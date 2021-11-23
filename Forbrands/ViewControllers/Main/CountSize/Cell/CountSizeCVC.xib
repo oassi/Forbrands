@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CountSizeCVC" rowHeight="96" id="KGk-i7-Jjw" customClass="CountSizeCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="352" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="352" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhF-9s-chc">
+                        <rect key="frame" x="5" y="5" width="342" height="96.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KyD-8F-Gfm">
+                                <rect key="frame" x="0.0" y="0.0" width="342" height="96.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Mmw-RL-AUH">
+                                        <rect key="frame" x="8" y="8" width="326" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" text="Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ih-32-1MP">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="20.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Size"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJp-Ho-Tzh">
+                                                <rect key="frame" x="39" y="0.0" width="287" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="FL8-Yq-aKz"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRT-AF-J4D">
+                                        <rect key="frame" x="8" y="38.5" width="326" height="50"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="100m" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rK0-2w-28D">
+                                                <rect key="frame" x="20" y="0.0" width="286" height="50"/>
+                                                <color key="backgroundColor" name="grey"/>
+                                                <color key="textColor" name="black"/>
+                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" name="grey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="rK0-2w-28D" secondAttribute="bottom" id="0cR-Ij-jKB"/>
+                                            <constraint firstAttribute="trailing" secondItem="rK0-2w-28D" secondAttribute="trailing" constant="20" id="9QQ-Rh-M8u"/>
+                                            <constraint firstItem="rK0-2w-28D" firstAttribute="top" secondItem="NRT-AF-J4D" secondAttribute="top" id="kEz-tN-Nhw"/>
+                                            <constraint firstItem="rK0-2w-28D" firstAttribute="leading" secondItem="NRT-AF-J4D" secondAttribute="leading" constant="20" id="p9K-tm-cG8"/>
+                                            <constraint firstAttribute="height" constant="48" id="vTh-7C-4M7"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KyD-8F-Gfm" secondAttribute="bottom" id="68G-0o-YzR"/>
+                            <constraint firstAttribute="trailing" secondItem="KyD-8F-Gfm" secondAttribute="trailing" id="ZEz-cT-ZxE"/>
+                            <constraint firstItem="KyD-8F-Gfm" firstAttribute="leading" secondItem="xhF-9s-chc" secondAttribute="leading" id="jKe-4n-mq8"/>
+                            <constraint firstItem="KyD-8F-Gfm" firstAttribute="top" secondItem="xhF-9s-chc" secondAttribute="top" id="tVc-EU-M3M"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="xhF-9s-chc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="1WD-er-xhA"/>
+                    <constraint firstAttribute="trailing" secondItem="xhF-9s-chc" secondAttribute="trailing" constant="5" id="3lT-on-30I"/>
+                    <constraint firstItem="xhF-9s-chc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="9uR-iz-PGH"/>
+                    <constraint firstAttribute="bottom" secondItem="xhF-9s-chc" secondAttribute="bottom" constant="5" id="PJQ-F0-2NY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblCount" destination="JJp-Ho-Tzh" id="RPi-5g-B3I"/>
+                <outlet property="lblCountSize" destination="rK0-2w-28D" id="FDD-2V-QcQ"/>
+            </connections>
+            <point key="canvasLocation" x="59.420289855072468" y="71.986607142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-SemiBold.ttf">
+            <string>Cairo-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVC" customModule="Forbrands" customModuleProvider="target">
+            <connections>
+                <outlet property="tableview" destination="hrr-dm-PXw" id="fcy-EJ-iyr"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hrr-dm-PXw">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="Jyc-t6-EN2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Research results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRj-Kz-XcP">
+                                <rect key="frame" x="20" y="0.0" width="374" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1kb-Pq-nga"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="16"/>
+                                <color key="textColor" name="black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="SRj-Kz-XcP" secondAttribute="bottom" id="Rss-1C-4Zh"/>
+                            <constraint firstItem="SRj-Kz-XcP" firstAttribute="top" secondItem="Jyc-t6-EN2" secondAttribute="top" id="XTU-qx-rgk"/>
+                            <constraint firstItem="SRj-Kz-XcP" firstAttribute="leading" secondItem="Jyc-t6-EN2" secondAttribute="leading" constant="20" id="rgc-pg-dKm"/>
+                            <constraint firstAttribute="trailing" secondItem="SRj-Kz-XcP" secondAttribute="trailing" constant="20" id="vhN-n1-lWZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9Yl-oE-4Ms"/>
+                        <outlet property="delegate" destination="-1" id="GDq-Mk-my4"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hrr-dm-PXw" secondAttribute="bottom" id="83q-E9-tYn"/>
+                <constraint firstItem="hrr-dm-PXw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="MN3-bR-8Nx"/>
+                <constraint firstItem="hrr-dm-PXw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dao-kb-1ls"/>
+                <constraint firstItem="hrr-dm-PXw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qcr-BY-Qd8"/>
+            </constraints>
+            <point key="canvasLocation" x="-1.4492753623188408" y="94.419642857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

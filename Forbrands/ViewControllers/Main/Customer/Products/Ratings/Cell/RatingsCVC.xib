@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cairo-Bold.ttf">
+            <string>Cairo-Bold</string>
+        </array>
+        <array key="Cairo-Regular.ttf">
+            <string>Cairo-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingsCVC" rowHeight="107" id="KGk-i7-Jjw" customClass="RatingsCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="107"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-Cv-96c">
+                        <rect key="frame" x="0.0" y="0.0" width="322" height="107"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="fbP-gQ-HfR">
+                                <rect key="frame" x="0.0" y="0.0" width="322" height="107"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="lJO-J6-uLA">
+                                        <rect key="frame" x="8" y="8" width="306" height="50"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqk-9M-aG9">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="OV0-Yt-ZMp">
+                                                        <rect key="frame" x="10.5" y="8" width="24" height="29"/>
+                                                        <color key="tintColor" name="background"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" name="grey"/>
+                                                <constraints>
+                                                    <constraint firstItem="OV0-Yt-ZMp" firstAttribute="centerY" secondItem="mqk-9M-aG9" secondAttribute="centerY" id="YEM-9a-MsV"/>
+                                                    <constraint firstItem="OV0-Yt-ZMp" firstAttribute="centerX" secondItem="mqk-9M-aG9" secondAttribute="centerX" id="kpt-Dc-QNN"/>
+                                                    <constraint firstAttribute="width" constant="45" id="nyK-be-ggk"/>
+                                                    <constraint firstAttribute="height" constant="45" id="oOA-Y4-dzn"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <view contentMode="scaleToFill" horizontalHuggingPriority="260" verticalHuggingPriority="260" horizontalCompressionResistancePriority="260" verticalCompressionResistancePriority="260" translatesAutoresizingMaskIntoConstraints="NO" id="8lm-8B-0wr">
+                                                <rect key="frame" x="54" y="0.0" width="1" height="50"/>
+                                                <color key="backgroundColor" name="grey"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="1" id="BVS-GO-Mxt"/>
+                                                    <constraint firstAttribute="height" constant="50" id="RXS-xv-hss"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VID-5a-7CN">
+                                                <rect key="frame" x="64" y="0.0" width="242" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1oT-bl-Eje">
+                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="50"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6IU-6o-6t3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="35.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="252" horizontalCompressionResistancePriority="240" verticalCompressionResistancePriority="751" text="Mayada" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="2kq-CL-4nI">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="142" height="16.5"/>
+                                                                        <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
+                                                                        <color key="textColor" name="#1B3764"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019\05\28" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIC-LI-K67">
+                                                                        <rect key="frame" x="0.0" y="21.5" width="142" height="14"/>
+                                                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
+                                                                        <color key="textColor" name="derkGrey"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICb-Iy-yxw">
+                                                                <rect key="frame" x="142" y="0.0" width="10" height="50"/>
+                                                                <color key="backgroundColor" name="white"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="10" id="Da3-L0-b9L"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="X4I-lm-vlo" customClass="CosmosView" customModule="Cosmos">
+                                                                <rect key="frame" x="152" y="0.0" width="90" height="15"/>
+                                                                <color key="backgroundColor" name="white"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="15" id="DDQ-SX-bnp"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="78" id="EoS-TZ-EXN"/>
+                                                                </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                        <real key="value" value="0.0"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                        <color key="value" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                        <real key="value" value="14"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                                        <color key="value" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                                        <color key="value" red="1" green="0.75686274509999996" blue="0.027450980390000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                                        <integer key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar1"/>
+                                                                    <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="fillStart"/>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="المنتج جيد جدا وليس له اي اعراض جانبية" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRh-h7-I81">
+                                        <rect key="frame" x="8" y="71" width="306" height="14"/>
+                                        <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
+                                        <color key="textColor" name="alert"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8i7-ea-gLM">
+                                        <rect key="frame" x="8" y="98" width="306" height="1"/>
+                                        <color key="backgroundColor" name="grey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="cwf-Rf-Aqr"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fbP-gQ-HfR" firstAttribute="leading" secondItem="pVa-Cv-96c" secondAttribute="leading" id="MGK-8J-n3S"/>
+                            <constraint firstAttribute="height" constant="107" id="O4i-fZ-Hpz"/>
+                            <constraint firstItem="fbP-gQ-HfR" firstAttribute="top" secondItem="pVa-Cv-96c" secondAttribute="top" id="cPD-G2-UWK"/>
+                            <constraint firstAttribute="trailing" secondItem="fbP-gQ-HfR" secondAttribute="trailing" id="rwa-u7-v3o"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pVa-Cv-96c" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="78z-9Q-EnK"/>
+                    <constraint firstAttribute="trailing" secondItem="pVa-Cv-96c" secondAttribute="trailing" id="Eeg-jP-QE1"/>
+                    <constraint firstAttribute="bottom" secondItem="pVa-Cv-96c" secondAttribute="bottom" id="VEl-ax-WcI"/>
+                    <constraint firstItem="pVa-Cv-96c" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="a9M-di-AN3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="ViewRate" destination="X4I-lm-vlo" id="v6W-l6-ysV"/>
+                <outlet property="img" destination="OV0-Yt-ZMp" id="GF2-QM-Bt7"/>
+                <outlet property="lblComment" destination="mRh-h7-I81" id="A4j-SF-AIy"/>
+                <outlet property="lblDate" destination="nIC-LI-K67" id="n0l-W5-7qa"/>
+                <outlet property="lblName" destination="2kq-CL-4nI" id="sTd-Ov-SkU"/>
+            </connections>
+            <point key="canvasLocation" x="91.304347826086968" y="115.51339285714285"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="X4I-lm-vlo">
+            <size key="intrinsicContentSize" width="90" height="14"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="emptyStar1" width="14" height="13"/>
+        <image name="fillStart" width="33" height="33"/>
+        <image name="person" width="24" height="29"/>
+        <namedColor name="#1B3764">
+            <color red="0.10588235294117647" green="0.21568627450980393" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="alert">
+            <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="derkGrey">
+            <color red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

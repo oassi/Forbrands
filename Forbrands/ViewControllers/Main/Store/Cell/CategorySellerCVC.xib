@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategorySellerCVC" id="gTV-IL-0wX" customClass="CategorySellerCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="167" height="137"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="167" height="137"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKa-wK-fFO">
+                        <rect key="frame" x="10" y="10" width="147" height="117"/>
+                        <subviews>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aTB-fn-N22">
+                                <rect key="frame" x="0.0" y="0.0" width="147" height="117"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="zal-5l-b7g">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="79"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="79" id="Bxq-zf-3SN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cl3-I6-2Fo">
+                                        <rect key="frame" x="0.0" y="79" width="147" height="38"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="عطور رجالي" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0m-lm-Zhf">
+                                                <rect key="frame" x="0.0" y="0.0" width="147" height="38"/>
+                                                <color key="backgroundColor" name="white"/>
+                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
+                                                <color key="textColor" name="black"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="p0m-lm-Zhf" firstAttribute="leading" secondItem="Cl3-I6-2Fo" secondAttribute="leading" id="HfF-J6-giB"/>
+                                            <constraint firstAttribute="trailing" secondItem="p0m-lm-Zhf" secondAttribute="trailing" id="PX3-CF-0eQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="p0m-lm-Zhf" secondAttribute="bottom" id="hpU-Op-hQg"/>
+                                            <constraint firstItem="p0m-lm-Zhf" firstAttribute="top" secondItem="Cl3-I6-2Fo" secondAttribute="top" id="xfG-oB-u2H"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aTB-fn-N22" firstAttribute="leading" secondItem="hKa-wK-fFO" secondAttribute="leading" id="6Rf-9k-Pgg"/>
+                            <constraint firstAttribute="bottom" secondItem="aTB-fn-N22" secondAttribute="bottom" id="Rh9-bE-CdS"/>
+                            <constraint firstItem="aTB-fn-N22" firstAttribute="top" secondItem="hKa-wK-fFO" secondAttribute="top" id="hEa-CD-Ez6"/>
+                            <constraint firstAttribute="trailing" secondItem="aTB-fn-N22" secondAttribute="trailing" id="qLn-cp-jcB"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.10000000000000001"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="0.29999999999999999"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" name="black"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="hKa-wK-fFO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="BSl-XP-tpE"/>
+                <constraint firstItem="hKa-wK-fFO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="LEf-Oa-mFD"/>
+                <constraint firstAttribute="trailing" secondItem="hKa-wK-fFO" secondAttribute="trailing" constant="10" id="Y3v-UZ-rXw"/>
+                <constraint firstAttribute="bottom" secondItem="hKa-wK-fFO" secondAttribute="bottom" constant="10" id="ciM-P1-Wnn"/>
+            </constraints>
+            <size key="customSize" width="269" height="164"/>
+            <connections>
+                <outlet property="img" destination="zal-5l-b7g" id="98h-rS-psW"/>
+                <outlet property="lblTitle" destination="p0m-lm-Zhf" id="MNC-dz-mwf"/>
+            </connections>
+            <point key="canvasLocation" x="250.72463768115944" y="86.049107142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img2" width="162" height="140"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

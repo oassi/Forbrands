@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SizeProductCVC" id="gTV-IL-0wX" customClass="SizeProductCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="101" height="46"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="101" height="46"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FGl-It-FNO">
+                        <rect key="frame" x="5" y="5" width="91" height="36"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ifM-2U-x8I">
+                                <rect key="frame" x="5" y="0.0" width="81" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L49-pA-cW8">
+                                        <rect key="frame" x="0.0" y="6" width="53" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Weo-qZ-Leg"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="100">
+                                                <attributes>
+                                                    <font key="NSFont" size="14" name="DINNextLTW23-Regular"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.80000000000000004" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyM-rv-MOE">
+                                        <rect key="frame" x="57" y="6" width="24" height="24"/>
+                                        <color key="backgroundColor" name="derkGrey"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="Re0-Jf-HUH"/>
+                                            <constraint firstAttribute="height" constant="24" id="yj4-gp-C1k"/>
+                                        </constraints>
+                                        <state key="normal" image="cancel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="tapDeleteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="pqH-zp-Hml"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="grey"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ifM-2U-x8I" secondAttribute="trailing" constant="5" id="Ai7-cq-SXp"/>
+                            <constraint firstItem="ifM-2U-x8I" firstAttribute="top" secondItem="FGl-It-FNO" secondAttribute="top" id="LsM-AA-90w"/>
+                            <constraint firstItem="ifM-2U-x8I" firstAttribute="leading" secondItem="FGl-It-FNO" secondAttribute="leading" constant="5" id="TlF-qj-9sd"/>
+                            <constraint firstAttribute="bottom" secondItem="ifM-2U-x8I" secondAttribute="bottom" id="dlx-py-A8H"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="FGl-It-FNO" secondAttribute="bottom" constant="5" id="5OR-mT-qB6"/>
+                <constraint firstItem="FGl-It-FNO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="cO9-Ag-LCh"/>
+                <constraint firstAttribute="trailing" secondItem="FGl-It-FNO" secondAttribute="trailing" constant="5" id="rbg-5T-fnA"/>
+                <constraint firstItem="FGl-It-FNO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="zeR-Mb-PRH"/>
+            </constraints>
+            <connections>
+                <outlet property="lblSize" destination="L49-pA-cW8" id="PNn-2c-4dj"/>
+            </connections>
+            <point key="canvasLocation" x="61.594202898550726" y="55.580357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cancel" width="8" height="8"/>
+        <namedColor name="derkGrey">
+            <color red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

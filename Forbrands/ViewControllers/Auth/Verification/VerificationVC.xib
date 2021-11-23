@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
+            <string>DINNextLTArabic-Regular</string>
+        </array>
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VerificationVC" customModule="Forbrands" customModuleProvider="target">
+            <connections>
+                <outlet property="lblCode" destination="sjV-Nq-i8P" id="lrA-Fu-MpV"/>
+                <outlet property="lblNumber" destination="mIX-Qa-UjC" id="aAS-ar-kjd"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEP-aH-4Lp">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="q4V-Dc-eKB">
+                            <rect key="frame" x="20" y="0.0" width="374" height="521"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activation code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFn-fZ-ATw">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
+                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="26"/>
+                                    <color key="textColor" name="black"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Activation code"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An activation code has been sent to your number" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rdu-XL-ehR">
+                                    <rect key="frame" x="0.0" y="36.5" width="374" height="44.5"/>
+                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
+                                    <color key="textColor" name="black"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="An activation code has been sent to your number"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIX-Qa-UjC">
+                                    <rect key="frame" x="0.0" y="87" width="374" height="19"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="5099313888">
+                                            <attributes>
+                                                <color key="NSColor" name="primary"/>
+                                                <font key="NSFont" size="16" name="Cairo-Regular"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="An activation code has been sent to your number"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cn-SW-HIg">
+                                    <rect key="frame" x="0.0" y="112" width="374" height="30"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="KoR-dS-Zk3"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the verification code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2f-aY-384">
+                                    <rect key="frame" x="0.0" y="148" width="374" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
+                                    <color key="textColor" name="black"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Enter the verification code"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T1F-9y-jXL">
+                                    <rect key="frame" x="0.0" y="176.5" width="374" height="10"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="10" id="uGE-su-vHu"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dcC-7M-FRk">
+                                    <rect key="frame" x="0.0" y="192.5" width="374" height="116"/>
+                                    <subviews>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjV-Nq-i8P" customClass="VKPinCodeView" customModule="VKPinCodeView">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="6Ey-Wg-CmV"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="NO"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                    <real key="value" value="0.040000000000000001"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khg-Be-D3R">
+                                            <rect key="frame" x="0.0" y="68" width="374" height="48"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gdV-br-Vkt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvv-au-Jcw">
+                                                            <rect key="frame" x="155" y="0.0" width="64.5" height="48"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                            <color key="textColor" name="white"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAF-tc-Iwg">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" name="white"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="bt_Virifcation:" destination="-1" eventType="touchUpInside" id="rM0-kQ-muH"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" name="primary"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="RAF-tc-Iwg" secondAttribute="trailing" id="DzI-VA-Fgj"/>
+                                                <constraint firstAttribute="bottom" secondItem="RAF-tc-Iwg" secondAttribute="bottom" id="GK7-OZ-LJJ"/>
+                                                <constraint firstItem="RAF-tc-Iwg" firstAttribute="top" secondItem="khg-Be-D3R" secondAttribute="top" id="JqO-sZ-ZUw"/>
+                                                <constraint firstItem="RAF-tc-Iwg" firstAttribute="leading" secondItem="khg-Be-D3R" secondAttribute="leading" id="RCy-0S-J9n"/>
+                                                <constraint firstAttribute="bottom" secondItem="gdV-br-Vkt" secondAttribute="bottom" id="bOJ-VF-AKH"/>
+                                                <constraint firstItem="gdV-br-Vkt" firstAttribute="leading" secondItem="khg-Be-D3R" secondAttribute="leading" id="g3i-AQ-H3B"/>
+                                                <constraint firstAttribute="height" constant="48" id="rVS-X2-234"/>
+                                                <constraint firstAttribute="trailing" secondItem="gdV-br-Vkt" secondAttribute="trailing" id="sR1-Kq-R0d"/>
+                                                <constraint firstItem="gdV-br-Vkt" firstAttribute="top" secondItem="khg-Be-D3R" secondAttribute="top" id="xAL-s2-Ftn"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQc-od-I0j">
+                                    <rect key="frame" x="0.0" y="314.5" width="374" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="PPf-Iv-RbY"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ge2-C7-6Z3">
+                                    <rect key="frame" x="0.0" y="360.5" width="374" height="1"/>
+                                    <color key="backgroundColor" name="black"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="T5Y-QU-4MJ"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cB8-Je-Yg1">
+                                    <rect key="frame" x="0.0" y="367.5" width="374" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="OyB-XO-4Bg"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn't get the activation code?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxU-qe-YL8">
+                                    <rect key="frame" x="0.0" y="413.5" width="374" height="17.5"/>
+                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
+                                    <color key="textColor" name="black"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Didn't get the activation code?"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KaC-Ie-QlL">
+                                    <rect key="frame" x="0.0" y="437" width="374" height="30"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="sr9-VN-8lu"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FQu-uj-EPu">
+                                    <rect key="frame" x="0.0" y="473" width="374" height="48"/>
+                                    <subviews>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxK-WF-21K">
+                                            <rect key="frame" x="84" y="0.0" width="206" height="48"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1vv-0c-75h">
+                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="send again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luh-ZC-o7D">
+                                                            <rect key="frame" x="59" y="0.0" width="88.5" height="48"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="send again"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQs-Ac-zFj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="206" height="48"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" name="white"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="bt_resendCode:" destination="-1" eventType="touchUpInside" id="VGB-Pc-i3Q"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1vv-0c-75h" firstAttribute="leading" secondItem="dxK-WF-21K" secondAttribute="leading" id="0T0-Pg-gnT"/>
+                                                <constraint firstAttribute="height" constant="48" id="F7y-Wa-N43"/>
+                                                <constraint firstAttribute="bottom" secondItem="uQs-Ac-zFj" secondAttribute="bottom" id="M65-aZ-ACA"/>
+                                                <constraint firstItem="1vv-0c-75h" firstAttribute="top" secondItem="dxK-WF-21K" secondAttribute="top" id="QRh-3y-Yri"/>
+                                                <constraint firstAttribute="trailing" secondItem="1vv-0c-75h" secondAttribute="trailing" id="W1a-wr-YZA"/>
+                                                <constraint firstAttribute="bottom" secondItem="1vv-0c-75h" secondAttribute="bottom" id="ZPd-RE-2fX"/>
+                                                <constraint firstItem="uQs-Ac-zFj" firstAttribute="leading" secondItem="dxK-WF-21K" secondAttribute="leading" id="jgd-ig-D0e"/>
+                                                <constraint firstItem="uQs-Ac-zFj" firstAttribute="top" secondItem="dxK-WF-21K" secondAttribute="top" id="lkz-1z-vUh"/>
+                                                <constraint firstAttribute="trailing" secondItem="uQs-Ac-zFj" secondAttribute="trailing" id="sVf-bJ-YKb"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dxK-WF-21K" firstAttribute="width" secondItem="FQu-uj-EPu" secondAttribute="width" multiplier="0.55" id="iBb-zG-Wa6"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="q4V-Dc-eKB" firstAttribute="top" secondItem="EEP-aH-4Lp" secondAttribute="top" id="TAv-Mf-pNe"/>
+                        <constraint firstItem="q4V-Dc-eKB" firstAttribute="leading" secondItem="EEP-aH-4Lp" secondAttribute="leading" constant="20" id="Ww2-Py-0IQ"/>
+                        <constraint firstAttribute="trailing" secondItem="q4V-Dc-eKB" secondAttribute="trailing" constant="20" id="ewY-8l-gwK"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="EEP-aH-4Lp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="eAr-z5-S33"/>
+                <constraint firstItem="EEP-aH-4Lp" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="jPY-xM-cx3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="EEP-aH-4Lp" secondAttribute="bottom" id="sS8-Ws-LCa"/>
+                <constraint firstItem="EEP-aH-4Lp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zHN-bw-Xyl"/>
+            </constraints>
+            <point key="canvasLocation" x="122" y="81"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

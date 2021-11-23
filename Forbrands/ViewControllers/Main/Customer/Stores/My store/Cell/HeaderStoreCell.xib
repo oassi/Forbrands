@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderStoreCell" id="U6b-Vx-4bR" customClass="HeaderStoreCell" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="163"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMF-jH-WFa">
+                    <rect key="frame" x="0.0" y="0.0" width="449" height="163"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="Yuj-8q-S6m">
+                            <rect key="frame" x="8" y="8" width="433" height="147"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" name="black"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="0.10000000000000001"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Yuj-8q-S6m" secondAttribute="bottom" constant="8" id="QhJ-1a-YAe"/>
+                        <constraint firstItem="Yuj-8q-S6m" firstAttribute="top" secondItem="HMF-jH-WFa" secondAttribute="top" constant="8" id="asR-zX-GZW"/>
+                        <constraint firstItem="Yuj-8q-S6m" firstAttribute="leading" secondItem="HMF-jH-WFa" secondAttribute="leading" constant="8" id="gXg-Iu-tha"/>
+                        <constraint firstAttribute="trailing" secondItem="Yuj-8q-S6m" secondAttribute="trailing" constant="8" id="rNe-WT-Yds"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="HMF-jH-WFa" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="Bhc-Mf-HN8"/>
+                <constraint firstAttribute="trailing" secondItem="HMF-jH-WFa" secondAttribute="trailing" id="KRs-Hg-Cbk"/>
+                <constraint firstAttribute="bottom" secondItem="HMF-jH-WFa" secondAttribute="bottom" id="Lha-Ch-nL7"/>
+                <constraint firstItem="HMF-jH-WFa" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="NmD-BG-3Rm"/>
+            </constraints>
+            <connections>
+                <outlet property="imgView" destination="Yuj-8q-S6m" id="cPj-oo-q0e"/>
+            </connections>
+            <point key="canvasLocation" x="-52.898550724637687" y="97.433035714285708"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="img2" width="162" height="140"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

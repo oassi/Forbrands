@@ -1,0 +1,6 @@
+framework module VKPinCodeView {
+  umbrella header "VKPinCodeView-umbrella.h"
+
+  export *
+  module * { export * }
+}

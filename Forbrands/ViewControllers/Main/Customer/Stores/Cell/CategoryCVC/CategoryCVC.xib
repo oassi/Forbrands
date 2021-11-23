@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCVC" id="gTV-IL-0wX" customClass="CategoryCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="194" height="48"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="194" height="48"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUu-oD-baz">
+                        <rect key="frame" x="5" y="5" width="184" height="38"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z80-d6-BL5">
+                                <rect key="frame" x="10" y="0.0" width="164" height="38"/>
+                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
+                                <color key="textColor" name="primary"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="z80-d6-BL5" firstAttribute="centerX" secondItem="DUu-oD-baz" secondAttribute="centerX" id="6By-0c-Cj5"/>
+                            <constraint firstAttribute="trailing" secondItem="z80-d6-BL5" secondAttribute="trailing" constant="10" id="CMg-gs-iNk"/>
+                            <constraint firstItem="z80-d6-BL5" firstAttribute="top" secondItem="DUu-oD-baz" secondAttribute="top" id="YKP-Pb-EzH"/>
+                            <constraint firstAttribute="bottom" secondItem="z80-d6-BL5" secondAttribute="bottom" id="ZtW-92-jLs"/>
+                            <constraint firstAttribute="height" constant="38" id="hwO-bb-Atj"/>
+                            <constraint firstItem="z80-d6-BL5" firstAttribute="leading" secondItem="DUu-oD-baz" secondAttribute="leading" constant="10" id="ulq-Pf-Nfn"/>
+                            <constraint firstItem="z80-d6-BL5" firstAttribute="centerY" secondItem="DUu-oD-baz" secondAttribute="centerY" id="zfw-R1-CU4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="primary"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="DUu-oD-baz" secondAttribute="bottom" constant="5" id="AhM-D6-SM8"/>
+                <constraint firstAttribute="trailing" secondItem="DUu-oD-baz" secondAttribute="trailing" constant="5" id="Muk-xb-ttT"/>
+                <constraint firstItem="DUu-oD-baz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="jMH-Vd-MIp"/>
+                <constraint firstItem="DUu-oD-baz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="veG-Wb-KWy"/>
+            </constraints>
+            <size key="customSize" width="122" height="41"/>
+            <connections>
+                <outlet property="lblTitle" destination="z80-d6-BL5" id="byv-jf-hvN"/>
+                <outlet property="viewCategory" destination="DUu-oD-baz" id="5dJ-nf-5xJ"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="91.40625"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

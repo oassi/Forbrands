@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSizeProductVC" customModule="Forbrands" customModuleProvider="target">
+            <connections>
+                <outlet property="pickerView" destination="wwu-jq-Snd" id="6Su-wI-Ku2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m14-3o-Bf6">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XOE-wo-X7Y">
+                            <rect key="frame" x="16" y="734" width="382" height="48"/>
+                            <color key="backgroundColor" name="primary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="dmz-aF-zFe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                            <state key="normal" title="add sizes">
+                                <color key="titleColor" name="white"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="add sizes"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapAddSizeProduct:" destination="-1" eventType="touchUpInside" id="wuh-pa-4hY"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="zfX-ed-LCa">
+                            <rect key="frame" x="0.0" y="267" width="414" height="284"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="كم عدد الأحجام" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XSt-l4-lFN">
+                                    <rect key="frame" x="142" y="0.0" width="130.5" height="28"/>
+                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="24"/>
+                                    <color key="textColor" name="alert"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwu-jq-Snd">
+                                    <rect key="frame" x="47" y="68" width="320" height="216"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="5Be-ei-G5z"/>
+                                        <outlet property="delegate" destination="-1" id="ewC-Ai-oCh"/>
+                                    </connections>
+                                </pickerView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="zfX-ed-LCa" firstAttribute="leading" secondItem="m14-3o-Bf6" secondAttribute="leading" id="8Jm-Au-uH2"/>
+                        <constraint firstItem="XOE-wo-X7Y" firstAttribute="leading" secondItem="m14-3o-Bf6" secondAttribute="leading" constant="16" id="C1s-aQ-cFq"/>
+                        <constraint firstItem="zfX-ed-LCa" firstAttribute="centerY" secondItem="m14-3o-Bf6" secondAttribute="centerY" id="K6d-hj-4eA"/>
+                        <constraint firstAttribute="bottom" secondItem="XOE-wo-X7Y" secondAttribute="bottom" constant="36" id="UP3-e2-CsN"/>
+                        <constraint firstAttribute="trailing" secondItem="zfX-ed-LCa" secondAttribute="trailing" id="VKu-9s-QEZ"/>
+                        <constraint firstAttribute="trailing" secondItem="XOE-wo-X7Y" secondAttribute="trailing" constant="16" id="ddb-V8-Yvi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="m14-3o-Bf6" secondAttribute="trailing" id="2b1-jH-bUI"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="m14-3o-Bf6" secondAttribute="bottom" id="A9L-6A-EaC"/>
+                <constraint firstItem="m14-3o-Bf6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Ta7-RP-3Qt"/>
+                <constraint firstItem="m14-3o-Bf6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="l4f-h6-Xsk"/>
+            </constraints>
+            <point key="canvasLocation" x="-32" y="55"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="alert">
+            <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

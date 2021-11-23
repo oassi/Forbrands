@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
+            <string>DINNextLTArabic-Regular</string>
+        </array>
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaymentMethodVC" customModule="Forbrands" customModuleProvider="target">
+            <connections>
+                <outlet property="tableview" destination="MNp-bv-MRK" id="c8P-Ws-MnC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MNp-bv-MRK">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" name="background"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="iDD-lu-SlQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mt-rX-VgI">
+                                <rect key="frame" x="20" y="0.0" width="374" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Kkd-YF-sdl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="26"/>
+                                <color key="textColor" name="black"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Payment method"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="6Mt-rX-VgI" secondAttribute="bottom" id="BPb-Cm-cNo"/>
+                            <constraint firstItem="6Mt-rX-VgI" firstAttribute="leading" secondItem="iDD-lu-SlQ" secondAttribute="leading" constant="20" id="Ia2-P0-hKf"/>
+                            <constraint firstAttribute="trailing" secondItem="6Mt-rX-VgI" secondAttribute="trailing" constant="20" id="Ord-Aj-kbT"/>
+                            <constraint firstItem="6Mt-rX-VgI" firstAttribute="top" secondItem="iDD-lu-SlQ" secondAttribute="top" id="VGu-MK-c1M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dQZ-Kp-4B8"/>
+                        <outlet property="delegate" destination="-1" id="nSC-mz-mxI"/>
+                    </connections>
+                </tableView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G54-xX-ZTD">
+                    <rect key="frame" x="20" y="784" width="374" height="48"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PRl-9u-ZT7">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xSg-cY-cpl">
+                                    <rect key="frame" x="155" y="0.0" width="64.5" height="48"/>
+                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                    <color key="textColor" name="white"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHn-4x-6xa">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                            <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                            <state key="normal">
+                                <color key="titleColor" name="white"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapSubscribe:" destination="-1" eventType="touchUpInside" id="bV5-4r-crl"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="primary"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="PRl-9u-ZT7" secondAttribute="bottom" id="9S6-kC-gNn"/>
+                        <constraint firstItem="PRl-9u-ZT7" firstAttribute="top" secondItem="G54-xX-ZTD" secondAttribute="top" id="Nfp-bX-qxq"/>
+                        <constraint firstAttribute="trailing" secondItem="JHn-4x-6xa" secondAttribute="trailing" id="cV2-8Y-HPd"/>
+                        <constraint firstItem="PRl-9u-ZT7" firstAttribute="leading" secondItem="G54-xX-ZTD" secondAttribute="leading" id="dSJ-zf-zsP"/>
+                        <constraint firstItem="JHn-4x-6xa" firstAttribute="top" secondItem="G54-xX-ZTD" secondAttribute="top" id="dh0-9E-nmD"/>
+                        <constraint firstAttribute="bottom" secondItem="JHn-4x-6xa" secondAttribute="bottom" id="iLA-OZ-m0P"/>
+                        <constraint firstAttribute="height" constant="48" id="k51-pL-Vdy"/>
+                        <constraint firstAttribute="trailing" secondItem="PRl-9u-ZT7" secondAttribute="trailing" id="uqt-v4-2w8"/>
+                        <constraint firstItem="JHn-4x-6xa" firstAttribute="leading" secondItem="G54-xX-ZTD" secondAttribute="leading" id="vge-yd-BN0"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="MNp-bv-MRK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8ZZ-rz-3Mq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MNp-bv-MRK" secondAttribute="bottom" id="B2b-Uu-PaE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="G54-xX-ZTD" secondAttribute="bottom" constant="30" id="Lae-a5-uWh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="G54-xX-ZTD" secondAttribute="trailing" constant="20" id="bh9-Kv-h6Y"/>
+                <constraint firstItem="G54-xX-ZTD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="h5J-eU-HwR"/>
+                <constraint firstItem="MNp-bv-MRK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nJG-et-rsW"/>
+                <constraint firstItem="MNp-bv-MRK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="opl-6r-xK4"/>
+            </constraints>
+            <point key="canvasLocation" x="-1.4492753623188408" y="94.419642857142847"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

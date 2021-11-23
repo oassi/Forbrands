@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddProductImgCVC" id="gTV-IL-0wX" customClass="AddProductImgCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="136" height="136"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxr-Pk-obO">
+                        <rect key="frame" x="5" y="5" width="126" height="126"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="yjH-uV-S1a">
+                                <rect key="frame" x="0.0" y="0.0" width="126" height="126"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFs-yA-8o8">
+                                <rect key="frame" x="12" y="12" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="QYV-LN-rLM"/>
+                                    <constraint firstAttribute="width" constant="24" id="TIt-gu-ws6"/>
+                                </constraints>
+                                <state key="normal" image="cancelleButton"/>
+                                <connections>
+                                    <action selector="tapDeleteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="x27-5k-a7O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yjH-uV-S1a" firstAttribute="top" secondItem="xxr-Pk-obO" secondAttribute="top" id="6wp-D0-O76"/>
+                            <constraint firstItem="yjH-uV-S1a" firstAttribute="leading" secondItem="xxr-Pk-obO" secondAttribute="leading" id="706-qO-J35"/>
+                            <constraint firstAttribute="bottom" secondItem="yjH-uV-S1a" secondAttribute="bottom" id="8ZP-B9-Lb1"/>
+                            <constraint firstAttribute="trailing" secondItem="yjH-uV-S1a" secondAttribute="trailing" id="GR1-cn-QSc"/>
+                            <constraint firstItem="cFs-yA-8o8" firstAttribute="leading" secondItem="xxr-Pk-obO" secondAttribute="leading" constant="12" id="nSP-H7-8ao"/>
+                            <constraint firstItem="cFs-yA-8o8" firstAttribute="top" secondItem="xxr-Pk-obO" secondAttribute="top" constant="12" id="oMe-Zg-uac"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                <real key="value" value="0.20000000000000001"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                <real key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" name="black"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="0.0" height="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="xxr-Pk-obO" secondAttribute="bottom" constant="5" id="HNT-xV-BRf"/>
+                <constraint firstItem="xxr-Pk-obO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="SGO-ZZ-ZJS"/>
+                <constraint firstAttribute="trailing" secondItem="xxr-Pk-obO" secondAttribute="trailing" constant="5" id="dv8-Us-9g7"/>
+                <constraint firstItem="xxr-Pk-obO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="kYF-vQ-BVF"/>
+            </constraints>
+            <size key="customSize" width="126" height="126"/>
+            <connections>
+                <outlet property="img" destination="yjH-uV-S1a" id="Aun-zo-ecj"/>
+            </connections>
+            <point key="canvasLocation" x="21.739130434782609" y="60.267857142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cancelleButton" width="24" height="24"/>
+        <image name="img2" width="162" height="140"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

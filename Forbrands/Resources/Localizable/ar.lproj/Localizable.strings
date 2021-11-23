@@ -1,0 +1,204 @@
+/* 
+  Localizable.strings
+  Forbrands
+  Created by osamaaassi on 05/08/2021.
+*/
+"Confirm" = "تأكيد";
+"Continue" = "إستمرار";
+
+"Login with phone" = "تسجيل برقم الهاتف";
+"Continue with Google" = "تسجيل بحساب جوجل";
+"Are you a trader?" = "هل أنت تأجر ؟";
+"When you register in Forbrands, this means that you agree to" = "عند تسجيلك في فور براندز هذا يعني الموافقة على";
+"Terms and Conditions" = "الشروط والأحكام";
+"Powered By ForBrands" = "مدعوم من فور براندز";
+"Activation code" = "كود التفعيل";
+"An activation code has been sent to your number" = "تم إرسال كود التفعيل على رقمك";
+"Enter the verification code" = "ادخل رمز التحقيق";
+"Didn't get the activation code?" = "لم تتلق كود التفعيل؟";
+"send again" = "إرسال مره أخرى";
+"Registration Form" = "إستمارة تسجيل";
+"Please enter the required information" = "الرجاء إدخال البيانات المطلوبة";
+"phone number" = "رقم الهاتف";
+"Phone number" = "رقم الهاتف";
+
+"Password" = "كلمة المرور";
+"Full Name" = "الإسم بالكامل";
+"My Orders" = "طلباتي";
+"Addresses" = "العناوين";
+"Settings" = "الإعدادات";
+"Payment" = "طريقة الدفع";
+"Payment methods" = "وسائل الدفع";
+"Share the app" = "مشاركة التطبيق";
+"Connect with us" = "تواصل معنا";
+"About us" = "نبذه عن التطبيق";
+"Application Rating" = "تقييم التطبيق";
+"Other" = "أخرى";
+"Sign out" = "تسجيل الخروج";
+"Sign in" = "تسجيل";
+"Subscribe to premium membership" = "الاشتراك بالعضوية المميزة";
+"save" = "حفظ";
+"Add Address" = "إضافة عنوان";
+"My Addresses" = "عناويني";
+
+// Settings
+"Edit" = "تعديل";
+"Mobile" = "رقم الموبايل";
+"Language" = "اللغة";
+"Edit my account" = "تعديل حسابي";
+"Privacy Policy" = "سياسية الخصوصية";
+
+"Change Password" = "تغيير كلمة المرور";
+"Old Password" = "كلمة المرور القديمة";
+"New Password" = "كلمة المرور الجديدة";
+"Change the language" = "تغيير اللغة";
+
+// Add address
+"Add address" = "إضافة عنوان";
+"Full Name" = "الاسم بالكامل";
+"Another mobile" = "رقم هاتف آخر";
+"option" = "إختياري";
+"Street" = "الشارع";
+"Governorate" = "المحافظة";
+"City" = "المدينة";
+"building number" = "رقم العمارة";
+"Floor" = "الدور";
+"Apartment" = "الشقة";
+"Special marque" = "علامة مميزة";
+"My Account" = "حسابي";
+"My Data" = "بياناتي";
+"Email" = "عن طريق الايميل";
+"WhatsApp" = "عن طريق الواتساب";
+"Promocode" = "البروموكود";
+"Research results" = "نتائج البحث";
+"Notifications" = "الإشعارات";
+"Ratings" = "التقييمات";
+"Skip" = "تخطي";
+"Favorites" = "المفضلة";
+"successful" = "تم بنجاح";
+"Search for" = "بحث عن";
+"Activate the discount code" = "تم تفعيل كود الخصم";
+
+"Promo Code Discount" = "خصم البروموكود";
+"SAR" = "ريال";
+"Total Price" = "السعر الإجمالي";
+"Total" = "الإجمالي";
+"Bye" = "شراء";
+"Do you have a discount code?" = "هل لديك كود خصم ؟";
+"The discount code you entered does not apply to products in the basket" = "كود الخصم الذي أدخلته لا ينطبق مع المنتجات في السلة";
+"Register as a seller" = "التسجيل كتاجر";
+"E-mail" = "البريد الإلكتروني";
+"Complete store information" = "استكمال بيانات المتجر";
+"Store cover photo" = "صورة غلاف المتجر";
+"Store name" = "إسم المتجر";
+"Iban" = "الايبان";
+"Store Link" = "رابط المتجر";
+"Commercial Registration No" = "رقم السجل التجاري";
+"Advertisement" = "إعلان";
+"Advertise with us" = "أعلن معنا";
+
+"Pay when receiving" = "الدفع عند الاستلام";
+"Pay by mada" = "الدفع عن طريق مدى";
+"Master Card" = "ماستر كارد";
+"Visa" = "فيزا";
+"STC Pay" = "STC Pay";
+"Subscription Features" = "مميزات الاشتراك";
+"Browse featured stores" = "تصفح المتاجر المميز";
+"Browse featured products" = "تصفح المنتجات المميزه";
+"Subscription" = "اشتراك";
+"Online payment" = "الدفع اونلاين";
+"Card holder's name" = "إسم صاحب الكارت";
+"Card number" = "رقم الكارت";
+"Expiry date" = "تاريخ الإنتهاء";
+"MM" = "شهر";
+"YY" = "سنة";
+
+
+
+
+"Add Product" = "إضافة منتج";
+"Delete" = "حذف";
+"Product available?" = "هل المنتج متوفر؟";
+"Men's perfume" = "العطور الرجالي";
+"My Store" = "متجري";
+"Do you want to delete this product?" = "هل تريد حذف هذا المنتج؟";
+"Cancel" = "إلغاء";
+"Add image" = "إضافة صورة";
+"Pictures" = "الصور";
+"Product details" = "تفاصيل المنتج";
+"Category" = "الفئة";
+"Product name in Arabic" = "إسم المنتج بالعربية";
+"Product name in English" = "إسم المنتج بالانجليزية";
+"Price" = "السعر";
+"SR" = "ريال سعودي";
+"Price after discount" = "السعر بعد الخصم";
+"Product details in Arabic" = "تفاصيل المنتج بالعربية";
+"Product details in English" = "تفاصيل المنتج بالانجليزية";
+"Are there sizes for the product?" = "هل يوجد أحجام للمنتج ؟";
+"If there are sizes click here" = "إذا كان هناك أحجام إضغط هنا";
+"add sizes" = "أضف الأحجام";
+"Size" = "حجم";
+"Package size" = "حجم العبوة";
+"Show All" = "عرض الكل";
+"reviews" = "تقييم";
+"App Evaluation" = "تقييم التطبيق";
+"Go to the App Store to rate the app" = "الذهاب إلى المتجر لتقييم التطبيق";
+"Go" = "ذهاب";
+"change cover photo" = "تغيير صورة الغلاف";
+"Store color" = "لون المتجر";
+"Store information" = "بيانات المتجر";
+"not found" = "غير موجود";
+"Added to cart" = "تم إضافته للسلة";
+"keep shopping" = "الاستمرار في التسوق";
+"go to cart" = "الذهاب للسلة";
+"This product is not available at the moment" = "هذا المنتج غٌر متوافر فً الوقت الحالً";
+"You will be notified when the product arrives via an alert" = "سيتم إبلاغك عند وصول المنتج بتنبيه على التطبيق";
+"Please register first so that we can inform you about our product availability." = "يرجى التسجيل أولا لكي نستطيع إبلاغك بتوفر المنتج لدينا";
+"Final invoice" = "الفاتورة النهائية";
+"Order number" = "رقم الطلب";
+"Product" = "المنتج";
+"Quantity" = "الكمية";
+"Shipping expenses" = "مصاريف الشحن";
+"Total to be paid" = "المطلوب دفعه";
+"Total before discount" = "الإجمالي قبل الخصم";
+"Total discount" = "إجمالي الخصم";
+"Confirm order" = "تأكيد الطلب";
+"Paiement when receiving" = "الدفع عند الإستلام";
+"Complete the order" = "إتمام العملية";
+"Choose payment method" = "أختر طريقة الدفع";
+"Current" = "الحالية";
+"Previous" = "السابقة";
+"Expected delivery date :" = "موعد التسليم المتوقع";
+"View order details" = "عرض تفاصيل الطلب";
+"Underway" = "قيد التنفيذ";
+"Charging" = "تم الشحن";
+"Received" = "تم الاستلام";
+"your opinion matters" = "رأيك يهمنا";
+"Your evaluation of the service" = "تقييمك للخدمه";
+"Order details" = "تفاصيل الطلب";
+"The total amount includes value tax, if due" = "المبلغ الإجمالي يشمل ضريبة القيمة المضافة ان استحقت";
+"The date of Order" = "تاريخ الطلب";
+
+"the order has been canceled" = "تم إلغاء الطلب";
+"Send" = "إرسال";
+"your comment" = "تعليقك";
+"write here" = "أكتب هنا...";
+"Change order status" = "تغيير حالة الطلب";
+"Order status" = "حالة الطلب";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
+"" = "";
