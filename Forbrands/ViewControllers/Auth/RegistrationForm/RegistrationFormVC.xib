@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
         <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
             <string>DINNextLTArabic-Regular</string>
         </array>
@@ -20,6 +23,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistrationFormVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
+                <outlet property="lblFullName" destination="owk-Yp-DGS" id="lG7-fG-8JT"/>
+                <outlet property="lblPassword" destination="kit-6Z-Tac" id="6rH-KY-b7x"/>
+                <outlet property="phoneTF" destination="UIC-Ik-14Z" id="JDS-UU-Gmn"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,10 +38,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="giI-uf-Jtg">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="735"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="604.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-D0-QX1">
-                                    <rect key="frame" x="20" y="0.0" width="374" height="695"/>
+                                    <rect key="frame" x="20" y="0.0" width="374" height="564.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration Form" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ji-IL-kev">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
@@ -62,92 +68,18 @@
                                                 <constraint firstAttribute="height" constant="30" id="UAw-sU-lGS"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K3-rl-81i">
-                                            <rect key="frame" x="0.0" y="101" width="374" height="22.5"/>
-                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
-                                            <color key="textColor" name="black"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="phone number"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G7y-BJ-IwG">
-                                            <rect key="frame" x="0.0" y="129.5" width="374" height="10"/>
+                                            <rect key="frame" x="0.0" y="101" width="374" height="10"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="6lS-6t-SDk"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gr0-F7-bg4">
-                                            <rect key="frame" x="0.0" y="145.5" width="374" height="337"/>
+                                            <rect key="frame" x="0.0" y="117" width="374" height="447.5"/>
                                             <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5R-d9-07o" customClass="VKPinCodeView" customModule="VKPinCodeView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                    <color key="backgroundColor" name="grey"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="48" id="daj-0Q-894"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="8"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.040000000000000001"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24w-hF-TN7">
-                                                    <rect key="frame" x="0.0" y="68" width="374" height="22.5"/>
-                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
-                                                    <color key="textColor" name="black"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Password"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </label>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-fd-p3O">
-                                                    <rect key="frame" x="0.0" y="110.5" width="374" height="48"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HUJ-5c-DeG">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                            <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="******" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kit-6Z-Tac">
-                                                                    <rect key="frame" x="8" y="0.0" width="324" height="48"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="48" id="ppI-Og-jdd"/>
-                                                                    </constraints>
-                                                                    <attributedString key="attributedText"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" returnKeyType="next" secureTextEntry="YES"/>
-                                                                </textField>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hidePasswoed" translatesAutoresizingMaskIntoConstraints="NO" id="nZE-dg-PWI">
-                                                                    <rect key="frame" x="342" y="12" width="24" height="24"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="24" id="jI7-Fn-rz7"/>
-                                                                        <constraint firstAttribute="width" constant="24" id="k72-Cj-iMj"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                            </subviews>
-                                                            <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <color key="backgroundColor" name="grey"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="HUJ-5c-DeG" secondAttribute="bottom" id="9Gt-hT-fds"/>
-                                                        <constraint firstAttribute="height" constant="48" id="Dii-ob-xNq"/>
-                                                        <constraint firstItem="HUJ-5c-DeG" firstAttribute="leading" secondItem="zxX-fd-p3O" secondAttribute="leading" id="ZvG-Te-BQs"/>
-                                                        <constraint firstItem="HUJ-5c-DeG" firstAttribute="top" secondItem="zxX-fd-p3O" secondAttribute="top" id="cPM-SC-w6n"/>
-                                                        <constraint firstAttribute="trailing" secondItem="HUJ-5c-DeG" secondAttribute="trailing" id="gWG-Au-uLc"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8U-ZA-x7D">
-                                                    <rect key="frame" x="0.0" y="178.5" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -156,18 +88,22 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xan-kn-S79">
-                                                    <rect key="frame" x="0.0" y="221" width="374" height="48"/>
+                                                    <rect key="frame" x="0.0" y="42.5" width="374" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fcv-bd-7oc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                            <rect key="frame" x="10" y="0.0" width="354" height="48"/>
                                                             <subviews>
-                                                                <textField opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="مثال محمد  احمد سعود" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owk-Yp-DGS">
-                                                                    <rect key="frame" x="8" y="0.0" width="358" height="48"/>
+                                                                <textField opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Example Muhammad Ahmed Ahmed Saud" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owk-Yp-DGS">
+                                                                    <rect key="frame" x="8" y="0.0" width="338" height="48"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="48" id="Nfw-BK-phB"/>
                                                                     </constraints>
-                                                                    <attributedString key="attributedText"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done"/>
+                                                                    <color key="textColor" name="black"/>
+                                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibPlaceholderLocKey" value="Example Muhammad Ahmed Ahmed Saud"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                             </subviews>
                                                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
@@ -175,8 +111,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="fcv-bd-7oc" secondAttribute="trailing" id="ZmJ-5g-Pyn"/>
-                                                        <constraint firstItem="fcv-bd-7oc" firstAttribute="leading" secondItem="Xan-kn-S79" secondAttribute="leading" id="dKf-gE-YTv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fcv-bd-7oc" secondAttribute="trailing" constant="10" id="ZmJ-5g-Pyn"/>
+                                                        <constraint firstItem="fcv-bd-7oc" firstAttribute="leading" secondItem="Xan-kn-S79" secondAttribute="leading" constant="10" id="dKf-gE-YTv"/>
                                                         <constraint firstAttribute="bottom" secondItem="fcv-bd-7oc" secondAttribute="bottom" id="hsP-qP-jvK"/>
                                                         <constraint firstItem="fcv-bd-7oc" firstAttribute="top" secondItem="Xan-kn-S79" secondAttribute="top" id="mwH-vv-zWJ"/>
                                                         <constraint firstAttribute="height" constant="48" id="rlj-QX-uHG"/>
@@ -185,8 +121,98 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K3-rl-81i">
+                                                    <rect key="frame" x="0.0" y="110.5" width="374" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
+                                                    <color key="textColor" name="black"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="phone number"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWt-33-yFt">
+                                                    <rect key="frame" x="0.0" y="153" width="374" height="48"/>
+                                                    <subviews>
+                                                        <textField opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UIC-Ik-14Z" customClass="FPNTextField" customModule="FlagPhoneNumber">
+                                                            <rect key="frame" x="10" y="0.0" width="354" height="48"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                            <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                        </textField>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="grey"/>
+                                                    <constraints>
+                                                        <constraint firstItem="UIC-Ik-14Z" firstAttribute="leading" secondItem="HWt-33-yFt" secondAttribute="leading" constant="10" id="9Vz-kG-IU7"/>
+                                                        <constraint firstItem="UIC-Ik-14Z" firstAttribute="top" secondItem="HWt-33-yFt" secondAttribute="top" id="J63-xN-jCJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UIC-Ik-14Z" secondAttribute="trailing" constant="10" id="gc0-8T-sOD"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UIC-Ik-14Z" secondAttribute="bottom" id="qu4-HG-dVu"/>
+                                                        <constraint firstAttribute="height" constant="48" id="zcL-l6-wAF"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                            <real key="value" value="0.040000000000000001"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                            <real key="value" value="8"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24w-hF-TN7">
+                                                    <rect key="frame" x="0.0" y="221" width="374" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
+                                                    <color key="textColor" name="black"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Password"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxX-fd-p3O">
+                                                    <rect key="frame" x="0.0" y="263.5" width="374" height="48"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HUJ-5c-DeG">
+                                                            <rect key="frame" x="10" y="0.0" width="354" height="48"/>
+                                                            <subviews>
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="******" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kit-6Z-Tac">
+                                                                    <rect key="frame" x="8" y="0.0" width="304" height="48"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="48" id="ppI-Og-jdd"/>
+                                                                    </constraints>
+                                                                    <attributedString key="attributedText"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                                                </textField>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-bD-SQJ">
+                                                                    <rect key="frame" x="322" y="12" width="24" height="24"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="24" id="0J9-62-IOb"/>
+                                                                        <constraint firstAttribute="width" constant="24" id="osZ-Ql-CO6"/>
+                                                                    </constraints>
+                                                                    <state key="normal" image="hidePasswoed"/>
+                                                                    <connections>
+                                                                        <action selector="isHidePassword:" destination="-1" eventType="touchUpInside" id="kGa-0M-BKS"/>
+                                                                    </connections>
+                                                                </button>
+                                                            </subviews>
+                                                            <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="grey"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="HUJ-5c-DeG" secondAttribute="bottom" id="9Gt-hT-fds"/>
+                                                        <constraint firstAttribute="height" constant="48" id="Dii-ob-xNq"/>
+                                                        <constraint firstItem="HUJ-5c-DeG" firstAttribute="leading" secondItem="zxX-fd-p3O" secondAttribute="leading" constant="10" id="ZvG-Te-BQs"/>
+                                                        <constraint firstItem="HUJ-5c-DeG" firstAttribute="top" secondItem="zxX-fd-p3O" secondAttribute="top" id="cPM-SC-w6n"/>
+                                                        <constraint firstAttribute="trailing" secondItem="HUJ-5c-DeG" secondAttribute="trailing" constant="10" id="gWG-Au-uLc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toe-ba-Okp">
-                                                    <rect key="frame" x="0.0" y="289" width="374" height="48"/>
+                                                    <rect key="frame" x="0.0" y="331.5" width="374" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="02p-Vm-d1D">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -204,13 +230,13 @@
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vig-ma-RLD">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                            <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
-                                                            <state key="normal">
-                                                                <color key="titleColor" name="white"/>
-                                                            </state>
+                                                            <state key="normal" title=""/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="tapConfirm:" destination="-1" eventType="touchUpInside" id="xx3-MK-HwC"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" name="primary"/>
@@ -229,100 +255,58 @@
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
-                                            </subviews>
-                                        </stackView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqR-2d-Y3y">
-                                            <rect key="frame" x="0.0" y="488.5" width="374" height="40"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="6AW-BA-fbI"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tq8-lc-QCl">
-                                            <rect key="frame" x="0.0" y="534.5" width="374" height="1"/>
-                                            <color key="backgroundColor" name="black"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="6Yh-d8-lpA"/>
-                                            </constraints>
-                                        </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-eu-17Q">
-                                            <rect key="frame" x="0.0" y="541.5" width="374" height="40"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="GXi-Xh-Jdx"/>
-                                            </constraints>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Didn't get the activation code?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsM-IF-k5X">
-                                            <rect key="frame" x="0.0" y="587.5" width="374" height="17.5"/>
-                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
-                                            <color key="textColor" name="black"/>
-                                            <nil key="highlightedColor"/>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Didn't get the activation code?"/>
-                                            </userDefinedRuntimeAttributes>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etI-uc-vJP">
-                                            <rect key="frame" x="0.0" y="611" width="374" height="30"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="s4I-ix-STr"/>
-                                            </constraints>
-                                        </view>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RQz-FH-HbU">
-                                            <rect key="frame" x="0.0" y="647" width="374" height="48"/>
-                                            <subviews>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKA-kV-GUl">
-                                                    <rect key="frame" x="84" y="0.0" width="206" height="48"/>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaN-Uk-5E1">
+                                                    <rect key="frame" x="0.0" y="399.5" width="374" height="48"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="at0-UL-FTq">
-                                                            <rect key="frame" x="0.0" y="0.0" width="206" height="48"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="send again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KIG-6I-LRx">
-                                                                    <rect key="frame" x="59" y="0.0" width="88.5" height="48"/>
-                                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                                                                    <color key="textColor" name="black"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="send again"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5z-OC-CPX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="206" height="48"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGi-nw-u9a">
+                                                            <rect key="frame" x="20" y="0.0" width="334" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="48" id="Gjt-od-rPn"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
+                                                            <color key="textColor" name="primary"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Do you have an account"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dL3-ZY-uZ2">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
                                                             <state key="normal">
                                                                 <color key="titleColor" name="white"/>
                                                             </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="tapSignIn:" destination="-1" eventType="touchUpInside" id="iVm-qX-yjq"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
+                                                    <color key="backgroundColor" name="white"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="B5z-OC-CPX" secondAttribute="bottom" id="Cx5-pd-IHm"/>
-                                                        <constraint firstItem="at0-UL-FTq" firstAttribute="top" secondItem="NKA-kV-GUl" secondAttribute="top" id="N50-nf-cmK"/>
-                                                        <constraint firstItem="B5z-OC-CPX" firstAttribute="top" secondItem="NKA-kV-GUl" secondAttribute="top" id="bW7-LJ-kv9"/>
-                                                        <constraint firstItem="B5z-OC-CPX" firstAttribute="leading" secondItem="NKA-kV-GUl" secondAttribute="leading" id="dTu-2V-Nod"/>
-                                                        <constraint firstAttribute="trailing" secondItem="B5z-OC-CPX" secondAttribute="trailing" id="gFj-41-oDb"/>
-                                                        <constraint firstAttribute="bottom" secondItem="at0-UL-FTq" secondAttribute="bottom" id="kET-ux-C6s"/>
-                                                        <constraint firstItem="at0-UL-FTq" firstAttribute="leading" secondItem="NKA-kV-GUl" secondAttribute="leading" id="lMC-ke-p0R"/>
-                                                        <constraint firstAttribute="trailing" secondItem="at0-UL-FTq" secondAttribute="trailing" id="u5U-v7-eqg"/>
-                                                        <constraint firstAttribute="height" constant="48" id="xar-3Y-hu6"/>
+                                                        <constraint firstItem="UGi-nw-u9a" firstAttribute="top" secondItem="IaN-Uk-5E1" secondAttribute="top" id="BLL-L9-2iY"/>
+                                                        <constraint firstAttribute="height" constant="48" id="GDE-FZ-KXs"/>
+                                                        <constraint firstItem="dL3-ZY-uZ2" firstAttribute="leading" secondItem="IaN-Uk-5E1" secondAttribute="leading" id="JPc-Ka-Ha5"/>
+                                                        <constraint firstItem="dL3-ZY-uZ2" firstAttribute="top" secondItem="IaN-Uk-5E1" secondAttribute="top" id="K1E-y3-Cnp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="dL3-ZY-uZ2" secondAttribute="trailing" id="L0B-ue-a9m"/>
+                                                        <constraint firstAttribute="trailing" secondItem="UGi-nw-u9a" secondAttribute="trailing" constant="20" id="g3K-Ri-sDE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="dL3-ZY-uZ2" secondAttribute="bottom" id="rrR-D8-MZP"/>
+                                                        <constraint firstItem="UGi-nw-u9a" firstAttribute="leading" secondItem="IaN-Uk-5E1" secondAttribute="leading" constant="20" id="s66-HK-32U"/>
+                                                        <constraint firstAttribute="bottom" secondItem="UGi-nw-u9a" secondAttribute="bottom" id="u5F-sv-umf"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" name="primary"/>
+                                                        </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="10"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                            <color key="value" name="black"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="NKA-kV-GUl" firstAttribute="width" secondItem="RQz-FH-HbU" secondAttribute="width" multiplier="0.55" id="NMV-Yi-ied"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                 </stackView>
@@ -358,6 +342,11 @@
             <point key="canvasLocation" x="121.73913043478262" y="80.357142857142847"/>
         </view>
     </objects>
+    <designables>
+        <designable name="UIC-Ik-14Z">
+            <size key="intrinsicContentSize" width="56" height="20.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="hidePasswoed" width="24" height="24"/>
         <namedColor name="black">

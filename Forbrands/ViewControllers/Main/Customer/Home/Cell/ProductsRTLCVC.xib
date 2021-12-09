@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductsRTLCVC" id="gTV-IL-0wX" customClass="ProductsRTLCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="311" height="142"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="311" height="142"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="znQ-la-5Mx">
+                        <rect key="frame" x="0.0" y="0.0" width="311" height="142"/>
+                        <subviews>
+                            <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iNe-OF-QYw">
+                                <rect key="frame" x="5" y="5" width="301" height="132"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bU6-bB-i66">
+                                        <rect key="frame" x="0.0" y="0.0" width="145.5" height="132"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ivr-Sf-H8m">
+                                                <rect key="frame" x="8" y="47" width="129.5" height="50.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="263" verticalHuggingPriority="255" horizontalCompressionResistancePriority="762" verticalCompressionResistancePriority="756" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1f5-Bd-3ld">
+                                                        <rect key="frame" x="0.0" y="0.0" width="129.5" height="15.5"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
+                                                        <color key="textColor" name="black"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="262" verticalHuggingPriority="259" horizontalCompressionResistancePriority="762" verticalCompressionResistancePriority="759" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pz-Jt-Is7">
+                                                        <rect key="frame" x="0.0" y="17.5" width="129.5" height="15.5"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
+                                                        <color key="textColor" name="black"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltT-JU-r1J">
+                                                        <rect key="frame" x="0.0" y="35" width="129.5" height="15.5"/>
+                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
+                                                        <color key="textColor" name="black"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                    </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="lIE-S0-o2V">
+                                        <rect key="frame" x="155.5" y="0.0" width="145.5" height="132"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="white"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="grey"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iNe-OF-QYw" secondAttribute="trailing" constant="5" id="8HC-h5-exl"/>
+                            <constraint firstAttribute="bottom" secondItem="iNe-OF-QYw" secondAttribute="bottom" constant="5" id="8Zu-ZA-5fb"/>
+                            <constraint firstItem="iNe-OF-QYw" firstAttribute="leading" secondItem="znQ-la-5Mx" secondAttribute="leading" constant="5" id="TeZ-oN-78M"/>
+                            <constraint firstItem="iNe-OF-QYw" firstAttribute="top" secondItem="znQ-la-5Mx" secondAttribute="top" constant="5" id="WbX-LN-j8K"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="znQ-la-5Mx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="1AL-b2-zah"/>
+                <constraint firstAttribute="bottom" secondItem="znQ-la-5Mx" secondAttribute="bottom" id="5Qm-eZ-SSl"/>
+                <constraint firstItem="znQ-la-5Mx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BXa-iT-YJ5"/>
+                <constraint firstAttribute="trailing" secondItem="znQ-la-5Mx" secondAttribute="trailing" id="Va8-vt-TGR"/>
+            </constraints>
+            <connections>
+                <outlet property="img" destination="lIE-S0-o2V" id="vle-ac-KFx"/>
+                <outlet property="lblCategory" destination="4Pz-Jt-Is7" id="sY3-iP-UJW"/>
+                <outlet property="lblDescription" destination="ltT-JU-r1J" id="MKW-u3-s5v"/>
+                <outlet property="lblName" destination="1f5-Bd-3ld" id="zia-eH-tP0"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="87"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="img2" width="162" height="140"/>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="grey">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

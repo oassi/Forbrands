@@ -5,12 +5,14 @@
 */
 "Confirm" = "تأكيد";
 "Continue" = "إستمرار";
+"Welcome" = "مرحبا بك";
 
 "Login with phone" = "تسجيل برقم الهاتف";
 "Continue with Google" = "تسجيل بحساب جوجل";
-"Are you a trader?" = "هل أنت تأجر ؟";
+"Are you a trader?" = "هل أنت تاجر ؟";
 "When you register in Forbrands, this means that you agree to" = "عند تسجيلك في فور براندز هذا يعني الموافقة على";
 "Terms and Conditions" = "الشروط والأحكام";
+"Terms And Conditions" = "الشروط والأحكام";
 "Powered By ForBrands" = "مدعوم من فور براندز";
 "Activation code" = "كود التفعيل";
 "An activation code has been sent to your number" = "تم إرسال كود التفعيل على رقمك";
@@ -21,7 +23,11 @@
 "Please enter the required information" = "الرجاء إدخال البيانات المطلوبة";
 "phone number" = "رقم الهاتف";
 "Phone number" = "رقم الهاتف";
+"Register with phone number" = "تسجيل برقم الهاتف";
 
+"Orders"="الطلبات";
+
+"My Order" = "الطلبات";
 "Password" = "كلمة المرور";
 "Full Name" = "الإسم بالكامل";
 "My Orders" = "طلباتي";
@@ -31,11 +37,14 @@
 "Payment methods" = "وسائل الدفع";
 "Share the app" = "مشاركة التطبيق";
 "Connect with us" = "تواصل معنا";
+"Contact us" = "اتصل بنا";
 "About us" = "نبذه عن التطبيق";
 "Application Rating" = "تقييم التطبيق";
 "Other" = "أخرى";
 "Sign out" = "تسجيل الخروج";
 "Sign in" = "تسجيل";
+"Sign" = "تسجيل الدخول";
+"New user" = "مستخدم جديد";
 "Subscribe to premium membership" = "الاشتراك بالعضوية المميزة";
 "save" = "حفظ";
 "Add Address" = "إضافة عنوان";
@@ -61,19 +70,22 @@
 "Street" = "الشارع";
 "Governorate" = "المحافظة";
 "City" = "المدينة";
-"building number" = "رقم العمارة";
+"Building number" = "رقم العمارة";
+"Building" = "عمارة";
 "Floor" = "الدور";
 "Apartment" = "الشقة";
 "Special marque" = "علامة مميزة";
 "My Account" = "حسابي";
 "My Data" = "بياناتي";
 "Email" = "عن طريق الايميل";
+"email" = "البريد الالكتروني";
 "WhatsApp" = "عن طريق الواتساب";
 "Promocode" = "البروموكود";
 "Research results" = "نتائج البحث";
 "Notifications" = "الإشعارات";
 "Ratings" = "التقييمات";
 "Skip" = "تخطي";
+"s" = "ث";
 "Favorites" = "المفضلة";
 "successful" = "تم بنجاح";
 "Search for" = "بحث عن";
@@ -112,12 +124,16 @@
 "Expiry date" = "تاريخ الإنتهاء";
 "MM" = "شهر";
 "YY" = "سنة";
+"Stores" = "المتاجر";
+"All" = "الكل";
+"Card" = "السلة";
+"Home" = "الرئيسية";
 
 
-
-
+"Wallet" = "وسائل الدفع";
 "Add Product" = "إضافة منتج";
 "Delete" = "حذف";
+"Are you sure to delete?" = "هل انت متأكد من الحذف";
 "Product available?" = "هل المنتج متوفر؟";
 "Men's perfume" = "العطور الرجالي";
 "My Store" = "متجري";
@@ -127,6 +143,10 @@
 "Pictures" = "الصور";
 "Product details" = "تفاصيل المنتج";
 "Category" = "الفئة";
+"Categories" = "الأقسام";
+"Order" = "الطلبات";
+
+
 "Product name in Arabic" = "إسم المنتج بالعربية";
 "Product name in English" = "إسم المنتج بالانجليزية";
 "Price" = "السعر";
@@ -135,7 +155,7 @@
 "Product details in Arabic" = "تفاصيل المنتج بالعربية";
 "Product details in English" = "تفاصيل المنتج بالانجليزية";
 "Are there sizes for the product?" = "هل يوجد أحجام للمنتج ؟";
-"If there are sizes click here" = "إذا كان هناك أحجام إضغط هنا";
+"If there are sizes click here" = "إذا كان هناك أحجام إضفط هنا";
 "add sizes" = "أضف الأحجام";
 "Size" = "حجم";
 "Package size" = "حجم العبوة";
@@ -181,10 +201,70 @@
 
 "the order has been canceled" = "تم إلغاء الطلب";
 "Send" = "إرسال";
+"Back" = "رجوع";
 "your comment" = "تعليقك";
-"write here" = "أكتب هنا...";
+"write here" = "أكتب هنا ...";
 "Change order status" = "تغيير حالة الطلب";
 "Order status" = "حالة الطلب";
+"Similar products" = "منتجات مشابهة";
+"Whoever buys this product also buys" = "من يشترون هذا المنتج يشترون أيضاً";
+"Start" = "إبدأ";
+"Add to card" = "أضف للسلة";
+"Please enter phone number" = "الرجاء إدخال رقم الموبايل";
+"Take photo" = "الكاميرا";
+"Photo library" = "البوم الصور";
+
+"Example Muhammad Ahmed Ahmed Saud" = "مثال محمد احمد سعود";
+"Cancel Order" = "إلغاء الطلب";
+"The language settings for the application will be changed." = "سيتم تغيير إعدادات اللغة للتطبيق.";
+"Alert!" = "تبيه!";
+"Do you have an account" = "هل لديك حساب؟";
+"Password cannot be empty" = "لا يمكن أن تكون كلمة المرور فارغة";
+"Password must be at least 6 characters long" = "يجب أن تتكون كلمة المرور من 6 أحرف على الأقل";
+"Error" = "خطأ";
+"Username cannot be empty" = "اسم المستخدم لا يمكن أن يكون فارغاً";
+"Email cannot be empty" = "لا يمكن أن يكون البريد الإلكتروني فارغًا";
+"Code expires after" = "تنتهي صلاحية الرمز بعد";
+"Code cannot be empty" = "لا يمكن أن يكون الرمز فارغًا";
+
+
+
+"Image Updated Successfully" = "تم تحديث الصورة بنجاح";
+"Store Details" = "تفاصيل المتجر";
+
+"Please select product image" = "الرجاء تحديد صورة المنتج";
+"Please selected imgae stores" = "الرجاء تحديد صورة المتجر";
+"Stor Name cannot be empty" = "لا يمكن أن يكون اسم المتجر فارغًا";
+"Store details cannot be empty" = "لا يمكن أن يكون وصف المتجر فارغًا";
+"Iban cannot be empty" = "لا يمكن أن يكون الايبان فارغًا";
+"Please selected Payment methods" = "الرجاء تحديد وسائل الدفع";
+
+"Please select Governorate in first" = "الرجاء تحديد المحافظة أولاً";
+"Please select City" = "الرجاء تحديد المدينة";
+"The name cannot be empty" = "لا يمكن أن يكون الاسم فارغًا";
+"Street cannot be empty" = "لا يمكن أن يكون الشارع فارغًا";
+"Another Address" = "عنوان أخر";
+"Primary address" = "العنوان الأساسي";
+"Near the water station" = "بالقرب من محطة المياه";
+"available" = "متوفر";
+"unavailable at the moment" = "غير متوفر حالياً";
+"unavailable" = "غير متوفر حالياً";
+"Notify me upon arrival" = "أبلغني عند وصولة";
+"The Product name is Arabic cannot be empty" = "اسم المنتج باللغة العربية لا يمكن أن يكون فارغًا";
+"The Product name is English cannot be empty" = "اسم المنتج باللغة الإنجليزية لا يمكن أن يكون فارغًا";
+"Price cannot be empty" = "لا يمكن أن يكون السعر فارغًا";
+"The Product details cannot be empty" = "لا يمكن أن تكون تفاصيل المنتج فارغة";
+"Please select Category" = "الرجاء تحديد الفئة";
+"Price after discount cannot be empty" = "لا يمكن ترك السعر بعد الخصم فارغًا";
+"Edit Product" = "حفظ التعديلات";
+"The basket must contain at least one product" = "يجب أن تحتوي السلة على منتج واحد على الأقل";
+"Customer evaluation" = "تقييم العميل";
+"undefined" = "غير معرف";
+"There are no search results" = "لا توجد نتائج بحث";
+"No Results" = "لا نتائج";
+"Name" = "الاسم";
+"Content" = "المحتوى";
+"Please select Pay Method" = "الرجاء تحديد طريقة الدفع";
 "" = "";
 "" = "";
 "" = "";
@@ -193,12 +273,6 @@
 "" = "";
 "" = "";
 "" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
+
+
+

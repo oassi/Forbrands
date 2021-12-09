@@ -17,8 +17,10 @@ class PreviousCVC: UITableViewCell {
     
     @IBOutlet var lblOrderNumber: UILabel!
     @IBOutlet var lblOrderDate: UILabel!
-    
+    @IBOutlet var lblEvaluation: UILabel!
     //Underway
+    
+    @IBOutlet var lblUnderway: UILabel!
     @IBOutlet var imgUnderway: UIImageView!
     @IBOutlet var viewUnderway: UIView!
     //Charging
@@ -29,12 +31,73 @@ class PreviousCVC: UITableViewCell {
     
     @IBOutlet var Total: UILabel!
     @IBOutlet var lblDay: UILabel!
-   
-    @IBOutlet var lblExpectedDeliveryDate: UILabel!
+    @IBOutlet var lblOrderDetails : UILabel!
     @IBOutlet var viewExpectedData: UIView!
-    
+    @IBOutlet var reviewsBut: UIButton!
     var viewOrderDetails : (()->())!
     var eveluationDeleget : (()->())!
+    
+    var products = [Product]()
+    
+    var obj : CustomerOrders? {
+        didSet{
+            lblOrderNumber.text = obj?.orderId ?? ""
+            lblOrderDate.text = obj?.orderDate ?? "undefined".localized
+            lblDay.text = obj?.deliverDate ?? "undefined".localized
+            Total.text = obj?.totalPrice ?? "0"
+            
+            
+            if (obj?.orderProcess == "1"){
+                imgUnderway.image = UIImage(named: "doneTrue")
+                imgCharging.image = UIImage(named: "onRequest")
+                imgReceived.image = UIImage(named: "onRequest")
+                viewUnderway.backgroundColor = UIColor(named: "green")
+                viewReceived.backgroundColor = UIColor(named: "derkGrey")
+              
+            }else if (obj?.orderProcess == "2"){
+                imgUnderway.image = UIImage(named: "doneTrue")
+                imgCharging.image = UIImage(named: "doneTrue")
+                imgReceived.image = UIImage(named: "onRequest")
+                viewUnderway.backgroundColor = UIColor(named: "green")
+                viewReceived.backgroundColor = UIColor(named: "green")
+            }
+            else if (obj?.orderProcess == "3"){
+                imgUnderway.image = UIImage(named: "doneTrue")
+                imgCharging.image = UIImage(named: "doneTrue")
+                imgReceived.image = UIImage(named: "doneTrue")
+                viewUnderway.backgroundColor = UIColor(named: "green")
+                viewReceived.backgroundColor = UIColor(named: "green")
+               
+            }
+            else if (obj?.orderProcess == "-1"){
+                lblUnderway.text = "the order has been canceled".localized
+                imgUnderway.image = UIImage(named: "cancelledOrder")
+                imgCharging.image = UIImage(named: "exitSearch")
+                imgReceived.image = UIImage(named: "exitSearch")
+                imgReceived.image = UIImage(named: "exitSearch")
+                viewUnderway.backgroundColor = UIColor(named: "derkGrey")
+                viewReceived.backgroundColor = UIColor(named: "derkGrey")
+               
+            }
+            else{
+                imgUnderway.image = UIImage(named: "onRequest")
+                imgCharging.image = UIImage(named: "onRequest")
+                imgReceived.image = UIImage(named: "onRequest")
+                viewUnderway.backgroundColor = UIColor(named: "derkGrey")
+                viewReceived.backgroundColor = UIColor(named: "derkGrey")
+            }
+            if(obj?.products != nil){
+                obj!.products!.forEach{products.append($0)}
+                self.heighttableViewCell.constant = CGFloat((obj!.products!.count) * 100)
+                tableview.reloadData()
+
+            }
+            
+        }
+    }
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -42,11 +105,13 @@ class PreviousCVC: UITableViewCell {
         tableview.registerCell(id: "CurrentTableViewCell")
         tableview.delegate = self
         tableview.dataSource = self
+        
         UIView.animate(withDuration: 1) {
-            self.heighttableViewCell.constant = 105
+            self.heighttableViewCell.constant = 100
             self.contentView.layoutIfNeeded()
         }
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -64,16 +129,15 @@ class PreviousCVC: UITableViewCell {
 
 extension PreviousCVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "CurrentTableViewCell", for: indexPath) as! CurrentTableViewCell
+        cell.obj = products[indexPath.row]
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.heighttableViewCell.constant = 2 * 105
-    }
+   
     
 }

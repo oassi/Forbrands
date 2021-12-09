@@ -55,7 +55,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEe-25-OMv">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Card holder's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LUk-ZY-rLm">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Card holder's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LUk-ZY-rLm">
                                                                     <rect key="frame" x="8" y="0.0" width="358" height="56"/>
                                                                     <color key="textColor" name="black"/>
                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
@@ -93,7 +93,7 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VYd-uu-uDE">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Card number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-Ep-bqx">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Card number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Kk-Ep-bqx">
                                                                     <rect key="frame" x="8" y="0.0" width="358" height="56"/>
                                                                     <color key="textColor" name="black"/>
                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
@@ -148,7 +148,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hix-S3-iKL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="56"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vIz-ID-OXa">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="MM" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vIz-ID-OXa">
                                                                             <rect key="frame" x="8" y="0.0" width="166" height="56"/>
                                                                             <color key="textColor" name="black"/>
                                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
@@ -186,7 +186,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xQ8-bP-nf9">
                                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="56"/>
                                                                     <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YY" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuL-6y-EJn">
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nuL-6y-EJn">
                                                                             <rect key="frame" x="8" y="0.0" width="166" height="56"/>
                                                                             <color key="textColor" name="black"/>
                                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
@@ -226,14 +226,11 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c1n-lu-dSM">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="56"/>
                                                             <subviews>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVV" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s74-0m-Fdm">
+                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s74-0m-Fdm">
                                                                     <rect key="frame" x="8" y="0.0" width="358" height="56"/>
                                                                     <color key="textColor" name="black"/>
                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="URL" returnKeyType="next"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibPlaceholderLocKey" value="Card number"/>
-                                                                    </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                             </subviews>
                                                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
@@ -317,7 +314,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="backgroundColor" name="white"/>
                             <constraints>
                                 <constraint firstItem="nHY-Lw-DDU" firstAttribute="leading" secondItem="Eev-Ro-ghj" secondAttribute="leading" constant="20" id="a1S-R7-ogp"/>
                                 <constraint firstItem="nHY-Lw-DDU" firstAttribute="top" secondItem="Eev-Ro-ghj" secondAttribute="top" id="qge-mz-hpm"/>
@@ -326,7 +323,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" name="background"/>
+                    <color key="backgroundColor" name="white"/>
                     <constraints>
                         <constraint firstItem="Eev-Ro-ghj" firstAttribute="top" secondItem="sOq-Dt-xHJ" secondAttribute="top" id="Bxx-hx-a6o"/>
                         <constraint firstItem="Eev-Ro-ghj" firstAttribute="width" secondItem="sOq-Dt-xHJ" secondAttribute="width" id="GIQ-j8-EAM"/>
@@ -343,7 +340,7 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" name="background"/>
+            <color key="backgroundColor" name="white"/>
             <constraints>
                 <constraint firstItem="0Td-TG-5iS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2xg-3f-hEc"/>
                 <constraint firstAttribute="bottom" secondItem="0Td-TG-5iS" secondAttribute="bottom" id="HXH-fF-bJ2"/>
@@ -356,9 +353,6 @@
     <resources>
         <namedColor name="alert">
             <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="background">
-            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

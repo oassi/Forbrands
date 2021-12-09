@@ -20,16 +20,34 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
     }()
     
     
-    var settingBtn:           UIButton?
-    var settingsBtn:          UIButton?
-    var TableBtn:             UIBarButtonItem?
-    var CollectionBtn:        UIBarButtonItem?
-    var filterBtn:            UIBarButtonItem?
+    var settingBtn:             UIButton?
+    var settingsBtn:            UIButton?
+    var TableBtn:               UIBarButtonItem?
+    var CollectionBtn:          UIBarButtonItem?
+    var filterBtn:              UIBarButtonItem?
     
     var favoritesBut:           UIBarButtonItem?
     var notificaltionBut:       UIBarButtonItem?
     var titleNavStore:          UIBarButtonItem?
-    var searchNavBut:          UIBarButtonItem?
+    var searchNavBut:           UIBarButtonItem?
+    
+    var cancelOrder:            UIButton?
+    var cancelOrders:           UIBarButtonItem?
+    var deletelProductBut:      UIButton?
+    var deletelProduct:         UIBarButtonItem?
+    var editProductBut:         UIButton?
+    var editProduct:            UIBarButtonItem?
+    
+    var siginBut:                  UIButton?
+    var siginBarButton:            UIBarButtonItem?
+    var newUserBut:                  UIButton?
+    var newUserBarButton:            UIBarButtonItem?
+    
+    
+    var skipNav:                UIBarButtonItem?
+    var languageNav:            UIBarButtonItem?
+
+    
     
     var isDark = false {
         didSet {
@@ -43,8 +61,17 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
         setUpBtnsNav()
         setShadowNavBar()
         
+        
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.colorChange(_:)), name: Notification.Name("colorChange"), object: nil)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name("colorChange"),object: nil)
+    }
     // Mark: - SetupNav
     func setUpNavgtion(){
         self.isDark = false
@@ -64,11 +91,11 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
         serach.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 120, height: 50)
         serach.placeholder = "Search for".localized
         serach.sizeToFit()
+        serach.searchTextField.backgroundColor =  UIColor(named: "searchbar")
         serach.keyboardType = .default
         serach.searchTextField.textColor = UIColor(named: "black")
         serach.tintColor = UIColor(named: "primary")
         serach.isSearchResultsButtonSelected = true
-        serach.searchTextField.backgroundColor =  UIColor(named: "searchbar")
         serach.searchTextField.font = UIFont.DinNextLtW23Regular(ofSize: 12)
         serach.searchBarStyle = .minimal
 
@@ -82,6 +109,12 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
     }
    
     
+    @objc func colorChange(_ notification:Notification) {
+        setUpBtnsNav()
+     }
+    
+    
+    
     func setUpBtnsNav(){
         
         TableBtn = UIBarButtonItem(image: UIImage(named:"ic_table")?.withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
@@ -92,13 +125,31 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
         
         favoritesBut = UIBarButtonItem(image: UIImage(named:"myFavorites")?.withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
         
-        notificaltionBut = UIBarButtonItem(image: UIImage(named:"notification")?.withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
         
-        searchNavBut = UIBarButtonItem(image: UIImage(named:"fillSearch")?.withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
+        if(CurrentUser.typeSelect == userType.Seller){
+            notificaltionBut = UIBarButtonItem(image: UIImage(named:"notification")?.withRenderingMode(.alwaysTemplate).withTintColor(getColorApp()), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
+            
+            searchNavBut = UIBarButtonItem(image: UIImage(named:"fillSearch")?.withRenderingMode(.alwaysTemplate).withTintColor(getColorApp()), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
+        }else{
+            
+            notificaltionBut = UIBarButtonItem(image: UIImage(named:"notification")?.withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
+            
+            searchNavBut = UIBarButtonItem(image: UIImage(named:"fillSearch")?.withRenderingMode(.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(didClickRightButton))
+        }
+      
         
-        titleNavStore = UIBarButtonItem(title: "My Store", style: .plain, target: self, action: #selector(didClickRightButton))
-       
-       
+        
+        
+        
+        titleNavStore = UIBarButtonItem(title: "My Store".localized, style: .plain, target: self, action: #selector(didClickRightButton))
+        
+        skipNav = UIBarButtonItem(title: "Skip".localized, style: .plain, target: self, action: #selector(didClickRightButton))
+        languageNav = UIBarButtonItem(title: "Language".localized, style: .plain, target: self, action: #selector(didClickRightButton))
+        
+        
+        titleNavStore?.setTitleTextAttributes(NsStyleNavBar(getColorName(),20), for: .normal)
+        skipNav?.setTitleTextAttributes(NsStyleNavBar("black",16), for: .normal)
+        languageNav?.setTitleTextAttributes(NsStyleNavBar("black",16), for: .normal)
         
         settingBtn  = UIButton(type: .custom)
         settingBtn!.setImage(UIImage(named: "ic_Menu"), for: .normal)
@@ -110,7 +161,17 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
         
         settingsBtn?.addTarget(self, action:#selector(didClickRightButton), for: .touchUpInside)
         
-     
+        
+        
+        cancelOrders =  styleButNavBar(cancelOrder ?? UIButton(), title: "Cancel Order", backgroundColor: "lightPrimary", setTitleColor: "redBut",tag: 110)
+        
+        deletelProduct =  styleButNavBar(deletelProductBut ?? UIButton(), title: "Delete", backgroundColor: "white", setTitleColor: "redBut",tag: 120, borderWidth:1,width:70)
+        editProduct =  styleButNavBar(editProductBut ?? UIButton(), title: "Edit", backgroundColor: getColorName(), setTitleColor: "white",tag: 130,width:70)
+        
+        siginBarButton =  styleButNavBar(siginBut ?? UIButton(), title: "Sign", backgroundColor: "primary", setTitleColor: "white",tag: 160,height:40,isSingin: true)
+        
+        newUserBarButton =  styleButNavBar(newUserBut ?? UIButton(), title: "New user", backgroundColor: "white", setTitleColor: "primary",tag: 160,borderWidth:1,borderColor:"primary",height:40,isSingin: true)
+        
         
         TableBtn?.tag         = 22
         CollectionBtn?.tag    = 22
@@ -121,10 +182,41 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
         notificaltionBut?.tag   = 66
         titleNavStore?.tag      = 99
         searchNavBut?.tag       = 100
-        
-        
+        skipNav?.tag            = 140
+        languageNav?.tag        = 150
+       
         
     }
+    private func NsStyleNavBar(_ color : String , _ size : CGFloat) -> [NSAttributedString.Key : Any]{
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor(named: color),
+            NSAttributedString.Key.font: UIFont.DinNextLtW23Regular(ofSize: size)
+        ]
+        
+        return attrs as [NSAttributedString.Key : Any]
+    }
+    private func styleButNavBar(_ sender : UIButton,title:String,backgroundColor:String,setTitleColor:String,tag:Int,borderWidth :CGFloat = 0,borderColor : String = "redBut",width:Int = 89,height:Int = 32,isSingin:Bool = false) -> UIBarButtonItem{
+        let sender  = UIButton(type: .custom)
+        var gripSize: CGSize = CGSize(width: width, height: height)
+        if isSingin{
+         gripSize = CGSize(width: (Int(ScreenSize.width) / 2) - 30, height: height)
+        }
+        sender.frame.size = gripSize
+        sender.layer.masksToBounds = true
+        sender.titleLabel!.font = UIFont.DinNextLtW23Regular(ofSize: 13)
+        sender.titleLabel!.baselineAdjustment = .alignCenters
+        sender.setTitle(title.localized, for: .normal)
+        sender.backgroundColor = UIColor(named: backgroundColor)
+        sender.borderWidth = borderWidth
+        sender.borderColor = UIColor(named: borderColor)
+        sender.setTitleColor(UIColor(named: setTitleColor), for: .normal)
+        sender.layer.cornerRadius = (gripSize.height / 2)
+        sender.addTarget(self, action:#selector(didClickRightButton), for: .touchUpInside)
+        sender.tag  = tag
+        return UIBarButtonItem(customView: sender)
+    }
+    
+    
     func setBtnTitle(title :String) -> UIBarButtonItem {
         let BarButton: UIBarButtonItem = UIBarButtonItem.init(title: title, style: .plain, target: self, action: #selector(didClickRightButton))
         BarButton.tintColor = .black
@@ -246,7 +338,7 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
     //MARK: - Add Logo Image As Title
     
     func setLogotitle(sender :UIViewController){
-        let logo = UIImage(named: "logoHeader")
+        let logo = UIImage(named: "logo")
         let imageView = UIImageView(image:logo)
         sender.navigationItem.titleView = imageView
     }
@@ -366,12 +458,26 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
     func setCustomBackButtonForViewController(sender :UIViewController,isWhite:Bool = true){
         if isWhite{
             if MOLHLanguage.isRTLLanguage() {
-                let back: UIImage? = UIImage(named:"right_back")?.withRenderingMode(.alwaysOriginal)
-                
+                var back = UIImage()
+                if(CurrentUser.typeSelect == userType.Seller){
+                    back = (UIImage(named:"right_back")?.withRenderingMode(.alwaysTemplate).withTintColor(getColorApp()))!
+                    
+                }else{
+                    back = (UIImage(named:"right_back")?.withRenderingMode(.alwaysOriginal))!
+             
+                }
                 sender.navigationItem.leftBarButtonItem = UIBarButtonItem(image: back, style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonAction))
                 
+               
+                
             } else{
-                let back: UIImage? = UIImage(named:"left_back")?.withRenderingMode(.alwaysOriginal)
+                var back = UIImage()
+                if(CurrentUser.typeSelect == userType.Seller){
+                    back = (UIImage(named:"left_back")?.withRenderingMode(.alwaysTemplate).withTintColor(getColorApp()))!
+                }else{
+                    back = (UIImage(named:"left_back")?.withRenderingMode(.alwaysOriginal))!
+
+                }
                 
                 sender.navigationItem.leftBarButtonItem = UIBarButtonItem(image: back, style: UIBarButtonItem.Style.plain, target: self, action: #selector(backButtonAction))
             }
@@ -492,12 +598,12 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
     }
     
     func setTitle (_ title: String, sender : UIViewController, large:Bool, srtingColor:String = "000000"){
-        for family in UIFont.familyNames {
-            print("family:", family)
-            for font in UIFont.fontNames(forFamilyName: family) {
-                print("font:", font)
-            }
-        }
+//        for family in UIFont.familyNames {
+//                print("family:", family)
+//            for font in UIFont.fontNames(forFamilyName: family) {
+//                print("font:", font)
+//            }
+//        }
         self.navigationBar.prefersLargeTitles = large
         sender.navigationItem.largeTitleDisplayMode = .always
         sender.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : srtingColor.color, NSAttributedString.Key.font: UIFont.DinNextLtW23Regular(ofSize: 30)]

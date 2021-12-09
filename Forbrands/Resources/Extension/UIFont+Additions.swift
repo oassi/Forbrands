@@ -28,9 +28,9 @@ extension UIFont {
     static func DinNextLtW23Regular(ofSize: CGFloat) -> UIFont {
         return UIFont(name: "DINNextLTW23-Regular", size: ofSize)!
     }
-//    static func DINNextLTArabic(ofSize: CGFloat) -> UIFont {
-//        return UIFont(name: "DINNextLTW23-Regular", size: ofSize)!
-//    }
+    static func DINNextLTArabic(ofSize: CGFloat) -> UIFont {
+        return UIFont(name: "DINNextLTW23-Regular", size: ofSize)!
+    }
     
     static func RobotoBold(ofSize: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Bold", size: ofSize)!
@@ -43,5 +43,6 @@ extension UIFont {
     }
   
 }
+
 
 

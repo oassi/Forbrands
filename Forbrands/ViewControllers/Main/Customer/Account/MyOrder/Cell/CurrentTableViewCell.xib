@@ -41,7 +41,7 @@
                                                     <constraint firstAttribute="height" constant="65" id="Asn-ho-8N1"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" text="la" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-yA-IX1">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" text="la" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrA-yA-IX1">
                                                 <rect key="frame" x="80" y="0.0" width="130" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                 <color key="textColor" name="black"/>
@@ -50,13 +50,13 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="255" horizontalCompressionResistancePriority="753" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9ms-NV-PhJ">
                                                 <rect key="frame" x="220" y="0.0" width="100" height="16.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="759" text="  : الكمية" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSA-Wt-ayn">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="759" text="الكمية :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSA-Wt-ayn">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                         <color key="textColor" name="alert"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbc-LU-upG">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hbc-LU-upG">
                                                         <rect key="frame" x="58" y="0.0" width="42" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                         <color key="textColor" name="alert"/>
@@ -96,6 +96,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="img" destination="pav-QD-A56" id="RzO-jr-yVB"/>
+                <outlet property="lblCount" destination="hbc-LU-upG" id="xWv-O2-tul"/>
+                <outlet property="lblTitle" destination="hrA-yA-IX1" id="f09-KL-eR6"/>
+            </connections>
             <point key="canvasLocation" x="-46.376811594202906" y="91.741071428571431"/>
         </tableViewCell>
     </objects>

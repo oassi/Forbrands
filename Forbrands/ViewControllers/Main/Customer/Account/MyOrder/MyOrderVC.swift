@@ -6,32 +6,42 @@
 //
 
 import UIKit
-
+import FittedSheets
 class MyOrderVC: SuperViewController {
     
-    @IBOutlet var tableview1: UITableView!
-    @IBOutlet var tableview2: UITableView!
+    @IBOutlet var tableview: UITableView!
     @IBOutlet var currentButton: UIButton!
     @IBOutlet var viewCurrent: UIView!
     @IBOutlet var previousButton: UIButton!
     @IBOutlet var viewPrevious: UIView!
+    var isPrevious = false
+    var customerOrdersCurrnt = [CustomerOrders]()
+    var customerOrdersPrevious = [CustomerOrders]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableview1.registerCell(id: "CurrentCVC")
-        tableview2.registerCell(id: "PreviousCVC")
+        tableview.registerCell(id: "CurrentCVC")
+        tableview.registerCell(id: "PreviousCVC")
+        tableview.dataSource = self
+        tableview.delegate = self
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         navButtons()
+        relodeData()
+    }
+    
+    func relodeData() {
+        customerOrdersCurrnt.removeAll()
+        customerOrdersPrevious.removeAll()
+        getOrders()
     }
     private func navButtons(){
         let navgtion = self.navigationController as! CustomNavigationBar
-        navgtion.setTitle("My Order".localized, sender: self, large: false)
-        if(CurrentUser.typeSelect ==  userType.User){
-            navgtion.setCustomBackButtonForViewController(sender: self)
-        }
+        navgtion.setTitle("My Orders".localized, sender: self, large: false)
+        navgtion.setCustomBackButtonForViewController(sender: self)
         navgtion.navigationBar.layer.masksToBounds = true
     }
     
@@ -40,9 +50,8 @@ class MyOrderVC: SuperViewController {
         viewCurrent.backgroundColor = UIColor(named: "primary")
         viewPrevious.backgroundColor = UIColor(named: "background")
         previousButton.setTitleColor(UIColor(named: "derkGrey"), for: .normal)
-        tableview1.isHidden = false
-        tableview2.isHidden = true
-        
+        isPrevious = false
+        tableview.reloadData()
         
     }
     @IBAction func tapPrevious(_ sender: UIButton) {
@@ -50,54 +59,109 @@ class MyOrderVC: SuperViewController {
         viewPrevious.backgroundColor = UIColor(named: "primary")
         viewCurrent.backgroundColor = UIColor(named: "background")
         currentButton.setTitleColor(UIColor(named: "derkGrey"), for: .normal)
-        tableview1.isHidden = true
-        tableview2.isHidden = false
+        isPrevious = true
+        tableview.reloadData()
     }
+    
+    func getOrders(){
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.customerOrders ,isAuthRequired:  true).start(){  (response, error) in
+            do {
+                let Status =  try JSONDecoder().decode(BaseDataArrayResponse<CustomerOrders>.self, from: response.data!)
+                if Status.code == 200 && Status.data != nil{
+                    Status.data?.forEach{
+                        if $0.status == 0 {
+                            self.customerOrdersCurrnt.append($0)
+                        }
+                        if $0.status == 1{
+                            self.customerOrdersPrevious.append($0)
+                        }
+                        self.tableview.reloadData()
+                    }
+                    
+                    
+                }
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
+    }
+    
 }
 
 
 
 extension MyOrderVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(tableView == tableview1){
-            return 2
-        }
-        if(tableView == tableview2){
-            return 2
-        }
-        return 0
+        return isPrevious ? customerOrdersPrevious.count :customerOrdersCurrnt.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        if(tableView == tableview1){
-            let cell = tableview1.dequeueReusableCell(withIdentifier: "CurrentCVC", for: indexPath) as! CurrentCVC
+        if(isPrevious){
+            let cell = tableview.dequeueReusableCell(withIdentifier: "PreviousCVC", for: indexPath) as! PreviousCVC
+            let obj = customerOrdersPrevious[indexPath.row]
+            cell.obj = obj
+            
+            if(obj.reviews != nil && obj.orderProcess != "-1" ){
+                cell.lblEvaluation.text = "Your evaluation of the service".localized
+                cell.reviewsBut.isHidden = true
+                cell.ViewRate.rating = Double(obj.reviews?.rating ?? "0.0") ?? 0.0
+            }else{
+                if(obj.orderProcess == "-1"){
+                    cell.viewRates.isHidden = true
+                }else{
+                    cell.viewRates.isHidden = false
+                    cell.reviewsBut.isHidden = false
+                    cell.lblEvaluation.text = "your opinion matters".localized
+                    cell.ViewRate.rating = 0.0
+                }
+            }
+            
             cell.viewOrderDetails = { [weak self] in
                 guard let strongSelf = self else {
                     return
                 }
                 let vc: OrderDetailsVC = OrderDetailsVC.loadFromNib()
+                vc.orders = obj
                 vc.modalPresentationStyle = .fullScreen
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
+            }
+            cell.eveluationDeleget = { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                let controller = PopEvaluationServiceVC()
+                controller.orderId = obj.id ?? 0
+                controller.rateDeleget = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.relodeData()
+                }
+                let sheet = SheetViewController(controller: controller, sizes: [.fixed(600)])
+                sheet.extendedLayoutIncludesOpaqueBars = false
+                strongSelf.present(sheet, animated: false, completion: nil)
                 
             }
             return cell
         }
-        if(tableView == tableview2){
-            let cell = tableview2.dequeueReusableCell(withIdentifier: "PreviousCVC", for: indexPath) as! PreviousCVC
-            cell.eveluationDeleget = { [weak self] in
+        else {
+            let cell = tableview.dequeueReusableCell(withIdentifier: "CurrentCVC", for: indexPath) as! CurrentCVC
+            let obj = customerOrdersCurrnt[indexPath.row]
+            cell.obj = obj
+            cell.viewOrderDetails = { [weak self] in
                 guard let strongSelf = self else {
                     return
                 }
-                let vc: PopEvaluationServiceVC = PopEvaluationServiceVC.loadFromNib()
-                vc.modalPresentationStyle = .overFullScreen
-                strongSelf.present(vc, animated: true, completion: nil)
-                
+                let vc: OrderDetailsVC = OrderDetailsVC.loadFromNib()
+                vc.ordersId = obj.orderId
+                vc.orders = obj
+                vc.current = true
+                vc.modalPresentationStyle = .fullScreen
+                strongSelf.navigationController?.pushViewController(vc, animated: true)
             }
+            
             return cell
+            
         }
         
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -109,3 +173,4 @@ extension MyOrderVC : UITableViewDelegate,UITableViewDataSource{
     //    }
     
 }
+

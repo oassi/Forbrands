@@ -35,6 +35,9 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favoritesImg" translatesAutoresizingMaskIntoConstraints="NO" id="jzn-JW-APj">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="149"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="149" id="YFE-xs-cXm"/>
+                                        </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RDj-kh-p2v">
                                         <rect key="frame" x="123" y="0.0" width="160" height="149"/>
@@ -45,7 +48,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mMb-pE-NJw">
                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="22"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-Va-Ffe">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg0-Va-Ffe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="124.5" height="22"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                                 <color key="textColor" name="black"/>
@@ -63,7 +66,7 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="749" text="labl" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6S-5o-Yo7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="749" text="labl" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6S-5o-Yo7">
                                                         <rect key="frame" x="0.0" y="29" width="144" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                         <color key="textColor" name="black"/>
@@ -73,25 +76,28 @@
                                                         <rect key="frame" x="0.0" y="52.5" width="144" height="15"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jso-Qx-f24">
-                                                                <rect key="frame" x="0.0" y="0.0" width="110.5" height="15"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="111.5" height="15"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THI-xR-tcN">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="15"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pog-OE-E3j">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="15"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="51" height="15"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yj-gM-STi">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" text="350" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yj-gM-STi">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="27" height="15"/>
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                                                                         <color key="textColor" name="black"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="756" text="ريال" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htv-jN-ee8">
-                                                                                        <rect key="frame" x="27" y="0.0" width="23" height="15"/>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="756" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htv-jN-ee8">
+                                                                                        <rect key="frame" x="27" y="0.0" width="24" height="15"/>
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                         <color key="textColor" name="black"/>
                                                                                         <nil key="highlightedColor"/>
+                                                                                        <userDefinedRuntimeAttributes>
+                                                                                            <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="SAR"/>
+                                                                                        </userDefinedRuntimeAttributes>
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
@@ -106,7 +112,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A7u-mt-Ebb">
-                                                                        <rect key="frame" x="55" y="0.0" width="55.5" height="15"/>
+                                                                        <rect key="frame" x="56" y="0.0" width="55.5" height="15"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yBL-pS-3vh">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="55.5" height="15"/>
@@ -114,17 +120,20 @@
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="xgC-Lb-Orc">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="15"/>
                                                                                         <subviews>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-4Z-0MW">
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOb-4Z-0MW">
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="27.5" height="15"/>
                                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                                                                 <color key="textColor" name="black"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
-                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSH-Xo-5h1">
+                                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSH-Xo-5h1">
                                                                                                 <rect key="frame" x="27.5" y="0.0" width="28" height="15"/>
                                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                                 <color key="textColor" name="black"/>
                                                                                                 <nil key="highlightedColor"/>
+                                                                                                <userDefinedRuntimeAttributes>
+                                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="SAR"/>
+                                                                                                </userDefinedRuntimeAttributes>
                                                                                             </label>
                                                                                         </subviews>
                                                                                     </stackView>
@@ -154,44 +163,44 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV9-xs-fmQ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZV9-xs-fmQ">
                                                         <rect key="frame" x="0.0" y="74.5" width="144" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                         <color key="textColor" name="green"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXJ-Xw-flR">
+                                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXJ-Xw-flR">
                                                         <rect key="frame" x="0.0" y="98" width="144" height="36"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="j0d-of-Wvz">
                                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="36"/>
                                                                 <subviews>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfx-PX-MIj">
-                                                                        <rect key="frame" x="42" y="0.0" width="60.5" height="36"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ARh-XX-Vhf">
+                                                                        <rect key="frame" x="25.5" y="0.0" width="93" height="36"/>
                                                                         <subviews>
-                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cartAdd" translatesAutoresizingMaskIntoConstraints="NO" id="7uf-H9-RCy">
-                                                                                <rect key="frame" x="-20" y="10" width="13" height="16"/>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cartAdd" translatesAutoresizingMaskIntoConstraints="NO" id="5ZD-NZ-tYp">
+                                                                                <rect key="frame" x="0.0" y="10" width="13" height="16"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="height" constant="16" id="2YI-Bd-SYD"/>
+                                                                                    <constraint firstAttribute="width" constant="13" id="MJO-OC-ges"/>
+                                                                                    <constraint firstAttribute="height" constant="16" id="Ynq-vr-ReH"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="Add to card" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33c-J9-kzX">
-                                                                                <rect key="frame" x="3" y="0.0" width="74" height="36"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="258" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="757" text="Add to card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELO-7K-wgx">
+                                                                                <rect key="frame" x="19" y="10" width="74" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                                                 <color key="textColor" name="white"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Add to card"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                         </subviews>
-                                                                        <constraints>
-                                                                            <constraint firstItem="33c-J9-kzX" firstAttribute="leading" secondItem="7uf-H9-RCy" secondAttribute="trailing" constant="10" id="6hv-3N-oNq"/>
-                                                                            <constraint firstItem="7uf-H9-RCy" firstAttribute="centerY" secondItem="33c-J9-kzX" secondAttribute="centerY" id="JHy-j2-Mkm"/>
-                                                                            <constraint firstAttribute="height" constant="36" id="O3M-PA-8It"/>
-                                                                            <constraint firstItem="33c-J9-kzX" firstAttribute="top" secondItem="pfx-PX-MIj" secondAttribute="top" id="UFb-ny-sX7"/>
-                                                                            <constraint firstItem="33c-J9-kzX" firstAttribute="centerX" secondItem="pfx-PX-MIj" secondAttribute="centerX" constant="10" id="jC8-s8-dBM"/>
-                                                                            <constraint firstAttribute="bottom" secondItem="33c-J9-kzX" secondAttribute="bottom" id="q6r-Ln-uXi"/>
-                                                                        </constraints>
-                                                                    </view>
+                                                                    </stackView>
                                                                 </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="ARh-XX-Vhf" firstAttribute="centerX" secondItem="j0d-of-Wvz" secondAttribute="centerX" id="0mU-vr-c53"/>
+                                                                    <constraint firstItem="ARh-XX-Vhf" firstAttribute="centerY" secondItem="j0d-of-Wvz" secondAttribute="centerY" id="GA1-fy-6Ga"/>
+                                                                </constraints>
                                                             </stackView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeV-fQ-FIh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="36"/>
@@ -231,7 +240,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWE-ya-QHq">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWE-ya-QHq">
                                 <rect key="frame" x="0.0" y="10" width="58" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خصم 10%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNA-yu-441">
@@ -250,6 +259,11 @@
                                     <constraint firstItem="WNA-yu-441" firstAttribute="leading" secondItem="kWE-ya-QHq" secondAttribute="leading" id="ghA-Be-I10"/>
                                     <constraint firstItem="WNA-yu-441" firstAttribute="top" secondItem="kWE-ya-QHq" secondAttribute="top" id="p3N-SS-NS4"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -290,13 +304,16 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="isAddImage" destination="7uf-H9-RCy" id="EjJ-ec-pLG"/>
+                <outlet property="favoritesBut" destination="z68-VR-RIw" id="lPj-Z5-nRr"/>
+                <outlet property="img" destination="jzn-JW-APj" id="491-68-XuD"/>
+                <outlet property="imgBut" destination="5ZD-NZ-tYp" id="dU5-14-d6C"/>
                 <outlet property="lblDescrption" destination="s6S-5o-Yo7" id="ZBa-pD-3gJ"/>
                 <outlet property="lblDiscount" destination="WNA-yu-441" id="hwA-qL-dgE"/>
                 <outlet property="lblDiscountPrice" destination="oOb-4Z-0MW" id="Nkf-5h-Vcr"/>
                 <outlet property="lblPrice" destination="1yj-gM-STi" id="wJ4-0F-lyZ"/>
                 <outlet property="lblState" destination="ZV9-xs-fmQ" id="ugU-p0-E6K"/>
                 <outlet property="lblTitle" destination="Lg0-Va-Ffe" id="RoK-hp-dHp"/>
+                <outlet property="titleButCard" destination="ELO-7K-wgx" id="WUw-SI-RQN"/>
                 <outlet property="viewBut" destination="j0d-of-Wvz" id="klA-ey-1Lq"/>
             </connections>
             <point key="canvasLocation" x="-261.59420289855075" y="138.61607142857142"/>

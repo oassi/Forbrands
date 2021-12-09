@@ -23,6 +23,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistWithPhoneVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="caf-hc-Hg4" id="u9V-3S-1TM"/>
+                <outlet property="phoneTF" destination="2Cp-LT-iNM" id="1Ne-Dg-lux"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="0KK-O3-DOi"/>
             </connections>
         </placeholder>
@@ -35,19 +37,19 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="INe-ci-B2J">
-                            <rect key="frame" x="20" y="10" width="374" height="251.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="270.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-NU-HVy">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="38.5"/>
                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="26"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="welcome"/>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Welcome"/>
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register with phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CO9-2s-Ufh">
-                                    <rect key="frame" x="0.0" y="34.5" width="374" height="22.5"/>
+                                    <rect key="frame" x="0.0" y="42.5" width="374" height="28"/>
                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
@@ -56,14 +58,14 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDm-gg-R3k">
-                                    <rect key="frame" x="0.0" y="61" width="374" height="30"/>
+                                    <rect key="frame" x="0.0" y="74.5" width="374" height="30"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="PIL-ZA-dZs"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y2-d2-O8J">
-                                    <rect key="frame" x="0.0" y="95" width="374" height="22.5"/>
+                                    <rect key="frame" x="0.0" y="108.5" width="374" height="28"/>
                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
@@ -72,46 +74,35 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZp-qQ-p8B">
-                                    <rect key="frame" x="0.0" y="121.5" width="374" height="10"/>
+                                    <rect key="frame" x="0.0" y="140.5" width="374" height="10"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="k0N-P6-UQr"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="INT-fa-L1C">
-                                    <rect key="frame" x="0.0" y="135.5" width="374" height="116"/>
+                                    <rect key="frame" x="0.0" y="154.5" width="374" height="116"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGp-dN-6CS">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-LT-iNM" customClass="FPNTextField" customModule="FlagPhoneNumber">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Cp-LT-iNM" customClass="FPNTextField" customModule="FlagPhoneNumber">
+                                                    <rect key="frame" x="10" y="0.0" width="354" height="48"/>
                                                     <color key="textColor" name="black"/>
                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="-1" id="Pzq-52-vuQ"/>
+                                                    </connections>
                                                 </textField>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdG-WX-IHy">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                    <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
-                                                    <state key="normal">
-                                                        <color key="titleColor" name="white"/>
-                                                    </state>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
                                             </subviews>
-                                            <color key="backgroundColor" name="derkGrey1"/>
+                                            <color key="backgroundColor" name="grey"/>
                                             <constraints>
                                                 <constraint firstItem="2Cp-LT-iNM" firstAttribute="top" secondItem="mGp-dN-6CS" secondAttribute="top" id="AgS-S0-FE5"/>
                                                 <constraint firstAttribute="bottom" secondItem="2Cp-LT-iNM" secondAttribute="bottom" id="DX5-nn-YrC"/>
-                                                <constraint firstAttribute="trailing" secondItem="FdG-WX-IHy" secondAttribute="trailing" id="NHm-em-vgT"/>
-                                                <constraint firstItem="FdG-WX-IHy" firstAttribute="leading" secondItem="mGp-dN-6CS" secondAttribute="leading" id="b7j-q6-xXt"/>
-                                                <constraint firstAttribute="trailing" secondItem="2Cp-LT-iNM" secondAttribute="trailing" id="fne-Gf-jcN"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Cp-LT-iNM" secondAttribute="trailing" constant="10" id="fne-Gf-jcN"/>
                                                 <constraint firstAttribute="height" constant="48" id="mI7-M6-T6f"/>
-                                                <constraint firstAttribute="bottom" secondItem="FdG-WX-IHy" secondAttribute="bottom" id="mp5-KD-Ufy"/>
-                                                <constraint firstItem="2Cp-LT-iNM" firstAttribute="leading" secondItem="mGp-dN-6CS" secondAttribute="leading" id="qXP-EN-PqD"/>
-                                                <constraint firstItem="FdG-WX-IHy" firstAttribute="top" secondItem="mGp-dN-6CS" secondAttribute="top" id="uQo-MP-Bdm"/>
+                                                <constraint firstItem="2Cp-LT-iNM" firstAttribute="leading" secondItem="mGp-dN-6CS" secondAttribute="leading" constant="10" id="qXP-EN-PqD"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
@@ -124,7 +115,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfx-kK-fhd">
-                                                            <rect key="frame" x="155" y="0.0" width="64.5" height="48"/>
+                                                            <rect key="frame" x="156" y="0.0" width="62.5" height="48"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                             <color key="textColor" name="white"/>
                                                             <nil key="highlightedColor"/>
@@ -190,15 +181,15 @@
     </objects>
     <designables>
         <designable name="2Cp-LT-iNM">
-            <size key="intrinsicContentSize" width="56" height="20.5"/>
+            <size key="intrinsicContentSize" width="55" height="20.5"/>
         </designable>
     </designables>
     <resources>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="derkGrey1">
-            <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="grey">
+            <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

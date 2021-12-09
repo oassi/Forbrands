@@ -14,11 +14,15 @@ class PopEvaluationServiceVC: SuperViewController {
     @IBOutlet weak var ViewRate: CosmosView!
     @IBOutlet var heighttableViewCell: NSLayoutConstraint!
     var selected = 0
-    
+    var orderId:Int!
+    var isDetalis = false
+    var comment:String?
+    var rateDeleget : (() -> ())?
+    var rateOrderDeleget : ((_ rating : Reviews) -> ())?
     var paymentMethods = ["Pay when receiving","Pay by mada","STC Pay","Master Card","Visa","Visa"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        commants.placeholder = "wirte here".localized
+//        commants.placeholder = "write here".localized
         collectionView.register(UINib(nibName: "EvaluationCVC", bundle: nil), forCellWithReuseIdentifier: "EvaluationCVC")
         // Do any additional setup after loading the view.
       
@@ -33,7 +37,34 @@ class PopEvaluationServiceVC: SuperViewController {
     }
     
     @IBAction func send(_ sender : UIButton){
-        dismiss(animated: true, completion: nil)
+        
+        if (ViewRate.rating != 0){
+            if(commants.text != nil){
+                comment = "\(comment?.description ?? "") \(commants.text ?? "")"
+            }
+            let rating = ViewRate.rating.description
+            var parameters = [String : Any]()
+            parameters["order_id"] = orderId.description
+            parameters["rating"] = rating
+            parameters["comment"] = comment
+            _ = WebRequests.setup(controller: self).prepare(api: Endpoint.addReview,parameters:parameters ,isAuthRequired: true).start(){  (response, error) in
+                do {
+                    let Status =  try JSONDecoder().decode(BaseDataResponse<Reviews>.self, from: response.data!)
+                    if Status.code == 200{
+                        if(Status.data != nil && self.isDetalis){
+                            self.rateOrderDeleget?(Status.data!)
+                        }else{
+                            self.rateDeleget?()
+                        }
+                     
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }catch let jsonErr {
+                    print("Error serializing  respone json", jsonErr)
+                }
+            }
+        }
+        
     }
 
 }
@@ -50,6 +81,7 @@ extension PopEvaluationServiceVC: UICollectionViewDelegate,UICollectionViewDataS
         if  selected == indexPath.row {
             cell.viewBackgroun.backgroundColor = UIColor(named: "primary")
             cell.lblTitle.textColor = .white
+            comment = paymentMethods[selected]
             
             }else {
                 cell.viewBackgroun.backgroundColor = .white
@@ -61,6 +93,7 @@ extension PopEvaluationServiceVC: UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
               selected = indexPath.row
+              comment = paymentMethods[selected]
               collectionView.reloadData()
     }
 

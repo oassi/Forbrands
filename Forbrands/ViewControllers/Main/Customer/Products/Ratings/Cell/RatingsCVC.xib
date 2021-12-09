@@ -20,11 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingsCVC" rowHeight="107" id="KGk-i7-Jjw" customClass="RatingsCVC" customModule="Forbrands" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="322" height="107"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="RatingsCVC" rowHeight="118" id="KGk-i7-Jjw" customClass="RatingsCVC" customModule="Forbrands" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="118"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="322" height="107"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="118"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pVa-Cv-96c">
@@ -67,35 +67,28 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VID-5a-7CN">
-                                                <rect key="frame" x="64" y="0.0" width="242" height="50"/>
+                                                <rect key="frame" x="64" y="0.0" width="242" height="35.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="1oT-bl-Eje">
-                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="242" height="35.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6IU-6o-6t3">
-                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="35.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="152" height="35.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="252" horizontalCompressionResistancePriority="240" verticalCompressionResistancePriority="751" text="Mayada" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="2kq-CL-4nI">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="142" height="16.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="252" horizontalCompressionResistancePriority="240" verticalCompressionResistancePriority="751" text="تست" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="2kq-CL-4nI">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="16.5"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
                                                                         <color key="textColor" name="#1B3764"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019\05\28" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIC-LI-K67">
-                                                                        <rect key="frame" x="0.0" y="21.5" width="142" height="14"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019\05\28" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIC-LI-K67">
+                                                                        <rect key="frame" x="0.0" y="21.5" width="152" height="14"/>
                                                                         <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                         <color key="textColor" name="derkGrey"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                             </stackView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICb-Iy-yxw">
-                                                                <rect key="frame" x="142" y="0.0" width="10" height="50"/>
-                                                                <color key="backgroundColor" name="white"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="10" id="Da3-L0-b9L"/>
-                                                                </constraints>
-                                                            </view>
                                                             <view contentMode="scaleToFill" horizontalHuggingPriority="254" verticalHuggingPriority="254" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="X4I-lm-vlo" customClass="CosmosView" customModule="Cosmos">
                                                                 <rect key="frame" x="152" y="0.0" width="90" height="15"/>
                                                                 <color key="backgroundColor" name="white"/>
@@ -177,7 +170,7 @@
                 <outlet property="lblDate" destination="nIC-LI-K67" id="n0l-W5-7qa"/>
                 <outlet property="lblName" destination="2kq-CL-4nI" id="sTd-Ov-SkU"/>
             </connections>
-            <point key="canvasLocation" x="91.304347826086968" y="115.51339285714285"/>
+            <point key="canvasLocation" x="91.304347826086968" y="119.19642857142857"/>
         </tableViewCell>
     </objects>
     <designables>

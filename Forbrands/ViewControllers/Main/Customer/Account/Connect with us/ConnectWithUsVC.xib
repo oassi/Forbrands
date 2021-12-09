@@ -10,8 +10,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
-            <string>DINNextLTArabic-Regular</string>
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
         </array>
     </customFonts>
     <objects>
@@ -29,10 +29,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WT4-gV-rgc">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="177"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="242"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="DsD-nr-G3B">
-                                    <rect key="frame" x="20" y="10" width="374" height="167"/>
+                                    <rect key="frame" x="20" y="10" width="374" height="232"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xME-9A-FaZ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -40,9 +40,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Q0l-yk-XJk">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-AX-rr8">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9n-AX-rr8">
                                                             <rect key="frame" x="0.0" y="13.5" width="320" height="21"/>
-                                                            <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -99,9 +99,9 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-rP-r4w">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatsApp" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-zt-b59">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatsApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-zt-b59">
                                                             <rect key="frame" x="0.0" y="13.5" width="320" height="21"/>
-                                                            <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -145,15 +145,67 @@
                                                 <constraint firstAttribute="bottom" secondItem="N9K-Ek-QWM" secondAttribute="bottom" id="vGc-la-92C"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmz-qv-UQR">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Qn-iQ-nbv">
                                             <rect key="frame" x="0.0" y="148" width="374" height="1"/>
                                             <color key="backgroundColor" name="grey"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="usS-4F-trb"/>
+                                                <constraint firstAttribute="height" constant="1" id="7dY-3I-Ufo"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAH-qW-V1K">
+                                            <rect key="frame" x="0.0" y="166" width="374" height="48"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Zaf-sj-w2X">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect With Us" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-a9-0hn">
+                                                            <rect key="frame" x="0.0" y="13.5" width="320" height="21"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Connect with us"/>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbE-qz-Xcq">
+                                                            <rect key="frame" x="350" y="12" width="24" height="24"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leftArraw" translatesAutoresizingMaskIntoConstraints="NO" id="yJQ-Hx-IR0">
+                                                                    <rect key="frame" x="8" y="5" width="8" height="14"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="24" id="6QO-EX-FEP"/>
+                                                                <constraint firstItem="yJQ-Hx-IR0" firstAttribute="centerY" secondItem="KbE-qz-Xcq" secondAttribute="centerY" id="Dpj-Ii-qD6"/>
+                                                                <constraint firstAttribute="height" constant="24" id="L0g-YP-f0z"/>
+                                                                <constraint firstItem="yJQ-Hx-IR0" firstAttribute="centerX" secondItem="KbE-qz-Xcq" secondAttribute="centerX" id="zrG-v1-sCn"/>
+                                                            </constraints>
+                                                        </view>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJj-f3-cIS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                    <connections>
+                                                        <action selector="tapConnect:" destination="-1" eventType="touchUpInside" id="dIv-tU-VCz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Zaf-sj-w2X" firstAttribute="leading" secondItem="xAH-qW-V1K" secondAttribute="leading" id="4sJ-lo-Jqe"/>
+                                                <constraint firstItem="Zaf-sj-w2X" firstAttribute="top" secondItem="xAH-qW-V1K" secondAttribute="top" id="MQh-zn-efA"/>
+                                                <constraint firstAttribute="bottom" secondItem="tJj-f3-cIS" secondAttribute="bottom" id="PDT-5H-NMj"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zaf-sj-w2X" secondAttribute="trailing" id="bTP-cR-bxr"/>
+                                                <constraint firstItem="tJj-f3-cIS" firstAttribute="leading" secondItem="xAH-qW-V1K" secondAttribute="leading" id="dbt-CB-Wa9"/>
+                                                <constraint firstItem="tJj-f3-cIS" firstAttribute="top" secondItem="xAH-qW-V1K" secondAttribute="top" id="fpr-1Y-WPf"/>
+                                                <constraint firstAttribute="bottom" secondItem="Zaf-sj-w2X" secondAttribute="bottom" id="mNu-7j-M3m"/>
+                                                <constraint firstAttribute="trailing" secondItem="tJj-f3-cIS" secondAttribute="trailing" id="qZB-an-DSb"/>
+                                                <constraint firstAttribute="height" constant="48" id="wPS-Ka-MRZ"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aq8-Cs-TTr">
-                                            <rect key="frame" x="0.0" y="166" width="374" height="1"/>
+                                            <rect key="frame" x="0.0" y="231" width="374" height="1"/>
                                             <color key="backgroundColor" name="grey"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="L5a-bO-rlK"/>

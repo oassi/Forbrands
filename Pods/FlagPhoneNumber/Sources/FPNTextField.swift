@@ -33,12 +33,14 @@ open class FPNTextField: UITextField {
 	private lazy var phoneUtil: NBPhoneNumberUtil = NBPhoneNumberUtil()
 	private var nbPhoneNumber: NBPhoneNumber?
 	private var formatter: NBAsYouTypeFormatter?
+    private var exampleNumberType: NBEPhoneNumberType = .MOBILE
 
 	open var flagButton: UIButton = UIButton()
 
 	open override var font: UIFont? {
 		didSet {
 			phoneCodeTextField.font = font
+            phoneCodeTextField.textAlignment = .left
 		}
 	}
 
@@ -105,7 +107,9 @@ open class FPNTextField: UITextField {
 		setupLeftView()
 
 		keyboardType = .numberPad
-		autocorrectionType = .no
+        autocorrectionType = .no
+        
+        textAlignment = .left
 		addTarget(self, action: #selector(didEditText), for: .editingChanged)
 		addTarget(self, action: #selector(displayNumberKeyBoard), for: .touchDown)
 
@@ -122,12 +126,18 @@ open class FPNTextField: UITextField {
 		flagButton.addTarget(self, action: #selector(displayCountries), for: .touchUpInside)
 		flagButton.translatesAutoresizingMaskIntoConstraints = false
 		flagButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+       
 	}
 
 	private func setupPhoneCodeTextField() {
 		phoneCodeTextField.font = font
 		phoneCodeTextField.isUserInteractionEnabled = false
 		phoneCodeTextField.translatesAutoresizingMaskIntoConstraints = false
+        if #available(iOS 9.0, *) {
+            phoneCodeTextField.semanticContentAttribute = .forceLeftToRight
+        } else {
+            // Fallback on earlier versions
+        }
 	}
 
 	private func setupLeftView() {
@@ -135,12 +145,14 @@ open class FPNTextField: UITextField {
 		leftViewMode = .always
 		if #available(iOS 9.0, *) {
 			phoneCodeTextField.semanticContentAttribute = .forceLeftToRight
+            leftView?.semanticContentAttribute = .forceLeftToRight
 		} else {
 			// Fallback on earlier versions
 		}
 
-		leftView?.addSubview(flagButton)
+		
 		leftView?.addSubview(phoneCodeTextField)
+        leftView?.addSubview(flagButton)
 
 		flagWidthConstraint = NSLayoutConstraint(item: flagButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: flagButtonSize.width)
 		flagHeightConstraint = NSLayoutConstraint(item: flagButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: flagButtonSize.height)
@@ -151,7 +163,11 @@ open class FPNTextField: UITextField {
 		NSLayoutConstraint(item: flagButton, attribute: .centerY, relatedBy: .equal, toItem: leftView, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
 
 		NSLayoutConstraint(item: flagButton, attribute: .leading, relatedBy: .equal, toItem: leftView, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-		NSLayoutConstraint(item: phoneCodeTextField, attribute: .leading, relatedBy: .equal, toItem: flagButton, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
+        
+        NSLayoutConstraint(item: flagButton, attribute: .trailing, relatedBy: .equal, toItem: phoneCodeTextField, attribute: .leading, multiplier: 1, constant: 0).isActive = true
+//        NSLayoutConstraint(item: phoneCodeTextField, attribute: .leading, relatedBy: .equal, toItem: flagButton, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
+//
+//		NSLayoutConstraint(item: phoneCodeTextField, attribute: .leading, relatedBy: .equal, toItem: flagButton, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
 		NSLayoutConstraint(item: phoneCodeTextField, attribute: .trailing, relatedBy: .equal, toItem: leftView, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
 		NSLayoutConstraint(item: phoneCodeTextField, attribute: .top, relatedBy: .equal, toItem: leftView, attribute: .top, multiplier: 1, constant: 0).isActive = true
 		NSLayoutConstraint(item: phoneCodeTextField, attribute: .bottom, relatedBy: .equal, toItem: leftView, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
@@ -446,7 +462,8 @@ open class FPNTextField: UITextField {
 	private func updatePlaceholder() {
 		if let countryCode = selectedCountry?.code {
 			do {
-				let example = try phoneUtil.getExampleNumber(countryCode.rawValue)
+                let example = try phoneUtil.getExampleNumber(forType: countryCode.rawValue, type: exampleNumberType)
+				//let example = try phoneUtil.getExampleNumber(countryCode.rawValue)
 				let phoneNumber = "+\(example.countryCode.stringValue)\(example.nationalNumber.stringValue)"
 
 				if let inputString = formatter?.inputString(phoneNumber) {

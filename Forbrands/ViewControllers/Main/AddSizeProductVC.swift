@@ -13,13 +13,13 @@ class AddSizeProductVC: SuperViewController ,UIPickerViewDataSource, UIPickerVie
     
     
    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var addSizeBut:UIButton!
     let minNum = 1
     let maxNum = 10
     var pickerData: [Int]!
     var color: UIColor!
     var size: UIFont!
     var titleData = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navButtons()
@@ -32,7 +32,9 @@ class AddSizeProductVC: SuperViewController ,UIPickerViewDataSource, UIPickerVie
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setCustomBackButtonForViewController(sender: self)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        changBackgroundColorButApp(addSizeBut)
+    }
     
     @IBAction func tapAddSizeProduct(_ sender: UIButton) {
         let vc: CountSizeVC = CountSizeVC.loadFromNib()
@@ -52,10 +54,10 @@ class AddSizeProductVC: SuperViewController ,UIPickerViewDataSource, UIPickerVie
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
          titleData = pickerData[row]
                   if pickerView.selectedRow(inComponent: 0) == row {
-                      color = UIColor(named: "primary")
+                      color = getColorApp()
                       size = UIFont.DinNextLtW23Regular(ofSize: 40)
                   } else {
-                      color = UIColor(named: "primary")
+                      color = getColorApp()
                       size = UIFont.DinNextLtW23Regular(ofSize: 30)
                   }
                 let attrs = [

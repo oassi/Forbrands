@@ -9,6 +9,20 @@ import UIKit
 
 class CurrentTableViewCell: UITableViewCell {
 
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var lblCount: UILabel!
+    @IBOutlet var img: UIImageView!
+    
+    var obj :Product?{
+        didSet{
+            lblTitle.text = MOLHLanguage.isArabic() ? obj?.nameAr ?? "" : obj?.nameEn ?? ""
+            lblCount.text =  obj?.amount?.description ?? ""
+            if(obj?.images?.count != 0){
+                img.sd_custom(url: "\(App.IMG_URL.img_URL)\(obj!.images?[0] ?? "")" ,defultImage: UIImage(named: "defultImg") )
+            }
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

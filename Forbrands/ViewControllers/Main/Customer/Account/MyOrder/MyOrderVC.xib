@@ -8,13 +8,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyOrderVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
                 <outlet property="currentButton" destination="bAd-rf-ST4" id="TjR-bK-eHH"/>
                 <outlet property="previousButton" destination="htR-M1-N6t" id="Isa-j0-EWk"/>
-                <outlet property="tableview1" destination="3o9-vS-vFo" id="x2T-qi-qOp"/>
-                <outlet property="tableview2" destination="fgo-I8-ptc" id="L0X-VZ-J0G"/>
+                <outlet property="tableview" destination="3o9-vS-vFo" id="pD5-Aq-3yb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewCurrent" destination="Apq-1X-CsK" id="bzs-Vt-XrF"/>
                 <outlet property="viewPrevious" destination="dNc-DW-j7w" id="sdC-cc-eFI"/>
@@ -32,10 +36,11 @@
                             <rect key="frame" x="8" y="0.0" width="398" height="50"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="253" horizontalCompressionResistancePriority="754" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-Nn-5PL">
-                                    <rect key="frame" x="0.0" y="16" width="62" height="34"/>
+                                    <rect key="frame" x="0.0" y="15" width="62" height="35"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="259" verticalHuggingPriority="256" horizontalCompressionResistancePriority="761" verticalCompressionResistancePriority="753" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAd-rf-ST4">
-                                            <rect key="frame" x="5" y="0.0" width="52" height="30"/>
+                                            <rect key="frame" x="1" y="0.0" width="60" height="31"/>
+                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                             <state key="normal" title="Current">
                                                 <color key="titleColor" name="primary"/>
                                             </state>
@@ -47,7 +52,7 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Apq-1X-CsK">
-                                            <rect key="frame" x="5" y="30" width="52" height="4"/>
+                                            <rect key="frame" x="1" y="31" width="60" height="4"/>
                                             <color key="backgroundColor" name="primary"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="4" id="MJa-Sy-Wun"/>
@@ -63,10 +68,11 @@
                                     </constraints>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CvL-6d-Yy3">
-                                    <rect key="frame" x="72" y="16" width="76" height="34"/>
+                                    <rect key="frame" x="72" y="15" width="76" height="35"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htR-M1-N6t">
-                                            <rect key="frame" x="0.0" y="0.0" width="76" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="76" height="31"/>
+                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                             <state key="normal" title="Previous">
                                                 <color key="titleColor" name="derkGrey"/>
                                             </state>
@@ -78,7 +84,7 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNc-DW-j7w">
-                                            <rect key="frame" x="0.0" y="30" width="76" height="4"/>
+                                            <rect key="frame" x="0.0" y="31" width="76" height="4"/>
                                             <color key="backgroundColor" name="background"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="4" id="AdG-CV-mgr"/>
@@ -126,33 +132,21 @@
                     <rect key="frame" x="0.0" y="99" width="414" height="797"/>
                     <color key="backgroundColor" name="background"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="hN9-Bd-HZI"/>
-                        <outlet property="delegate" destination="-1" id="XOt-7J-4Vj"/>
-                    </connections>
-                </tableView>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fgo-I8-ptc">
-                    <rect key="frame" x="0.0" y="99" width="414" height="763"/>
-                    <color key="backgroundColor" name="background"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="bfE-hz-6mw"/>
-                        <outlet property="delegate" destination="-1" id="rHB-NB-k6B"/>
+                        <outlet property="dataSource" destination="-1" id="O4Y-8d-0IW"/>
+                        <outlet property="delegate" destination="-1" id="15W-uq-cNN"/>
                     </connections>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" name="background"/>
             <constraints>
-                <constraint firstItem="fgo-I8-ptc" firstAttribute="top" secondItem="WlE-dy-E6k" secondAttribute="bottom" constant="5" id="5Cg-kr-yu9"/>
                 <constraint firstItem="WlE-dy-E6k" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="7bM-Ji-f4m"/>
                 <constraint firstItem="3o9-vS-vFo" firstAttribute="top" secondItem="WlE-dy-E6k" secondAttribute="bottom" constant="5" id="HTa-uN-vfx"/>
                 <constraint firstItem="3o9-vS-vFo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JYN-Q7-Zff"/>
                 <constraint firstItem="WlE-dy-E6k" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="QuB-E6-RSq"/>
-                <constraint firstItem="fgo-I8-ptc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="UCV-yy-YDO"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fgo-I8-ptc" secondAttribute="trailing" id="Vad-pf-oWa"/>
                 <constraint firstAttribute="bottom" secondItem="3o9-vS-vFo" secondAttribute="bottom" id="bt8-Ye-rNx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WlE-dy-E6k" secondAttribute="trailing" id="bxv-dg-X8R"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3o9-vS-vFo" secondAttribute="trailing" id="dZW-dx-EFT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="fgo-I8-ptc" secondAttribute="bottom" id="hnz-5J-U2A"/>
             </constraints>
             <point key="canvasLocation" x="-4" y="71"/>
         </view>

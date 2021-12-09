@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SDWebImage
 import BRYXBanner
+
 extension String {
     
     var localized: String {
@@ -31,18 +32,19 @@ extension String {
         }
         return UIColor(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
+  
+    var stringByRemovingWhitespaces: String {
+            return components(separatedBy: .whitespaces).joined()
+        }
+ 
     
 }
 
 
 extension UIImageView {
     func sd_custom(url: String, defultImage:UIImage? = nil){
-//        self.sd_setShowActivityIndicatorView(true)
-//        self.sd_setIndicatorStyle(.gray)
         let imageView = UIImageView(image: UIImage(named: "invite"))
-        
         imageView.image = imageView.image?.imageWithColor(color1: "DDDDDD".color)
-        
         self.sd_setImage(with: URL(string: url), placeholderImage: defultImage)
     }
     
@@ -72,17 +74,50 @@ extension UIImage {
 
 extension UIViewController {
     
-    static func loadFromNib() -> Self {
-            func instantiateFromNib<T: UIViewController>() -> T {
-                return T.init(nibName: String(describing: T.self), bundle: nil)
-            }
-            return instantiateFromNib()
-        }
+    
     
     func showAlert(title: String, message:String, okAction: String = "Ok".localized, completion: ((UIAlertAction) -> Void)? = nil ) {
         let banner = Banner(title: title, subtitle: message, image: nil, backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         banner.textColor = .black
-        banner.show(duration: 3.0)
+        banner.show(duration: 10.0)
+    }
+    func showActionsheet(viewController: UIViewController,tint:String? = "", title: String, message: String,titleColor:String? = "", actions: [(String, UIAlertAction.Style)], completion: @escaping (_ index: Int) -> Void) {
+        
+        var alertStyle = UIAlertController.Style.actionSheet
+        if (UIDevice.current.userInterfaceIdiom == .pad) {
+            alertStyle = UIAlertController.Style.alert
+        }
+        
+        let alertViewController = UIAlertController(title: title, message: message, preferredStyle: alertStyle)
+        alertViewController.setTint(color: "003B87".color)
+        
+        for (index, (title, style)) in actions.enumerated() {
+            let alertAction = UIAlertAction(title: title, style: style) { (_) in
+                completion(index)
+            }
+            alertViewController.addAction(alertAction)
+        }
+        viewController.present(alertViewController, animated: true, completion: nil)
+    }
+    
+    
+    func askForQuit(title: String, message:String, okAction: String = "Ok".localized, _ completion:@escaping (_ canQuit: Bool) -> Void) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: okAction, style: UIAlertAction.Style.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            completion(true)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: UIAlertAction.Style.cancel, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            completion(false)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //Set tint color of UIAlertController
+    func setTint(color: UIColor) {
+        self.view.tintColor = color
     }
     
     //with completion
@@ -130,6 +165,25 @@ func navigationController() -> UINavigationController {
         //navController.viewControllers = [self]
         return navController
     }
+    
+    func showGif(imgName:String, loopCount:Int, mainView:UIView) {
+        var imageview: UIImageView?
+        //mainView.backgroundColor = .clear
+        do {
+            let gif = try UIImage(gifName: imgName)
+            
+            // Use -1 for infinite loop
+            imageview = UIImageView(gifImage: gif, loopCount: loopCount)
+            imageview?.frame = mainView.bounds
+            imageview?.contentMode = .scaleAspectFit
+            //self.imageview.delegate = self
+            mainView.addSubview(imageview ?? UIImageView())
+            
+        } catch let error as NSError{
+            print(error)
+        }
+        imageview?.startAnimatingGif()
+    }
 }
 
 extension UITableView{
@@ -142,4 +196,37 @@ extension UICollectionView {
     func dequeue<T: UICollectionViewCell>(cellForItemAt indexPath: IndexPath) -> T {
     return self.dequeueReusableCell(withReuseIdentifier: "\(T.self)", for: indexPath) as! T
     }
+}
+
+
+extension UserDefaults {
+    func object<T: Codable>(_ type: T.Type, with key: String, usingDecoder decoder: JSONDecoder = JSONDecoder()) -> T? {
+        guard let data = self.value(forKey: key) as? Data else { return nil }
+        return try? decoder.decode(type.self, from: data)
+    }
+
+    func set<T: Codable>(object: T, forKey key: String, usingEncoder encoder: JSONEncoder = JSONEncoder()) {
+        let data = try? encoder.encode(object)
+        self.set(data, forKey: key)
+    }
+}
+
+extension Notification.Name {
+    static let didReceiveData = Notification.Name("didReceiveData")
+
+}
+extension UIViewController {
+    func removeCharacters(_ parameters:String,characters : String) -> String {
+        let stringValue = parameters.replacingOccurrences(of: characters, with: "").stringByRemovingWhitespaces
+       return stringValue
+    }
+    
+}
+
+extension UIImageView {
+  func setImageColor(color: UIColor) {
+    let templateImage = self.image?.withRenderingMode(.alwaysTemplate)
+    self.image = templateImage
+    self.tintColor = color
+  }
 }

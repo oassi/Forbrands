@@ -11,12 +11,26 @@ class ChangeLanguageVC: SuperViewController {
     
     @IBOutlet weak var imgEn: UIImageView!
     @IBOutlet weak var imgAr: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgAr.isHidden = true
+       
+        if(MOLHLanguage.isArabic() ){
+            imgAr.isHidden = false
+            imgEn.isHidden = true
+           
+        }else{
+            imgAr.isHidden = true
+            imgEn.isHidden = false
+        }
         // Do any additional setup after loading the view.
-        
+        if(CurrentUser.typeSelect == userType.Seller){
+            changBackgroundColorButApp(saveButton)
+            imgEn.tintColor = getColorApp()
+            imgAr.tintColor = getColorApp()
+            
+        }
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setCustomBackButtonForViewController(sender: self)
     }
@@ -26,10 +40,14 @@ class ChangeLanguageVC: SuperViewController {
         if(sender.tag == 0){
             imgEn.isHidden = false
             imgAr.isHidden = true
+            MOLH.setLanguageTo("en")
+            MOLH.reset(transition: .transitionCrossDissolve, duration: 0.25)
         }
         if(sender.tag == 1){
             imgEn.isHidden = true
             imgAr.isHidden = false
+            MOLH.setLanguageTo("ar")
+            MOLH.reset(transition: .transitionCrossDissolve, duration: 0.25)
         }
         
     }
@@ -39,3 +57,4 @@ class ChangeLanguageVC: SuperViewController {
     }
 
 }
+

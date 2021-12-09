@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnBordingVC" customModule="Forbrands" customModuleProvider="target">
+            <connections>
+                <outlet property="lblTimmer" destination="XQ8-1h-xSZ" id="GTR-qu-kLy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7e-7S-9zK">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfume" translatesAutoresizingMaskIntoConstraints="NO" id="k3J-re-ezK">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRW-D1-iPW">
+                            <rect key="frame" x="20" y="818" width="374" height="48"/>
+                            <color key="backgroundColor" name="primary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="Lba-S4-ggR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                            <state key="normal" title="Start">
+                                <color key="titleColor" name="white"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Start"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="bt_Next:" destination="-1" eventType="touchUpInside" id="w43-S5-5GE"/>
+                            </connections>
+                        </button>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uxm-j1-wAZ">
+                            <rect key="frame" x="308" y="56" width="86" height="36"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQ8-1h-xSZ">
+                                    <rect key="frame" x="5" y="5" width="76" height="26"/>
+                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="XQ8-1h-xSZ" secondAttribute="trailing" constant="5" id="36C-sk-T0k"/>
+                                <constraint firstItem="XQ8-1h-xSZ" firstAttribute="top" secondItem="uxm-j1-wAZ" secondAttribute="top" constant="5" id="GFc-s0-zwY"/>
+                                <constraint firstAttribute="height" constant="36" id="Ocq-vf-e9E"/>
+                                <constraint firstAttribute="width" constant="86" id="izH-o5-Y80"/>
+                                <constraint firstItem="XQ8-1h-xSZ" firstAttribute="leading" secondItem="uxm-j1-wAZ" secondAttribute="leading" constant="5" id="qGB-AU-xua"/>
+                                <constraint firstAttribute="bottom" secondItem="XQ8-1h-xSZ" secondAttribute="bottom" constant="5" id="zJb-Jb-6We"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="YRW-D1-iPW" secondAttribute="bottom" constant="30" id="1iA-Cj-WBJ"/>
+                        <constraint firstAttribute="trailing" secondItem="uxm-j1-wAZ" secondAttribute="trailing" constant="20" id="Hfa-JQ-NJM"/>
+                        <constraint firstItem="uxm-j1-wAZ" firstAttribute="top" secondItem="J7e-7S-9zK" secondAttribute="top" constant="56" id="Hrt-hH-alH"/>
+                        <constraint firstAttribute="trailing" secondItem="k3J-re-ezK" secondAttribute="trailing" id="b3I-NY-A2g"/>
+                        <constraint firstAttribute="trailing" secondItem="YRW-D1-iPW" secondAttribute="trailing" constant="20" id="lJF-G4-Oxd"/>
+                        <constraint firstItem="k3J-re-ezK" firstAttribute="leading" secondItem="J7e-7S-9zK" secondAttribute="leading" id="pJq-5O-O9g"/>
+                        <constraint firstItem="k3J-re-ezK" firstAttribute="top" secondItem="J7e-7S-9zK" secondAttribute="top" id="rY9-TO-ybZ"/>
+                        <constraint firstAttribute="bottom" secondItem="k3J-re-ezK" secondAttribute="bottom" constant="-4" id="s52-PJ-WQc"/>
+                        <constraint firstItem="YRW-D1-iPW" firstAttribute="leading" secondItem="J7e-7S-9zK" secondAttribute="leading" constant="20" id="u7p-j7-lrO"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="J7e-7S-9zK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="IdV-QP-nQK"/>
+                <constraint firstAttribute="bottom" secondItem="J7e-7S-9zK" secondAttribute="bottom" id="Vev-6h-85V"/>
+                <constraint firstItem="J7e-7S-9zK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YUp-tT-U1d"/>
+                <constraint firstItem="J7e-7S-9zK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dRQ-8z-Ak1"/>
+            </constraints>
+            <point key="canvasLocation" x="-25" y="76"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="perfume" width="378" height="815"/>
+        <namedColor name="primary">
+            <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

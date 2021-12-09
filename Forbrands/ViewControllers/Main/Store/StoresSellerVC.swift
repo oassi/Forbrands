@@ -10,20 +10,45 @@ import UIKit
 class StoresSellerVC: SuperViewController {
     @IBOutlet weak var collectionview:UICollectionView!
     
+    @IBOutlet weak var appProdcut:UILabel!
+    @IBOutlet weak var img:UIImageView!
+    var imgStore:String?
+    
+    var categories = [CategoriesHome]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        navButtons()
+        
         registerCell()
         // Do any additional setup after loading the view.
+        
+      //  NotificationCenter.default.addObserver(self, selector: #selector(self.colorChange(_:)), name: Notification.Name("colorChange"), object: nil)
+
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        colorChang()
+        navButtons()
+        relodeData()
+  
+        
+    }
+  
+    func relodeData() {
+        categories.removeAll()
+        getMyStore()
+    }
+    func colorChang() {
+        appProdcut.textColor = getColorApp()
+        img.tintColor = getColorApp()
+    }
     private func navButtons(){
         let navgtion = self.navigationController as! CustomNavigationBar
-        navigationController?.navigationBar.tintColor = UIColor(named: "primary")
+        navigationController?.navigationBar.tintColor = getColorApp()
         navgtion.setLeftsButtons([navgtion.titleNavStore!], sender: self)
         navgtion.setRightButtons([navgtion.notificaltionBut!], sender: self)
        
     }
+    
+   
 
     private  func registerCell(){
         let nib1 = UINib(nibName: "CategorySellerCVC", bundle: .main)
@@ -43,26 +68,56 @@ class StoresSellerVC: SuperViewController {
             break
         }
     }
+    
 
     @IBAction func tapAddProductButton(_sender: UIButton) {
         let vc:AddProductVC = AddProductVC.loadFromNib()
         vc.hidesBottomBarWhenPushed = true
         vc.modalPresentationStyle = .fullScreen
+        UserDefaults.standard.set(object: [String](), forKey: "sizeLest")
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
+    func getMyStore(){
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.myStoreSeller ,isAuthRequired:  true).start(){ (response, error) in
+            do {
+                let Status =  try JSONDecoder().decode(BaseDataResponse<MyStoreSeller>.self, from: response.data!)
+                if Status.code == 200{
+                    if let img =  Status.data?.image {
+                        self.imgStore = img
+                    }
+                    if let categorie = Status.data?.categories{
+                        categorie.forEach{self.categories.append($0) }
+                    }
+                    self.collectionview.reloadData()
+                }
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
+    }
+    
+    
+    
 }
 extension StoresSellerVC : UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CategorySellerCVC", for: indexPath) as! CategorySellerCVC
+         
+        let obj = categories[indexPath.row]
+        cell.obj = obj
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc:ShowCategoryVC = ShowCategoryVC.loadFromNib()
+        vc.CategoryId =  categories[indexPath.row].id?.description ?? "0"
+        vc.titleNav = categories[indexPath.row].name ?? "Categories"
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -72,8 +127,8 @@ extension StoresSellerVC : UICollectionViewDataSource,UICollectionViewDelegate{
         switch kind {
             case UICollectionView.elementKindSectionHeader:
                 guard let headerView = collectionView.dequeueReusableSupplementaryView( ofKind: kind, withReuseIdentifier: "\(HeaderStoreSellerCell.self)", for: indexPath) as? HeaderStoreSellerCell  else { fatalError("Invalid view type") }
-            
-            headerView.imgView.image = #imageLiteral(resourceName: "img")
+                
+            headerView.imgView.sd_custom(url: "\(App.IMG_URL.img_URL)\(imgStore ?? "")" ,defultImage: UIImage(named: "defultImg") )
             return headerView
         default:
             assert(false, "Invalid element type")

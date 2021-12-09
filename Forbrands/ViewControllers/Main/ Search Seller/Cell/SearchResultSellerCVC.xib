@@ -45,7 +45,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-7W-Ac1">
                                                 <rect key="frame" x="8" y="5.5" width="148" height="161"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 خصم" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE4-gt-cr9">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 خصم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE4-gt-cr9">
                                                         <rect key="frame" x="0.0" y="0.0" width="148" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="GT1-d0-AEi"/>
@@ -54,7 +54,7 @@
                                                         <color key="textColor" name="black"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 خصم" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZm-1e-GIh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 خصم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZm-1e-GIh">
                                                         <rect key="frame" x="0.0" y="30" width="148" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="aZ7-wl-nxV"/>
@@ -72,23 +72,16 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="kCb-6G-mpD">
                                                                         <rect key="frame" x="0.0" y="0.0" width="56" height="25"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="256" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" text="232" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJa-ll-ctl">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="256" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" text="232" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJa-ll-ctl">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="27" height="25"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                                                                 <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqJ-2s-XKv">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqJ-2s-XKv">
                                                                                 <rect key="frame" x="30" y="0.0" width="26" height="25"/>
-                                                                                <attributedString key="attributedText">
-                                                                                    <fragment content="SAR">
-                                                                                        <attributes>
-                                                                                            <color key="NSColor" name="black"/>
-                                                                                            <font key="NSFont" size="13" name="DINNextLTW23-Regular"/>
-                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
-                                                                                        </attributes>
-                                                                                    </fragment>
-                                                                                </attributedString>
+                                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
+                                                                                <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="SAR"/>
@@ -107,28 +100,21 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e0U-SO-Rkh">
-                                                                <rect key="frame" x="63" y="0.0" width="34" height="25"/>
+                                                                <rect key="frame" x="63" y="0.0" width="28" height="25"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W9J-wE-ejY">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="25"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="28" height="25"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="257" verticalHuggingPriority="253" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="752" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBo-Qr-u55">
-                                                                                <rect key="frame" x="0.0" y="4" width="34" height="17"/>
-                                                                                <attributedString key="attributedText">
-                                                                                    <fragment content="3 SAR">
-                                                                                        <attributes>
-                                                                                            <color key="NSColor" name="black"/>
-                                                                                            <font key="NSFont" size="12" name="DINNextLTW23-Regular"/>
-                                                                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
-                                                                                        </attributes>
-                                                                                    </fragment>
-                                                                                </attributedString>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="257" verticalHuggingPriority="253" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="752" text="3 ريال" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBo-Qr-u55">
+                                                                                <rect key="frame" x="0.0" y="5.5" width="28" height="14"/>
+                                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
+                                                                                <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRc-T0-oCt">
-                                                                        <rect key="frame" x="0.0" y="14" width="34" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="14" width="28" height="1"/>
                                                                         <color key="backgroundColor" name="derkGrey1"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="wrg-uB-hZe"/>
@@ -148,7 +134,7 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38K-lg-Y9f">
-                                                                <rect key="frame" x="104" y="7.5" width="44" height="10"/>
+                                                                <rect key="frame" x="98" y="7.5" width="50" height="10"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="10" id="SRj-lg-nqI"/>
@@ -159,7 +145,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zql-Fe-XB4">
                                                         <rect key="frame" x="0.0" y="95" width="148" height="20"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product available?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2Q-a8-eF2">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product available?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2Q-a8-eF2">
                                                                 <rect key="frame" x="0.0" y="3" width="106" height="14"/>
                                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="12"/>
                                                                 <color key="textColor" name="black"/>
@@ -200,18 +186,11 @@
                                                                     <action selector="tapEditButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RdN-U9-EYe"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dSE-Bs-thB">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSE-Bs-thB">
                                                                 <rect key="frame" x="78.5" y="1.5" width="69.5" height="33"/>
-                                                                <state key="normal">
-                                                                    <attributedString key="attributedTitle">
-                                                                        <fragment content="Delete">
-                                                                            <attributes>
-                                                                                <color key="NSColor" name="redBut"/>
-                                                                                <font key="NSFont" size="18" name="DINNextLTW23-Regular"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="charWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
+                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                                <state key="normal" title="Delete">
+                                                                    <color key="titleColor" name="redBut"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
@@ -326,9 +305,6 @@
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="black">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="derkGrey1">
             <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -337,9 +313,6 @@
         </namedColor>
         <namedColor name="red">
             <color red="0.7686274509803922" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="redBut">
-            <color red="0.63921568627450975" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="redBut">
             <color red="0.63921568627450975" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

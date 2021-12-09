@@ -16,6 +16,7 @@ class CurrentCVC: UITableViewCell {
     @IBOutlet var lblOrderDate: UILabel!
     
     //Underway
+    @IBOutlet var lblUnderway: UILabel!
     @IBOutlet var imgUnderway: UIImageView!
     @IBOutlet var viewUnderway: UIView!
     //Charging
@@ -26,10 +27,16 @@ class CurrentCVC: UITableViewCell {
     
     @IBOutlet var TotalPaid: UILabel!
     @IBOutlet var lblDay: UILabel!
-    @IBOutlet var lblExpectedDeliveryDate: UILabel!
+    
+    @IBOutlet var viewDetailsIsUser: UIView!
+    @IBOutlet var viewDetailsIsSeller: UIView!
+    @IBOutlet var viewOrderDetailsBut : UIButton!
+    
+    var products = [Product]()
     
     var viewOrderDetails : (()->())!
-
+    var changeOrderStatus : (()->())!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -37,9 +44,77 @@ class CurrentCVC: UITableViewCell {
         tableview.delegate = self
         tableview.dataSource = self
         
+        if(CurrentUser.typeSelect == userType.User){
+            viewDetailsIsUser.isHidden = false
+            viewDetailsIsSeller.isHidden = true
+        }
+        else{
+            viewDetailsIsUser.isHidden = true
+            viewDetailsIsSeller.isHidden = false
+            
+        }
         UIView.animate(withDuration: 1) {
-            self.heighttableViewCell.constant = 105
+            self.heighttableViewCell.constant =  100
             self.contentView.layoutIfNeeded()
+        }
+    }
+    
+    var obj : CustomerOrders? {
+        didSet{
+            lblOrderNumber.text = obj?.orderId ?? "0"
+            lblOrderDate.text = obj?.orderDate ?? "undefined".localized
+            TotalPaid.text = obj?.totalPrice ?? "0"
+            lblDay.text = obj?.deliverDate ?? "undefined".localized
+            
+            if (obj?.orderProcess == "1"){
+                imgUnderway.image = UIImage(named: "doneTrue")
+                imgCharging.image = UIImage(named: "onRequest")
+                imgReceived.image = UIImage(named: "onRequest")
+                viewUnderway.backgroundColor = UIColor(named: "green")
+                viewReceived.backgroundColor = UIColor(named: "derkGrey")
+              
+            }else if (obj?.orderProcess == "2"){
+                imgUnderway.image = UIImage(named: "doneTrue")
+                imgCharging.image = UIImage(named: "doneTrue")
+                imgReceived.image = UIImage(named: "onRequest")
+                viewUnderway.backgroundColor = UIColor(named: "green")
+                viewReceived.backgroundColor = UIColor(named: "green")
+            }
+            else if (obj?.orderProcess == "3"){
+                imgUnderway.image = UIImage(named: "doneTrue")
+                imgCharging.image = UIImage(named: "doneTrue")
+                imgReceived.image = UIImage(named: "doneTrue")
+                viewUnderway.backgroundColor = UIColor(named: "green")
+                viewReceived.backgroundColor = UIColor(named: "green")
+            }
+            else if (obj?.orderProcess == "-1"){
+                lblUnderway.text = "the order has been canceled".localized
+                imgUnderway.image = UIImage(named: "cancelledOrder")
+                imgCharging.image = UIImage(named: "exitSearch")
+                imgReceived.image = UIImage(named: "exitSearch")
+                imgReceived.image = UIImage(named: "exitSearch")
+                viewUnderway.backgroundColor = UIColor(named: "derkGrey")
+                viewReceived.backgroundColor = UIColor(named: "derkGrey")
+               
+            }
+            else{
+                imgUnderway.image = UIImage(named: "onRequest")
+                imgCharging.image = UIImage(named: "onRequest")
+                imgReceived.image = UIImage(named: "onRequest")
+                viewUnderway.backgroundColor = UIColor(named: "derkGrey")
+                viewReceived.backgroundColor = UIColor(named: "derkGrey")
+            }
+          
+            if(obj?.products != nil){
+                obj!.products!.forEach{
+                    products.append($0)
+                }
+                self.heighttableViewCell.constant = CGFloat((obj!.products!.count) * 100)
+                tableview.reloadData()
+
+            }
+
+            
         }
     }
 
@@ -48,29 +123,29 @@ class CurrentCVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func tableviewRelodData(){
-        self.heighttableViewCell.constant = 2 * 105
-        tableview.reloadData()
-    }
+ 
     
     @IBAction func tapViewOrderDetails(_ sender: UIButton) {
         viewOrderDetails?()
     }
+    @IBAction func tapChangeOrderStatus(_ sender: UIButton) {
+        changeOrderStatus?()
+    }
+    
     
 }
 
 extension CurrentCVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "CurrentTableViewCell", for: indexPath) as! CurrentTableViewCell
+            cell.obj = products[indexPath.row]
+
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.heighttableViewCell.constant = 2 * 105
-    }
     
 }

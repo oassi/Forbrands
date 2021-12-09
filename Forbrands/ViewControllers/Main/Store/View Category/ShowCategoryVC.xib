@@ -17,7 +17,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowCategoryVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
+                <outlet property="appProdcut" destination="aRN-Kb-cUH" id="7lX-ba-waT"/>
                 <outlet property="collectionview" destination="VX6-GO-atT" id="lrN-Bz-mec"/>
+                <outlet property="img" destination="Glj-Pc-E8y" id="hul-0a-G2s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

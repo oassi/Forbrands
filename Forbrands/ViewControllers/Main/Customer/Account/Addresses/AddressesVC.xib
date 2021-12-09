@@ -13,9 +13,6 @@
         <array key="Cairo-SemiBold.ttf">
             <string>Cairo-SemiBold</string>
         </array>
-        <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
-            <string>DINNextLTArabic-Regular</string>
-        </array>
         <array key="din-next-lt-w23-regular.ttf">
             <string>DINNextLTW23-Regular</string>
         </array>
@@ -132,7 +129,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="48" id="aAn-9U-ywW"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                             <state key="normal" title="save">
                                 <color key="titleColor" name="white"/>
                             </state>

@@ -21,4 +21,13 @@ target 'Forbrands' do
   pod 'ActionSheetPicker-3.0'
   # Collection View Flow Layout
   pod "AlignedCollectionViewFlowLayout"
+  # FSPagerView
+  pod 'FSPagerView'
+  # Fitted Sheets
+  pod 'FittedSheets'
+  # Alamofire
+  pod 'Alamofire'
+  pod 'PopupDialog'
+  pod 'KRProgressHUD'
+
 end

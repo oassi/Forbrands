@@ -7,13 +7,35 @@
 
 import UIKit
 
-class SearchSellerVC: SuperViewController {
+class SearchSellerVC: SuperViewController, UISearchBarDelegate {
 
     @IBOutlet weak var tableview:UITableView!
+    lazy var searchBars:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 40))
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.registerCell(id: "SearchResultSellerCVC")
+        navButtons()
         // Do any additional setup after loading the view.
+        
+    }
+    
+    private func navButtons(){
+        let navgtion = self.navigationController as! CustomNavigationBar
+        navgtion.setCustomBackButtonWithdismiss(sender: self)
+        searchBars.delegate = self
+        searchBars.tintColor = .black
+        searchBars.searchTextField.textColor = .black
+        searchBars.showsCancelButton = true
+        searchBars.placeholder = "Search for".localized
+        searchBars.sizeToFit()
+        searchBars.searchTextField.backgroundColor =  UIColor(named: "searchbar")
+        let leftNavBarButton = UIBarButtonItem(customView: searchBars)
+        navgtion.setRightButtons([leftNavBarButton], sender: self)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBars.searchTextField.text = ""
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

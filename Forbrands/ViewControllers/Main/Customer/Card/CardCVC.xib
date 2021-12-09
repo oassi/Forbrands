@@ -34,6 +34,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img2" translatesAutoresizingMaskIntoConstraints="NO" id="8NI-KZ-RJk">
                                         <rect key="frame" x="0.0" y="0.0" width="124" height="123"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="123" id="L0z-9T-uX1"/>
                                             <constraint firstAttribute="width" constant="124" id="v3e-fm-wWM"/>
                                         </constraints>
                                     </imageView>
@@ -43,7 +44,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rPi-vm-XFG">
                                                 <rect key="frame" x="0.0" y="0.0" width="150" height="22"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1N-Xf-ncn">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q1N-Xf-ncn">
                                                         <rect key="frame" x="0.0" y="0.0" width="124" height="22"/>
                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
                                                         <color key="textColor" name="black"/>
@@ -55,10 +56,13 @@
                                                             <constraint firstAttribute="width" constant="26" id="Glu-Eq-N2y"/>
                                                         </constraints>
                                                         <state key="normal" image="trash"/>
+                                                        <connections>
+                                                            <action selector="tapDeleteCard:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YgU-Yd-SvR"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Va-ku-9ba">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Va-ku-9ba">
                                                 <rect key="frame" x="0.0" y="32" width="150" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
                                                 <color key="textColor" name="black"/>
@@ -79,8 +83,11 @@
                                                                             <constraint firstAttribute="width" constant="24" id="XyK-lI-mMp"/>
                                                                         </constraints>
                                                                         <state key="normal" image="pluse"/>
+                                                                        <connections>
+                                                                            <action selector="tappPlusCount:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="SOO-Hu-kgW"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="264" verticalHuggingPriority="264" horizontalCompressionResistancePriority="757" verticalCompressionResistancePriority="752" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyR-JR-sdx">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="264" verticalHuggingPriority="264" horizontalCompressionResistancePriority="757" verticalCompressionResistancePriority="752" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZyR-JR-sdx">
                                                                         <rect key="frame" x="31" y="23" width="7.5" height="15.5"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
                                                                         <color key="textColor" name="black"/>
@@ -92,6 +99,9 @@
                                                                             <constraint firstAttribute="width" constant="24" id="Yxi-nE-rHS"/>
                                                                         </constraints>
                                                                         <state key="normal" image="minus"/>
+                                                                        <connections>
+                                                                            <action selector="tappMinCount:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ou5-l1-vqX"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -128,6 +138,9 @@
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                 <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="SAR"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
@@ -145,6 +158,9 @@
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                 <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="SAR"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
@@ -219,6 +235,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="img" destination="8NI-KZ-RJk" id="8ku-zV-E9V"/>
+                <outlet property="lblCount" destination="ZyR-JR-sdx" id="hxZ-Ck-K5s"/>
+                <outlet property="lblDescrption" destination="6Va-ku-9ba" id="omF-hu-CjS"/>
+                <outlet property="lblDiscountPrice" destination="T6l-x3-yTI" id="bRa-F0-zUL"/>
+                <outlet property="lblPrice" destination="BSx-e3-gZm" id="uhJ-9N-wzn"/>
+                <outlet property="lblTitle" destination="Q1N-Xf-ncn" id="HNU-pr-Int"/>
+            </connections>
             <point key="canvasLocation" x="58.695652173913047" y="88.058035714285708"/>
         </tableViewCell>
     </objects>

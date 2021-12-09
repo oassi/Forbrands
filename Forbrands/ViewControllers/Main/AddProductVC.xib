@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
-            <string>DINNextLTArabic-Regular</string>
-        </array>
         <array key="din-next-lt-w23-regular.ttf">
             <string>DINNextLTW23-Regular</string>
         </array>
@@ -20,10 +17,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddProductVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
+                <outlet property="addProductBut" destination="GMU-lg-fhT" id="GzO-aN-i12"/>
                 <outlet property="collectionView1" destination="WMs-uV-tGB" id="DdM-ck-di7"/>
                 <outlet property="collectionView2" destination="bfR-af-VPf" id="mj7-aN-XD5"/>
                 <outlet property="heighttableViewSearch" destination="73c-IH-euW" id="HGc-lg-8G0"/>
                 <outlet property="lblCategory" destination="g7P-8V-lQr" id="XGa-tA-twC"/>
+                <outlet property="lblOption" destination="d8u-2b-m98" id="csL-cp-cz0"/>
                 <outlet property="lblPrice" destination="eEC-uP-Krv" id="qvT-CT-NbO"/>
                 <outlet property="lblPriceDiscount" destination="dKY-zK-hyd" id="24L-Dh-CGt"/>
                 <outlet property="lblProductDetailsArabic" destination="BqT-2E-Psv" id="kTC-qS-tCN"/>
@@ -49,7 +48,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-Bj-hWE">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictures" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nil-9V-wyJ">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pictures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nil-9V-wyJ">
                                             <rect key="frame" x="20" y="10" width="394" height="24"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="24" id="4K6-WN-y8K"/>
@@ -101,7 +100,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qfh-X8-Qnv">
                                     <rect key="frame" x="20" y="225" width="374" height="1312.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rev-vE-3XC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rev-vE-3XC">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                             <color key="textColor" name="alert"/>
@@ -126,10 +125,10 @@
                                                     <rect key="frame" x="0.0" y="39.5" width="374" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4bE-Cr-sN2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                            <rect key="frame" x="10" y="0.0" width="354" height="48"/>
                                                             <subviews>
                                                                 <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g7P-8V-lQr">
-                                                                    <rect key="frame" x="8" y="0.0" width="334" height="48"/>
+                                                                    <rect key="frame" x="8" y="0.0" width="314" height="48"/>
                                                                     <color key="textColor" name="black"/>
                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                                     <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
@@ -138,7 +137,7 @@
                                                                     </userDefinedRuntimeAttributes>
                                                                 </textField>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downArrow" translatesAutoresizingMaskIntoConstraints="NO" id="aVJ-HG-RbH">
-                                                                    <rect key="frame" x="352" y="0.0" width="14" height="48"/>
+                                                                    <rect key="frame" x="332" y="0.0" width="14" height="48"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="48" id="Tkk-ut-UtI"/>
                                                                     </constraints>
@@ -157,11 +156,11 @@
                                                     <constraints>
                                                         <constraint firstItem="oIr-ZL-fKD" firstAttribute="leading" secondItem="gWQ-YG-tnX" secondAttribute="leading" id="1XI-cK-GGn"/>
                                                         <constraint firstAttribute="bottom" secondItem="oIr-ZL-fKD" secondAttribute="bottom" id="2If-m0-wU5"/>
-                                                        <constraint firstAttribute="trailing" secondItem="4bE-Cr-sN2" secondAttribute="trailing" id="K8C-Lj-APc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="4bE-Cr-sN2" secondAttribute="trailing" constant="10" id="K8C-Lj-APc"/>
                                                         <constraint firstAttribute="height" constant="48" id="TNb-n0-kkz"/>
                                                         <constraint firstAttribute="bottom" secondItem="4bE-Cr-sN2" secondAttribute="bottom" id="Usj-LS-v2d"/>
                                                         <constraint firstItem="4bE-Cr-sN2" firstAttribute="top" secondItem="gWQ-YG-tnX" secondAttribute="top" id="gO4-GS-T9y"/>
-                                                        <constraint firstItem="4bE-Cr-sN2" firstAttribute="leading" secondItem="gWQ-YG-tnX" secondAttribute="leading" id="kI9-Rw-m3k"/>
+                                                        <constraint firstItem="4bE-Cr-sN2" firstAttribute="leading" secondItem="gWQ-YG-tnX" secondAttribute="leading" constant="10" id="kI9-Rw-m3k"/>
                                                         <constraint firstAttribute="trailing" secondItem="oIr-ZL-fKD" secondAttribute="trailing" id="tGg-ou-u2F"/>
                                                         <constraint firstItem="oIr-ZL-fKD" firstAttribute="top" secondItem="gWQ-YG-tnX" secondAttribute="top" id="w8o-rq-Zoc"/>
                                                     </constraints>
@@ -196,7 +195,7 @@
                                                                     </constraints>
                                                                     <color key="textColor" name="black"/>
                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                                 </textField>
                                                             </subviews>
                                                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
@@ -241,7 +240,7 @@
                                                                     </constraints>
                                                                     <color key="textColor" name="black"/>
                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                                                 </textField>
                                                             </subviews>
                                                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
@@ -405,18 +404,18 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwr-ed-uei">
                                                     <rect key="frame" x="0.0" y="39.5" width="374" height="150"/>
                                                     <subviews>
-                                                        <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqT-2E-Psv">
+                                                        <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="BqT-2E-Psv">
                                                             <rect key="frame" x="10" y="5" width="354" height="140"/>
                                                             <color key="backgroundColor" name="grey"/>
                                                             <color key="textColor" name="black"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="-1" id="9IJ-fG-Mrc"/>
                                                             </connections>
                                                         </textView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textCourner" translatesAutoresizingMaskIntoConstraints="NO" id="0rN-kz-DWq">
-                                                            <rect key="frame" x="5" y="126" width="20" height="19"/>
+                                                            <rect key="frame" x="349" y="126" width="20" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="19" id="s2M-cg-mbP"/>
                                                             </constraints>
@@ -425,8 +424,8 @@
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstItem="BqT-2E-Psv" firstAttribute="leading" secondItem="Nwr-ed-uei" secondAttribute="leading" constant="10" id="MpH-E7-bpa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0rN-kz-DWq" secondAttribute="trailing" constant="5" id="PjK-5p-oa3"/>
                                                         <constraint firstAttribute="trailing" secondItem="BqT-2E-Psv" secondAttribute="trailing" constant="10" id="Q2b-EH-fqP"/>
-                                                        <constraint firstItem="0rN-kz-DWq" firstAttribute="leading" secondItem="Nwr-ed-uei" secondAttribute="leading" constant="5" id="QBz-r6-ube"/>
                                                         <constraint firstAttribute="height" constant="150" id="Yle-in-mXR"/>
                                                         <constraint firstAttribute="bottom" secondItem="BqT-2E-Psv" secondAttribute="bottom" constant="5" id="liK-us-g8A"/>
                                                         <constraint firstItem="BqT-2E-Psv" firstAttribute="top" secondItem="Nwr-ed-uei" secondAttribute="top" constant="5" id="xBk-NX-hvf"/>
@@ -456,17 +455,17 @@
                                                     <rect key="frame" x="0.0" y="39.5" width="374" height="150"/>
                                                     <subviews>
                                                         <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTh-Z7-b8M">
-                                                            <rect key="frame" x="10" y="5" width="354" height="140"/>
+                                                            <rect key="frame" x="20" y="5" width="334" height="140"/>
                                                             <color key="backgroundColor" name="grey"/>
                                                             <color key="textColor" name="black"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet" returnKeyType="done"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
                                                                 <outlet property="delegate" destination="-1" id="JRc-QG-Cxe"/>
                                                             </connections>
                                                         </textView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textCourner" translatesAutoresizingMaskIntoConstraints="NO" id="U8x-Yc-O1t">
-                                                            <rect key="frame" x="5" y="126" width="20" height="19"/>
+                                                            <rect key="frame" x="349" y="126" width="20" height="19"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="19" id="uzX-HK-bqj"/>
                                                             </constraints>
@@ -475,12 +474,12 @@
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstItem="sTh-Z7-b8M" firstAttribute="top" secondItem="GBy-C9-qRt" secondAttribute="top" constant="5" id="GCQ-Xo-fFl"/>
-                                                        <constraint firstItem="sTh-Z7-b8M" firstAttribute="leading" secondItem="GBy-C9-qRt" secondAttribute="leading" constant="10" id="QVY-hm-tOQ"/>
+                                                        <constraint firstItem="sTh-Z7-b8M" firstAttribute="leading" secondItem="GBy-C9-qRt" secondAttribute="leading" constant="20" id="QVY-hm-tOQ"/>
                                                         <constraint firstAttribute="height" constant="150" id="QjS-em-LNd"/>
-                                                        <constraint firstAttribute="trailing" secondItem="sTh-Z7-b8M" secondAttribute="trailing" constant="10" id="TBn-4H-dY3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="sTh-Z7-b8M" secondAttribute="trailing" constant="20" id="TBn-4H-dY3"/>
                                                         <constraint firstAttribute="bottom" secondItem="U8x-Yc-O1t" secondAttribute="bottom" constant="5" id="YD6-O4-06z"/>
                                                         <constraint firstAttribute="bottom" secondItem="sTh-Z7-b8M" secondAttribute="bottom" constant="5" id="YK6-5l-RG1"/>
-                                                        <constraint firstItem="U8x-Yc-O1t" firstAttribute="leading" secondItem="GBy-C9-qRt" secondAttribute="leading" constant="5" id="v1V-gb-Aey"/>
+                                                        <constraint firstAttribute="trailing" secondItem="U8x-Yc-O1t" secondAttribute="trailing" constant="5" id="j2N-JD-AQw"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -496,7 +495,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APL-dh-655">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there sizes for the product?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-n5-jB7">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are there sizes for the product?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-n5-jB7">
                                                             <rect key="frame" x="0.0" y="0.0" width="317" height="30"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                                             <color key="textColor" name="black"/>
@@ -512,6 +511,7 @@
                                                                 <constraint firstAttribute="width" constant="57" id="g7g-jB-oYu"/>
                                                                 <constraint firstAttribute="height" constant="30" id="nvj-O9-WCY"/>
                                                             </constraints>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                                             <state key="normal" title="Edit">
                                                                 <color key="titleColor" name="primary"/>
                                                             </state>
@@ -532,7 +532,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="4db-0B-gQZ">
-                                                                    <rect key="frame" x="65" y="0.0" width="244" height="48"/>
+                                                                    <rect key="frame" x="59" y="0.0" width="256" height="48"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImg" translatesAutoresizingMaskIntoConstraints="NO" id="Eiv-Vd-Dfp">
                                                                             <rect key="frame" x="8" y="17" width="26" height="14"/>
@@ -540,22 +540,15 @@
                                                                                 <constraint firstAttribute="height" constant="14" id="hY9-ow-9Lq"/>
                                                                             </constraints>
                                                                         </imageView>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="USR-NU-a9R">
-                                                                            <rect key="frame" x="35" y="14.5" width="201" height="19.5"/>
-                                                                            <attributedString key="attributedText">
-                                                                                <fragment content="If there are sizes click here">
-                                                                                    <attributes>
-                                                                                        <color key="NSColor" name="black"/>
-                                                                                        <font key="NSFont" size="18" name="DINNextLTW23-Regular"/>
-                                                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.90000000000000002" tighteningFactorForTruncation="0.0"/>
-                                                                                    </attributes>
-                                                                                </fragment>
-                                                                            </attributedString>
-                                                                            <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If there are sizes click here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTs-YF-4t9">
+                                                                            <rect key="frame" x="35" y="13.5" width="213" height="21"/>
+                                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                                            <color key="textColor" name="black"/>
+                                                                            <nil key="highlightedColor"/>
                                                                             <userDefinedRuntimeAttributes>
-                                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibPlaceholderLocKey" value="If there are sizes click here"/>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="If there are sizes click here"/>
                                                                             </userDefinedRuntimeAttributes>
-                                                                        </textField>
+                                                                        </label>
                                                                     </subviews>
                                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
                                                                 </stackView>
@@ -613,24 +606,11 @@
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10X-nD-Owv">
                                             <rect key="frame" x="0.0" y="1264.5" width="374" height="48"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uP6-80-NpI">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YL-uQ-tw9">
-                                                            <rect key="frame" x="136" y="0.0" width="102" height="48"/>
-                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                                                            <color key="textColor" name="white"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Add Product"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
-                                                    </subviews>
-                                                </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMU-lg-fhT">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                    <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
-                                                    <state key="normal">
+                                                    <color key="backgroundColor" name="primary"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                    <state key="normal" title="Add Product">
                                                         <color key="titleColor" name="white"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
@@ -641,17 +621,12 @@
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" name="primary"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="GMU-lg-fhT" secondAttribute="bottom" id="0dq-XB-rHe"/>
                                                 <constraint firstAttribute="height" constant="48" id="4n9-2K-taR"/>
-                                                <constraint firstAttribute="bottom" secondItem="uP6-80-NpI" secondAttribute="bottom" id="aC0-9q-1uI"/>
                                                 <constraint firstItem="GMU-lg-fhT" firstAttribute="leading" secondItem="10X-nD-Owv" secondAttribute="leading" id="cAA-a5-nZw"/>
-                                                <constraint firstAttribute="trailing" secondItem="uP6-80-NpI" secondAttribute="trailing" id="hDe-uc-CTe"/>
                                                 <constraint firstAttribute="trailing" secondItem="GMU-lg-fhT" secondAttribute="trailing" id="mAL-jX-RrN"/>
                                                 <constraint firstItem="GMU-lg-fhT" firstAttribute="top" secondItem="10X-nD-Owv" secondAttribute="top" id="vVv-0Z-s9q"/>
-                                                <constraint firstItem="uP6-80-NpI" firstAttribute="top" secondItem="10X-nD-Owv" secondAttribute="top" id="vWZ-1Y-JBz"/>
-                                                <constraint firstItem="uP6-80-NpI" firstAttribute="leading" secondItem="10X-nD-Owv" secondAttribute="leading" id="xRb-zC-DmN"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
@@ -703,9 +678,6 @@
         <image name="textCourner" width="20" height="19"/>
         <namedColor name="alert">
             <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="black">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

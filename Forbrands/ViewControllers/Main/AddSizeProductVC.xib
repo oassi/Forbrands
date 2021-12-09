@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddSizeProductVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
+                <outlet property="addSizeBut" destination="XOE-wo-X7Y" id="WEF-q8-VMb"/>
                 <outlet property="pickerView" destination="wwu-jq-Snd" id="6Su-wI-Ku2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

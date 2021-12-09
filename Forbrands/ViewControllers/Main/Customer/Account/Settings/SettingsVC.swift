@@ -19,6 +19,8 @@ class SettingsVC: SuperViewController {
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setTitle(" ".localized, sender: self, large: false)
         navgtion.setCustomBackButtonForViewController(sender: self)
+        navigationController?.navigationBar.tintColor = getColorApp()
+
     }
 
     @IBAction func tapSettings(_ sender: UIButton) {

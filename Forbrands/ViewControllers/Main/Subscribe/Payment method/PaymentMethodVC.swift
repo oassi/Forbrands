@@ -37,7 +37,7 @@ extension PaymentMethodVC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "PaymentMethodsCell", for: indexPath) as! PaymentMethodsCell
-        cell.lblNamePayment.text = paymentMethods[indexPath.row]
+        cell.lblNamePayment.text = paymentMethods[indexPath.row].localized
         if(selectedID == indexPath.row){
             cell.imgPayment.image = UIImage(named: "fillDot")
         }else{
@@ -51,6 +51,4 @@ extension PaymentMethodVC : UITableViewDelegate,UITableViewDataSource{
         selectedID = indexPath.row
         tableview.reloadData()
     }
-    
-    
 }

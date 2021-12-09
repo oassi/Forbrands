@@ -68,6 +68,9 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tPj-VV-6Fs">
                                 <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
+                                <connections>
+                                    <action selector="tapDeleteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="6qp-2v-Z5v"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

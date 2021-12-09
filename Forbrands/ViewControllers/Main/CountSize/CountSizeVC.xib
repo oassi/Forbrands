@@ -17,7 +17,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountSizeVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
-                <outlet property="tableview" destination="B86-NO-Ypj" id="haC-T7-Amo"/>
+                <outlet property="saveBut" destination="ppf-ga-2Mg" id="5ia-oa-v8N"/>
+                <outlet property="tableview" destination="ZGX-gm-tjf" id="rbr-CE-Wji"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -26,49 +27,60 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B86-NO-Ypj">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZGX-gm-tjf">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" name="background"/>
+                    <view key="tableFooterView" contentMode="scaleToFill" id="9ZO-ck-pXx">
+                        <rect key="frame" x="0.0" y="828" width="414" height="95"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppf-ga-2Mg">
+                                <rect key="frame" x="20" y="30" width="374" height="48"/>
+                                <color key="backgroundColor" name="primary"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="tJw-SC-VIH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                <state key="normal" title="save">
+                                    <color key="titleColor" name="white"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="save"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tapSave:" destination="-1" eventType="touchUpInside" id="Nzl-yN-Jhi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ppf-ga-2Mg" secondAttribute="trailing" constant="20" id="DBb-xS-PGa"/>
+                            <constraint firstItem="ppf-ga-2Mg" firstAttribute="top" secondItem="9ZO-ck-pXx" secondAttribute="top" constant="30" id="Rqd-jJ-buo"/>
+                            <constraint firstItem="ppf-ga-2Mg" firstAttribute="leading" secondItem="9ZO-ck-pXx" secondAttribute="leading" constant="20" id="lWM-Zt-Sjj"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="xEo-m2-FSz"/>
-                        <outlet property="delegate" destination="-1" id="DtU-F0-0xO"/>
+                        <outlet property="dataSource" destination="-1" id="aPY-7o-fav"/>
+                        <outlet property="delegate" destination="-1" id="hD5-18-POC"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qla-Wg-GoQ">
-                    <rect key="frame" x="16" y="784" width="378" height="48"/>
-                    <color key="backgroundColor" name="primary"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="48" id="pZm-XN-RpL"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                    <state key="normal" title="save">
-                        <color key="titleColor" name="white"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="save"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <action selector="tapSave:" destination="-1" eventType="touchUpInside" id="fnF-3z-0eV"/>
-                    </connections>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Qla-Wg-GoQ" secondAttribute="trailing" constant="20" id="01t-xn-RUi"/>
-                <constraint firstItem="Qla-Wg-GoQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="8Zu-6v-5jw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="B86-NO-Ypj" secondAttribute="trailing" id="F06-RS-9J6"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B86-NO-Ypj" secondAttribute="bottom" id="hLo-z3-uHU"/>
-                <constraint firstItem="B86-NO-Ypj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="maK-hr-1dc"/>
-                <constraint firstItem="B86-NO-Ypj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nU5-4s-VV6"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Qla-Wg-GoQ" secondAttribute="bottom" constant="30" id="uo3-RH-W44"/>
+                <constraint firstItem="ZGX-gm-tjf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="MJd-2p-xSR"/>
+                <constraint firstItem="ZGX-gm-tjf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="VQb-yh-gkC"/>
+                <constraint firstAttribute="bottom" secondItem="ZGX-gm-tjf" secondAttribute="bottom" id="cHd-hG-Sa4"/>
+                <constraint firstItem="ZGX-gm-tjf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ll1-pG-syj"/>
             </constraints>
-            <point key="canvasLocation" x="-32" y="55"/>
+            <point key="canvasLocation" x="-33.333333333333336" y="54.910714285714285"/>
         </view>
     </objects>
     <resources>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primary">
             <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

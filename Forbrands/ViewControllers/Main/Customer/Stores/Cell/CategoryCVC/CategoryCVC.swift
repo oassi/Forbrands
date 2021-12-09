@@ -16,5 +16,12 @@ class CategoryCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    var obj : CategoriesHome?{
+        didSet{
+            lblTitle.text = obj?.name ?? ""
+        }
+    }
+    
 
 }

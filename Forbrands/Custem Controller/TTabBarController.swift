@@ -18,15 +18,22 @@ class TTabBarController: UITabBarController {
     
     // Seller
     let vc5 = StoresSellerVC().navigationController()
-    let vc6 = MyOrderVC().navigationController()
+   // let vc6 = MyOrderVC().navigationController()
     let vc7 = MyAccountVC().navigationController()
-//    let vc6 = OrderSellerVC().navigationController()
+    let vc6 = OrderSellerVC().navigationController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationController?.navigationBar.tintColor = getColorApp()
+
         tabBar.backgroundColor = .white
-        tabBar.tintColor = UIColor(named: "primary")
+        if(CurrentUser.typeSelect == userType.Seller){
+            tabBar.tintColor = getColorApp()
+
+        }else{
+            tabBar.tintColor = UIColor(named: "primary")
+
+        }
         selectedIndex = 0
         //Customer
         vc1.tabBarItem = UITabBarItem(title: "Home".localized, image: #imageLiteral(resourceName: "home"),  selectedImage: #imageLiteral(resourceName: "homeSelected"))
@@ -38,10 +45,12 @@ class TTabBarController: UITabBarController {
         self.tabBarController?.selectedIndex = 1
         
         // Seller
-        vc5.tabBarItem = UITabBarItem(title: "My Stores".localized, image: #imageLiteral(resourceName: "home"),  selectedImage: #imageLiteral(resourceName: "homeSelected"))
-        vc6.tabBarItem = UITabBarItem(title: "Order".localized, image: #imageLiteral(resourceName: "cart"), selectedImage: #imageLiteral(resourceName: "cartSelected"))
-        vc7.tabBarItem = UITabBarItem(title: "My Account".localized, image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profileSelected"))
-        if(CurrentUser.typeSelect == userType.User){
+        vc5.tabBarItem = UITabBarItem(title: "My Store".localized, image: #imageLiteral(resourceName: "home"),  selectedImage: #imageLiteral(resourceName: "homeSelected").withRenderingMode(.alwaysTemplate).withTintColor(getColorApp()))
+        vc6.tabBarItem = UITabBarItem(title: "Order".localized, image: #imageLiteral(resourceName: "cart"), selectedImage: #imageLiteral(resourceName: "cartSelected").withRenderingMode(.alwaysTemplate).withTintColor(getColorApp()))
+        vc7.tabBarItem = UITabBarItem(title: "My Account".localized, image: #imageLiteral(resourceName: "profile"), selectedImage: #imageLiteral(resourceName: "profileSelected").withRenderingMode(.alwaysTemplate).withTintColor(getColorApp()))
+        
+            
+        if(CurrentUser.typeSelect == userType.User || CurrentUser.typeSelect == userType.Guest){
             viewControllers = [vc1,vc2,vc3,vc4]
         }else{
             viewControllers = [vc5,vc6,vc7]

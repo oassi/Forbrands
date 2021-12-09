@@ -56,13 +56,13 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ovc-sL-DdX">
                                             <rect key="frame" x="0.0" y="526" width="414" height="198"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="My Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTe-aV-hNc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="My Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTe-aV-hNc">
                                                     <rect key="frame" x="20" y="8" width="374" height="19.5"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P95-yG-CGX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P95-yG-CGX">
                                                     <rect key="frame" x="20" y="47.5" width="374" height="16.5"/>
                                                     <string key="text"> إستخدم بروموكود ZXC   وإحصل على
 خصم 30 ريال على جميع العطور</string>
@@ -97,7 +97,7 @@
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-DZ-jcJ">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                                                     <subviews>
-                                                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zxc" placeholder="zxc" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="W1O-YA-jAF">
+                                                                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="zxc" placeholder="zxc" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="W1O-YA-jAF">
                                                                                             <rect key="frame" x="20" y="0.0" width="265" height="48"/>
                                                                                             <constraints>
                                                                                                 <constraint firstAttribute="height" constant="48" id="5Yu-mg-NtT"/>

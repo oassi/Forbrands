@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
-            <string>DINNextLTArabic-Regular</string>
-        </array>
         <array key="din-next-lt-w23-regular.ttf">
             <string>DINNextLTW23-Regular</string>
         </array>
@@ -22,6 +19,7 @@
             <connections>
                 <outlet property="imgAr" destination="bxz-Kt-fdE" id="RXU-11-n9G"/>
                 <outlet property="imgEn" destination="QXL-Iu-JUt" id="7p3-q6-XId"/>
+                <outlet property="saveButton" destination="Hb1-Ag-JmL" id="Qzu-9x-L4x"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,6 +70,7 @@
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedlanguage" translatesAutoresizingMaskIntoConstraints="NO" id="QXL-Iu-JUt">
                                                                     <rect key="frame" x="342" y="12" width="24" height="24"/>
+                                                                    <color key="tintColor" name="primary"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="24" id="7Gq-zw-ZHX"/>
                                                                         <constraint firstAttribute="height" constant="24" id="srx-sP-rxU"/>
@@ -123,6 +122,7 @@
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkedlanguage" translatesAutoresizingMaskIntoConstraints="NO" id="bxz-Kt-fdE">
                                                                     <rect key="frame" x="342" y="12" width="24" height="24"/>
+                                                                    <color key="tintColor" name="primary"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="24" id="RvJ-DB-R15"/>
                                                                         <constraint firstAttribute="height" constant="24" id="UDR-Ic-SWL"/>
@@ -156,45 +156,28 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d1G-7D-gl2">
                                                     <rect key="frame" x="0.0" y="157" width="374" height="48"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="R8A-1a-tFy">
-                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                            <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="save" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCz-mW-1Em">
-                                                                    <rect key="frame" x="168.5" y="0.0" width="37.5" height="48"/>
-                                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
-                                                                    <color key="textColor" name="white"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="save"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hb1-Ag-JmL">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                            <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
-                                                            <state key="normal">
+                                                            <color key="backgroundColor" name="primary"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                            <state key="normal" title="save">
                                                                 <color key="titleColor" name="white"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="save"/>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
                                                                 <action selector="tapSave:" destination="-1" eventType="touchUpInside" id="AX2-Gc-tCk"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" name="primary"/>
                                                     <constraints>
                                                         <constraint firstItem="Hb1-Ag-JmL" firstAttribute="top" secondItem="d1G-7D-gl2" secondAttribute="top" id="9dQ-mF-dKK"/>
                                                         <constraint firstAttribute="bottom" secondItem="Hb1-Ag-JmL" secondAttribute="bottom" id="Ce0-t0-b6g"/>
-                                                        <constraint firstItem="R8A-1a-tFy" firstAttribute="leading" secondItem="d1G-7D-gl2" secondAttribute="leading" id="CwI-Fy-b6M"/>
                                                         <constraint firstAttribute="trailing" secondItem="Hb1-Ag-JmL" secondAttribute="trailing" id="HAV-iR-Z48"/>
                                                         <constraint firstItem="Hb1-Ag-JmL" firstAttribute="leading" secondItem="d1G-7D-gl2" secondAttribute="leading" id="IHi-vn-zqR"/>
                                                         <constraint firstAttribute="height" constant="48" id="ITG-lV-CpN"/>
-                                                        <constraint firstAttribute="trailing" secondItem="R8A-1a-tFy" secondAttribute="trailing" id="Oy9-f2-2An"/>
-                                                        <constraint firstItem="R8A-1a-tFy" firstAttribute="top" secondItem="d1G-7D-gl2" secondAttribute="top" id="eVK-0P-h4j"/>
-                                                        <constraint firstAttribute="bottom" secondItem="R8A-1a-tFy" secondAttribute="bottom" id="l5c-9B-hxs"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>

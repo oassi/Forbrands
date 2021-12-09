@@ -1,12 +1,21 @@
 PODS:
   - ActionSheetPicker-3.0 (2.7.1)
+  - Alamofire (5.4.3)
   - AlignedCollectionViewFlowLayout (1.1.2)
   - BRYXBanner (0.8.4)
   - Cosmos (23.0.0)
+  - DynamicBlurView (4.1.0)
+  - FittedSheets (2.4.2)
   - FlagPhoneNumber (0.8.0):
     - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
   - FlagPhoneNumber/libPhoneNumberiOS (0.8.0)
+  - FSPagerView (0.8.3)
   - IQKeyboardManagerSwift (6.5.6)
+  - KRActivityIndicatorView (3.0.7)
+  - KRProgressHUD (3.4.7):
+    - KRActivityIndicatorView (= 3.0.7)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -14,35 +23,54 @@ PODS:
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - Alamofire
   - AlignedCollectionViewFlowLayout
   - BRYXBanner
   - Cosmos
+  - FittedSheets
   - FlagPhoneNumber
+  - FSPagerView
   - IQKeyboardManagerSwift
+  - KRProgressHUD
+  - PopupDialog
   - SDWebImage
   - VKPinCodeView
 
 SPEC REPOS:
   trunk:
     - ActionSheetPicker-3.0
+    - Alamofire
     - AlignedCollectionViewFlowLayout
     - BRYXBanner
     - Cosmos
+    - DynamicBlurView
+    - FittedSheets
     - FlagPhoneNumber
+    - FSPagerView
     - IQKeyboardManagerSwift
+    - KRActivityIndicatorView
+    - KRProgressHUD
+    - PopupDialog
     - SDWebImage
     - VKPinCodeView
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 36da254b97a09ff89679ecb8b8510bd3e5bdc773
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AlignedCollectionViewFlowLayout: ee2ef451e741ec08f8e0967d828001e2f051c20a
   BRYXBanner: 4fbd266f96ce000e4c6cc9a0558c446bd88d9801
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
   FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  KRActivityIndicatorView: ad69e89c4ce40c986cf580595be4829dcad0e35a
+  KRProgressHUD: a248f0bc6c9c2aed40a37b76e03ffecc7f85c887
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   VKPinCodeView: 8d711959a080fec9e6aac165f7225d55b54a24ae
 
-PODFILE CHECKSUM: 539f43c9abaa8165776582442d0939e39ff6668c
+PODFILE CHECKSUM: 0cccf630c2c165cc569262b81cf2c2beb7d8985c
 
 COCOAPODS: 1.10.1

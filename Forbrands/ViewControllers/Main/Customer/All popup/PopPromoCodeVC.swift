@@ -14,16 +14,21 @@ class PopPromoCodeVC: UIViewController {
     @IBOutlet weak var lblIsErrorPromoCode:UILabel!
     @IBOutlet weak var viewDescount:UIStackView!
     
+
+    var delegetPromocode : ((String)->())!
     override func viewDidLoad() {
         super.viewDidLoad()
       
         // Do any additional setup after loading the view.
     }
   
+    
     @IBAction func tapSave (_ sender : UIButton){
-     dismiss(animated: true, completion: nil)
+        delegetPromocode?(lblPromeCode.text!)
+        dismiss(animated: true, completion: nil)
     
     }
+  
 
 
 }

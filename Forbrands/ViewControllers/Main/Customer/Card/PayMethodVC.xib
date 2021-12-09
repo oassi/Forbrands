@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="din-next-lt-w23-regular.ttf">
+            <string>DINNextLTW23-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PayMethodVC" customModule="Forbrands" customModuleProvider="target">
+            <connections>
+                <outlet property="saveBut" destination="IMQ-7x-vaV" id="daI-RQ-ldw"/>
+                <outlet property="tableview" destination="HVK-2f-wWO" id="Vtz-nT-D4n"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HVK-2f-wWO">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                    <color key="backgroundColor" name="white"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="20"/>
+                    <view key="tableHeaderView" contentMode="scaleToFill" id="qBo-UG-lSi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment methods" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B3z-3w-xhz">
+                                <rect key="frame" x="20" y="0.0" width="374" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="uyb-st-Sm3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="26"/>
+                                <color key="textColor" name="black"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Payment methods"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="B3z-3w-xhz" secondAttribute="trailing" constant="20" id="Ksj-vr-hoN"/>
+                            <constraint firstItem="B3z-3w-xhz" firstAttribute="top" secondItem="qBo-UG-lSi" secondAttribute="top" id="Sxd-3r-zVg"/>
+                            <constraint firstItem="B3z-3w-xhz" firstAttribute="leading" secondItem="qBo-UG-lSi" secondAttribute="leading" constant="20" id="dVx-aC-9tg"/>
+                            <constraint firstAttribute="bottom" secondItem="B3z-3w-xhz" secondAttribute="bottom" id="shN-ae-z2z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="o51-Gj-5Fs"/>
+                        <outlet property="delegate" destination="-1" id="N6a-LU-TBG"/>
+                    </connections>
+                </tableView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVu-6H-gRg">
+                    <rect key="frame" x="20" y="774" width="374" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMQ-7x-vaV">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                            <color key="backgroundColor" name="primary"/>
+                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                            <state key="normal" title="Confirm">
+                                <color key="titleColor" name="white"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Confirm"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="tapSave:" destination="-1" eventType="touchUpInside" id="dYZ-mP-Ruy"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="IMQ-7x-vaV" secondAttribute="bottom" id="2Ij-sp-3nT"/>
+                        <constraint firstAttribute="trailing" secondItem="IMQ-7x-vaV" secondAttribute="trailing" id="3S7-AN-h6p"/>
+                        <constraint firstItem="IMQ-7x-vaV" firstAttribute="leading" secondItem="YVu-6H-gRg" secondAttribute="leading" id="OPO-fa-mCL"/>
+                        <constraint firstItem="IMQ-7x-vaV" firstAttribute="top" secondItem="YVu-6H-gRg" secondAttribute="top" id="oay-3W-ijg"/>
+                        <constraint firstAttribute="height" constant="48" id="zqc-zc-FpK"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="HVK-2f-wWO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="1rS-X3-L5n"/>
+                <constraint firstAttribute="bottom" secondItem="HVK-2f-wWO" secondAttribute="bottom" id="JYv-vb-CaP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YVu-6H-gRg" secondAttribute="bottom" constant="40" id="QU2-a0-q26"/>
+                <constraint firstItem="YVu-6H-gRg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cBA-dl-VdB"/>
+                <constraint firstItem="HVK-2f-wWO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fwW-WJ-WwB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YVu-6H-gRg" secondAttribute="trailing" constant="20" id="lDU-Zn-7eE"/>
+                <constraint firstItem="HVK-2f-wWO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="viI-FE-yhM"/>
+            </constraints>
+            <point key="canvasLocation" x="34.782608695652179" y="45.535714285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

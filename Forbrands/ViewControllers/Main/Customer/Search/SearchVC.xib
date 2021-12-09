@@ -43,7 +43,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="SRj-Kz-XcP" secondAttribute="bottom" id="Rss-1C-4Zh"/>
                             <constraint firstItem="SRj-Kz-XcP" firstAttribute="top" secondItem="Jyc-t6-EN2" secondAttribute="top" id="XTU-qx-rgk"/>
@@ -69,6 +69,9 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

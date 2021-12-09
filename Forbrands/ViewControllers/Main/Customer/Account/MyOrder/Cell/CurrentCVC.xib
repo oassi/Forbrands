@@ -11,8 +11,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="alfont_com_AlFont_com_DINNextLTArabic-Regular-4.ttf">
-            <string>DINNextLTArabic-Regular</string>
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
         </array>
         <array key="din-next-lt-w23-regular.ttf">
             <string>DINNextLTW23-Regular</string>
@@ -43,7 +43,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zw5-X8-fBV">
                                                         <rect key="frame" x="8" y="0.0" width="277" height="16.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" text="Order number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mx-gF-hCj">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" text="Order number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Mx-gF-hCj">
                                                                 <rect key="frame" x="0.0" y="1.5" width="75" height="14"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                 <color key="textColor" name="black"/>
@@ -107,6 +107,9 @@
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                 <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Underway"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
@@ -125,6 +128,9 @@
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                 <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Charging"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
@@ -138,11 +144,14 @@
                                                                                     <constraint firstAttribute="width" constant="18" id="Uhs-vu-Ueg"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="تم الإستلام" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUm-Qx-KNo">
-                                                                                <rect key="frame" x="16.5" y="26" width="46" height="24"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="Received" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUm-Qx-KNo">
+                                                                                <rect key="frame" x="14.5" y="26" width="50" height="24"/>
                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                 <color key="textColor" name="black"/>
                                                                                 <nil key="highlightedColor"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Received"/>
+                                                                                </userDefinedRuntimeAttributes>
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
@@ -191,29 +200,16 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rGo-2O-aAr">
                                                                 <rect key="frame" x="190.5" y="0.0" width="86.5" height="37.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRW-eK-iCY">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRW-eK-iCY">
                                                                         <rect key="frame" x="37.5" y="0.0" width="11.5" height="23.5"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment content="0">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" name="black"/>
-                                                                                    <font key="NSFont" size="20" name="Roboto-Regular"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                        <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
+                                                                        <color key="textColor" name="black"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuv-18-gah">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" text="SAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuv-18-gah">
                                                                         <rect key="frame" x="31.5" y="23.5" width="24" height="14"/>
-                                                                        <attributedString key="attributedText">
-                                                                            <fragment content="SAR">
-                                                                                <attributes>
-                                                                                    <color key="NSColor" name="black"/>
-                                                                                    <font key="NSFont" size="12" name="DINNextLTW23-Regular"/>
-                                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                                </attributes>
-                                                                            </fragment>
-                                                                        </attributedString>
+                                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
+                                                                        <color key="textColor" name="black"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="SAR"/>
@@ -226,7 +222,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="752" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aUj-gd-yY4">
                                                         <rect key="frame" x="8" y="289" width="277" height="14"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="Expected delivery date :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7J-2X-QbC">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="255" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="Expected delivery date :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7J-2X-QbC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="129.5" height="14"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                 <color key="textColor" name="black"/>
@@ -236,13 +232,7 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" text="السبت" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjV-hP-V8L">
-                                                                <rect key="frame" x="139.5" y="0.0" width="26.5" height="14"/>
-                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
-                                                                <color key="textColor" name="primary"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="755" text="2020\12\09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c35-9h-InJ">
-                                                                <rect key="frame" x="176" y="0.0" width="101" height="14"/>
+                                                                <rect key="frame" x="139.5" y="0.0" width="137.5" height="14"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                 <color key="textColor" name="primary"/>
                                                                 <nil key="highlightedColor"/>
@@ -268,9 +258,9 @@
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="UQa-jB-PHR">
                                                                 <rect key="frame" x="10" y="0.0" width="273" height="48"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View order details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qq-BX-eMj">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View order details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qq-BX-eMj">
                                                                         <rect key="frame" x="0.0" y="13.5" width="219" height="21"/>
-                                                                        <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                                                                        <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                                         <color key="textColor" name="primary"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -339,6 +329,9 @@
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="View order details"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapViewOrderDetails:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="TRg-YJ-0jx"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRH-jk-JHv">
                                                                         <rect key="frame" x="146.5" y="0.0" width="146.5" height="48"/>
@@ -350,6 +343,9 @@
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Change order status"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="tapChangeOrderStatus:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="p0R-Yc-XH3"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -420,10 +416,13 @@
                 <outlet property="imgReceived" destination="6xK-Rk-Kbd" id="KHt-MD-ECJ"/>
                 <outlet property="imgUnderway" destination="g4u-lT-DF6" id="SzY-di-6te"/>
                 <outlet property="lblDay" destination="SjV-hP-V8L" id="LaF-5g-AZc"/>
-                <outlet property="lblExpectedDeliveryDate" destination="c35-9h-InJ" id="nL9-Yz-Wkx"/>
                 <outlet property="lblOrderDate" destination="eC5-H8-sBY" id="V2s-Fa-M12"/>
                 <outlet property="lblOrderNumber" destination="V4v-v3-yZy" id="8cj-U5-UF8"/>
+                <outlet property="lblUnderway" destination="g8q-bw-920" id="c0g-8P-sYY"/>
                 <outlet property="tableview" destination="teb-uw-BWW" id="wvO-QQ-SqP"/>
+                <outlet property="viewDetailsIsSeller" destination="0b9-HL-VGn" id="zGG-ry-d6X"/>
+                <outlet property="viewDetailsIsUser" destination="qMW-4N-ko8" id="7Ev-ca-F2r"/>
+                <outlet property="viewOrderDetailsBut" destination="4lW-0y-fxe" id="RYf-1b-Zfs"/>
                 <outlet property="viewReceived" destination="XmU-RX-2Fi" id="Cil-Y4-K9M"/>
                 <outlet property="viewUnderway" destination="IZQ-bV-MmR" id="GoB-vx-Z7H"/>
             </connections>
@@ -438,9 +437,6 @@
         </namedColor>
         <namedColor name="background">
             <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="black">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

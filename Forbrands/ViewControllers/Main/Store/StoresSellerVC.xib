@@ -17,7 +17,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoresSellerVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
+                <outlet property="appProdcut" destination="xVl-NH-H1E" id="37P-o3-tTY"/>
                 <outlet property="collectionview" destination="ZNy-uq-iuX" id="5fk-jD-B1e"/>
+                <outlet property="img" destination="ESg-nw-sJc" id="6hO-H7-wAp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

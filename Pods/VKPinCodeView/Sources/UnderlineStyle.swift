@@ -27,13 +27,14 @@ public final class UnderlineStyle: EntryViewStyle {
     private var _errorLineColor: UIColor
 
 
+    @available(iOS 11.0, *)
     public required init(
         font: UIFont = UIFont.systemFont(ofSize: 22),
-        textColor: UIColor = .black,
+        textColor: UIColor = UIColor(named: "primary") ?? #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1),
         errorTextColor: UIColor = .red,
         lineColor: UIColor = UIColor(white: 0.9, alpha: 1),
-        selectedLineColor: UIColor = .lightGray,
-        lineWidth: CGFloat = 1,
+        selectedLineColor: UIColor = .black,
+        lineWidth: CGFloat = 1.5,
         errorLineColor: UIColor = .red) {
 
         _font = font

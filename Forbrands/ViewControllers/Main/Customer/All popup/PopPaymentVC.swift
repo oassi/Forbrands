@@ -10,8 +10,9 @@ import UIKit
 class PopPaymentVC: UIViewController {
     @IBOutlet weak var tableview:UITableView!
     @IBOutlet var heighttableViewCell: NSLayoutConstraint!
-    var paymentMethods = ["Pay when receiving","Pay by mada","STC Pay","Master Card","Visa"]
+    var paymentMethods = ["Pay when receiving","Tabby Pay","STC Pay","Master Card","Visa"]
     var selectedID = 0
+    var paySelected : ((Int)->())?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.registerCell(id: "PaymentMethodsCell")
@@ -22,7 +23,9 @@ class PopPaymentVC: UIViewController {
     }
     
     @IBAction func tapSave (_ sender : UIButton){
-       dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+        paySelected?(selectedID)
+        
     }
 
 }

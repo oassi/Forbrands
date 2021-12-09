@@ -24,6 +24,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
                 <outlet property="lblFullName" destination="LlG-c6-ug3" id="J5V-Mc-uhl"/>
+                <outlet property="loginButton" destination="dFl-wK-cJd" id="HUa-tl-0gF"/>
+                <outlet property="phoneTF" destination="YAh-nF-qNc" id="hEa-sv-AdU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,10 +38,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzB-4V-IGJ">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="712"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="562"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="400" translatesAutoresizingMaskIntoConstraints="NO" id="Vco-s6-4vr">
-                                    <rect key="frame" x="20" y="0.0" width="374" height="682"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="250" translatesAutoresizingMaskIntoConstraints="NO" id="Vco-s6-4vr">
+                                    <rect key="frame" x="20" y="0.0" width="374" height="532"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OvK-R7-cQP">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="234"/>
@@ -67,16 +69,19 @@
                                                             <rect key="frame" x="0.0" y="39" width="374" height="48"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vb2-nf-iTY">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                                    <rect key="frame" x="10" y="0.0" width="354" height="48"/>
                                                                     <subviews>
                                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LlG-c6-ug3">
-                                                                            <rect key="frame" x="8" y="0.0" width="358" height="48"/>
+                                                                            <rect key="frame" x="8" y="0.0" width="338" height="48"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="48" id="WUs-4O-iBc"/>
                                                                             </constraints>
                                                                             <color key="textColor" name="black"/>
                                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                                             <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
+                                                                            <userDefinedRuntimeAttributes>
+                                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibPlaceholderLocKey" value="Full Name"/>
+                                                                            </userDefinedRuntimeAttributes>
                                                                         </textField>
                                                                     </subviews>
                                                                     <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
@@ -85,8 +90,8 @@
                                                             <color key="backgroundColor" name="grey"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="73J-sl-TEz"/>
-                                                                <constraint firstAttribute="trailing" secondItem="vb2-nf-iTY" secondAttribute="trailing" id="g34-Qt-7B1"/>
-                                                                <constraint firstItem="vb2-nf-iTY" firstAttribute="leading" secondItem="5Ca-Ix-nI4" secondAttribute="leading" id="txV-iJ-d4N"/>
+                                                                <constraint firstAttribute="trailing" secondItem="vb2-nf-iTY" secondAttribute="trailing" constant="10" id="g34-Qt-7B1"/>
+                                                                <constraint firstItem="vb2-nf-iTY" firstAttribute="leading" secondItem="5Ca-Ix-nI4" secondAttribute="leading" constant="10" id="txV-iJ-d4N"/>
                                                                 <constraint firstItem="vb2-nf-iTY" firstAttribute="top" secondItem="5Ca-Ix-nI4" secondAttribute="top" id="wAm-MU-fIN"/>
                                                                 <constraint firstAttribute="bottom" secondItem="vb2-nf-iTY" secondAttribute="bottom" id="zIF-cp-kLx"/>
                                                             </constraints>
@@ -108,32 +113,23 @@
                                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Mobile"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="axI-Lt-nKb">
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1t-9h-q5d">
                                                             <rect key="frame" x="0.0" y="39" width="374" height="48"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h7P-Un-F31">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                                    <subviews>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00000000" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y3Y-sm-Mfj">
-                                                                            <rect key="frame" x="8" y="0.0" width="358" height="48"/>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="48" id="aPP-dC-cra"/>
-                                                                            </constraints>
-                                                                            <color key="textColor" name="black"/>
-                                                                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
-                                                                            <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" returnKeyType="done"/>
-                                                                        </textField>
-                                                                    </subviews>
-                                                                    <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
-                                                                </stackView>
+                                                                <textField opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAh-nF-qNc" customClass="FPNTextField" customModule="FlagPhoneNumber">
+                                                                    <rect key="frame" x="10" y="0.0" width="354" height="48"/>
+                                                                    <color key="textColor" name="black"/>
+                                                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
                                                             </subviews>
                                                             <color key="backgroundColor" name="grey"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="48" id="5rP-l0-qRH"/>
-                                                                <constraint firstItem="h7P-Un-F31" firstAttribute="top" secondItem="axI-Lt-nKb" secondAttribute="top" id="6IA-qk-xvM"/>
-                                                                <constraint firstAttribute="bottom" secondItem="h7P-Un-F31" secondAttribute="bottom" id="Ekj-8A-aT0"/>
-                                                                <constraint firstAttribute="trailing" secondItem="h7P-Un-F31" secondAttribute="trailing" id="VRE-VO-OAr"/>
-                                                                <constraint firstItem="h7P-Un-F31" firstAttribute="leading" secondItem="axI-Lt-nKb" secondAttribute="leading" id="XOs-2W-uNg"/>
+                                                                <constraint firstAttribute="height" constant="48" id="0bR-9G-j5h"/>
+                                                                <constraint firstItem="YAh-nF-qNc" firstAttribute="top" secondItem="Y1t-9h-q5d" secondAttribute="top" id="bYj-DJ-rar"/>
+                                                                <constraint firstAttribute="bottom" secondItem="YAh-nF-qNc" secondAttribute="bottom" id="mTJ-r9-stc"/>
+                                                                <constraint firstItem="YAh-nF-qNc" firstAttribute="leading" secondItem="Y1t-9h-q5d" secondAttribute="leading" constant="10" id="suq-xA-J2V"/>
+                                                                <constraint firstAttribute="trailing" secondItem="YAh-nF-qNc" secondAttribute="trailing" constant="10" id="zRl-IQ-RnB"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
@@ -144,7 +140,7 @@
                                             </subviews>
                                         </stackView>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGd-PT-IWr">
-                                            <rect key="frame" x="0.0" y="634" width="374" height="48"/>
+                                            <rect key="frame" x="0.0" y="484" width="374" height="48"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AAd-pg-1rd">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -224,6 +220,11 @@
             <point key="canvasLocation" x="121.73913043478262" y="94.419642857142847"/>
         </view>
     </objects>
+    <designables>
+        <designable name="YAh-nF-qNc">
+            <size key="intrinsicContentSize" width="56" height="20.5"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

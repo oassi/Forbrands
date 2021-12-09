@@ -23,6 +23,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
+                <outlet property="imgCoverStore" destination="oZg-In-C7F" id="sSA-aw-gnz"/>
                 <outlet property="lblFullName" destination="sPG-qJ-Q13" id="J2y-mu-ecH"/>
                 <outlet property="lblMobile" destination="Fyp-P3-8S5" id="MDn-43-hpD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -54,46 +55,49 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNH-GH-FNa">
                                             <rect key="frame" x="0.0" y="80.5" width="374" height="180"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch1-Zi-nVr">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ch1-Zi-nVr">
                                                     <rect key="frame" x="151" y="54" width="72" height="72"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.checkmark.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oZg-In-C7F">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.badge.checkmark.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oZg-In-C7F">
                                                             <rect key="frame" x="0.0" y="0.0" width="72" height="71.5"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIM-BZ-xzy">
-                                                            <rect key="frame" x="60" y="60" width="24" height="24"/>
-                                                            <color key="backgroundColor" name="primary"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="24" id="9Bc-bp-vgY"/>
-                                                                <constraint firstAttribute="height" constant="24" id="k1I-kY-1af"/>
-                                                            </constraints>
-                                                            <state key="normal" image="editImage"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                            <connections>
-                                                                <action selector="tapEditImgProfile:" destination="-1" eventType="touchUpInside" id="yIC-wo-jO4"/>
-                                                            </connections>
-                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="oZg-In-C7F" firstAttribute="centerY" secondItem="Ch1-Zi-nVr" secondAttribute="centerY" id="Csr-Ee-caN"/>
-                                                        <constraint firstAttribute="trailing" secondItem="AIM-BZ-xzy" secondAttribute="trailing" constant="-12" id="Pf1-QO-ZeP"/>
                                                         <constraint firstItem="oZg-In-C7F" firstAttribute="top" secondItem="Ch1-Zi-nVr" secondAttribute="top" id="VG0-TL-6eu"/>
                                                         <constraint firstAttribute="width" constant="72" id="dl7-8l-DUk"/>
                                                         <constraint firstAttribute="height" constant="72" id="jrx-n8-GpP"/>
                                                         <constraint firstItem="oZg-In-C7F" firstAttribute="centerX" secondItem="Ch1-Zi-nVr" secondAttribute="centerX" id="kEx-KN-WgH"/>
                                                         <constraint firstAttribute="bottom" secondItem="oZg-In-C7F" secondAttribute="bottom" id="nXI-r9-GcR"/>
-                                                        <constraint firstAttribute="bottom" secondItem="AIM-BZ-xzy" secondAttribute="bottom" constant="-12" id="oLa-K6-NnB"/>
                                                         <constraint firstItem="oZg-In-C7F" firstAttribute="leading" secondItem="Ch1-Zi-nVr" secondAttribute="leading" id="y8A-Fg-VTD"/>
                                                         <constraint firstAttribute="trailing" secondItem="oZg-In-C7F" secondAttribute="trailing" id="z8S-lr-yVS"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIM-BZ-xzy">
+                                                    <rect key="frame" x="211" y="114" width="24" height="24"/>
+                                                    <color key="backgroundColor" name="primary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="9Bc-bp-vgY"/>
+                                                        <constraint firstAttribute="height" constant="24" id="k1I-kY-1af"/>
+                                                    </constraints>
+                                                    <state key="normal" image="editImage"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="tapEditImgProfile:" destination="-1" eventType="touchUpInside" id="yIC-wo-jO4"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="Ch1-Zi-nVr" firstAttribute="centerY" secondItem="qNH-GH-FNa" secondAttribute="centerY" id="bMh-ay-dkg"/>
+                                                <constraint firstItem="AIM-BZ-xzy" firstAttribute="bottom" secondItem="Ch1-Zi-nVr" secondAttribute="bottom" constant="12" id="jsG-Jj-Kx2"/>
+                                                <constraint firstItem="AIM-BZ-xzy" firstAttribute="trailing" secondItem="Ch1-Zi-nVr" secondAttribute="trailing" constant="12" id="pO9-wR-8Ux"/>
                                                 <constraint firstAttribute="height" constant="180" id="sZp-Ie-eVa"/>
                                                 <constraint firstItem="Ch1-Zi-nVr" firstAttribute="centerX" secondItem="qNH-GH-FNa" secondAttribute="centerX" id="yH1-ek-Fms"/>
                                             </constraints>
@@ -144,22 +148,25 @@
                                                             <rect key="frame" x="0.0" y="24" width="374" height="48"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ql6-BL-W3q">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                                    <rect key="frame" x="10" y="0.0" width="354" height="48"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yds-H8-kvb">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
                                                                             <subviews>
                                                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="sPG-qJ-Q13">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="48" id="6JP-yT-SFk"/>
                                                                                     </constraints>
                                                                                     <color key="textColor" name="black"/>
                                                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                                                     <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
+                                                                                    <userDefinedRuntimeAttributes>
+                                                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibPlaceholderLocKey" value="Full Name"/>
+                                                                                    </userDefinedRuntimeAttributes>
                                                                                 </textField>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DAL-nc-1Dw">
-                                                                                    <rect key="frame" x="0.0" y="47" width="374" height="1"/>
+                                                                                    <rect key="frame" x="0.0" y="47" width="354" height="1"/>
                                                                                     <color key="backgroundColor" name="grey"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="1" id="Lgw-6P-eUF"/>
@@ -183,8 +190,8 @@
                                                             <color key="backgroundColor" name="white"/>
                                                             <constraints>
                                                                 <constraint firstItem="Ql6-BL-W3q" firstAttribute="top" secondItem="iEU-DU-uXz" secondAttribute="top" id="3g3-xj-YWc"/>
-                                                                <constraint firstItem="Ql6-BL-W3q" firstAttribute="leading" secondItem="iEU-DU-uXz" secondAttribute="leading" id="WUj-cY-ZyJ"/>
-                                                                <constraint firstAttribute="trailing" secondItem="Ql6-BL-W3q" secondAttribute="trailing" id="lnI-4F-kQg"/>
+                                                                <constraint firstItem="Ql6-BL-W3q" firstAttribute="leading" secondItem="iEU-DU-uXz" secondAttribute="leading" constant="10" id="WUj-cY-ZyJ"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Ql6-BL-W3q" secondAttribute="trailing" constant="10" id="lnI-4F-kQg"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Ql6-BL-W3q" secondAttribute="bottom" id="x5X-kf-Ftn"/>
                                                                 <constraint firstAttribute="height" constant="48" id="yLN-IX-uuW"/>
                                                             </constraints>
@@ -210,13 +217,13 @@
                                                             <rect key="frame" x="0.0" y="24" width="374" height="48"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Cc9-ZQ-7d2">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                                    <rect key="frame" x="10" y="0.0" width="354" height="48"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7gV-in-Kmy">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
                                                                             <subviews>
-                                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00000000" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fyp-P3-8S5">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="00000000" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Fyp-P3-8S5">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="48"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="48" id="F1v-6J-Tbe"/>
                                                                                     </constraints>
@@ -225,7 +232,7 @@
                                                                                     <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="next"/>
                                                                                 </textField>
                                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzP-dg-ey2">
-                                                                                    <rect key="frame" x="0.0" y="47" width="374" height="1"/>
+                                                                                    <rect key="frame" x="0.0" y="47" width="354" height="1"/>
                                                                                     <color key="backgroundColor" name="grey"/>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="1" id="hyJ-aw-Io5"/>
@@ -250,8 +257,8 @@
                                                             <constraints>
                                                                 <constraint firstItem="Cc9-ZQ-7d2" firstAttribute="top" secondItem="LEe-cX-AZW" secondAttribute="top" id="2Ql-cu-FiZ"/>
                                                                 <constraint firstAttribute="bottom" secondItem="Cc9-ZQ-7d2" secondAttribute="bottom" id="4Z1-UA-d9e"/>
-                                                                <constraint firstItem="Cc9-ZQ-7d2" firstAttribute="leading" secondItem="LEe-cX-AZW" secondAttribute="leading" id="DY2-Ca-V7w"/>
-                                                                <constraint firstAttribute="trailing" secondItem="Cc9-ZQ-7d2" secondAttribute="trailing" id="hv7-Zw-1cY"/>
+                                                                <constraint firstItem="Cc9-ZQ-7d2" firstAttribute="leading" secondItem="LEe-cX-AZW" secondAttribute="leading" constant="10" id="DY2-Ca-V7w"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Cc9-ZQ-7d2" secondAttribute="trailing" constant="10" id="hv7-Zw-1cY"/>
                                                                 <constraint firstAttribute="height" constant="48" id="r2I-a0-kKC"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>

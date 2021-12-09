@@ -78,13 +78,13 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qfn-82-BD2">
                                                                         <rect key="frame" x="0.0" y="0.0" width="108" height="35.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="252" horizontalCompressionResistancePriority="240" verticalCompressionResistancePriority="751" text="Mayada" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="JI9-W9-XNV">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="240" verticalHuggingPriority="252" horizontalCompressionResistancePriority="240" verticalCompressionResistancePriority="751" text="Mayada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="JI9-W9-XNV">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="108" height="16.5"/>
                                                                                 <fontDescription key="fontDescription" name="Cairo-Bold" family="Cairo" pointSize="14"/>
                                                                                 <color key="textColor" name="#1B3764"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019\05\28" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6m-RY-egR">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019\05\28" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6m-RY-egR">
                                                                                 <rect key="frame" x="0.0" y="21.5" width="108" height="14"/>
                                                                                 <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="12"/>
                                                                                 <color key="textColor" name="derkGrey"/>
@@ -212,6 +212,11 @@
             <point key="canvasLocation" x="-1" y="55"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="cob-FC-apG">
+            <size key="intrinsicContentSize" width="90" height="14"/>
+        </designable>
+    </designables>
     <resources>
         <image name="emptyStar1" width="14" height="13"/>
         <image name="fillStart" width="33" height="33"/>

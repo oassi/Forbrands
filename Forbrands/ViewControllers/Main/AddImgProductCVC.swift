@@ -9,13 +9,13 @@ import UIKit
 
 class AddImgProductCVC: UICollectionViewCell {
     @IBOutlet weak var img: UIImageView!
-    var addImgDeleget : (() -> ())!
+    var addImgDeleget : ((_ sender: UIButton) -> ())!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     @IBAction func tapDeleteButton(_ sender: UIButton) {
-        addImgDeleget?()
+        addImgDeleget?(sender)
     }
 
 }

@@ -15,5 +15,14 @@ class CategorySellerCVC: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    
+    var obj : CategoriesHome?{
+        didSet{
+            lblTitle.text = obj?.name ?? ""
+            img.sd_custom(url: (obj?.logo ?? ""),defultImage: UIImage(named: "defultImg"))
+
+        }
+    }
 
 }

@@ -13,15 +13,17 @@ class StoresVC: SuperViewController, UISearchBarDelegate, UITextFieldDelegate,UI
     @IBOutlet weak var collectionview2:UICollectionView!
     @IBOutlet weak var scrollView:UIScrollView!
     
+    var categories = [CategoriesHome]()
+    var storesHome = [StoresHome]()
+    
+    
     var searchBar = UISearchBar()
     var searchValue:String?
     var idSelection = 0
     
-    var lest = ["الكل","عطور نسائي","عطور رجالي","معطرات منازل","4","5","6","7","8","9","10"]
-    var lest2 = ["1","2","3","4","5","6","7","8","9","10"]
     
     
-    
+//    StoresHome
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.keyboardDismissMode = .onDrag
@@ -29,6 +31,7 @@ class StoresVC: SuperViewController, UISearchBarDelegate, UITextFieldDelegate,UI
         scrollView.delegate = self
         registerCell()
         navButtons()
+       
         
        // setupNavBar()
         // Do any additional setup after loading the view.
@@ -46,6 +49,9 @@ class StoresVC: SuperViewController, UISearchBarDelegate, UITextFieldDelegate,UI
         navgtion.setLeftsButtons([leftNavBarButton], sender: self)
     }
  
+    override func viewWillAppear(_ animated: Bool) {
+        reloadDate()
+    }
     override func viewWillDisappear(_ animated: Bool) {
         searchBar.endEditing(true)
     }
@@ -56,15 +62,30 @@ class StoresVC: SuperViewController, UISearchBarDelegate, UITextFieldDelegate,UI
         return true
     }
 
+    func reloadDate()  {
+        storesHome.removeAll()
+        categories.removeAll()
+        getStoresHome()
+        getCategories()
+    }
     
+    func reloadStoreDate()  {
+        storesHome.removeAll()
+        getStoresHome()
+    }
 
 
     override func didClickRightButton(_sender: UIBarButtonItem) {
+        guard CurrentUser.typeSelect != userType.Guest else {
+            App.logout(self)
+            return
+        }
         switch _sender.tag {
         case 77:
             let vc:FavoritesVC = FavoritesVC.loadFromNib()
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(vc, animated: true)
+    
         case 66:
             let vc:NotificationsVC = NotificationsVC.loadFromNib()
             vc.modalPresentationStyle = .fullScreen
@@ -81,6 +102,43 @@ class StoresVC: SuperViewController, UISearchBarDelegate, UITextFieldDelegate,UI
         collectionview2.register(nib2, forCellWithReuseIdentifier: "StoresCVC")
     }
     
+    
+    func getStoresHome(){
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.storesList ,isAuthRequired:  false).start(){  (response, error) in
+            do {
+                let Status =  try JSONDecoder().decode(BaseDataArrayResponse<StoresHome>.self, from: response.data!)
+                if Status.code == 200{
+                    guard Status.data != nil else {
+                        return
+                    }
+                    self.storesHome += Status.data!
+                    self.collectionview2.reloadData()
+                }
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
+    }
+    
+    func getCategories(){
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.categoriesList ,isAuthRequired:  false).start(){  (response, error) in
+            do {
+                let Status =  try JSONDecoder().decode(BaseDataArrayResponse<CategoriesHome>.self, from: response.data!)
+                if Status.code == 200{
+                    guard Status.data != nil else {
+                        return
+                    }
+                    self.categories += Status.data!
+                    self.collectionview1.reloadData()
+                }
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
+    }
+    
+    
+    
 }
 
 extension StoresVC: UICollectionViewDelegate,UICollectionViewDataSource{
@@ -88,20 +146,26 @@ extension StoresVC: UICollectionViewDelegate,UICollectionViewDataSource{
    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == collectionview1) {
-            return lest.count
+            return categories.count + 1
         }
         if (collectionView == collectionview2) {
-            return lest2.count
+            return storesHome.count
         }
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(collectionView == collectionview1){
-            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCVC", for: indexPath) as! CategoryCVC
-            cell.lblTitle.text = lest[indexPath.row]
+            let cell :CategoryCVC = collectionView.dequeue(cellForItemAt: indexPath)
             
-           
+            if(indexPath.row == 0){
+                cell.lblTitle.text = "All".localized
+            }
+            else{
+                cell.obj = categories[indexPath.row-1]
+            }
+            
+            
             if (idSelection == indexPath.row){
                 cell.lblTitle.textColor = .white
                 cell.viewCategory.backgroundColor = UIColor(named: "primary")
@@ -114,8 +178,8 @@ extension StoresVC: UICollectionViewDelegate,UICollectionViewDataSource{
             return cell
         }
         if(collectionView == collectionview2){
-            let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "StoresCVC", for: indexPath) as! StoresCVC
-            
+            let cell :StoresCVC = collectionView.dequeue(cellForItemAt: indexPath)
+            cell.obj = storesHome[indexPath.row]
             return cell
         }
         
@@ -125,11 +189,26 @@ extension StoresVC: UICollectionViewDelegate,UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView  == collectionview1) {
             idSelection = indexPath.row
-            collectionview1.reloadData()
+            
+            if(indexPath.row == 0 ){
+                reloadStoreDate()
+                collectionview1.reloadData()
+            }else{
+                collectionview1.reloadData()
+                let vc:CategoriesVC = CategoriesVC.loadFromNib()
+                vc.titleNav = categories[indexPath.row-1].name ?? "Categories"
+                vc.categoryId =  categories[indexPath.row-1].id?.description ?? "0"
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+          
+
         }
         
         if (collectionView  == collectionview2) {
             let vc:MyStoreVC = MyStoreVC.loadFromNib()
+            vc.imgStore = storesHome[indexPath.row].image ?? ""
+            vc.id = storesHome[indexPath.row].id?.description ?? "0"
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.pushViewController(vc, animated: true)
         }
@@ -147,13 +226,18 @@ extension StoresVC: UICollectionViewDelegateFlowLayout{
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         var widths : CGFloat = 80
         if(collectionView == collectionview1){
-            let text = lest[indexPath.item]
+            let text :String
+            if indexPath.row == 0{
+                text = "All".localized
+            }else{
+                text = categories[indexPath.item-1].name?.description ?? ""
+            }
             widths = estimateFrameForText(text).width + 50
             return CGSize(width: widths, height:41)
         }
         if(collectionView == collectionview2){
             let width =  (self.view.frame.size.width - 40)/2
-            return CGSize(width: width, height:190)
+            return CGSize(width: width, height:180)
         }
         return CGSize(width: 0, height: 0)
          

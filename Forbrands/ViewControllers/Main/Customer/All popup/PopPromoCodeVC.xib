@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,93 +30,82 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66B-RF-w2u">
-                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JoN-Qd-VRf">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JoN-Qd-VRf">
-                            <rect key="frame" x="0.0" y="617" width="414" height="235"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-Hz-cbr">
+                            <rect key="frame" x="16" y="0.0" width="382" height="237.5"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2F-en-KWQ">
-                                    <rect key="frame" x="168" y="2" width="78" height="5"/>
-                                    <color key="backgroundColor" name="searchbar"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="78" id="7QF-Q6-xt2"/>
-                                        <constraint firstAttribute="height" constant="5" id="Zif-rx-VXV"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-Hz-cbr">
-                                    <rect key="frame" x="16" y="16" width="382" height="189.5"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMA-9M-EUk">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="237.5"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IMA-9M-EUk">
-                                            <rect key="frame" x="0.0" y="0.0" width="382" height="189.5"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kTG-k0-Jrt">
+                                            <rect key="frame" x="0.0" y="0.0" width="382" height="237.5"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kTG-k0-Jrt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="189.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have a discount code?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzP-Bh-syI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="91.5"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
+                                                    <color key="textColor" name="black"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Do you have a discount code?"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Em4-SW-vhQ">
+                                                    <rect key="frame" x="0.0" y="107.5" width="382" height="66"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have a discount code?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzP-Bh-syI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="43.5"/>
-                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
-                                                            <color key="textColor" name="black"/>
+                                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q25-Hf-CkS">
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sbw-qu-fz6">
+                                                                    <rect key="frame" x="10" y="0.0" width="362" height="48"/>
+                                                                    <subviews>
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="couponFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ia-Kq-8FB">
+                                                                            <rect key="frame" x="0.0" y="16.5" width="23" height="15"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="14.99" id="H19-c7-RA8"/>
+                                                                                <constraint firstAttribute="width" constant="22.760000000000002" id="hSL-ku-QnO"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FORHER100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-Xo-qlt">
+                                                                            <rect key="frame" x="43" y="15" width="319" height="18"/>
+                                                                            <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
+                                                                            <textInputTraits key="textInputTraits"/>
+                                                                        </textField>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" name="grey"/>
+                                                            <constraints>
+                                                                <constraint firstItem="Sbw-qu-fz6" firstAttribute="top" secondItem="Q25-Hf-CkS" secondAttribute="top" id="Ebr-Dg-VzO"/>
+                                                                <constraint firstItem="Sbw-qu-fz6" firstAttribute="leading" secondItem="Q25-Hf-CkS" secondAttribute="leading" constant="10" id="hDk-HD-a1T"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Sbw-qu-fz6" secondAttribute="bottom" id="tNi-wC-ci9"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Sbw-qu-fz6" secondAttribute="trailing" constant="10" id="uGG-E0-7vh"/>
+                                                                <constraint firstAttribute="height" constant="48" id="xo5-HR-LPv"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                    <real key="value" value="0.0"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The discount code you entered does not apply to products in the basket" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-Ph-4Lf">
+                                                            <rect key="frame" x="0.0" y="53" width="382" height="13"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="11"/>
+                                                            <color key="textColor" name="red"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Do you have a discount code?"/>
+                                                                <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="The discount code you entered does not apply to products in the basket"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Em4-SW-vhQ">
-                                                            <rect key="frame" x="0.0" y="59.5" width="382" height="66"/>
-                                                            <subviews>
-                                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q25-Hf-CkS">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
-                                                                    <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sbw-qu-fz6">
-                                                                            <rect key="frame" x="10" y="0.0" width="362" height="48"/>
-                                                                            <subviews>
-                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="couponFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ia-Kq-8FB">
-                                                                                    <rect key="frame" x="0.0" y="16.5" width="23" height="15"/>
-                                                                                    <constraints>
-                                                                                        <constraint firstAttribute="height" constant="14.99" id="H19-c7-RA8"/>
-                                                                                        <constraint firstAttribute="width" constant="22.760000000000002" id="hSL-ku-QnO"/>
-                                                                                    </constraints>
-                                                                                </imageView>
-                                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="FORHER100" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C8B-Xo-qlt">
-                                                                                    <rect key="frame" x="43" y="15" width="319" height="18"/>
-                                                                                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="14"/>
-                                                                                    <textInputTraits key="textInputTraits"/>
-                                                                                </textField>
-                                                                            </subviews>
-                                                                        </stackView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" name="grey"/>
-                                                                    <constraints>
-                                                                        <constraint firstItem="Sbw-qu-fz6" firstAttribute="top" secondItem="Q25-Hf-CkS" secondAttribute="top" id="Ebr-Dg-VzO"/>
-                                                                        <constraint firstItem="Sbw-qu-fz6" firstAttribute="leading" secondItem="Q25-Hf-CkS" secondAttribute="leading" constant="10" id="hDk-HD-a1T"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="Sbw-qu-fz6" secondAttribute="bottom" id="tNi-wC-ci9"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="Sbw-qu-fz6" secondAttribute="trailing" constant="10" id="uGG-E0-7vh"/>
-                                                                        <constraint firstAttribute="height" constant="48" id="xo5-HR-LPv"/>
-                                                                    </constraints>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
-                                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                            <real key="value" value="0.0"/>
-                                                                        </userDefinedRuntimeAttribute>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The discount code you entered does not apply to products in the basket" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-Ph-4Lf">
-                                                                    <rect key="frame" x="0.0" y="53" width="382" height="13"/>
-                                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="11"/>
-                                                                    <color key="textColor" name="red"/>
-                                                                    <nil key="highlightedColor"/>
-                                                                    <userDefinedRuntimeAttributes>
-                                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="The discount code you entered does not apply to products in the basket"/>
-                                                                    </userDefinedRuntimeAttributes>
-                                                                </label>
-                                                            </subviews>
-                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="cke-gD-VKO">
+                                                    <rect key="frame" x="0.0" y="189.5" width="382" height="48"/>
+                                                    <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1s-7f-mM2">
-                                                            <rect key="frame" x="0.0" y="141.5" width="382" height="48"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
                                                             <color key="backgroundColor" name="primary"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="TGi-Cj-663"/>
@@ -137,48 +125,34 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" name="white"/>
-                                            <constraints>
-                                                <constraint firstItem="kTG-k0-Jrt" firstAttribute="leading" secondItem="IMA-9M-EUk" secondAttribute="leading" id="0Tm-Ry-QeY"/>
-                                                <constraint firstItem="kTG-k0-Jrt" firstAttribute="top" secondItem="IMA-9M-EUk" secondAttribute="top" id="Akh-LB-1sL"/>
-                                                <constraint firstAttribute="bottom" secondItem="kTG-k0-Jrt" secondAttribute="bottom" id="XhB-rh-Pux"/>
-                                                <constraint firstAttribute="trailing" secondItem="kTG-k0-Jrt" secondAttribute="trailing" id="pgC-dg-fZR"/>
-                                            </constraints>
-                                        </view>
+                                        </stackView>
                                     </subviews>
-                                </stackView>
+                                    <color key="backgroundColor" name="white"/>
+                                    <constraints>
+                                        <constraint firstItem="kTG-k0-Jrt" firstAttribute="leading" secondItem="IMA-9M-EUk" secondAttribute="leading" id="0Tm-Ry-QeY"/>
+                                        <constraint firstItem="kTG-k0-Jrt" firstAttribute="top" secondItem="IMA-9M-EUk" secondAttribute="top" id="Akh-LB-1sL"/>
+                                        <constraint firstAttribute="bottom" secondItem="kTG-k0-Jrt" secondAttribute="bottom" id="XhB-rh-Pux"/>
+                                        <constraint firstAttribute="trailing" secondItem="kTG-k0-Jrt" secondAttribute="trailing" id="pgC-dg-fZR"/>
+                                    </constraints>
+                                </view>
                             </subviews>
-                            <color key="backgroundColor" name="white"/>
-                            <constraints>
-                                <constraint firstItem="q2F-en-KWQ" firstAttribute="top" secondItem="JoN-Qd-VRf" secondAttribute="top" constant="2" id="PUB-V2-bRW"/>
-                                <constraint firstItem="PLf-Hz-cbr" firstAttribute="leading" secondItem="JoN-Qd-VRf" secondAttribute="leading" constant="16" id="Vug-V6-I8x"/>
-                                <constraint firstItem="PLf-Hz-cbr" firstAttribute="top" secondItem="JoN-Qd-VRf" secondAttribute="top" constant="16" id="Zey-p2-aPW"/>
-                                <constraint firstAttribute="trailing" secondItem="PLf-Hz-cbr" secondAttribute="trailing" constant="16" id="lmf-wA-4ng"/>
-                                <constraint firstAttribute="height" constant="235" id="rPI-69-KZX"/>
-                                <constraint firstItem="q2F-en-KWQ" firstAttribute="centerX" secondItem="JoN-Qd-VRf" secondAttribute="centerX" id="rU0-Fa-qWe"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="20"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
+                        </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="white"/>
                     <constraints>
-                        <constraint firstItem="JoN-Qd-VRf" firstAttribute="leading" secondItem="66B-RF-w2u" secondAttribute="leading" id="SSN-kq-Qrb"/>
-                        <constraint firstAttribute="trailing" secondItem="JoN-Qd-VRf" secondAttribute="trailing" id="aVf-SF-wrB"/>
-                        <constraint firstAttribute="bottom" secondItem="JoN-Qd-VRf" secondAttribute="bottom" id="nHo-f8-9YQ"/>
+                        <constraint firstItem="PLf-Hz-cbr" firstAttribute="leading" secondItem="JoN-Qd-VRf" secondAttribute="leading" constant="16" id="Vug-V6-I8x"/>
+                        <constraint firstItem="PLf-Hz-cbr" firstAttribute="top" secondItem="JoN-Qd-VRf" secondAttribute="top" id="Zey-p2-aPW"/>
+                        <constraint firstAttribute="trailing" secondItem="PLf-Hz-cbr" secondAttribute="trailing" constant="16" id="lmf-wA-4ng"/>
                     </constraints>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="quaternarySystemFillColor"/>
+            <color key="backgroundColor" name="white"/>
             <constraints>
-                <constraint firstItem="66B-RF-w2u" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5y4-yh-ME1"/>
-                <constraint firstItem="66B-RF-w2u" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YH0-EB-2ib"/>
-                <constraint firstAttribute="bottom" secondItem="66B-RF-w2u" secondAttribute="bottom" id="oCh-UM-VOb"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="66B-RF-w2u" secondAttribute="trailing" id="u1S-3a-GSg"/>
+                <constraint firstItem="JoN-Qd-VRf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7aN-nE-pb5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JoN-Qd-VRf" secondAttribute="bottom" id="HBX-ft-Zsf"/>
+                <constraint firstItem="JoN-Qd-VRf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="kjQ-RU-Prf"/>
+                <constraint firstItem="JoN-Qd-VRf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="o2n-0L-B6a"/>
             </constraints>
             <point key="canvasLocation" x="-1" y="68"/>
         </view>
@@ -197,14 +171,8 @@
         <namedColor name="red">
             <color red="0.7686274509803922" green="0.23137254901960785" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="searchbar">
-            <color red="0.89411764705882357" green="0.89411764705882357" blue="0.89803921568627454" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="white">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="quaternarySystemFillColor">
-            <color red="0.45490196078431372" green="0.45490196078431372" blue="0.50196078431372548" alpha="0.080000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopChangeOrderStatusVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
                 <outlet property="heighttableViewCell" destination="zj9-lm-iZN" id="60G-jk-ADs"/>
+                <outlet property="sendBut" destination="9Np-tN-nOH" id="Jdl-Eb-erx"/>
                 <outlet property="tableview" destination="4We-gZ-IrM" id="z1p-rI-a4y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,7 +32,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-pI-OBg">
-                            <rect key="frame" x="0.0" y="556" width="414" height="340"/>
+                            <rect key="frame" x="0.0" y="546" width="414" height="350"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZdT-bF-sB1">
                                     <rect key="frame" x="168" y="2" width="78" height="5"/>
@@ -45,12 +46,12 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="nEc-JZ-mlz">
-                                    <rect key="frame" x="16" y="35" width="382" height="277"/>
+                                    <rect key="frame" x="16" y="35" width="382" height="315"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="f2X-nF-2fH">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="277"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6f-lV-i0q">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order status" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6f-lV-i0q">
                                                     <rect key="frame" x="0.0" y="0.0" width="382" height="19"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
@@ -59,7 +60,7 @@
                                                         <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Order status"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
-                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4We-gZ-IrM">
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4We-gZ-IrM">
                                                     <rect key="frame" x="0.0" y="49" width="382" height="150"/>
                                                     <color key="backgroundColor" name="white"/>
                                                     <constraints>
@@ -96,7 +97,8 @@
                             <color key="backgroundColor" name="white"/>
                             <constraints>
                                 <constraint firstItem="ZdT-bF-sB1" firstAttribute="top" secondItem="ZIa-pI-OBg" secondAttribute="top" constant="2" id="D9j-AU-ISx"/>
-                                <constraint firstAttribute="height" constant="340" id="Kqt-Tb-3W3"/>
+                                <constraint firstAttribute="bottom" secondItem="nEc-JZ-mlz" secondAttribute="bottom" id="KpJ-Lu-mQ0"/>
+                                <constraint firstAttribute="height" constant="350" id="Kqt-Tb-3W3"/>
                                 <constraint firstItem="ZdT-bF-sB1" firstAttribute="centerX" secondItem="ZIa-pI-OBg" secondAttribute="centerX" id="RB7-MW-0Mt"/>
                                 <constraint firstAttribute="trailing" secondItem="nEc-JZ-mlz" secondAttribute="trailing" constant="16" id="T5k-Fv-oNi"/>
                                 <constraint firstItem="nEc-JZ-mlz" firstAttribute="top" secondItem="ZIa-pI-OBg" secondAttribute="top" constant="35" id="a3D-AG-Pcn"/>
