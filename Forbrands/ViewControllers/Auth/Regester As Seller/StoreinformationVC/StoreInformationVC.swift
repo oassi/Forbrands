@@ -14,6 +14,7 @@ class StoreInformationVC: SuperViewController,UITextViewDelegate {
     @IBOutlet weak var lblStoreLink:                UITextField!
     @IBOutlet weak var lblCommercialRegistrationNo: UITextField!
     @IBOutlet weak var lblIban:                     UITextField!
+    @IBOutlet weak var storePolicy:                      UITextView!
     @IBOutlet weak var collectionView:              UICollectionView!
     //Image
     @IBOutlet var imgCoverStore:    UIImageView!
@@ -89,6 +90,13 @@ class StoreInformationVC: SuperViewController,UITextViewDelegate {
             lblIban.becomeFirstResponder()
             return
         }
+        
+        guard let storePolicy = self.storePolicy.text, !storePolicy.isEmpty else{
+            self.showAlert(title: "Error".localized, message: "Store policy cannot be empty".localized)
+            self.storePolicy.becomeFirstResponder()
+            return
+        }
+        
         guard arrSelectedData.count != 0 else {
             self.showAlert(title: "Error".localized, message: "Please selected Payment methods".localized)
             return
@@ -99,6 +107,7 @@ class StoreInformationVC: SuperViewController,UITextViewDelegate {
         parameters["maroof_link"] = lblStoreLink.text ?? ""
         parameters["commercial_record"] = lblCommercialRegistrationNo.text ?? ""
         parameters["iban"] = iban
+        parameters["store_policy"] = storePolicy
         let arr = "[\(arrSelectedData.map{String($0)}.joined(separator: ","))]"
         parameters["pay_methods"] = arr
         

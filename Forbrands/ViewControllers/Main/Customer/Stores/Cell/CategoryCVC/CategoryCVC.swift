@@ -19,7 +19,7 @@ class CategoryCVC: UICollectionViewCell {
     
     var obj : CategoriesHome?{
         didSet{
-            lblTitle.text = obj?.name ?? ""
+            lblTitle.text = MOLHLanguage.isArabic() ? obj?.nameAr ?? "Categories".localized : obj?.nameEn ?? "Categories".localized
         }
     }
     

@@ -24,6 +24,7 @@ struct StoreTrader: Codable {
         case detail
         case colors
         case maroofLink = "maroof_link"
+        case storePolicy = "store_policy"
     }
     
     var id: Int?
@@ -42,6 +43,7 @@ struct StoreTrader: Codable {
     var colors: String?
     var maroofLink: String?
     var updatedAt: String?
+    var storePolicy : String?
     
     
     

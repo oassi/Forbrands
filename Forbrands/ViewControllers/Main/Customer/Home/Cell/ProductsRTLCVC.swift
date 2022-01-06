@@ -27,8 +27,11 @@ class ProductsRTLCVC: UICollectionViewCell {
             lblDescription.text =  MOLHLanguage.isArabic() ? obj?.detailsAr ?? "" : obj?.detailsEn ?? ""
             lblCategory.text = obj?.category ?? ""
             
-            if(obj?.images?.count != 0){
-                img.sd_custom(url: "\(App.IMG_URL.img_URL)\(obj!.images?[0] ?? "" )" ,defultImage: UIImage(named: "defultImg") )
+//            if(obj?.images?.count != 0){
+//                img.sd_custom(url: "\(App.IMG_URL.img_URL)\(obj!.images?[0] ?? "" )" ,defultImage: UIImage(named: "defultImg") )
+//            }
+            if let imgs = obj?.images , !imgs.isEmpty , !imgs[0].isEmpty{
+                self.img.sd_custom(url: "\(App.IMG_URL.img_URL)\(imgs[0])" ,defultImage: UIImage(named: "defultImg") )
             }
         }
     }

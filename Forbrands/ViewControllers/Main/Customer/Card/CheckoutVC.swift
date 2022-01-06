@@ -24,7 +24,7 @@ class CheckoutVC: SuperViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navButtons()
+       // navButtons()
         tableview.registerCell(id: "CheckoutCVC")
         getItems()
         // Do any additional setup after loading the view.
@@ -91,8 +91,14 @@ class CheckoutVC: SuperViewController {
     }
     
     @IBAction func tapSave (_ sender : UIButton){
-        navigationController?.popToRootViewController(animated: true)
-        UserDefaults.standard.set(true, forKey: "ordersComplete")
+        DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                let vc = TTabBarController()
+                        vc.modalPresentationStyle = .fullScreen
+                        vc.title = "sfds"
+                        self.goToRoot(vc)
+            })}
+//        UserDefaults.standard.set(true, forKey: "ordersComplete")
 
       
     }

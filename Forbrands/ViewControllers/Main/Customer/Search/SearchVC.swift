@@ -44,7 +44,7 @@ class SearchVC: SuperViewController, UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         self.productBySearch.removeAll()
         getSearch(searchBars.searchTextField.text ?? "")
-        reloadCard()
+        self.tableview.reloadData()
        // searchBars.searchTextField.text = ""
         
     }
@@ -56,21 +56,27 @@ class SearchVC: SuperViewController, UISearchBarDelegate {
         card.removeAll()
         card = loads()
     }
-    
+    @objc func didRefersh() {
+        print("didRefersh")
+    }
     func getSearch(_ str : String)  {
         var parameters = [String : Any]()
         parameters["query"] = str
        
-        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.search,parameters:parameters ,isAuthRequired: false).start(){  (response, error) in
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.search,parameters:parameters ,isAuthRequired: false).start(){   [weak self] (response, error)  in
             do {
+                guard let strongSelf = self else { return }
+                
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<Product>.self, from: response.data!)
                 if Status.code == 200 && Status.data != nil{
-                    guard Status.data?.count != 0  else {
-                        self.showAlert(title: "No Results".localized , message: "There are no search results".localized)
-                        return
+                    strongSelf.tableview.tableFooterView = nil
+                    guard let data = Status.data else { return }
+                    strongSelf.productBySearch += data
+                    
+                    if data.count == 0{
+                      _=strongSelf.showEmptyView(emptyView: strongSelf.emptyView, parentView: (strongSelf.tableview)!, refershSelector: #selector(strongSelf.didRefersh),firstLabel: "There are no search results".localized)
                     }
-                    self.productBySearch += Status.data!
-                    self.tableview.reloadData()
+                    strongSelf.tableview.reloadData()
                 }
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
@@ -188,9 +194,13 @@ extension SearchVC : UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc :DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
-         vc.productId = productBySearch[indexPath.row].id ?? 0
-         vc.modalPresentationStyle = .fullScreen
-         self.navigationController?.pushViewController(vc, animated: true)
+       
+        if  productBySearch.count != 0 &&  productBySearch[indexPath.row] != nil{
+            let vc :DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
+            vc.productId = productBySearch[indexPath.row].id ?? 0
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+         
     }
 }

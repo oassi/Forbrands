@@ -21,8 +21,9 @@ class StoresWithVideoCVC: UICollectionViewCell {
         didSet{
             lblName.text = obj?.name ?? ""
             lblDetail.text = obj?.detail ?? ""
-            if(obj?.image != nil){
-                img.sd_custom(url: "\(App.IMG_URL.img_URL)\(obj!.image!)" ,defultImage: UIImage(named: "defultImg") )
+   
+            if let imgs = obj?.image , !imgs.isEmpty{
+                self.img.sd_custom(url: "\(App.IMG_URL.img_URL)\(imgs)" ,defultImage: UIImage(named: "defultImg") )
             }else{
                 img.image = UIImage(named: "defultImg")
             }

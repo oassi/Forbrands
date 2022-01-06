@@ -36,6 +36,7 @@ class OrderDetailsVC: SuperViewController {
     
     @IBOutlet weak var viewRate: CosmosView!
     @IBOutlet var viewEvaluation: UIStackView!
+    @IBOutlet var evaluationView: UIView!
     @IBOutlet var lblEvaluation: UILabel!
     @IBOutlet var reviewsBut: UIButton!
     
@@ -127,7 +128,7 @@ class OrderDetailsVC: SuperViewController {
             lblTotlas.text =  String((Int($0.price ?? "0")! * Int($0.amount ?? 1)) + Int( self.lblTotlas.text ?? "0")! )
         }
         
-        if(orders?.products != nil){
+        if(orders?.products != nil && orders?.products?.count != 0){
             orders!.products!.forEach{
                 products.append($0)
             }
@@ -143,7 +144,9 @@ class OrderDetailsVC: SuperViewController {
             viewRate.rating = Double(reviews!.rating ?? "0.0") ?? 0.0
         }else{
             if(orders?.orderProcess == "-1"){
-                viewRate.isHidden = true
+                viewEvaluation.isHidden = true
+            }else if (orders?.orderProcess != "3"){
+                evaluationView.isHidden = true
             }else{
                viewRate.isHidden = false
                reviewsBut.isHidden = false
@@ -260,8 +263,8 @@ extension OrderDetailsVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(tableView == tableview2){
             let cell = tableview2.dequeueReusableCell(withIdentifier: "CurrentTableViewCell", for: indexPath) as! CurrentTableViewCell
-            
-            cell.obj = products[indexPath.row]
+            let obj = products[indexPath.row]
+            cell.obj = obj
             
             return cell
             

@@ -33,6 +33,7 @@
                 <outlet property="lblMobile" destination="gVr-bI-OQx" id="tiR-h8-108"/>
                 <outlet property="lblStoreLink" destination="Tly-l6-oNR" id="FUx-SF-o7D"/>
                 <outlet property="lblStoreName" destination="osI-wU-BBd" id="dqs-BE-fPB"/>
+                <outlet property="storePolicy" destination="ejo-5m-g7t" id="97n-VZ-4vU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,10 +46,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vd-B4-f06">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1327"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1440.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jXw-Cu-QDM">
-                                    <rect key="frame" x="20" y="0.0" width="374" height="1287"/>
+                                    <rect key="frame" x="20" y="0.0" width="374" height="1400.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBY-nI-Oxa">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="10"/>
@@ -394,8 +395,35 @@
                                                 </view>
                                             </subviews>
                                         </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1wp-Le-UDA">
+                                            <rect key="frame" x="0.0" y="1277" width="374" height="93.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amg-14-fdF">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
+                                                    <color key="textColor" name="black"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Store Policy"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejo-5m-g7t">
+                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
+                                                    <color key="textColor" name="black"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgS-Fl-ud2">
+                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <color key="backgroundColor" name="grey"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="DMb-l0-nWG"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bt7-iH-NJr">
-                                            <rect key="frame" x="0.0" y="1277" width="374" height="10"/>
+                                            <rect key="frame" x="0.0" y="1390.5" width="374" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="RmZ-dC-0EY"/>
                                             </constraints>

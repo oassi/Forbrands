@@ -26,7 +26,7 @@ struct OrdersComplete: Codable {
     var payment: String?
     var promocode: Int?
     var orderId: String?
-    var shoping : String?
+    var shoping : Int?
     var products: [Products]?
     
 
@@ -44,9 +44,9 @@ struct OrdersComplete: Codable {
         }else if let value = try? container.decode(String.self, forKey:.orderId) {
             orderId = value
         }
-        if let value = try? container.decode(Int.self, forKey:.shoping) {
-            shoping = String(value)
-        }else if let value = try? container.decode(String.self, forKey:.shoping) {
+        if let value = try? container.decode(String.self, forKey:.shoping) {
+            shoping = Int(value)
+        } else if let value = try? container.decode(Int.self, forKey:.shoping) {
             shoping = value
         }
         

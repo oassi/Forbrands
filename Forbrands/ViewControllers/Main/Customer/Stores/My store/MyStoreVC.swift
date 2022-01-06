@@ -25,6 +25,13 @@ class MyStoreVC: SuperViewController, UISearchBarDelegate {
         registerCell()
         
         // Do any additional setup after loading the view.
+        
+        let controller = PopStorePolicy()
+        controller.storePolicyID = id?.description
+        let sheet = SheetViewController(controller: controller, sizes: [.marginFromTop(200)])
+        sheet.extendedLayoutIncludesOpaqueBars = true
+        self.present(sheet, animated: false, completion: nil)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -308,7 +315,11 @@ extension MyStoreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             if indexPath.row == 0{
                 text = "All".localized
             }else{
-                text = categories[indexPath.item-1].name?.description ?? ""
+                if MOLHLanguage.isArabic() {
+                    text = categories[indexPath.item-1].nameAr ?? "Categories".localized
+                }else{
+                    text = categories[indexPath.item-1].nameEn ?? "Categories".localized
+                }
             }
             widths = estimateFrameForText(text).width + 50
             return CGSize(width: widths, height:41)
@@ -340,7 +351,8 @@ extension MyStoreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
             }else{
                 collectionview1.reloadData()
                 let vc:CategoriesVC = CategoriesVC.loadFromNib()
-                vc.titleNav = categories[indexPath.row-1].name ?? "Categories"
+                vc.titleNav = MOLHLanguage.isArabic() ? categories[indexPath.row-1].nameAr ?? "Categories".localized : categories[indexPath.row-1].nameEn ?? "Categories".localized
+
                 vc.categoryId =  categories[indexPath.row-1].id?.description ?? "0"
                 vc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(vc, animated: true)

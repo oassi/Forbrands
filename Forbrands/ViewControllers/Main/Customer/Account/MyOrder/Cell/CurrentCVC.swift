@@ -37,13 +37,13 @@ class CurrentCVC: UITableViewCell {
     var viewOrderDetails : (()->())!
     var changeOrderStatus : (()->())!
     
+    var deleteDeleget: (()->())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         tableview.registerCell(id: "CurrentTableViewCell")
-        tableview.delegate = self
-        tableview.dataSource = self
-        
+                
         if(CurrentUser.typeSelect == userType.User){
             viewDetailsIsUser.isHidden = false
             viewDetailsIsSeller.isHidden = true
@@ -105,7 +105,7 @@ class CurrentCVC: UITableViewCell {
                 viewReceived.backgroundColor = UIColor(named: "derkGrey")
             }
           
-            if(obj?.products != nil){
+            if(obj?.products != nil && obj?.products?.count != 0){
                 obj!.products!.forEach{
                     products.append($0)
                 }
@@ -113,7 +113,9 @@ class CurrentCVC: UITableViewCell {
                 tableview.reloadData()
 
             }
-
+            tableview.delegate = self
+            tableview.dataSource = self
+          
             
         }
     }
@@ -143,7 +145,18 @@ extension CurrentCVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "CurrentTableViewCell", for: indexPath) as! CurrentTableViewCell
             cell.obj = products[indexPath.row]
-
+        
+//        if (self.obj?.orderProcess == "1" || self.obj?.orderProcess == "2" || self.obj?.orderProcess == "3" || self.obj?.orderProcess == "-1"){
+//            cell.deleteProdectBut.isHidden = true
+//        }else{
+//            cell.deleteProdectBut.isHidden = false
+//        }
+        
+        cell.deleteDeleget = { [weak self] in
+            guard let strongSelf =  self else {  return }
+            strongSelf.deleteDeleget?()
+            
+        }
         return cell
     }
     

@@ -5,6 +5,7 @@ PODS:
   - BRYXBanner (0.8.4)
   - Cosmos (23.0.0)
   - DynamicBlurView (4.1.0)
+  - EmptyStateKit (1.1.0)
   - FittedSheets (2.4.2)
   - FlagPhoneNumber (0.8.0):
     - FlagPhoneNumber/libPhoneNumberiOS (= 0.8.0)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - AlignedCollectionViewFlowLayout
   - BRYXBanner
   - Cosmos
+  - EmptyStateKit
   - FittedSheets
   - FlagPhoneNumber
   - FSPagerView
@@ -44,6 +46,7 @@ SPEC REPOS:
     - BRYXBanner
     - Cosmos
     - DynamicBlurView
+    - EmptyStateKit
     - FittedSheets
     - FlagPhoneNumber
     - FSPagerView
@@ -61,6 +64,7 @@ SPEC CHECKSUMS:
   BRYXBanner: 4fbd266f96ce000e4c6cc9a0558c446bd88d9801
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  EmptyStateKit: dc41e9ce5c6089f67a49d063bce73ade9f2ba73f
   FittedSheets: 661408776eb4ff514a31da75b3600bd7222b2b3d
   FlagPhoneNumber: 3712455b95f66cb0f2016fef7d9e34cddf8c7f9a
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
@@ -71,6 +75,6 @@ SPEC CHECKSUMS:
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   VKPinCodeView: 8d711959a080fec9e6aac165f7225d55b54a24ae
 
-PODFILE CHECKSUM: 0cccf630c2c165cc569262b81cf2c2beb7d8985c
+PODFILE CHECKSUM: aaec1d96452175ba7e9ff70e9c44192e494d18d7
 
 COCOAPODS: 1.10.1

@@ -63,74 +63,63 @@ class PayMethodVC: SuperViewController {
         print(parameters)
         switch id {
         case 1:
-            _ = WebRequests.setup(controller: self).prepare(api: Endpoint.addOrders,parameters: parameters ,isAuthRequired:  true).start(){  (response, error) in
-                do {
-                    
-                    let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
-                    if Status.code == 200{
-                        guard let st = Status.status, st else {
-                            return
-                        }
-                        let vc:CheckoutVC = CheckoutVC.loadFromNib()
-                        vc.modalPresentationStyle = .fullScreen
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
-                }catch let jsonErr {
-                    print("Error serializing  respone json", jsonErr)
-                }
-            }
-            
-            
-            
-            
-//            _ = WebRequests.setup(controller: self).prepare(api: Endpoint.ordersComplete,parameters: parameters ,isAuthRequired:  true).start(){  (response, error) in
-//                do {
-//
-//                    let Status =  try JSONDecoder().decode(BaseDataArrayResponse<Product>.self, from: response.data!)
-//                    if Status.code == 200{
-//                        guard Status.data != nil else {
-//                            return
-//                        }
-//                        let vc:CheckoutVC = CheckoutVC.loadFromNib()
-//                        vc.modalPresentationStyle = .fullScreen
-//                        self.navigationController?.pushViewController(vc, animated: true)
-//                    }
-//                }catch let jsonErr {
-//                    print("Error serializing  respone json", jsonErr)
-//                }
-//            }
-         
+            addOrders(parameters :parameters, paymentId: 1)
         case 2:
-            
-         
-            _ = WebRequests.setup(controller: self).prepare(api: Endpoint.tabby ,isAuthRequired:  false).start(){  (response, error) in
-                do {
-                    let Status =  try JSONDecoder().decode(TabbayResponse.self, from: response.data!)
-                    
-                    let vc : webViewVC = webViewVC.loadFromNib()
-                    vc.url = Status.webUrl ?? ""
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    
-                }catch let jsonErr {
-                    print("Error serializing  respone json", jsonErr)
-                }
-            }
+            addOrders(parameters :parameters, paymentId: 2)
         case 3:
-            print(id)
+            addOrders(parameters :parameters, paymentId: 3)
         case 4:
             print(id)
         case 5:
-            break
-            
+            addOrders(parameters :parameters, paymentId: 5)
         default:
             break
         }
        
-        
-        
-        
-        
-        
+    }
+    
+    func addOrders(parameters : [String:String], paymentId : Int)  {
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.addOrders,parameters: parameters ,isAuthRequired:  true).start(){  (response, error) in
+            do {
+                
+                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                if Status.code == 200{
+                    guard let st = Status.status, st else {
+                        return
+                    }
+                    if paymentId == 1 {
+                        let vc:CheckoutVC = CheckoutVC.loadFromNib()
+                        vc.modalPresentationStyle = .fullScreen
+                        self.navigationController?.present(vc, animated: true, completion: nil)
+                    }else if paymentId == 2 {
+                        self.pay(type: Endpoint.tabby)
+                    }
+                    else if paymentId == 3 {
+                        self.pay(type: Endpoint.stc)
+                    }
+                    else if paymentId == 5 {
+                        self.pay(type: Endpoint.tap)
+                    }
+                 
+                }
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
+    }
+    func pay(type:Endpoint) {
+        _ = WebRequests.setup(controller: self).prepare(api: type ,isAuthRequired:  true).start(){  (response, error) in
+            do {
+                let Status =  try JSONDecoder().decode(TabbayResponse.self, from: response.data!)
+                
+                let vc : webViewVC = webViewVC.loadFromNib()
+                vc.url = Status.webUrl ?? ""
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
     }
 }
 

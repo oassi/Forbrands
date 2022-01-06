@@ -10,6 +10,8 @@ import UIKit
 class MyAccountVC: SuperViewController {
     @IBOutlet weak var viewMyOrede : UIView!
     @IBOutlet weak var viewAddress : UIView!
+    @IBOutlet weak var viewPay : UIView!
+    @IBOutlet weak var viewPoint : UIView!
     @IBOutlet weak var viewMyAccount: UIStackView!
     @IBOutlet weak var viewtopNotSingin : UIView!
     
@@ -48,15 +50,23 @@ class MyAccountVC: SuperViewController {
             viewMyOrede.isHidden = true
             viewAddress.isHidden = true
             SubscribeToPremiumMembership.isHidden = true
+            viewPay.isHidden = false
+            viewPoint.isHidden = false
         }
         if( CurrentUser.typeSelect == userType.Guest){
             viewtopNotSingin.isHidden = false
             viewMyOrede.isHidden = true
             viewAddress.isHidden = true
             viewMyAccount.isHidden = true
+            viewPay.isHidden = true
+            viewPoint.isHidden = true
             viewSingOut.isHidden = true
             SubscribeToPremiumMembership.isHidden = true
 
+        }
+        if CurrentUser.typeSelect == userType.User {
+            viewPay.isHidden = true
+            viewPoint.isHidden = true
         }
       
     }
@@ -125,6 +135,14 @@ class MyAccountVC: SuperViewController {
         if(sender.tag == 3){
             if(CurrentUser.typeSelect == userType.Seller){
                 let vc:PayMethodSellerVC = PayMethodSellerVC.loadFromNib()
+                poushVC(vc)
+            }
+           
+        }
+        //Payment
+        if(sender.tag == 10){
+            if(CurrentUser.typeSelect == userType.Seller){
+                let vc:MyPointsVC = MyPointsVC.loadFromNib()
                 poushVC(vc)
             }
            

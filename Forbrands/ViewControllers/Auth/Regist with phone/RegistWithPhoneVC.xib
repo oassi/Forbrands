@@ -37,10 +37,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="INe-ci-B2J">
-                            <rect key="frame" x="20" y="10" width="374" height="270.5"/>
+                            <rect key="frame" x="20" y="10" width="374" height="251.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSc-NU-HVy">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="38.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="26"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register with phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CO9-2s-Ufh">
-                                    <rect key="frame" x="0.0" y="42.5" width="374" height="28"/>
+                                    <rect key="frame" x="0.0" y="34.5" width="374" height="22.5"/>
                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
@@ -58,14 +58,14 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDm-gg-R3k">
-                                    <rect key="frame" x="0.0" y="74.5" width="374" height="30"/>
+                                    <rect key="frame" x="0.0" y="61" width="374" height="30"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="PIL-ZA-dZs"/>
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y2-d2-O8J">
-                                    <rect key="frame" x="0.0" y="108.5" width="374" height="28"/>
+                                    <rect key="frame" x="0.0" y="95" width="374" height="22.5"/>
                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                     <color key="textColor" name="black"/>
                                     <nil key="highlightedColor"/>
@@ -74,14 +74,14 @@
                                     </userDefinedRuntimeAttributes>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZp-qQ-p8B">
-                                    <rect key="frame" x="0.0" y="140.5" width="374" height="10"/>
+                                    <rect key="frame" x="0.0" y="121.5" width="374" height="10"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="10" id="k0N-P6-UQr"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="INT-fa-L1C">
-                                    <rect key="frame" x="0.0" y="154.5" width="374" height="116"/>
+                                    <rect key="frame" x="0.0" y="135.5" width="374" height="116"/>
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGp-dN-6CS">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -115,7 +115,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfx-kK-fhd">
-                                                            <rect key="frame" x="156" y="0.0" width="62.5" height="48"/>
+                                                            <rect key="frame" x="155" y="0.0" width="64.5" height="48"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                             <color key="textColor" name="white"/>
                                                             <nil key="highlightedColor"/>
@@ -181,7 +181,7 @@
     </objects>
     <designables>
         <designable name="2Cp-LT-iNM">
-            <size key="intrinsicContentSize" width="55" height="20.5"/>
+            <size key="intrinsicContentSize" width="5" height="20.5"/>
         </designable>
     </designables>
     <resources>

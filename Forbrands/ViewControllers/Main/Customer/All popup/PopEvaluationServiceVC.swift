@@ -19,7 +19,7 @@ class PopEvaluationServiceVC: SuperViewController {
     var comment:String?
     var rateDeleget : (() -> ())?
     var rateOrderDeleget : ((_ rating : Reviews) -> ())?
-    var paymentMethods = ["Pay when receiving","Pay by mada","STC Pay","Master Card","Visa","Visa"]
+    var paymentMethods = ["Fast service","Original products","Committed to a date","Respected delegate","Simple method","Always available"]
     override func viewDidLoad() {
         super.viewDidLoad()
 //        commants.placeholder = "write here".localized
@@ -76,12 +76,12 @@ extension PopEvaluationServiceVC: UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:EvaluationCVC = collectionView.dequeue(cellForItemAt: indexPath)
-        cell.lblTitle.text = paymentMethods[indexPath.row]
+        cell.lblTitle.text = paymentMethods[indexPath.row].localized
         
         if  selected == indexPath.row {
             cell.viewBackgroun.backgroundColor = UIColor(named: "primary")
             cell.lblTitle.textColor = .white
-            comment = paymentMethods[selected]
+            comment = paymentMethods[selected].localized
             
             }else {
                 cell.viewBackgroun.backgroundColor = .white
@@ -93,7 +93,7 @@ extension PopEvaluationServiceVC: UICollectionViewDelegate,UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
               selected = indexPath.row
-              comment = paymentMethods[selected]
+        comment = paymentMethods[selected].localized
               collectionView.reloadData()
     }
 

@@ -28,7 +28,7 @@ class RatingsVC: SuperViewController {
         navgtion.setCustomBackButtonForViewController(sender: self)
        
     }
-    
+    @objc func didRefersh() {}
     func getRatings(){
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.reviewsByID,nestedParams: productID.description ,isAuthRequired:  true).start(){  (response, error) in
             do {
@@ -36,10 +36,12 @@ class RatingsVC: SuperViewController {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<ReviewsByID>.self, from: response.data!)
                 if Status.code == 200{
                     let obj = Status.data
-                    if(obj?.reviews != nil){
+                    if obj?.reviews?.count == 0 || obj?.reviews == nil {
+                        self.tableview.tableHeaderView = nil
+                        _=self.showEmptyView(emptyView: self.emptyView, parentView: self.tableview, refershSelector: #selector(self.didRefersh), firstLabel : "No ratings found! ⭐️".localized)
+                    } else{
                         obj?.reviews?.forEach{self.reviews.append($0)}
                         self.tableview.reloadData()
-
                     }
                     
                     

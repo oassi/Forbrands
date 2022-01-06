@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="webViewAdsVC" customModule="Forbrands" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="KmA-RR-TPd" id="6rk-L0-tQO"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFO-Pn-WNK">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                    <subviews>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KmA-RR-TPd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            <color key="backgroundColor" name="background"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="KmA-RR-TPd" secondAttribute="trailing" id="24z-PA-Vmg"/>
+                        <constraint firstItem="KmA-RR-TPd" firstAttribute="leading" secondItem="xFO-Pn-WNK" secondAttribute="leading" id="2QO-ue-n0s"/>
+                        <constraint firstAttribute="bottom" secondItem="KmA-RR-TPd" secondAttribute="bottom" id="4gA-Ad-9LW"/>
+                        <constraint firstItem="KmA-RR-TPd" firstAttribute="top" secondItem="xFO-Pn-WNK" secondAttribute="top" id="nfJ-sK-acv"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xFO-Pn-WNK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Cmd-5G-no5"/>
+                <constraint firstItem="xFO-Pn-WNK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mff-lZ-mLo"/>
+                <constraint firstItem="xFO-Pn-WNK" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="PDI-YX-Y3r"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xFO-Pn-WNK" secondAttribute="bottom" id="dKu-dc-vdc"/>
+            </constraints>
+            <point key="canvasLocation" x="42" y="47"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

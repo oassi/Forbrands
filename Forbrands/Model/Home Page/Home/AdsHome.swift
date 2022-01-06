@@ -14,12 +14,14 @@ struct AdsHome: Codable {
         case image
         case link
         case id
+        case productId = "product_id"
     }
     
     var position: String?
     var image: String?
     var link: String?
     var id: Int?
+    var productId: Int?
     
     
     
@@ -44,6 +46,11 @@ struct AdsHome: Codable {
             id = Int(value)
         } else if let value = try? container.decode(Int.self, forKey:.id) {
             id = value
+        }
+        if let value = try? container.decode(String.self, forKey:.productId) {
+            productId = Int(value)
+        } else if let value = try? container.decode(Int.self, forKey:.productId) {
+            productId = value
         }
     }
     

@@ -15,7 +15,7 @@ class CardVC: SuperViewController {
     @IBOutlet weak var lblTotlaPrice:UILabel!
     @IBOutlet weak var viewDescount:UIView!
     @IBOutlet weak var deleteView:UIView!
-    @IBOutlet weak var discountView:UIStackView!
+    @IBOutlet var footerTable: UIView!
     var cart = [Cart]()
     var productsId = [Int]()
     var amounts = [Int]()
@@ -30,24 +30,31 @@ class CardVC: SuperViewController {
         super.viewDidLoad()
         navButtons()
        // getToCart()
-        tableview.registerCell(id: "CardCVC")
+       
+       
         // Do any additional setup after loading the view.
        
     }
+  
     override func viewWillAppear(_ animated: Bool) {
         guard CurrentUser.typeSelect != userType.Guest else {
             App.logout(self)
             return
         }
+        tableview.registerCell(id: "CardCVC")
         getToCart()
         if( UserDefaults.standard.bool(forKey: "ordersComplete")){
             self.tabBarController?.selectedIndex = 0
             UserDefaults.standard.set(false, forKey: "ordersComplete")
+        }else{
+            
         }
       
        // tableview.reloadData()
 
     }
+    
+
     
     func updataCard() {
         cart.removeAll()
@@ -57,17 +64,33 @@ class CardVC: SuperViewController {
        // lblTotlaPrice.text = "0"
        // card.forEach{ self.lblTotlaPrice.text = String((($0.price ?? 0) * $0.count) + Int(  self.lblTotlaPrice.text ?? "0")!) }
     }
+    
+    @objc func didRefersh() {
+        //let vc = LoginViewController().navigationController()
+        //self.goToRoot(vc)
+    }
+    
     func getToCart(){
         cart.removeAll()
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.listCart ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<Cart>.self, from: response.data!)
                 if Status.code == 200{
-                    guard Status.data != nil else {   return    }
-                    self.cart += Status.data!
-                    self.discountView.isHidden =  self.cart.isEmpty
-                    self.lblTotlaPrice.text = self.totalCart(self.cart).description
+                    guard let data = Status.data else {   return    }
+                    self.cart += data
+                    if self.cart.count == 0{
+                        self.tableview.tableHeaderView = nil
+                        
+                        _=self.showEmptyView(emptyView: self.emptyView, parentView: self.tableview, refershSelector: #selector(self.didRefersh))
+                    } else{
+                        self.tableview.tableFooterView = self.footerTable
+                        self.lblTotlaPrice.text = self.totalCart(self.cart).description
+                    }
+                    self.tableview.delegate = self
+                    self.tableview.dataSource = self
                     self.tableview.reloadData()
+                    
+                    
                 }
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
@@ -239,7 +262,15 @@ extension CardVC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let vc:DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
+        vc.productId = cart[indexPath.row].productId ?? 0
+        vc.isCart = true
+        vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
 }
+
+

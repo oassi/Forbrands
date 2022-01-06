@@ -15,7 +15,7 @@ class PopChangeOrderStatusVC: SuperViewController {
     var paymentMethods = ["Underway","Charging","Received"]
     var selectedID = 0
     var ordersId: String?
-    var rateDeleget : (() -> ())?
+    var changeProcessDeleget : (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class PopChangeOrderStatusVC: SuperViewController {
                 let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
                 if Status.code == 200{
                     self.showAlert(title: "", message: "successful".localized)
-                    self.rateDeleget?()
+                    self.changeProcessDeleget?()
                     self.navigationController?.popViewController(animated: true)
                 }
             }catch let jsonErr {

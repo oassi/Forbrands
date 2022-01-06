@@ -29,7 +29,8 @@ class StoresCell: UICollectionViewCell {
     
     var obj : CategoriesHome? {
         didSet{
-            lblTitle.text = obj?.name ?? ""
+            lblTitle.text = MOLHLanguage.isArabic() ? obj?.nameAr ?? "" : obj?.nameEn ?? ""
+            
             img.sd_custom(url: obj?.logo ?? "",defultImage: UIImage(named: "defultImg"))
         }
     }

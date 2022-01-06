@@ -25,6 +25,7 @@
                 <outlet property="optionColor" destination="466-qn-ahM" id="4wI-wm-XL7"/>
                 <outlet property="optionColor2" destination="Hgv-9Z-3bw" id="Q8M-an-Yuw"/>
                 <outlet property="saveButton" destination="Rro-ev-VZY" id="C3s-7U-7m9"/>
+                <outlet property="storePolicy" destination="FR3-24-VAe" id="EhZ-xf-sa1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,10 +38,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="idh-Zc-dMT">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="806.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1016"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pvl-G9-lSY">
-                                    <rect key="frame" x="20" y="0.0" width="374" height="766.5"/>
+                                    <rect key="frame" x="20" y="0.0" width="374" height="976"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfK-oh-AAL">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="10"/>
@@ -301,15 +302,62 @@
                                                 </view>
                                             </subviews>
                                         </stackView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="1KT-lY-Sss">
+                                            <rect key="frame" x="0.0" y="668.5" width="374" height="189.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-tt-jGm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
+                                                    <color key="textColor" name="black"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Store Policy"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QR-uz-x8W">
+                                                    <rect key="frame" x="0.0" y="39.5" width="374" height="150"/>
+                                                    <subviews>
+                                                        <textView multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="FR3-24-VAe">
+                                                            <rect key="frame" x="10" y="5" width="354" height="140"/>
+                                                            <color key="backgroundColor" name="grey"/>
+                                                            <color key="textColor" name="black"/>
+                                                            <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                        </textView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textCourner" translatesAutoresizingMaskIntoConstraints="NO" id="vYh-g5-moW">
+                                                            <rect key="frame" x="349" y="126" width="20" height="19"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="19" id="I3w-tX-cw9"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" name="grey"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="Nux-7K-jFx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="FR3-24-VAe" secondAttribute="trailing" constant="10" id="aAB-Vp-KpH"/>
+                                                        <constraint firstItem="FR3-24-VAe" firstAttribute="leading" secondItem="6QR-uz-x8W" secondAttribute="leading" constant="10" id="jhx-oh-Gl4"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vYh-g5-moW" secondAttribute="trailing" constant="5" id="kmE-xS-sbX"/>
+                                                        <constraint firstItem="FR3-24-VAe" firstAttribute="top" secondItem="6QR-uz-x8W" secondAttribute="top" constant="5" id="lNS-4b-a89"/>
+                                                        <constraint firstAttribute="bottom" secondItem="FR3-24-VAe" secondAttribute="bottom" constant="5" id="vXj-cS-Tdt"/>
+                                                        <constraint firstAttribute="bottom" secondItem="vYh-g5-moW" secondAttribute="bottom" constant="5" id="xDg-3y-7Kc"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="24"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                        </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h20-54-n3G">
-                                            <rect key="frame" x="0.0" y="668.5" width="374" height="30"/>
+                                            <rect key="frame" x="0.0" y="878" width="374" height="30"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="YnT-of-kts"/>
                                             </constraints>
                                         </view>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYC-t5-JYk">
-                                            <rect key="frame" x="0.0" y="718.5" width="374" height="48"/>
+                                            <rect key="frame" x="0.0" y="928" width="374" height="48"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rro-ev-VZY">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>

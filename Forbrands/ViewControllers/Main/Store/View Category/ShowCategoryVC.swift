@@ -62,15 +62,18 @@ class ShowCategoryVC: SuperViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @objc func didRefersh() {  }
     func getCategories(){
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.getProductsByStoreByCategory,nestedParams: CategoryId ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<ProductsByStoreCat>.self, from: response.data!)
                 if Status.code == 200{
-                    guard Status.data != nil else {
+                    guard let obj = Status.data, !obj.isEmpty  else {
+                        _=self.showEmptyView(emptyView: self.emptyView, parentView: self.collectionview, refershSelector: #selector(self.didRefersh), firstLabel: "There are No Products! 🥲".localized)
                         return
                     }
-                    self.productsByStore += Status.data!
+                    
+                    self.productsByStore += obj
                     self.collectionview.reloadData()
                 }
             }catch let jsonErr {

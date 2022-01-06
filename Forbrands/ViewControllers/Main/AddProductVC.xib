@@ -21,6 +21,7 @@
                 <outlet property="collectionView1" destination="WMs-uV-tGB" id="DdM-ck-di7"/>
                 <outlet property="collectionView2" destination="bfR-af-VPf" id="mj7-aN-XD5"/>
                 <outlet property="heighttableViewSearch" destination="73c-IH-euW" id="HGc-lg-8G0"/>
+                <outlet property="isReturnProdectBut" destination="6Eo-EI-TOx" id="oxf-fT-TaW"/>
                 <outlet property="lblCategory" destination="g7P-8V-lQr" id="XGa-tA-twC"/>
                 <outlet property="lblOption" destination="d8u-2b-m98" id="csL-cp-cz0"/>
                 <outlet property="lblPrice" destination="eEC-uP-Krv" id="qvT-CT-NbO"/>
@@ -43,7 +44,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p1u-AH-LnX">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1577.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1620"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6b-Bj-hWE">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
@@ -98,7 +99,7 @@
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qfh-X8-Qnv">
-                                    <rect key="frame" x="20" y="225" width="374" height="1312.5"/>
+                                    <rect key="frame" x="20" y="225" width="374" height="1355"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rev-vE-3XC">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="19"/>
@@ -109,8 +110,34 @@
                                                 <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Product details"/>
                                             </userDefinedRuntimeAttributes>
                                         </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kCe-Lj-txO">
+                                            <rect key="frame" x="0.0" y="39" width="374" height="22.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Return Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhX-uk-Tgn">
+                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="22.5"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
+                                                    <color key="textColor" name="black"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Return Product"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Eo-EI-TOx">
+                                                    <rect key="frame" x="337" y="1.5" width="37" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="THl-Kd-usb"/>
+                                                        <constraint firstAttribute="width" constant="37" id="f9v-3g-vyV"/>
+                                                    </constraints>
+                                                    <state key="normal" image="switshOff"/>
+                                                    <state key="selected" image="switshOn"/>
+                                                    <connections>
+                                                        <action selector="tapIsReturnButton:" destination="-1" eventType="touchUpInside" id="T7c-zD-Qq2"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHI-AS-cMX">
-                                            <rect key="frame" x="0.0" y="39" width="374" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="81.5" width="374" height="87.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nm-vq-PQr">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
@@ -171,7 +198,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="mxT-MC-nvE">
-                                            <rect key="frame" x="0.0" y="146.5" width="374" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="189" width="374" height="87.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name in Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNH-ti-Kgo">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
@@ -216,7 +243,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="CQr-g5-4R5">
-                                            <rect key="frame" x="0.0" y="254" width="374" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="296.5" width="374" height="87.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product name in English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArX-bM-Wq8">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
@@ -261,7 +288,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="sMM-Ao-aRt">
-                                            <rect key="frame" x="0.0" y="361.5" width="374" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="404" width="374" height="87.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-yg-S92">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
@@ -315,7 +342,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="oTF-dc-o9u">
-                                            <rect key="frame" x="0.0" y="469" width="374" height="89.5"/>
+                                            <rect key="frame" x="0.0" y="511.5" width="374" height="89.5"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RnP-b6-Joh">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="24.5"/>
@@ -390,7 +417,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="tM5-Lj-nbi">
-                                            <rect key="frame" x="0.0" y="578.5" width="374" height="189.5"/>
+                                            <rect key="frame" x="0.0" y="621" width="374" height="189.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product details in Arabic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPu-up-1oi">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
@@ -440,7 +467,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="st3-fP-hEx">
-                                            <rect key="frame" x="0.0" y="788" width="374" height="189.5"/>
+                                            <rect key="frame" x="0.0" y="830.5" width="374" height="189.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product details in English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqM-Bp-2JG">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
@@ -490,7 +517,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="sbM-vC-sbf">
-                                            <rect key="frame" x="0.0" y="997.5" width="374" height="217"/>
+                                            <rect key="frame" x="0.0" y="1040" width="374" height="217"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APL-dh-655">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
@@ -597,14 +624,14 @@
                                             </subviews>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2S-4q-pQ3">
-                                            <rect key="frame" x="0.0" y="1234.5" width="374" height="10"/>
+                                            <rect key="frame" x="0.0" y="1277" width="374" height="10"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="Mth-qE-tgh"/>
                                             </constraints>
                                         </view>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10X-nD-Owv">
-                                            <rect key="frame" x="0.0" y="1264.5" width="374" height="48"/>
+                                            <rect key="frame" x="0.0" y="1307" width="374" height="48"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GMU-lg-fhT">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
@@ -675,6 +702,8 @@
     <resources>
         <image name="addImg" width="26" height="26"/>
         <image name="downArrow" width="14" height="8"/>
+        <image name="switshOff" width="37" height="20"/>
+        <image name="switshOn" width="37" height="20"/>
         <image name="textCourner" width="20" height="19"/>
         <namedColor name="alert">
             <color red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

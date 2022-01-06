@@ -17,10 +17,17 @@ class NotificationsVC: SuperViewController {
         tableview.registerCell(id: "NotificationsCVC")
         // Do any additional setup after loading the view.
         
+        _=self.showEmptyView(emptyView: self.emptyView, parentView: self.tableview , refershSelector: #selector(self.didRefersh),firstLabel: "No notifications".localized)
+        self.tableview.reloadData()
+    
+
         
     }
   
-
+    @objc func didRefersh() {
+        print("didRefersh")
+    }
+    
     private func navButtons(){
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setTitle("Notifications".localized, sender: self, large: false)
@@ -31,7 +38,7 @@ class NotificationsVC: SuperViewController {
 
 extension NotificationsVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

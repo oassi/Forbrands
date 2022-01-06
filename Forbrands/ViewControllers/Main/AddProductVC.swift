@@ -26,7 +26,7 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
     @IBOutlet weak var addProductBut            :UIButton!
     @IBOutlet weak var lblOption                :UILabel!
     @IBOutlet weak var heighttableViewSearch    :NSLayoutConstraint!
-    
+    @IBOutlet weak var isReturnProdectBut     : UIButton!
     
     var categories = [CategoriesHome]()
     
@@ -180,6 +180,8 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
                     self.lblProductDetailsArabic.text = obj.detailsAr ?? ""
                     self.lblProductDetailsEnglish.text = obj.detailsEn ?? ""
                     self.selectedTypeCategoryID = obj.categoryId ?? "0"
+                    self.isReturnProdectBut.isSelected = obj.returnProduct == "1" ? true : false
+                    
                     if(obj.images != nil){
                         obj.images!.forEach{
                             let url = URL(string: "\(App.IMG_URL.img_URL)" + $0)
@@ -229,6 +231,10 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
       }
     
    
+    @IBAction func tapIsReturnButton(_ sender: UIButton) {
+        isReturnProdectBut.isSelected = !sender.isSelected
+        
+    }
 
     func CheckProduct(){
         guard  imgProducts.count != 0 else{
@@ -280,6 +286,10 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
         parameters["old_price"] = price
         parameters["store_id"] = CurrentUser.userInfo?.store?.id?.description ?? "0"
         parameters["status"] = "1"
+        parameters["returnproduct"] = "\( self.isReturnProdectBut.isSelected ? 1 : 0)"
+    
+        
+        
         parameters["sizes"] = json(from: sizeLest as Any)
         if(self.lblPriceDiscount != nil){
             parameters["price"] = lblPriceDiscount.text?.description

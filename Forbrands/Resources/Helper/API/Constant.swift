@@ -61,8 +61,11 @@ struct App {
             App.logout(viewController)
         } 
        _ = WebRequests.setup(controller: viewController).prepare(api: Endpoint.fav,nestedParams: id ,isAuthRequired:  true).start(){  (response, error) in
+        
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                
+                let Status =  try JSONDecoder().decode(BaseDataResponse<Favorites>.self, from: response.data!)
+                
                 if Status.code == 200{
                     print("_____ FAV Done _____")
                     print( Status.message ?? "")
@@ -183,8 +186,9 @@ struct StatusStruct : Codable{
     let message: String?
     let title: String?
     let data : [String]?
-    
 }
+
+
 struct TabbyStruct : Codable{
     let status: String?
     let web_url: String?

@@ -86,7 +86,7 @@ class PreviousCVC: UITableViewCell {
                 viewUnderway.backgroundColor = UIColor(named: "derkGrey")
                 viewReceived.backgroundColor = UIColor(named: "derkGrey")
             }
-            if(obj?.products != nil){
+            if(obj?.products != nil && obj?.products?.count != 0){
                 obj!.products!.forEach{products.append($0)}
                 self.heighttableViewCell.constant = CGFloat((obj!.products!.count) * 100)
                 tableview.reloadData()
@@ -135,6 +135,7 @@ extension PreviousCVC : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableview.dequeueReusableCell(withIdentifier: "CurrentTableViewCell", for: indexPath) as! CurrentTableViewCell
         cell.obj = products[indexPath.row]
+        cell.deleteProdectBut.isHidden = true
         return cell
     }
     

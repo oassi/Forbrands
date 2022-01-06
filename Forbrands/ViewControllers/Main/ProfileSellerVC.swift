@@ -19,6 +19,7 @@ class ProfileSellerVC: SuperViewController{
     @IBOutlet var lblStoreLink      : UILabel!
     @IBOutlet var lblCommercial     : UILabel!
     @IBOutlet var lblIban           : UILabel!
+    @IBOutlet var storePolicy       : UILabel!
     
     @IBOutlet var caverImgBut      : UIButton!
     @IBOutlet var editBut          : UIButton!
@@ -63,26 +64,35 @@ class ProfileSellerVC: SuperViewController{
         
         if( CurrentUser.userTrader != nil ){
             let store = CurrentUser.userTrader!
-            lblStoreName.text =  store.name ?? ""
-            lblStoreLink.text =  store.maroofLink ?? ""
+            lblStoreName.text  = store.name ?? ""
+            lblStoreLink.text  = store.maroofLink ?? ""
             lblCommercial.text = store.commercialRecord ?? ""
-            lblIban.text =       store.iban ?? ""
+            lblIban.text       = store.iban ?? ""
+            storePolicy.text   = store.storePolicy ?? ""
             imgCoverStore.sd_custom(url: "\(App.IMG_URL.img_URL)\(store.image ?? "")",defultImage: UIImage(named: "caverImg"))
         }
     }
     
     @IBAction func tapEdit(_ sender: UIButton) {
-        var vc = UIViewController()
+     
         switch  sender.tag {
         case 0:
-            vc = EditProfileSellerVC.loadFromNib()
+            var vc = EditProfileSellerVC.loadFromNib()
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         case 1:
-            vc = EditStoreInformationVC.loadFromNib()
+            var vc = EditStoreInformationVC.loadFromNib()
+            if( CurrentUser.userTrader != nil ){
+                vc.storeData = CurrentUser.userTrader
+            }
+            vc.modalPresentationStyle = .fullScreen
+            self.navigationController?.pushViewController(vc, animated: true)
+          
         default:
             break
         }
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.pushViewController(vc, animated: true)
+        
         
     }
     

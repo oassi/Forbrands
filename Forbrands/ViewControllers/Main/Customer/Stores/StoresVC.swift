@@ -196,7 +196,13 @@ extension StoresVC: UICollectionViewDelegate,UICollectionViewDataSource{
             }else{
                 collectionview1.reloadData()
                 let vc:CategoriesVC = CategoriesVC.loadFromNib()
-                vc.titleNav = categories[indexPath.row-1].name ?? "Categories"
+           
+                
+                if MOLHLanguage.isArabic() {
+                    vc.titleNav = categories[indexPath.item-1].nameAr ?? "Categories".localized
+                }else{
+                    vc.titleNav = categories[indexPath.item-1].nameEn ?? "Categories".localized
+                }
                 vc.categoryId =  categories[indexPath.row-1].id?.description ?? "0"
                 vc.modalPresentationStyle = .fullScreen
                 self.navigationController?.pushViewController(vc, animated: true)
@@ -230,7 +236,12 @@ extension StoresVC: UICollectionViewDelegateFlowLayout{
             if indexPath.row == 0{
                 text = "All".localized
             }else{
-                text = categories[indexPath.item-1].name?.description ?? ""
+                
+                if MOLHLanguage.isArabic() {
+                    text = categories[indexPath.item-1].nameAr ?? "Categories".localized
+                }else{
+                    text = categories[indexPath.item-1].nameEn ?? "Categories".localized
+                }
             }
             widths = estimateFrameForText(text).width + 50
             return CGSize(width: widths, height:41)

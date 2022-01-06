@@ -52,7 +52,7 @@
 
 // Settings
 "Edit" = "تعديل";
-"Mobile" = "رقم الموبايل";
+"Mobile" = "رقم الجوال";
 "Language" = "اللغة";
 "Edit my account" = "تعديل حسابي";
 "Privacy Policy" = "سياسية الخصوصية";
@@ -178,6 +178,7 @@
 "Order number" = "رقم الطلب";
 "Product" = "المنتج";
 "Quantity" = "الكمية";
+"Quantity :" = ": الكمية";
 "Shipping expenses" = "مصاريف الشحن";
 "Total to be paid" = "المطلوب دفعه";
 "Total before discount" = "الإجمالي قبل الخصم";
@@ -210,7 +211,7 @@
 "Whoever buys this product also buys" = "من يشترون هذا المنتج يشترون أيضاً";
 "Start" = "إبدأ";
 "Add to card" = "أضف للسلة";
-"Please enter phone number" = "الرجاء إدخال رقم الموبايل";
+"Please enter phone number" = "الرجاء إدخال رقم الجوال";
 "Take photo" = "الكاميرا";
 "Photo library" = "البوم الصور";
 
@@ -265,14 +266,25 @@
 "Name" = "الاسم";
 "Content" = "المحتوى";
 "Please select Pay Method" = "الرجاء تحديد طريقة الدفع";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-"" = "";
-
-
-
+"No results found!" = "لا يوجد بيانات";
+"Pay Now" = "ادفع الآن";
+"Wallet balance" = "رصيد المحفظة";
+"You have points" = "لديك من النقاط";
+"Don't forget to charge your balance to get points" = "لا تنسي شحن رصيدك لتحصل على النقاط";
+"My Points" = "نقاطي";
+"No ratings found! ⭐️" = "لا توجد تقييمات ⭐️";
+"Fast service" = "خدمة سريعة";
+"Original products" = "منتجات أصلية";
+"Committed to a date" = "ملتزم بميعاده";
+"Respected delegate" = "مندوب محترم";
+"Simple method" = "طريقتة بسيطة";
+"Always available" = "متوفر دائما";
+"Store Policy" = "سياسة المتجر";
+"I agree with the policy" = "أنا أتفق مع السياسة" ;
+"Store policy cannot be empty" = "لا يمكن ترك سياسة المتجر فارغة";
+"There are No Products! ☹️" = "لا يوجد منتجات! ☹️";
+"Are you sure to delete the product?" = "هل أنت متأكد من حذف المنتج؟";
+"Return Product" = "إرجاع المنتج" ;
+"returnable" = "قابل للإرجاع" ;
+"not returnable" = "غير قابل للإرجاع" ;
+"No notifications" = "لا يوجد إشعارات";

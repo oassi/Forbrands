@@ -7,7 +7,7 @@
 
 import UIKit
 import FSPagerView
-
+import AVKit
 class HomeVC: SuperViewController,UISearchBarDelegate, UITextFieldDelegate {
     @IBOutlet var pageControl: FSPageControl!
     @IBOutlet weak var collectionview1:UICollectionView!
@@ -56,19 +56,21 @@ class HomeVC: SuperViewController,UISearchBarDelegate, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         reloadDate()
    
     }
-    
+ 
     func reloadDate(){
         adsTpo.removeAll()
         adsCenter.removeAll()
         storesTop.removeAll()
         storesBut.removeAll()
         products.removeAll()
+        getHomeList()
         storesWithVideo.removeAll()
         categories.removeAll()
-        getHomeList()
+       
     }
     
     
@@ -143,24 +145,28 @@ class HomeVC: SuperViewController,UISearchBarDelegate, UITextFieldDelegate {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<HomePage>.self, from: response.data!)
                 if Status.code == 200{
                     if (Status.data != nil) {
-                        if(Status.data!.ads?.count != 0){
-                            Status.data!.ads!.forEach{
+                        
+                        if let ad = Status.data?.ads , !ad.isEmpty {
+                                ad.forEach{
                                 $0.position == "top" ? self.adsTpo.append($0): self.adsCenter.append($0)
                             }
+                            self.pagerView.reloadData()
+                            self.pageControlle.numberOfPages = self.adsTpo.count
                         }
-                        if(Status.data!.stores?.count != 0){
-                           let splitStore = Status.data!.stores!.devided()
-                            self.storesTop += splitStore.left
-                            self.storesBut += splitStore.right
+                        if let storeTop = Status.data?.stores , !storeTop.isEmpty {
+                            let splitStore = storeTop.devided()
+                             self.storesTop += splitStore.left
+                             self.storesBut += splitStore.right
                         }
-                        if(Status.data!.products != nil){
-                            self.products += Status.data!.products!
+                        
+                        if let product = Status.data?.products , !product.isEmpty {
+                            self.products += product
                         }
-                        if(Status.data!.storesWithVideo != nil){
-                            self.storesWithVideo += Status.data!.storesWithVideo!
+                        if let storesWithVideo = Status.data?.storesWithVideo , !storesWithVideo.isEmpty {
+                            self.storesWithVideo += storesWithVideo
                         }
-                        if(Status.data!.categories?.count != 0){
-                            self.categories += Status.data!.categories!
+                        if let categories = Status.data?.categories , !categories.isEmpty {
+                            self.categories += categories
                         }
                     }
                     self.heighttableViewCell.constant = CGFloat(150 * self.products.count)
@@ -171,8 +177,8 @@ class HomeVC: SuperViewController,UISearchBarDelegate, UITextFieldDelegate {
                     self.collectionview4.reloadData()
                     self.collectionview5.reloadData()
                     self.collectionview6.reloadData()
-                    self.pagerView.reloadData()
-                    self.pageControlle.numberOfPages = self.adsTpo.count
+                    
+                    
                 }
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
@@ -276,15 +282,55 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource{
             poushVC(vc,.fullScreen)
 
         }
+        
+        if(collectionView == collectionview4){
+            if  adsCenter[indexPath.row].productId != nil && adsCenter[indexPath.row].productId != 0 {
+                let vc :DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
+                vc.productId =  adsCenter[indexPath.row].productId ?? 0
+                poushVC(vc,.fullScreen)
+            } else if  adsCenter[indexPath.row].link != nil && adsCenter[indexPath.row].productId == 0 {
+                let vc :webViewAdsVC = webViewAdsVC.loadFromNib()
+                vc.url =  adsCenter[indexPath.row].link ?? ""
+                poushVC(vc,.fullScreen)
+            }
+            
+        }
+        
+        if(collectionView == collectionview5){
+            if let url =  storesWithVideo[indexPath.row].videoLink, !url.isEmpty {
+                playVideoButton(url)
+            }
+         
+         
+
+
+        }
         if(collectionView == collectionview6){
             let vc:CategoriesVC = CategoriesVC.loadFromNib()
-            vc.titleNav = categories[indexPath.row].name ?? "Categories"
+            
+            if MOLHLanguage.isArabic(){
+                vc.titleNav = categories[indexPath.row].nameAr ?? ""
+            }else{
+                vc.titleNav = categories[indexPath.row].nameEn ?? ""
+            }
+            
+           
             vc.categoryId =  categories[indexPath.row].id?.description ?? "0"
             poushVC(vc,.fullScreen, false)
           
         }
         
         
+    }
+    
+    func playVideoButton(_ url:String = "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4") {
+        guard let url = URL(string: url) else { return }
+        let player = AVPlayer(url:url)
+        let controller = AVPlayerViewController()
+        controller.player = player
+        present(controller, animated: true) {
+               player.play()
+           }
     }
     
     
@@ -347,10 +393,32 @@ extension HomeVC:FSPagerViewDelegate,FSPagerViewDataSource{
     }
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: "SliderProducatCell", at: index) as! SliderProducatCell
-        cell.imgProducta.sd_custom(url: adsTpo[index].image ?? "")
-        self.pageControlle.currentPage = pagerView.currentIndex
-        cell.imgProducta?.contentMode = .scaleToFill
-        return cell
+        if !adsTpo.isEmpty {
+            cell.imgProducta.sd_custom(url: adsTpo[index].image ?? "")
+            self.pageControlle.currentPage = pagerView.currentIndex
+            cell.imgProducta?.contentMode = .scaleToFill
+            return cell
+        }
+        return FSPagerViewCell()
+       
+    }
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        
+       
+        if  adsTpo[index].productId != nil && adsTpo[index].productId != 0 {
+            let vc :DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
+            vc.productId =  adsTpo[index].productId ?? 0
+            poushVC(vc,.fullScreen)
+        }
+        else if  adsTpo[index].link != nil && adsTpo[index].productId == 0 {
+            let vc :webViewAdsVC = webViewAdsVC.loadFromNib()
+            vc.url =  adsTpo[index].link ?? ""
+            poushVC(vc,.fullScreen)
+        }
+        
+
+        
+        print("sada")
     }
     func pagerViewDidEndScrollAnimation(_ pagerView: FSPagerView) {
         self.pageControlle.currentPage = pagerView.currentIndex

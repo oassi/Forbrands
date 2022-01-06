@@ -31,7 +31,7 @@ class CategoriesVC: SuperViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         reloadDataProduct()
-        reloadCard()
+       // reloadCard()
     }
     
     func reloadCard()  {
@@ -48,7 +48,8 @@ class CategoriesVC: SuperViewController {
             do {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<Product>.self, from: response.data!)
                 if Status.code == 200{
-                    guard Status.data != nil else {
+                    guard let obj = Status.data, !obj.isEmpty  else {
+                        _=self.showEmptyView(emptyView: self.emptyView, parentView: self.tableview, refershSelector: #selector(self.didRefersh), firstLabel: "There are No Products! 🥲".localized)
                         return
                     }
                     self.productByCat += Status.data!
@@ -59,16 +60,19 @@ class CategoriesVC: SuperViewController {
             }
         }
     }
+    @objc func didRefersh() {  }
     func getProductByCat(){
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.productsByCategory,nestedParams: categoryId ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<Product>.self, from: response.data!)
                 if Status.code == 200{
-                    guard Status.data != nil else {
+                    guard let obj = Status.data, !obj.isEmpty  else {
+                        _=self.showEmptyView(emptyView: self.emptyView, parentView: self.tableview, refershSelector: #selector(self.didRefersh), firstLabel: "There are No Products! 🥲".localized)
                         return
                     }
                     self.productByCat += Status.data!
                     self.tableview.reloadData()
+                    
                 }
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
@@ -180,4 +184,12 @@ extension CategoriesVC : UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc:DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
+        vc.productId = productByCat[indexPath.row].id ?? 0
+        vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+ 
 }

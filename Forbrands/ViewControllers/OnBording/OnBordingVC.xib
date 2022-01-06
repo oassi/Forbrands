@@ -18,6 +18,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnBordingVC" customModule="Forbrands" customModuleProvider="target">
             <connections>
                 <outlet property="lblTimmer" destination="XQ8-1h-xSZ" id="GTR-qu-kLy"/>
+                <outlet property="pageControlle" destination="cdx-fw-cSP" id="jZH-xv-7op"/>
+                <outlet property="pagerView" destination="5xf-dn-WHm" id="aLr-gI-zje"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,10 +31,29 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7e-7S-9zK">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfume" translatesAutoresizingMaskIntoConstraints="NO" id="k3J-re-ezK">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xf-dn-WHm" customClass="FSPagerView" customModule="FSPagerView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="vlz-CG-sMV"/>
+                                <outlet property="delegate" destination="-1" id="gPk-CC-MSK"/>
+                            </connections>
+                        </view>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdx-fw-cSP" customClass="FSPageControl" customModule="FSPagerView">
+                            <rect key="frame" x="167" y="836" width="80" height="16"/>
+                            <color key="backgroundColor" name="background"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="8zG-So-YLI"/>
+                                <constraint firstAttribute="width" constant="80" id="ufc-TJ-CUk"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="perfume" translatesAutoresizingMaskIntoConstraints="NO" id="k3J-re-ezK">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                         </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRW-D1-iPW">
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRW-D1-iPW">
                             <rect key="frame" x="20" y="818" width="374" height="48"/>
                             <color key="backgroundColor" name="primary"/>
                             <constraints>
@@ -77,15 +98,26 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="YRW-D1-iPW" secondAttribute="bottom" constant="30" id="1iA-Cj-WBJ"/>
+                        <constraint firstAttribute="bottom" secondItem="5xf-dn-WHm" secondAttribute="bottom" id="EJt-Yr-IH8"/>
                         <constraint firstAttribute="trailing" secondItem="uxm-j1-wAZ" secondAttribute="trailing" constant="20" id="Hfa-JQ-NJM"/>
                         <constraint firstItem="uxm-j1-wAZ" firstAttribute="top" secondItem="J7e-7S-9zK" secondAttribute="top" constant="56" id="Hrt-hH-alH"/>
+                        <constraint firstItem="cdx-fw-cSP" firstAttribute="bottom" secondItem="5xf-dn-WHm" secondAttribute="bottom" constant="-44" id="JFD-ni-Ikv"/>
+                        <constraint firstAttribute="trailing" secondItem="5xf-dn-WHm" secondAttribute="trailing" id="KF5-8w-5du"/>
+                        <constraint firstItem="5xf-dn-WHm" firstAttribute="leading" secondItem="J7e-7S-9zK" secondAttribute="leading" id="Td6-wd-lPS"/>
+                        <constraint firstItem="cdx-fw-cSP" firstAttribute="centerX" secondItem="5xf-dn-WHm" secondAttribute="centerX" id="Voz-PH-nPV"/>
                         <constraint firstAttribute="trailing" secondItem="k3J-re-ezK" secondAttribute="trailing" id="b3I-NY-A2g"/>
+                        <constraint firstItem="5xf-dn-WHm" firstAttribute="top" secondItem="J7e-7S-9zK" secondAttribute="top" id="bUW-h4-KXj"/>
                         <constraint firstAttribute="trailing" secondItem="YRW-D1-iPW" secondAttribute="trailing" constant="20" id="lJF-G4-Oxd"/>
                         <constraint firstItem="k3J-re-ezK" firstAttribute="leading" secondItem="J7e-7S-9zK" secondAttribute="leading" id="pJq-5O-O9g"/>
                         <constraint firstItem="k3J-re-ezK" firstAttribute="top" secondItem="J7e-7S-9zK" secondAttribute="top" id="rY9-TO-ybZ"/>
                         <constraint firstAttribute="bottom" secondItem="k3J-re-ezK" secondAttribute="bottom" constant="-4" id="s52-PJ-WQc"/>
                         <constraint firstItem="YRW-D1-iPW" firstAttribute="leading" secondItem="J7e-7S-9zK" secondAttribute="leading" constant="20" id="u7p-j7-lrO"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="k3J-re-ezK"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -96,11 +128,14 @@
                 <constraint firstItem="J7e-7S-9zK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YUp-tT-U1d"/>
                 <constraint firstItem="J7e-7S-9zK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dRQ-8z-Ak1"/>
             </constraints>
-            <point key="canvasLocation" x="-25" y="76"/>
+            <point key="canvasLocation" x="-26.086956521739133" y="75.669642857142847"/>
         </view>
     </objects>
     <resources>
         <image name="perfume" width="378" height="815"/>
+        <namedColor name="background">
+            <color red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primary">
             <color red="0.83499997854232788" green="0.66299998760223389" blue="0.25499999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

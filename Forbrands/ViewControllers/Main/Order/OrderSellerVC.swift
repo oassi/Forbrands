@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import FittedSheets
 class OrderSellerVC: SuperViewController {
     @IBOutlet var tableview: UITableView!
     
@@ -150,17 +150,22 @@ extension OrderSellerVC : UITableViewDelegate,UITableViewDataSource{
             }
             
             cell.changeOrderStatus = { [weak self] in
-                guard let strongSelf = self else {
-                    return
-                }
-                let vc: PopChangeOrderStatusVC = PopChangeOrderStatusVC.loadFromNib()
-                vc.modalPresentationStyle = .overFullScreen
-                vc.ordersId = obj.orderId ?? ""
-                vc.rateDeleget = { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                let controller = PopChangeOrderStatusVC()
+                controller.ordersId = obj.orderId ?? ""
+                controller.changeProcessDeleget = { [weak self] in
                     guard let strongSelf = self else { return }
                     strongSelf.relodeData()
                 }
-                strongSelf.present(vc, animated: false, completion: nil)
+                let sheet = SheetViewController(controller: controller, sizes: [.fixed(350)])
+                sheet.extendedLayoutIncludesOpaqueBars = false
+                strongSelf.present(sheet, animated: false, completion: nil)
+                
+                
+                
+                
+                
             }
             return cell
         }

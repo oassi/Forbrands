@@ -29,6 +29,7 @@ class DetailsProductUserVC: SuperViewController {
     @IBOutlet weak var lblRate:            UILabel!
     @IBOutlet weak var lblReviews:         UILabel!
     @IBOutlet weak var lblCount :          UILabel!
+    @IBOutlet weak var lblIsReturn :       UILabel!
     @IBOutlet weak var favoritesBut:       UIButton!
     @IBOutlet weak var ViewRate:           CosmosView!
     @IBOutlet weak var ViewReviewsProduct: CosmosView!
@@ -40,6 +41,9 @@ class DetailsProductUserVC: SuperViewController {
     
     var product = [Product]()
     var productId = 0
+    var isCart:Bool = false
+    var isAds:Bool = false
+    
     var productAndReviews : ProductAndReviews?
     var imgProduct = [String]()
     var reviews = [Reviews]()
@@ -60,6 +64,33 @@ class DetailsProductUserVC: SuperViewController {
     private func navButtons(){
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setCustomBackButtonForViewController(sender: self)
+        navigationController?.navigationBar.tintColor = getColorApp()
+    }
+    
+    override func backButtonAction(_sender: UIBarButtonItem) {
+        if isAds{
+            if CurrentUser.userInfo == nil {
+                register(LoginVC.loadFromNib().navigationController())
+            }else{
+                if(CurrentUser.userInfo!.roleName == "Trader"
+                    && CurrentUser.userInfo!.store == nil
+                    && CurrentUser.userTrader == nil){
+                    UserDefaults.standard.set(true, forKey: "isNotCompleteData")
+                    register(StoreInformationVC.loadFromNib().navigationController())
+                }else{
+                    register(TTabBarController())
+                }
+            }
+        }else{
+            navigationController?.popViewController(animated: true)
+        }
+      
+    }
+    
+    func register<T>(_ a: T) {
+        let vc = a
+        (vc as! UIViewController).modalPresentationStyle = .fullScreen
+        self.goToRoot(vc as! UIViewController)
     }
     
     func reloadCard()  {
@@ -143,7 +174,7 @@ class DetailsProductUserVC: SuperViewController {
 //        return cardItems
 //    }
     @IBAction func tapAddToCard(_ sender: UIButton) {
-        if CurrentUser.typeSelect == userType.Guest{
+        if CurrentUser.typeSelect == userType.Guest || CurrentUser.typeSelect == userType.Seller || CurrentUser.userInfo == nil{
             App.logout(self)
         }else{
             if(productAndReviews?.status == 1){
@@ -153,7 +184,20 @@ class DetailsProductUserVC: SuperViewController {
                 App.addCart(self, parameters: parameters) { bool in
                     let controller = PopAddCardVC()
                     controller.goTocard = { [weak self] in
-                        self?.tabBarController?.selectedIndex = 2
+                        if self!.isCart {
+                            self?.navigationController?.popViewController(animated: true)
+                        }
+                        else if self!.isAds {
+                            let vc = TTabBarController()
+                            vc.modalPresentationStyle = .fullScreen
+                            vc.selectedIndex = 2
+                            self?.goToRoot(vc)
+                        }
+                        
+                        else{
+                            self?.tabBarController?.selectedIndex = 2
+                        }
+                        
                     }
                     let sheet = SheetViewController(controller: controller, sizes: [.fixed(290)])
                     sheet.extendedLayoutIncludesOpaqueBars = false
@@ -237,6 +281,8 @@ class DetailsProductUserVC: SuperViewController {
                     self.lblTitle.text = obj.nameAr ?? ""
                     self.lblDescrption.text = obj.nameEn ?? ""
                     self.lblStatus.text = obj.status == 1 ? "available".localized : "unavailable".localized
+                    
+                    self.lblIsReturn.text = obj.returnProduct == "1" ? "returnable".localized : "not returnable".localized
                     
                     if(obj.price == "0"){
                         self.lblPrice.text = obj.oldPrice ?? "0"

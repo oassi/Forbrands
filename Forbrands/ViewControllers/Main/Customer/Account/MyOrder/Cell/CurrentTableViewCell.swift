@@ -12,15 +12,16 @@ class CurrentTableViewCell: UITableViewCell {
     @IBOutlet var lblTitle: UILabel!
     @IBOutlet var lblCount: UILabel!
     @IBOutlet var img: UIImageView!
-    
+    @IBOutlet var deleteProdectBut: UIButton!
+    var deleteDeleget: (()->())?
+
     var obj :Product?{
         didSet{
             lblTitle.text = MOLHLanguage.isArabic() ? obj?.nameAr ?? "" : obj?.nameEn ?? ""
             lblCount.text =  obj?.amount?.description ?? ""
-            if(obj?.images?.count != 0){
+            if(obj?.images?.count != 0 && obj?.images != nil){
                 img.sd_custom(url: "\(App.IMG_URL.img_URL)\(obj!.images?[0] ?? "")" ,defultImage: UIImage(named: "defultImg") )
             }
-            
         }
     }
     override func awakeFromNib() {
@@ -32,6 +33,9 @@ class CurrentTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func deleteProdect(_ sender:UIButton){
+        deleteDeleget?()
     }
     
 }

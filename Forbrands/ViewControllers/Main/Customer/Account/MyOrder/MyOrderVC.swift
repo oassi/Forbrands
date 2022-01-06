@@ -101,6 +101,7 @@ extension MyOrderVC : UITableViewDelegate,UITableViewDataSource{
             let cell = tableview.dequeueReusableCell(withIdentifier: "PreviousCVC", for: indexPath) as! PreviousCVC
             let obj = customerOrdersPrevious[indexPath.row]
             cell.obj = obj
+           
             
             if(obj.reviews != nil && obj.orderProcess != "-1" ){
                 cell.lblEvaluation.text = "Your evaluation of the service".localized
@@ -157,6 +158,16 @@ extension MyOrderVC : UITableViewDelegate,UITableViewDataSource{
                 vc.modalPresentationStyle = .fullScreen
                 strongSelf.navigationController?.pushViewController(vc, animated: true)
             }
+            
+            cell.deleteDeleget = { [weak self] in
+            guard let strongSelf = self else {  return }
+                
+                
+                strongSelf.showAlertWithCancel(title: "Are you sure to delete the product?".localized, message: "", okAction: "Delete".localized) { _ in
+                    print( "Delete Prodect")
+                }
+            }
+            
             
             return cell
             

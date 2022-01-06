@@ -42,6 +42,10 @@ class FavoritesVC: SuperViewController {
         card = loads()
     }
     
+    @objc func didRefersh() {
+        print("didRefersh")
+    }
+    
     func getFavList(){
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.favList ,isAuthRequired:  true).start(){  (response, error) in
             
@@ -49,10 +53,15 @@ class FavoritesVC: SuperViewController {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<FavoriteList>.self, from: response.data!)
                 
                 if Status.code == 200{
-                    guard Status.data != nil else {
-                        return
+                    guard let data = Status.data else {   return    }
+                    
+                    self.favoriteList += data
+                    
+                    if self.favoriteList.count == 0{
+                        self.tableview.tableHeaderView = nil
+                        _=self.showEmptyView(emptyView: self.emptyView, parentView: self.tableview, refershSelector: #selector(self.didRefersh))
                     }
-                    self.favoriteList += Status.data!
+                    
                     self.tableview.reloadData()
 
                 }
@@ -163,4 +172,13 @@ extension FavoritesVC : UITableViewDelegate,UITableViewDataSource{
      
  
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc:DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
+        vc.productId = favoriteList[indexPath.row].productId ?? 0
+        vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

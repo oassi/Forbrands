@@ -28,6 +28,7 @@ struct ProductAndReviews: Codable {
         case detailsEn = "details_en"
         case currencyId = "currency_id"
         case favorite
+        case returnProduct = "returnproduct"
     }
     
     var storeName: String?
@@ -48,7 +49,7 @@ struct ProductAndReviews: Codable {
     var detailsEn: String?
     var currencyId: Int?
     var favorite: Bool?
-    
+    var returnProduct: String?
     
     
     init(from decoder: Decoder) throws {
@@ -124,6 +125,11 @@ struct ProductAndReviews: Codable {
             currencyId = Int(value)
         } else if let value = try? container.decode(Int.self, forKey:.currencyId) {
             currencyId = value
+        }
+        if let value = try? container.decode(Int.self, forKey:.returnProduct) {
+            returnProduct = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.returnProduct) {
+            returnProduct = value
         }
         images = try container.decodeIfPresent([String].self, forKey: .images)
         sizes = try container.decodeIfPresent([String].self, forKey: .sizes)

@@ -221,11 +221,6 @@
             <point key="canvasLocation" x="-13.043478260869566" y="70.982142857142847"/>
         </view>
     </objects>
-    <designables>
-        <designable name="or4-ZG-aaC">
-            <size key="intrinsicContentSize" width="217.5" height="39.5"/>
-        </designable>
-    </designables>
     <resources>
         <image name="emptyStart" width="33" height="33"/>
         <image name="fillStart" width="33" height="33"/>

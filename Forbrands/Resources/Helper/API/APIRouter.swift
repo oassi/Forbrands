@@ -63,6 +63,7 @@ enum Endpoint {
     case productsByStore
     case productsByStoreAuth
     case myStoreSeller
+    case storePolicy
     
     //profile
     case uploadImageProfile
@@ -121,6 +122,9 @@ enum Endpoint {
     
     //Payment
     case tabby
+    case tap
+    case stc
+    case point
     
     //Cart
     case addCart
@@ -129,6 +133,10 @@ enum Endpoint {
     case addPromoCode
     case deletePromoCode
     case ordersComplete
+    
+    //Splash
+    case adsList
+   
     
     public var values : (url: String ,reqeustType: HTTPMethod,key :String?){
         get{
@@ -216,7 +224,8 @@ enum Endpoint {
                 return (Endpoint.DOMAIN_URL + "v1/products/store_auth/",.get,nil)
             case .myStoreSeller:
                 return (Endpoint.DOMAIN_URL + "v1/stores/my_store",.get,nil)
-                
+            case .storePolicy:
+                return (Endpoint.DOMAIN_URL + "stores/storePolicy/",.get,nil)
                 
                 
             //My Account
@@ -298,6 +307,18 @@ enum Endpoint {
             //Payment
             case .tabby:
                 return (Endpoint.DOMAIN_URL + "v1/credit/taby",.get,nil)
+            case .tap:
+                return (Endpoint.DOMAIN_URL + "credit/tap",.get,nil)
+            case .stc:
+                return (Endpoint.DOMAIN_URL + "credit/stc",.get,nil)
+            case .point:
+                    return (Endpoint.DOMAIN_URL + "User/point",.get,nil)
+            
+            //Splash
+            case .adsList:
+                    return (Endpoint.DOMAIN_URL + "v1/ads/front/list",.get,nil)
+            
+            
             }
             
 

@@ -29,5 +29,6 @@ target 'Forbrands' do
   pod 'Alamofire'
   pod 'PopupDialog'
   pod 'KRProgressHUD'
+  pod 'EmptyStateKit'
 
 end

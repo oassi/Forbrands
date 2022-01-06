@@ -29,6 +29,7 @@
             <connections>
                 <outlet property="currency1" destination="F2U-lI-N8F" id="LNl-Mm-FfX"/>
                 <outlet property="currency2" destination="BoJ-ae-d8e" id="zB7-8B-b0u"/>
+                <outlet property="evaluationView" destination="jYm-gP-m8c" id="JeL-lz-IgN"/>
                 <outlet property="heighttableViewCell1" destination="VOn-AR-ybG" id="Ti9-Db-aag"/>
                 <outlet property="heighttableViewCell2" destination="WOW-Hd-xnz" id="eM6-kl-gTs"/>
                 <outlet property="imgCharging" destination="6fu-oe-Vlr" id="xpS-oP-gAg"/>
@@ -1010,11 +1011,6 @@
             <point key="canvasLocation" x="-246.37681159420291" y="70.982142857142847"/>
         </view>
     </objects>
-    <designables>
-        <designable name="r8h-RP-yTX">
-            <size key="intrinsicContentSize" width="195" height="35"/>
-        </designable>
-    </designables>
     <resources>
         <image name="emptyStart" width="33" height="33"/>
         <image name="fillStart" width="33" height="33"/>
