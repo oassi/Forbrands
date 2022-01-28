@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		43B864FF7AAEBB22E8EAA381 /* Pods_Forbrands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A3C6726B96AF6699123ECD /* Pods_Forbrands.framework */; };
+		A404B1EB27A2C179007C9E06 /* CartObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = A404B1EA27A2C179007C9E06 /* CartObj.swift */; };
+		A470B6DC27A2D30F007ABCC4 /* ForgetPasPhVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470B6DA27A2D30F007ABCC4 /* ForgetPasPhVC.swift */; };
+		A470B6DD27A2D310007ABCC4 /* ForgetPasPhVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A470B6DB27A2D30F007ABCC4 /* ForgetPasPhVC.xib */; };
+		A470B6E527A2D633007ABCC4 /* PhoneVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470B6E327A2D633007ABCC4 /* PhoneVerificationCode.swift */; };
+		A470B6E627A2D633007ABCC4 /* PhoneVerificationCode.xib in Resources */ = {isa = PBXBuildFile; fileRef = A470B6E427A2D633007ABCC4 /* PhoneVerificationCode.xib */; };
+		A470B6EA27A2EF7F007ABCC4 /* NewPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470B6E827A2EF7F007ABCC4 /* NewPasswordVC.swift */; };
+		A470B6EB27A2EF7F007ABCC4 /* NewPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A470B6E927A2EF7F007ABCC4 /* NewPasswordVC.xib */; };
 		C90B5D0D26BE84D300F4F255 /* TermsAndConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90B5D0B26BE84D300F4F255 /* TermsAndConditionsVC.swift */; };
 		C90B5D0E26BE84D300F4F255 /* TermsAndConditionsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90B5D0C26BE84D300F4F255 /* TermsAndConditionsVC.xib */; };
 		C90B5D1326BE862F00F4F255 /* AboudUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90B5D1126BE862F00F4F255 /* AboudUsVC.swift */; };
@@ -307,6 +314,13 @@
 		55A3C6726B96AF6699123ECD /* Pods_Forbrands.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forbrands.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD19959D67083F5FF6B277D /* Pods-Forbrands.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forbrands.release.xcconfig"; path = "Target Support Files/Pods-Forbrands/Pods-Forbrands.release.xcconfig"; sourceTree = "<group>"; };
 		941B95D5AF01907390E2601C /* Pods-Forbrands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forbrands.debug.xcconfig"; path = "Target Support Files/Pods-Forbrands/Pods-Forbrands.debug.xcconfig"; sourceTree = "<group>"; };
+		A404B1EA27A2C179007C9E06 /* CartObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartObj.swift; sourceTree = "<group>"; };
+		A470B6DA27A2D30F007ABCC4 /* ForgetPasPhVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasPhVC.swift; sourceTree = "<group>"; };
+		A470B6DB27A2D30F007ABCC4 /* ForgetPasPhVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasPhVC.xib; sourceTree = "<group>"; };
+		A470B6E327A2D633007ABCC4 /* PhoneVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCode.swift; sourceTree = "<group>"; };
+		A470B6E427A2D633007ABCC4 /* PhoneVerificationCode.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneVerificationCode.xib; sourceTree = "<group>"; };
+		A470B6E827A2EF7F007ABCC4 /* NewPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordVC.swift; sourceTree = "<group>"; };
+		A470B6E927A2EF7F007ABCC4 /* NewPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewPasswordVC.xib; sourceTree = "<group>"; };
 		C90B5D0B26BE84D300F4F255 /* TermsAndConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsAndConditionsVC.swift; sourceTree = "<group>"; };
 		C90B5D0C26BE84D300F4F255 /* TermsAndConditionsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermsAndConditionsVC.xib; sourceTree = "<group>"; };
 		C90B5D1126BE862F00F4F255 /* AboudUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboudUsVC.swift; sourceTree = "<group>"; };
@@ -644,6 +658,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A404B1EC27A2CC71007C9E06 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				A470B6DA27A2D30F007ABCC4 /* ForgetPasPhVC.swift */,
+				A470B6DB27A2D30F007ABCC4 /* ForgetPasPhVC.xib */,
+				A470B6E227A2D614007ABCC4 /* PhoneVerificationCode */,
+				A470B6E727A2EF5A007ABCC4 /* New password */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		A470B6E227A2D614007ABCC4 /* PhoneVerificationCode */ = {
+			isa = PBXGroup;
+			children = (
+				A470B6E327A2D633007ABCC4 /* PhoneVerificationCode.swift */,
+				A470B6E427A2D633007ABCC4 /* PhoneVerificationCode.xib */,
+			);
+			path = PhoneVerificationCode;
+			sourceTree = "<group>";
+		};
+		A470B6E727A2EF5A007ABCC4 /* New password */ = {
+			isa = PBXGroup;
+			children = (
+				A470B6E827A2EF7F007ABCC4 /* NewPasswordVC.swift */,
+				A470B6E927A2EF7F007ABCC4 /* NewPasswordVC.xib */,
+			);
+			path = "New password";
+			sourceTree = "<group>";
+		};
 		C90B5D0926BE840700F4F255 /* Terms and Conditions */ = {
 			isa = PBXGroup;
 			children = (
@@ -678,6 +721,7 @@
 				C992BB97275FA2B700CB04BB /* OrdersComplete */,
 				C912DE65275E6C990095CBEB /* PromoCode */,
 				C912DE4F275D6F710095CBEB /* Cart.swift */,
+				A404B1EA27A2C179007C9E06 /* CartObj.swift */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -1817,6 +1861,7 @@
 			children = (
 				C9269FF126D36EDD00CE0BBB /* Sigin */,
 				C95F7C8026BB062100A26425 /* Login */,
+				A404B1EC27A2CC71007C9E06 /* ForgotPassword */,
 				C9F3622E26C174790012EC71 /* Regester As Seller */,
 				C9C0222726BB4B28000ACBFE /* RegistrationForm */,
 				C9C0220026BB2A14000ACBFE /* Regist with phone */,
@@ -2095,6 +2140,7 @@
 				TargetAttributes = {
 					C9EAB8B926B9C145008F3A7B = {
 						CreatedOnToolsVersion = 12.0;
+						LastSwiftMigration = 1310;
 					};
 				};
 			};
@@ -2149,6 +2195,7 @@
 				C9CAC8B026C2ABC200284B5E /* StoresSellerVC.xib in Resources */,
 				C9965B5C26C66792003413C6 /* PackageSizeCVC.xib in Resources */,
 				C96FE1D526BC36FC00F3D5A5 /* RatingsVC.xib in Resources */,
+				A470B6DD27A2D310007ABCC4 /* ForgetPasPhVC.xib in Resources */,
 				C9E10DD826BA72E200E146C2 /* Assets.xcassets in Resources */,
 				C96A5D612762A2CE007FF864 /* webViewVC.xib in Resources */,
 				C9BA7EBC26C1568F0003AD4E /* PopPromoCodeVC.xib in Resources */,
@@ -2200,6 +2247,7 @@
 				C9AEA6B226BD7F1A00AAE409 /* CategoryCVC.xib in Resources */,
 				C9EAB8C526B9C145008F3A7B /* Main.storyboard in Resources */,
 				C96FE19A26BBC10800F3D5A5 /* AddAddressCVC.xib in Resources */,
+				A470B6EB27A2EF7F007ABCC4 /* NewPasswordVC.xib in Resources */,
 				C9EBADDB276CF5D40048716C /* PopStorePolicy.xib in Resources */,
 				C9965B9D26C69A39003413C6 /* ProfileSellerVC.xib in Resources */,
 				C938B0FA26BFF6F9004C362A /* HomeCell.xib in Resources */,
@@ -2208,6 +2256,7 @@
 				C9CAC8B726C2AC0A00284B5E /* OrderSellerVC.xib in Resources */,
 				C9C0220426BB2A3A000ACBFE /* RegistWithPhoneVC.xib in Resources */,
 				C94C25B126BD1DE400300CDE /* NotificationDisplayVC.xib in Resources */,
+				A470B6E627A2D633007ABCC4 /* PhoneVerificationCode.xib in Resources */,
 				C93F2E4526C71E660036BF9E /* PopAddCardVC.xib in Resources */,
 				C93A932A26CEFDF300D904EB /* EditSizeVC.xib in Resources */,
 				C94553B826CD00DB00174DFD /* StoresWithVideoCVC.xib in Resources */,
@@ -2300,6 +2349,7 @@
 				C9C0223026BBA118000ACBFE /* LoginVC.swift in Sources */,
 				C96E588A26DAC82600263BD2 /* ProductsRTLCVC.swift in Sources */,
 				C9CAC8D426C32D1A00284B5E /* ShowCategoryVC.swift in Sources */,
+				A470B6DC27A2D30F007ABCC4 /* ForgetPasPhVC.swift in Sources */,
 				C9269F7526D25C0000CE0BBB /* UserStruct.swift in Sources */,
 				C9965B9C26C69A39003413C6 /* ProfileSellerVC.swift in Sources */,
 				C9DC491A26DD58B1007864F4 /* Pivot.swift in Sources */,
@@ -2376,6 +2426,7 @@
 				C99F2AB526CF8EB700AE1A83 /* DatePickerViewController.swift in Sources */,
 				C97571EE26CB0555008FCDDA /* DetailsProducCVC.swift in Sources */,
 				C926AD0B2705794200AC338F /* PayMethodObj.swift in Sources */,
+				A470B6E527A2D633007ABCC4 /* PhoneVerificationCode.swift in Sources */,
 				C9E10DDE26BAA61A00E146C2 /* UIView+Extensions.swift in Sources */,
 				C9DC492526DD7A33007864F4 /* StoresHome.swift in Sources */,
 				C938B0FF26BFFCF6004C362A /* HeaderStoreCell.swift in Sources */,
@@ -2396,6 +2447,7 @@
 				C987BD5126DE978C002C7B8F /* ProductsByStore.swift in Sources */,
 				C9F11BFA26C3E21400E41CB2 /* SearchSellerVC.swift in Sources */,
 				C94553CC26CD1C9F00174DFD /* CategoriesVC.swift in Sources */,
+				A404B1EB27A2C179007C9E06 /* CartObj.swift in Sources */,
 				C9965B5B26C66792003413C6 /* PackageSizeCVC.swift in Sources */,
 				C96C792F26E7DE920010709A /* Whatsapp.swift in Sources */,
 				C93A932926CEFDF300D904EB /* EditSizeVC.swift in Sources */,
@@ -2445,6 +2497,7 @@
 				C96FE1A026BBCA4600F3D5A5 /* SettingsVC.swift in Sources */,
 				C9DF511226D05A86008B92B7 /* Helper.swift in Sources */,
 				C9A3CE5427655C4000936115 /* Favorites.swift in Sources */,
+				A470B6EA27A2EF7F007ABCC4 /* NewPasswordVC.swift in Sources */,
 				C97DA73626F62C18002A2A77 /* CustomerOrders.swift in Sources */,
 				C9AEA6AA26BD77FC00AAE409 /* StoresCVC.swift in Sources */,
 				C9B48F4626CABDC6004A751C /* DetailsProductUserVC.swift in Sources */,
@@ -2624,11 +2677,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Forbrands/Forbrands.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
-				DEVELOPMENT_TEAM = RZZ472J6K5;
+				CURRENT_PROJECT_VERSION = 23;
+				DEVELOPMENT_TEAM = 4S3VB3SD4A;
 				INFOPLIST_FILE = Forbrands/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2638,6 +2692,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.forbrands.almusand.assi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2653,11 +2708,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Forbrands/Forbrands.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
-				DEVELOPMENT_TEAM = RZZ472J6K5;
+				CURRENT_PROJECT_VERSION = 23;
+				DEVELOPMENT_TEAM = Z3V7529PR9;
 				INFOPLIST_FILE = Forbrands/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -104,7 +104,7 @@ class RegistrationFormVC: SuperViewController {
         let fullNum = (phoneTF.selectedCountry?.phoneCode ?? "+996")! + num!
         var parameters: [String: Any] = [:]
         parameters["name"] =     fullName
-        parameters["phone"] = fullNum
+        parameters["phone"] = num
         parameters["password"] = password
         parameters["role_id"] =  3
         

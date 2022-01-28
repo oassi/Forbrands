@@ -131,6 +131,16 @@ class DetailsProductUserVC: SuperViewController {
     }
     
     @IBAction func tapShareApp(_ sender: UIButton) {
+        let shareAll = ["\(lblStoreName.text ?? "")",
+                        "\(lblDescrption.text ?? "")",
+                        "\(lblTitle.text ?? "")",
+                        "\(lblPrice.text ?? "")",
+                        "\(lblProductDetails.text ?? "")",
+                        "\(imgProduct.first ?? "")"] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: shareAll as [Any], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        self.present(activityViewController, animated: true, completion: nil)
+        
     
     }
     @IBAction func tapIsFavorite(_ sender: UIButton) {
@@ -303,7 +313,7 @@ class DetailsProductUserVC: SuperViewController {
                         }
                         self.pagerView.reloadData()
                     }
-                    if(obj.reviews != nil){
+                    if(obj.reviews != nil && obj.reviews!.count > 0){
                         obj.reviews?.forEach{ self.reviews.append($0)}
                         self.viewCollectionview2.isHidden = false
                         self.collectionview2.reloadData()

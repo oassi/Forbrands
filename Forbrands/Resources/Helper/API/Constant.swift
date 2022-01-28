@@ -132,10 +132,16 @@ struct App {
     static func addCart(_ viewController:UIViewController?,parameters : [String : String] = [:], completion:((Bool)->Void)?){
        _ = WebRequests.setup(controller: viewController).prepare(api: Endpoint.addCart ,parameters: parameters ,isAuthRequired:  true).start(){  (response, error) in
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                let Status =  try JSONDecoder().decode(BaseDataResponse<CartObj>.self, from: response.data!)
                 if Status.code == 200{
                     print("_____ addProducts Done _____")
                     print( Status.message ?? "")
+                    print(Status.data?.count?.description)
+                    UserDefaults.standard.set("\(Status.data?.count?.description ?? "0")", forKey: "countCart")
+
+                    NotificationCenter.default.post(name: .didCartCount, object: nil)
+                
+                    
                     completion?(true)
                 }else{
                     print("_____ addProducts Error _____")
@@ -152,10 +158,12 @@ struct App {
     static func removeProductCart(_ viewController:UIViewController?,parameters : [String : String] = [:], completion:((Bool)->Void)?){
        _ = WebRequests.setup(controller: viewController).prepare(api: Endpoint.removeProductCart ,parameters: parameters ,isAuthRequired:  true).start(){  (response, error) in
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                let Status =  try JSONDecoder().decode(BaseDataResponse<CartObj>.self, from: response.data!)
                 if Status.code == 200{
                     print("_____ deleteProducts Done _____")
                     print( Status.message ?? "")
+                    UserDefaults.standard.set("\(Status.data?.count?.description ?? "0")", forKey: "countCart")
+                    NotificationCenter.default.post(name: .didCartCount, object: nil)
                     completion?(true)
                 }else{
                     print("_____ deleteProducts Error _____")

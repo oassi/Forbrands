@@ -213,6 +213,7 @@ extension UserDefaults {
 
 extension Notification.Name {
     static let didReceiveData = Notification.Name("didReceiveData")
+    static let didCartCount = Notification.Name("didCartCount")
 
 }
 extension UIViewController {

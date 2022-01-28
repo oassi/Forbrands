@@ -20,6 +20,7 @@ class WebRequests: NSObject{
     private static var controller: UIViewController?
     private static var headers = [String : String]()
     private static var tokenApi = CurrentUser.userInfo?.token ?? ""
+    static var tokenApiPassword : String = ""
     private var isAuth: Bool = false
     var parameters = [String : Any]()
     var ReqMethod: HTTPMethod = HTTPMethod.get
@@ -87,7 +88,7 @@ class WebRequests: NSObject{
         }
         if isAuthRequired{
             self.isAuth = true
-            WebRequests.tokenApi = CurrentUser.userInfo?.token ?? ""
+            WebRequests.tokenApi = CurrentUser.userInfo?.token ?? WebRequests.tokenApiPassword
             WebRequests.headers["Authorization"] = "Bearer \(WebRequests.tokenApi)"
 
         }

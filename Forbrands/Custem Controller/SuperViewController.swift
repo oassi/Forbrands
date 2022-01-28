@@ -34,8 +34,14 @@ class SuperViewController: UIViewController, UIGestureRecognizerDelegate {
         self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
         
+        NotificationCenter.default.addObserver(self, selector: #selector(cartCount(_:)), name: .didCartCount, object: nil)
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    
+  
     
     //    func getProfileRequest(){
     //        _ = WebRequests.setup(controller: self).prepare(query: "profile", method: HTTPMethod.get,isAuthRequired:true).start(){ (response, error) in
@@ -53,7 +59,10 @@ class SuperViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func didClickRightButton(_sender :UIBarButtonItem) {
     }
-    
+   
+    @objc func cartCount(_ notification: Notification){
+        tabBarController?.tabBar.items?[2].badgeValue = UserDefaults.standard.string(forKey: "countCart")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

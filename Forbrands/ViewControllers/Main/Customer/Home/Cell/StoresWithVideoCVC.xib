@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,6 +36,14 @@
                                     <constraint firstAttribute="width" constant="48" id="Q7m-PE-OH0"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-22-mOx">
+                                <rect key="frame" x="0.0" y="0.0" width="203" height="178"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                <connections>
+                                    <action selector="tapVedio:" destination="gTV-IL-0wX" eventType="touchUpInside" id="p5Q-sE-6xV"/>
+                                </connections>
+                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z9S-vK-qMq">
                                 <rect key="frame" x="5" y="183" width="193" height="72"/>
                                 <subviews>
@@ -62,14 +70,26 @@
                                         </subviews>
                                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGD-Es-rbn">
+                                        <rect key="frame" x="0.0" y="0.0" width="193" height="72"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title=" "/>
+                                        <connections>
+                                            <action selector="tapProduct:" destination="gTV-IL-0wX" eventType="touchUpInside" id="IfZ-Ig-b0X"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="TGD-Es-rbn" firstAttribute="leading" secondItem="z9S-vK-qMq" secondAttribute="leading" id="1k4-Hu-0cb"/>
+                                    <constraint firstAttribute="bottom" secondItem="TGD-Es-rbn" secondAttribute="bottom" id="3Lu-E4-gyy"/>
+                                    <constraint firstItem="TGD-Es-rbn" firstAttribute="top" secondItem="z9S-vK-qMq" secondAttribute="top" id="6Mh-UY-oVP"/>
                                     <constraint firstAttribute="bottom" secondItem="nHN-X3-Bht" secondAttribute="bottom" id="7yU-FB-DMv"/>
                                     <constraint firstItem="nHN-X3-Bht" firstAttribute="top" secondItem="z9S-vK-qMq" secondAttribute="top" id="8qK-dx-qcQ"/>
                                     <constraint firstAttribute="trailing" secondItem="nHN-X3-Bht" secondAttribute="trailing" id="A3w-c8-xXK"/>
                                     <constraint firstItem="nHN-X3-Bht" firstAttribute="leading" secondItem="z9S-vK-qMq" secondAttribute="leading" id="MpI-pK-ybm"/>
                                     <constraint firstAttribute="height" constant="72" id="k8f-qn-dsf"/>
+                                    <constraint firstAttribute="trailing" secondItem="TGD-Es-rbn" secondAttribute="trailing" id="yuI-j6-XUZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -81,11 +101,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eEu-7l-w7C" firstAttribute="centerY" secondItem="o53-br-Ju5" secondAttribute="centerY" id="0Ky-E7-qV0"/>
+                            <constraint firstItem="z9S-vK-qMq" firstAttribute="top" secondItem="zHu-22-mOx" secondAttribute="bottom" constant="5" id="2Af-cb-i9g"/>
                             <constraint firstAttribute="trailing" secondItem="z9S-vK-qMq" secondAttribute="trailing" constant="5" id="Dfi-eM-n6o"/>
                             <constraint firstItem="z9S-vK-qMq" firstAttribute="leading" secondItem="o53-br-Ju5" secondAttribute="leading" constant="5" id="GIZ-GO-xvX"/>
                             <constraint firstAttribute="bottom" secondItem="z9S-vK-qMq" secondAttribute="bottom" constant="5" id="IhS-US-d6e"/>
                             <constraint firstItem="eEu-7l-w7C" firstAttribute="centerX" secondItem="o53-br-Ju5" secondAttribute="centerX" id="QAZ-CF-W2C"/>
+                            <constraint firstItem="zHu-22-mOx" firstAttribute="leading" secondItem="o53-br-Ju5" secondAttribute="leading" id="YK6-Ex-rbR"/>
+                            <constraint firstAttribute="trailing" secondItem="zHu-22-mOx" secondAttribute="trailing" id="ZL5-ZC-2vr"/>
                             <constraint firstAttribute="bottom" secondItem="buz-Zj-FsS" secondAttribute="bottom" id="b1B-il-mp1"/>
+                            <constraint firstItem="zHu-22-mOx" firstAttribute="top" secondItem="o53-br-Ju5" secondAttribute="top" id="dGz-W3-2g1"/>
                             <constraint firstItem="buz-Zj-FsS" firstAttribute="leading" secondItem="o53-br-Ju5" secondAttribute="leading" id="g8z-pp-Ovq"/>
                             <constraint firstItem="buz-Zj-FsS" firstAttribute="top" secondItem="o53-br-Ju5" secondAttribute="top" id="kAX-xk-kun"/>
                             <constraint firstAttribute="trailing" secondItem="buz-Zj-FsS" secondAttribute="trailing" id="ucU-R7-MtG"/>

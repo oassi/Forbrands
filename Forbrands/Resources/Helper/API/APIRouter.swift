@@ -35,7 +35,9 @@ enum Endpoint {
     case register
     case generateActiveCode
     case verifyPhoneCode
-   
+    case forgetpasswordCode
+    case checkCode
+    case changepassword
     
     //About App
     case aboutApp
@@ -133,6 +135,7 @@ enum Endpoint {
     case addPromoCode
     case deletePromoCode
     case ordersComplete
+    case countCart
     
     //Splash
     case adsList
@@ -150,6 +153,13 @@ enum Endpoint {
                 return (Endpoint.DOMAIN_URL + "v1/user/generateActiveCode/",.get,nil)
             case .verifyPhoneCode:
                 return (Endpoint.DOMAIN_URL + "v1/user/verifyPhoneCode/",.get,nil)
+            case .forgetpasswordCode:
+                return (Endpoint.DOMAIN_URL + "admin/forgetpassword/",.get,nil)
+            case .checkCode:
+                return (Endpoint.DOMAIN_URL + "admin/checkCode",.post,nil)
+            case .changepassword:
+                return (Endpoint.DOMAIN_URL + "admin/changepassword",.post,nil)
+                
                 
             // Cart
             
@@ -166,6 +176,8 @@ enum Endpoint {
                 return (Endpoint.DOMAIN_URL + "v1/user/cancel/discount",.get,nil)
             case .ordersComplete:
                 return (Endpoint.DOMAIN_URL + "v1/orders/show",.get,nil)
+            case .countCart:
+                return (Endpoint.DOMAIN_URL + "v1/user/cart/count",.get,nil)
                 
                 
             //About App

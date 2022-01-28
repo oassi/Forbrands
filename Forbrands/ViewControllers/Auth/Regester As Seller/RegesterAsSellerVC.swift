@@ -110,12 +110,12 @@ class RegesterAsSellerVC: SuperViewController,UITextFieldDelegate {
             return
         }
         let num = phoneTF.getRawPhoneNumber()
-        let fullNum = (phoneTF.selectedCountry?.phoneCode ?? "+996")! + num!
+       let fullNum = (phoneTF.selectedCountry?.phoneCode ?? "+996")! + num!
         
         var parameters: [String: Any] = [:]
         parameters["name"] =      fullName
         parameters["email"] =     email
-        parameters["phone"] =    fullNum
+        parameters["phone"] =    num
         parameters["password"] =  password
         parameters["role_id"] =   2
         

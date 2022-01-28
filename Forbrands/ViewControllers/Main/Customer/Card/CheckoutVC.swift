@@ -98,7 +98,8 @@ class CheckoutVC: SuperViewController {
                         vc.title = "sfds"
                         self.goToRoot(vc)
             })}
-//        UserDefaults.standard.set(true, forKey: "ordersComplete")
+        
+        UserDefaults.standard.set("0", forKey: "countCart")
 
       
     }

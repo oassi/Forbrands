@@ -22,6 +22,7 @@ class TTabBarController: UITabBarController {
     let vc7 = MyAccountVC().navigationController()
     let vc6 = OrderSellerVC().navigationController()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = getColorApp()
@@ -52,6 +53,13 @@ class TTabBarController: UITabBarController {
             
         if(CurrentUser.typeSelect == userType.User || CurrentUser.typeSelect == userType.Guest){
             viewControllers = [vc1,vc2,vc3,vc4]
+            if(UserDefaults.standard.string(forKey: "countCart") == nil){
+                vc3.tabBarItem.badgeValue =  "0"
+            }else{
+                vc3.tabBarItem.badgeValue = UserDefaults.standard.string(forKey: "countCart")
+            }
+    
+            
         }else{
             viewControllers = [vc5,vc6,vc7]
         }

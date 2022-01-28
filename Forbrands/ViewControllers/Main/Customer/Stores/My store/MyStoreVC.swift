@@ -26,16 +26,13 @@ class MyStoreVC: SuperViewController, UISearchBarDelegate {
         
         // Do any additional setup after loading the view.
         
-        let controller = PopStorePolicy()
-        controller.storePolicyID = id?.description
-        let sheet = SheetViewController(controller: controller, sizes: [.marginFromTop(200)])
-        sheet.extendedLayoutIncludesOpaqueBars = true
-        self.present(sheet, animated: false, completion: nil)
+        storePolicy(id?.description ?? "0")
         
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     func reloadData()  {
         categories.removeAll()
@@ -68,6 +65,27 @@ class MyStoreVC: SuperViewController, UISearchBarDelegate {
         
         collectionview2.register(UINib(nibName: "HeaderStoreCell", bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader , withReuseIdentifier: "HeaderStoreCell")
         
+    }
+    func storePolicy( _ id:String){
+            _ = WebRequests.setup(controller: self).prepare(api: Endpoint.storePolicy,parameters: ["id" : id ] ,isAuthRequired:  true).start(){ (response, error) in
+            do {
+                let Status =  try JSONDecoder().decode(BaseDataResponse<StorePolicy>.self, from: response.data!)
+                if Status.code == 200{
+                    if Status.data != nil{
+                        if Status.data?.statusPolicy != 0 {
+                            let controller = PopStorePolicy()
+                            controller.storePolicy = Status.data!.storePolicy
+                            let sheet = SheetViewController(controller: controller, sizes: [.marginFromTop(200)])
+                            sheet.extendedLayoutIncludesOpaqueBars = true
+                            self.present(sheet, animated: false, completion: nil)
+                        }
+                    }
+                  
+                }
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
     }
     
     
@@ -156,7 +174,7 @@ extension MyStoreVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollec
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (collectionView == collectionview1) {
-            return categories.count
+            return categories.count + 1
         }
         if (collectionView == collectionview2) {
             return productByStoreAuth.count

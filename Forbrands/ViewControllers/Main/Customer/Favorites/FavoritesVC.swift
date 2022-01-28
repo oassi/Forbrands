@@ -28,7 +28,7 @@ class FavoritesVC: SuperViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         reloadDataFavoriteList()
-        reloadCard()
+       // reloadCard()
     }
     
     func reloadDataFavoriteList() {

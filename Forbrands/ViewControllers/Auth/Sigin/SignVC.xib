@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,13 +37,13 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSq-9n-0x7">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="433.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="502.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YAo-nP-f1L">
-                                    <rect key="frame" x="20" y="0.0" width="374" height="393.5"/>
+                                    <rect key="frame" x="20" y="0.0" width="374" height="462.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pb-Kv-7MY">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="30.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="38.5"/>
                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="26"/>
                                             <color key="textColor" name="black"/>
                                             <nil key="highlightedColor"/>
@@ -52,17 +52,17 @@
                                             </userDefinedRuntimeAttributes>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SJl-PT-kb4">
-                                            <rect key="frame" x="0.0" y="50.5" width="374" height="30"/>
+                                            <rect key="frame" x="0.0" y="58.5" width="374" height="30"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="LvO-BN-34V"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="OZ6-R1-DnW">
-                                            <rect key="frame" x="0.0" y="100.5" width="374" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="108.5" width="374" height="93"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElP-SI-thB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -71,7 +71,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIP-yj-PDx">
-                                                    <rect key="frame" x="0.0" y="39.5" width="374" height="48"/>
+                                                    <rect key="frame" x="0.0" y="45" width="374" height="48"/>
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="leading" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cuk-G3-Bt9" customClass="FPNTextField" customModule="FlagPhoneNumber">
                                                             <rect key="frame" x="10" y="0.0" width="354" height="48"/>
@@ -104,10 +104,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPp-hy-LBo">
-                                            <rect key="frame" x="0.0" y="208" width="374" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="221.5" width="374" height="93"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mF7-Pb-cqe">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -116,7 +116,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwT-bb-luG">
-                                                    <rect key="frame" x="0.0" y="39.5" width="374" height="48"/>
+                                                    <rect key="frame" x="0.0" y="45" width="374" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-wr-EyY">
                                                             <rect key="frame" x="10" y="0.0" width="354" height="48"/>
@@ -127,7 +127,7 @@
                                                                         <constraint firstAttribute="height" constant="48" id="mi7-ge-hpM"/>
                                                                     </constraints>
                                                                     <attributedString key="attributedText"/>
-                                                                    <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" returnKeyType="next" secureTextEntry="YES"/>
+                                                                    <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                                                 </textField>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x6-ug-Umg">
                                                                     <rect key="frame" x="322" y="12" width="24" height="24"/>
@@ -158,21 +158,63 @@
                                                 </view>
                                             </subviews>
                                         </stackView>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TL5-sk-PFV">
+                                            <rect key="frame" x="0.0" y="334.5" width="374" height="30"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j9F-x9-NI2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
+                                                    <color key="textColor" name="primary"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="xibLocKey" value="Forgot password?"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAO-Cc-6oG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                                    <fontDescription key="fontDescription" name="DINNextLTArabic-Regular" family="DIN Next LT Arabic" pointSize="18"/>
+                                                    <state key="normal">
+                                                        <color key="titleColor" name="white"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="tapForgotPassword:" destination="-1" eventType="touchUpInside" id="Tlu-Ai-sYA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" name="white"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="J8z-Y2-wJR"/>
+                                                <constraint firstAttribute="bottom" secondItem="pAO-Cc-6oG" secondAttribute="bottom" id="Z2u-iH-UaW"/>
+                                                <constraint firstItem="j9F-x9-NI2" firstAttribute="top" secondItem="TL5-sk-PFV" secondAttribute="top" id="aLS-0n-yAQ"/>
+                                                <constraint firstItem="pAO-Cc-6oG" firstAttribute="leading" secondItem="TL5-sk-PFV" secondAttribute="leading" id="aMf-Ja-tCm"/>
+                                                <constraint firstAttribute="trailing" secondItem="j9F-x9-NI2" secondAttribute="trailing" id="ags-MJ-9uv"/>
+                                                <constraint firstItem="pAO-Cc-6oG" firstAttribute="top" secondItem="TL5-sk-PFV" secondAttribute="top" id="e0g-bd-rMd"/>
+                                                <constraint firstAttribute="bottom" secondItem="j9F-x9-NI2" secondAttribute="bottom" id="pjf-Jv-q98"/>
+                                                <constraint firstItem="j9F-x9-NI2" firstAttribute="leading" secondItem="TL5-sk-PFV" secondAttribute="leading" id="rlE-We-rw2"/>
+                                                <constraint firstAttribute="trailing" secondItem="pAO-Cc-6oG" secondAttribute="trailing" id="tvg-EL-mb7"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="NO"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QtM-KZ-8kC">
-                                            <rect key="frame" x="0.0" y="315.5" width="374" height="10"/>
+                                            <rect key="frame" x="0.0" y="384.5" width="374" height="10"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="mOP-qS-KdR"/>
                                             </constraints>
                                         </view>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6t-1L-63G">
-                                            <rect key="frame" x="0.0" y="345.5" width="374" height="48"/>
+                                            <rect key="frame" x="0.0" y="414.5" width="374" height="48"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="afu-HM-WPH">
                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gh-iq-83z">
-                                                            <rect key="frame" x="155" y="0.0" width="64.5" height="48"/>
+                                                            <rect key="frame" x="156" y="0.0" width="62.5" height="48"/>
                                                             <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                             <color key="textColor" name="white"/>
                                                             <nil key="highlightedColor"/>
@@ -252,7 +294,7 @@
     </objects>
     <designables>
         <designable name="cuk-G3-Bt9">
-            <size key="intrinsicContentSize" width="56" height="20.5"/>
+            <size key="intrinsicContentSize" width="4" height="20.5"/>
         </designable>
     </designables>
     <resources>

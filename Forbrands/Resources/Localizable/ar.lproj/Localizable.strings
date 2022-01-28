@@ -6,7 +6,14 @@
 "Confirm" = "تأكيد";
 "Continue" = "إستمرار";
 "Welcome" = "مرحبا بك";
-
+"Confirm password" = "تأكيد كلمة المرور";
+"Confirm password cannot be empty" = "لا يمكن أن يكون تأكيد كلمة المرور فارغًا";
+"Password does not match" = "كلمة السر غير متطابقة";
+"The new password matches the old password" = "كلمة المرور الجديدة تطابق كلمة المرور القديمة";
+"Forgot password?" = "هل نسيت كلمة السر؟";
+"Forgot password" = "استعادة كلمة السر";
+"Enter phone number" = "أدخل رقم الهاتف";
+"New Password" = "كلمة السر الجديدة";
 "Login with phone" = "تسجيل برقم الهاتف";
 "Continue with Google" = "تسجيل بحساب جوجل";
 "Are you a trader?" = "هل أنت تاجر ؟";

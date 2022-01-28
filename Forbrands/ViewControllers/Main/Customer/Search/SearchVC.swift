@@ -41,21 +41,28 @@ class SearchVC: SuperViewController, UISearchBarDelegate {
         searchBars.searchTextField.text = ""
         self.navigationController?.popViewController(animated: true)
     }
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.productBySearch.removeAll()
         getSearch(searchBars.searchTextField.text ?? "")
         self.tableview.reloadData()
-       // searchBars.searchTextField.text = ""
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        reloadCard()
     }
     
-    func reloadCard()  {
-        card.removeAll()
-        card = loads()
-    }
+//    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        self.productBySearch.removeAll()
+//        getSearch(searchBars.searchTextField.text ?? "")
+//        self.tableview.reloadData()
+//       // searchBars.searchTextField.text = ""
+//
+//    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        reloadCard()
+//    }
+//
+//    func reloadCard()  {
+//        card.removeAll()
+//        card = loads()
+//    }
     @objc func didRefersh() {
         print("didRefersh")
     }

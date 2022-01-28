@@ -251,7 +251,23 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource{
         }
         if(collectionView == collectionview5){
             let cell :StoresWithVideoCVC = collectionView.dequeue(cellForItemAt: indexPath)
-            cell.obj = storesWithVideo[indexPath.row]
+            let obj = storesWithVideo[indexPath.row]
+            cell.obj = obj
+            
+            cell.vedioAction = {[weak self] in
+                guard let strongSelf = self else { return }
+                if let url =  obj.videoLink, !url.isEmpty {
+                    strongSelf.playVideoButton(url)
+                }
+             
+            }
+            cell.productAction = {[weak self] in
+                guard let strongSelf = self else { return }
+                let vc :MyStoreVC = MyStoreVC.loadFromNib()
+                vc.imgStore = obj.image ?? ""
+                vc.id = obj.id?.description ?? "0"
+                strongSelf.poushVC(vc,.fullScreen,false)
+            }
             return cell
         }
         if(collectionView == collectionview6){
@@ -296,15 +312,12 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource{
             
         }
         
-        if(collectionView == collectionview5){
-            if let url =  storesWithVideo[indexPath.row].videoLink, !url.isEmpty {
-                playVideoButton(url)
-            }
-         
-         
-
-
-        }
+//        if(collectionView == collectionview5){
+//            if let url =  storesWithVideo[indexPath.row].videoLink, !url.isEmpty {
+//                playVideoButton(url)
+//            }
+//
+//        }
         if(collectionView == collectionview6){
             let vc:CategoriesVC = CategoriesVC.loadFromNib()
             

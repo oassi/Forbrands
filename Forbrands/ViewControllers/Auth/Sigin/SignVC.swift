@@ -56,6 +56,16 @@ class SignVC: SuperViewController {
         }
     }
     
+    
+    
+    @IBAction func tapForgotPassword(_ sender: UIButton) {
+      
+        let vc:ForgetPasPhVC = ForgetPasPhVC.loadFromNib()
+        vc.hidesBottomBarWhenPushed = true
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     @IBAction func tapConfirm(_ sender: UIButton) {
         
         guard isValidPhone else{
@@ -70,20 +80,34 @@ class SignVC: SuperViewController {
             self.showAlert(title: "Error".localized, message: "Password cannot be empty".localized)
             return
         }
+        
+        guard  password.count >= 6 else{
+            self.showAlert(title: "Error".localized, message: "Password must be at least 6 characters long".localized)
+            return
+        }
+        
+        
+        
         let num = phoneTF.getRawPhoneNumber()
+//        (phoneTF.selectedCountry?.phoneCode ?? "+996")! +
         var parameters: [String: Any] = [:]
-        parameters["phone"] =     (phoneTF.selectedCountry?.phoneCode ?? "+996")! + num!
+        parameters["phone"] =    num!
         parameters["password"] =  password
         
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.login,parameters: parameters ,isAuthRequired:  false).start(){ (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<UserData>.self, from: response.data!)
                 
-                if Status.code != 200{
-                    self.showAlert(title: "Alert!".localized, message: Status.message ?? "")
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
                     return
-                    
-                }else{
+                }
+                
+//                if Status.code != 200{
+//
+//                    return
+//
+//                }else{
                     CurrentUser.userInfo = Status.data
                     CurrentUser.userTrader = Status.data?.store
                     CurrentUser.typeSelect =  Status.data?.roleName == "Trader" ?  userType.Seller : userType.User
@@ -99,6 +123,7 @@ class SignVC: SuperViewController {
                             })}
                         
                     }else{
+                        self.getCountCart()
                         DispatchQueue.main.async {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
                                 let vc = TTabBarController()
@@ -107,13 +132,36 @@ class SignVC: SuperViewController {
                             })}
                     }
                     
-                }
+                //}
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
         }
     
     }
+    
+    func getCountCart(){
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.countCart ,isAuthRequired:  true).start(){  (response, error) in
+            do {
+                let Status =  try JSONDecoder().decode(BaseDataResponse<CartObj>.self, from: response.data!)
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: "Error".localized, message: Status.message ?? "")
+                    return
+                }
+                 
+                if(Status.data != nil){
+                    UserDefaults.standard.set("\(Status.data?.count?.description ?? "0")", forKey: "countCart")
+                    NotificationCenter.default.post(name: .didCartCount, object: nil)
+                }
+                   
+                
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
+    }
+    
 
 }
 

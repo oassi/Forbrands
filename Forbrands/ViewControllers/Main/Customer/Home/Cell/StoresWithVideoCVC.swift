@@ -13,6 +13,9 @@ class StoresWithVideoCVC: UICollectionViewCell {
     @IBOutlet weak var lblDetail:UILabel!
     @IBOutlet weak var img:UIImageView!
     
+    var vedioAction : (()->())?
+    var productAction : (()->())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,5 +33,12 @@ class StoresWithVideoCVC: UICollectionViewCell {
         }
     }
 
+    @IBAction func tapVedio(_ sender : UIButton){
+        vedioAction?()
+    }
+    
+    @IBAction func tapProduct(_ sender : UIButton){
+        productAction?()
+    }
     
 }

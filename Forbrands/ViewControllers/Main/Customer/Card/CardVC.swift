@@ -90,7 +90,6 @@ class CardVC: SuperViewController {
                     self.tableview.dataSource = self
                     self.tableview.reloadData()
                     
-                    
                 }
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
