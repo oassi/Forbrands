@@ -152,6 +152,9 @@ class WebRequests: NSObject{
                             WebRequests.controller?.showOkAlert(withTitle: messages.api, message: "not Authorized", okayButtonCompletionHandler: {
                                // Utility.rootLogin(isNav: false)
                             })
+//                        case 300:
+//                            WebRequests.controller?.showOkAlert(withTitle: messages.api, message:"\(Status.message ?? "")")
+
                         default:
 //                            WebRequests.controller?.showAlert(title: messages.api, message:"\(Status.message ?? "")")
                             

@@ -32,3 +32,22 @@ struct ProductByID: Codable {
     }
     
 }
+
+
+struct ProductAndRelated: Codable {
+    
+    enum CodingKeys: String, CodingKey {
+        case relatedproducts
+        case product
+    }
+    
+    var relatedproducts: [ProductAndReviews]?
+    var product: ProductAndReviews?
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        product = try container.decodeIfPresent(ProductAndReviews.self, forKey: .product)
+        relatedproducts = try container.decodeIfPresent([ProductAndReviews].self, forKey: .relatedproducts)
+    }
+    
+}

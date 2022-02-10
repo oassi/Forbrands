@@ -65,7 +65,7 @@ class NewPasswordVC : SuperViewController {
                 let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
                 
                 guard Status.code == 200 else{
-                    self.showAlert(title: "Error".localized, message: Status.message ?? "")
+                    //self.showAlert(title: "Error".localized, message: Status.message ?? "")
                     return
                 }
                 self.showAlert(title: Status.title ?? "", message: Status.message ?? "")

@@ -10,27 +10,40 @@ struct ProductsByStoreCat: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-        case name
-        case details
+        case nameAr   = "name_ar"
+        case nameEn   = "name_en"
+        case detailsAr = "details_ar"
+        case detailsEn = "details_en"
+        case sizes
         case images
         case oldPrice = "old_price"
         case price
+        case currencyId = "currency_id"
+        case categoryId = "category_id"
         case subCategoryId = "sub_category_id"
         case storeId = "store_id"
-        case favorite
         case status
-        case categoryId = "category_id"
-        case currencyId = "currency_id"
+        case returnProduct = "returnproduct"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case favorite
         case deletedAt = "deleted_at"
+        
+        
+        
+       
+        
+       
         
         
         
     }
     
     var id: Int?
-    var name: String?
+    var nameAr: String?
+    var nameEn: String?
+    var detailsAr: String?
+    var detailsEn: String?
     var details: String?
     var images: String?
     var subCategoryId: String?
@@ -44,11 +57,13 @@ struct ProductsByStoreCat: Codable {
     var createdAt: String?
     var updatedAt: String?
     var deletedAt: String?
-    
-    
+    var returnProduct:String?
+    var sizes: [String]?
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        sizes = try container.decodeIfPresent([String].self, forKey: .sizes)
+        
         if let value = try? container.decode(Int.self, forKey:.images) {
             images = String(value)
         }else if let value = try? container.decode(String.self, forKey:.images) {
@@ -90,23 +105,31 @@ struct ProductsByStoreCat: Codable {
         } else if let value = try? container.decode(Int.self, forKey:.status) {
             status = value
         }
-        if let value = try? container.decode(Int.self, forKey:.name) {
-            name = String(value)
-        }else if let value = try? container.decode(String.self, forKey:.name) {
-            name = value
+        if let value = try? container.decode(Int.self, forKey:.nameAr) {
+            nameAr = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.nameAr) {
+            nameAr = value
         }
-        if let value = try? container.decode(Int.self, forKey:.details) {
-            details = String(value)
-        }else if let value = try? container.decode(String.self, forKey:.details) {
-            details = value
+        if let value = try? container.decode(Int.self, forKey:.nameEn) {
+            nameEn = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.nameEn) {
+            nameEn = value
+        }
+        if let value = try? container.decode(Int.self, forKey:.detailsAr) {
+            detailsAr = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.detailsAr) {
+            detailsAr = value
+        }
+        if let value = try? container.decode(Int.self, forKey:.detailsEn) {
+            detailsEn = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.detailsEn) {
+            detailsEn = value
         }
         if let value = try? container.decode(String.self, forKey:.currencyId) {
             currencyId = Int(value)
         } else if let value = try? container.decode(Int.self, forKey:.currencyId) {
             currencyId = value
         }
-        
-        
         if let value = try? container.decode(Int.self, forKey:.createdAt) {
             createdAt = String(value)
         }else if let value = try? container.decode(String.self, forKey:.createdAt) {
@@ -121,6 +144,11 @@ struct ProductsByStoreCat: Codable {
             deletedAt = String(value)
         }else if let value = try? container.decode(String.self, forKey:.deletedAt) {
             deletedAt = value
+        }
+        if let value = try? container.decode(Int.self, forKey:.returnProduct) {
+            returnProduct = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.returnProduct) {
+            returnProduct = value
         }
     }
     

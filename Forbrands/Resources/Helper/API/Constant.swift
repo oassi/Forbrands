@@ -112,7 +112,7 @@ struct App {
     static func deleteProducts(_ viewController:UIViewController?, id:String, completion:((Bool)->Void)?){
        _ = WebRequests.setup(controller: viewController).prepare(api: Endpoint.deleteProduct,nestedParams: id ,isAuthRequired:  true).start(){  (response, error) in
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                let Status =  try JSONDecoder().decode(DeleteProdect.self, from: response.data!)
                 if Status.code == 200{
                     print("_____ deleteProducts Done _____")
                     print( Status.message ?? "")
@@ -196,6 +196,24 @@ struct StatusStruct : Codable{
     let data : [String]?
 }
 
+
+struct StatusAddressEdit : Codable{
+    let status: Bool?
+    let code: Int?
+    let message: String?
+    let title: String?
+    let data : Bool?
+}
+
+struct DeleteProdect: Codable {
+    var status: Bool
+    var code: Int
+    var title, message: String
+    var data: DataClass
+}
+
+struct DataClass: Codable {
+}
 
 struct TabbyStruct : Codable{
     let status: String?

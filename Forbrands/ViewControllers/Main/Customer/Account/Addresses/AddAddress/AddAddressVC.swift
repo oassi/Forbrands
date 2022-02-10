@@ -120,7 +120,7 @@ class AddAddressVC: SuperViewController {
         
         var parameters: [String: String] = [:]
         parameters["full_name"] =    fullName
-        parameters["phone"] =        fullNum
+        parameters["phone"] =        num
         parameters["street"] =       street
         parameters["state_id"] =     selectedGovernorateID!.description
         parameters["city_id"] =      selectedCityID!.description
@@ -132,7 +132,7 @@ class AddAddressVC: SuperViewController {
         if(anotherMobileTF.text != nil && anotherMobileTF.text?.count == 11){
             let another = anotherMobileTF.getRawPhoneNumber()
             let anotherMobile = (anotherMobileTF.selectedCountry?.phoneCode ?? "+996")! + another!
-            parameters["phone_ex"] = anotherMobile
+            parameters["phone_ex"] = another
         }
         if(isEdit){
             editAddress(parameters, addressInfo!.id?.description ?? "0")
@@ -158,7 +158,7 @@ class AddAddressVC: SuperViewController {
     func editAddress(_ parameters: [String:String], _ id:String){
             _ = WebRequests.setup(controller: self).prepare(api: Endpoint.editAddress,nestedParams: id,parameters: parameters ,isAuthRequired:  true).start(){ (response, error) in
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                let Status =  try JSONDecoder().decode(StatusAddressEdit.self, from: response.data!)
                 if Status.code == 200{
                     self.showAlert(title: "", message: Status.message ?? "")
                     self.navigationController?.popViewController(animated: true)
@@ -205,7 +205,14 @@ class AddAddressVC: SuperViewController {
     }
 
     @IBAction func tapGovernorate(_ sender: UIButton) {
-        self.selectedGovernorateID = nil
+        guard !statesList.isEmpty else {
+            showAlert(title: "", message: "There are no Governorates".localized)
+            return
+        }
+        self.selectedGovernorateID = statesList.first?.id ?? nil
+        self.lblGovernorate.text = statesList.first?.name ?? ""
+        self.getCities(self.selectedGovernorateID!.description)
+        
         self.selectedCityID = nil
         self.lblCity.text = ""
         ActionSheetStringPicker.show(withTitle: self.lblGovernorate.text ?? "Governorate".localized, rows: self.statesList.map { $0.name as Any }
@@ -225,7 +232,13 @@ class AddAddressVC: SuperViewController {
             showAlert(title: "", message: "Please select Governorate in first".localized)
             return
         }
-        self.selectedCityID = nil
+        guard !citiesList.isEmpty else {
+            showAlert(title: "", message: "There are no cities".localized)
+            return
+        }
+        self.selectedCityID = citiesList.first?.id ?? 0
+        self.lblCity.text = citiesList.first?.name ?? ""
+        
         ActionSheetStringPicker.show(withTitle: self.lblCity.text ?? "City".localized, rows: self.citiesList.map { $0.name as Any }
             , initialSelection: 0, doneBlock: {
                 picker, value, index in

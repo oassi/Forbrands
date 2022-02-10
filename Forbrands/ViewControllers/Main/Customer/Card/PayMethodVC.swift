@@ -36,13 +36,13 @@ class PayMethodVC: SuperViewController {
             _ = WebRequests.setup(controller: self).prepare(api: Endpoint.payMethodsList ,isAuthRequired:  true).start(){  (response, error) in
                 do {
                     let Status =  try JSONDecoder().decode(BaseDataResponse<PayMethodObj>.self, from: response.data!)
-                     if Status.code == 200{
-                        if let pay = Status.data?.payMethods , !pay.isEmpty {
-                            self.paymentMethods += Status.data!.payMethods!
-                            self.tableview.reloadData()
-                        }
-                       
+                    guard Status.code == 200 , let pay = Status.data?.payMethods , !pay.isEmpty  else {
+                        self.showAlert(title: "", message: Status.message ?? "")
+                        return
                     }
+                    self.paymentMethods += pay
+                    self.tableview.reloadData()
+                   
                 }catch let jsonErr {
                     print("Error serializing  respone json", jsonErr)
                 }
@@ -65,13 +65,16 @@ class PayMethodVC: SuperViewController {
         case 1:
             addOrders(parameters :parameters, paymentId: 1)
         case 2:
-            addOrders(parameters :parameters, paymentId: 2)
+            self.pay(type: Endpoint.tabby,parameters :parameters)
+           // addOrders(parameters :parameters, paymentId: 2)
         case 3:
-            addOrders(parameters :parameters, paymentId: 3)
+            self.pay(type: Endpoint.stc,parameters :parameters)
+           // addOrders(parameters :parameters, paymentId: 3)
         case 4:
             print(id)
         case 5:
-            addOrders(parameters :parameters, paymentId: 5)
+            self.pay(type: Endpoint.tap,parameters :parameters)
+           // addOrders(parameters :parameters, paymentId: 5)
         default:
             break
         }
@@ -91,15 +94,16 @@ class PayMethodVC: SuperViewController {
                         let vc:CheckoutVC = CheckoutVC.loadFromNib()
                         vc.modalPresentationStyle = .fullScreen
                         self.navigationController?.present(vc, animated: true, completion: nil)
-                    }else if paymentId == 2 {
-                        self.pay(type: Endpoint.tabby)
                     }
-                    else if paymentId == 3 {
-                        self.pay(type: Endpoint.stc)
-                    }
-                    else if paymentId == 5 {
-                        self.pay(type: Endpoint.tap)
-                    }
+//                    else if paymentId == 2 {
+//                        self.pay(type: Endpoint.tabby)
+//                    }
+//                    else if paymentId == 3 {
+//                        self.pay(type: Endpoint.stc)
+//                    }
+//                    else if paymentId == 5 {
+//                        self.pay(type: Endpoint.tap)
+//                    }
                  
                 }
             }catch let jsonErr {
@@ -107,13 +111,14 @@ class PayMethodVC: SuperViewController {
             }
         }
     }
-    func pay(type:Endpoint) {
+    func pay(type:Endpoint,parameters : [String:String]) {
         _ = WebRequests.setup(controller: self).prepare(api: type ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(TabbayResponse.self, from: response.data!)
                 
                 let vc : webViewVC = webViewVC.loadFromNib()
                 vc.url = Status.webUrl ?? ""
+                vc.parametersOrder = parameters
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }catch let jsonErr {

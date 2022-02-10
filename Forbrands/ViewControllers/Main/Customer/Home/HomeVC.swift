@@ -263,10 +263,9 @@ extension HomeVC: UICollectionViewDelegate,UICollectionViewDataSource{
             }
             cell.productAction = {[weak self] in
                 guard let strongSelf = self else { return }
-                let vc :MyStoreVC = MyStoreVC.loadFromNib()
-                vc.imgStore = obj.image ?? ""
-                vc.id = obj.id?.description ?? "0"
-                strongSelf.poushVC(vc,.fullScreen,false)
+                let vc :DetailsProductUserVC = DetailsProductUserVC.loadFromNib()
+                 vc.productId = obj.id ?? 0
+                strongSelf.poushVC(vc,.fullScreen)
             }
             return cell
         }

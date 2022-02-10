@@ -49,13 +49,13 @@ class MyStoreVC: SuperViewController, UISearchBarDelegate {
     override func viewWillAppear(_ animated: Bool) {
         reloadData()
         reloadDataProduct()
-        reloadCard()
+       // reloadCard()
     }
     
-    func reloadCard()  {
-        card.removeAll()
-        card = loads()
-    }
+//    func reloadCard()  {
+//        card.removeAll()
+//        card = loads()
+//    }
     private  func registerCell(){
         let nib1 = UINib(nibName: "CategoryCVC", bundle: .main)
         collectionview1.register(nib1, forCellWithReuseIdentifier: "CategoryCVC")
@@ -137,10 +137,10 @@ class MyStoreVC: SuperViewController, UISearchBarDelegate {
             do {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<Product>.self, from: response.data!)
                 if Status.code == 200{
-                    guard Status.data != nil else {
+                    guard let obj = Status.data , obj.count > 0 else {
                         return
                     }
-                    self.productByStoreAuth += Status.data!
+                    self.productByStoreAuth += obj
                     self.collectionview2.reloadData()
                 }
             }catch let jsonErr {

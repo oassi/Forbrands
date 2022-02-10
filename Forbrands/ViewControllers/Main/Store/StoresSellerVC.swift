@@ -83,23 +83,25 @@ class StoresSellerVC: SuperViewController {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.myStoreSeller ,isAuthRequired:  true).start(){ (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<MyStoreSeller>.self, from: response.data!)
-                if Status.code == 200{
-                    if let img =  Status.data?.image {
-                        self.imgStore = img
-                    }
-                    if let categorie = Status.data?.categories{
-                        categorie.forEach{self.categories.append($0) }
-                    }
-                    self.collectionview.reloadData()
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                if let img =  Status.data?.image {
+                    self.imgStore = img
+                }
+                guard let categorie = Status.data?.categories , !categorie.isEmpty  else{
+                    return
+                }
+                categorie.forEach{self.categories.append($0) }
+                self.collectionview.reloadData()
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
         }
     }
-    
-    
-    
 }
 extension StoresSellerVC : UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

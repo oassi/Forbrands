@@ -12,6 +12,7 @@ class DetailsProductVC: SuperViewController {
 
     @IBOutlet weak var collectionview1:   UICollectionView!
     @IBOutlet weak var collectionview2:   UICollectionView!
+    @IBOutlet weak var viewCollectionview2: UIStackView!
     @IBOutlet weak var lblStoreName:      UILabel!
     @IBOutlet weak var lblTitle:          UILabel!
     @IBOutlet weak var lblDescrption:     UILabel!
@@ -27,7 +28,6 @@ class DetailsProductVC: SuperViewController {
     var sizes = [String]()
     var ProdectId:Int = 0
 
-    var lest = ["100","200","3000","4","5","6","7","8","9","10"]
     var idSelection:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,53 +98,54 @@ class DetailsProductVC: SuperViewController {
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
     }
-   
-    
     
     func getProduct(){
-        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.getProduct,nestedParams: ProdectId.description ,isAuthRequired:  false).start(){  (response, error) in
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.getProductTrader,nestedParams: ProdectId.description ,isAuthRequired:  false).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<ProductAndReviews>.self, from: response.data!)
                 
-                if Status.code == 200 && Status.data != nil{
-                    let obj = Status.data!
-                    self.lblStoreName.text = obj.storeName ?? ""
-                    self.lblTitle.text = obj.nameAr ?? ""
-                    self.lblDescrption.text = obj.nameEn ?? ""
-                    self.isAvailbleButton.isSelected = obj.status == 1 ? true : false
-
-                    
-                    if(obj.price == "0"){
-                        self.lblPrice.text = obj.oldPrice ?? "0"
-                        self.lblDiscountPrice.text = "\(obj.price ?? "0") "+"SAR".localized
-                    }else{
-                        self.lblPrice.text = obj.price ?? "0"
-                        self.lblDiscountPrice.text = "\(obj.oldPrice ?? "0") "+"SAR".localized
-                    }
-                    
-                    
-                    self.lblProductDetails.text = MOLHLanguage.isArabic() ? obj.detailsAr ?? "" : obj.detailsEn ?? ""
-                    self.lblRate.text = obj.reviewsAverage?.description ?? "0"
-                    self.ViewRate.rating  = Double(obj.reviewsAverage ?? "0")!
-                    self.lblReviews.text = obj.reviewsCount?.description ?? "0"
-                    if(obj.images != nil){
-                        obj.images!.forEach{
-                            self.imgProduct.append("\(App.IMG_URL.img_URL)" + $0)
-                        }
-                        self.pagerView.reloadData()
-                    }
-                    if(obj.reviews != nil){
-                        obj.reviews?.forEach{ self.reviews.append($0)}
-                        self.collectionview2.reloadData()
-                    }
-                    if(obj.sizes != nil){
-                        obj.sizes?.forEach{ self.sizes.append($0)}
-                        self.collectionview1.reloadData()
-                    }
-                    
-                  
-                    
+                guard Status.code == 200, let obj =  Status.data else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                
+                self.lblStoreName.text = obj.storeName ?? ""
+                self.lblTitle.text = obj.nameAr ?? ""
+                self.lblDescrption.text = obj.nameEn ?? ""
+                self.isAvailbleButton.isSelected = obj.status == 1 ? true : false
+                
+                
+                if(obj.price == "0"){
+                    self.lblPrice.text = obj.oldPrice ?? "0"
+                    self.lblDiscountPrice.text = "\(obj.price ?? "0") "+"SAR".localized
+                }else{
+                    self.lblPrice.text = obj.price ?? "0"
+                    self.lblDiscountPrice.text = "\(obj.oldPrice ?? "0") "+"SAR".localized
+                }
+                
+                
+                self.lblProductDetails.text = MOLHLanguage.isArabic() ? obj.detailsAr ?? "" : obj.detailsEn ?? ""
+                self.lblRate.text = obj.reviewsAverage?.description ?? "0"
+                self.ViewRate.rating  = Double(obj.reviewsAverage ?? "0")!
+                self.lblReviews.text = obj.reviewsCount?.description ?? "0"
+                if(obj.images != nil){
+                    obj.images!.forEach{
+                        self.imgProduct.append("\(App.IMG_URL.img_URL)" + $0)
+                    }
+                    self.pagerView.reloadData()
+                }
+                if(obj.reviews != nil && obj.reviews!.count > 0){
+                    self.viewCollectionview2.isHidden = false
+                    obj.reviews?.forEach{ self.reviews.append($0)}
+                    self.collectionview2.reloadData()
+                }else{
+                    self.viewCollectionview2.isHidden = true
+                }
+                if(obj.sizes != nil && obj.sizes!.count > 0){
+                    obj.sizes?.forEach{ self.sizes.append($0)}
+                    self.collectionview1.reloadData()
+                }
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

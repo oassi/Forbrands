@@ -103,6 +103,7 @@ extension ShowCategoryVC : UICollectionViewDataSource,UICollectionViewDelegate{
                 App.deleteProducts(strongSelf, id: obj.id?.description ?? "") { bool in
                     if bool{
                         strongSelf.relodeData()
+                        strongSelf.collectionview.reloadData()
                     }
                 }
             }
@@ -122,7 +123,7 @@ extension ShowCategoryVC : UICollectionViewDataSource,UICollectionViewDelegate{
             let stusts = obj.status == 1 ? "0" : "1"
             _ = WebRequests.setup(controller: self).prepare(api: Endpoint.productChangeStatus,nestedParams: "\(obj.id?.description ?? "")/\(stusts)" ,isAuthRequired:  true).start(){  (response, error) in
                 do {
-                    let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                    let Status =  try JSONDecoder().decode(StatusAddressEdit.self, from: response.data!)
                     if Status.code == 200{
                         strongSelf.relodeData()
                     }
@@ -130,11 +131,7 @@ extension ShowCategoryVC : UICollectionViewDataSource,UICollectionViewDelegate{
                     print("Error serializing  respone json", jsonErr)
                 }
             }
-            
-            
-            
         }
-        
         return cell
     }
     
@@ -144,8 +141,6 @@ extension ShowCategoryVC : UICollectionViewDataSource,UICollectionViewDelegate{
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
-    
 }
 
 extension ShowCategoryVC:UICollectionViewDelegateFlowLayout{

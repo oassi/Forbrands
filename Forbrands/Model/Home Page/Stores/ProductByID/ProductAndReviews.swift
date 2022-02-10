@@ -29,6 +29,7 @@ struct ProductAndReviews: Codable {
         case currencyId = "currency_id"
         case favorite
         case returnProduct = "returnproduct"
+        
     }
     
     var storeName: String?

@@ -101,10 +101,14 @@ class ProfileSellerVC: SuperViewController{
         WebRequests.sendPostMultipartRequestWithImgParam(api: Endpoint.uploadImageStore,nestedParams: id, parameters: [String : String](), img: image, withName: "image", completion: { (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<StoreTrader>.self, from: response.data!)
-                if Status.code == 200{
-                    CurrentUser.userTrader = Status.data
-                    self.showOkAlert(withTitle: "successful".localized, message:Status.message?.localized ?? "" )
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                CurrentUser.userTrader = Status.data
+                self.showOkAlert(withTitle: "successful".localized, message:Status.message?.localized ?? "" )
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -115,11 +119,14 @@ class ProfileSellerVC: SuperViewController{
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.userProfile ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<UserStruct>.self, from: response.data!)
-                if Status.code == 200{
-                    self.lblFullName.text = Status.data?.name ?? ""
-                    self.lblEmail.text =  Status.data?.email ?? ""
-                    self.lblMobile.text = Status.data?.phone ?? ""
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                self.lblFullName.text = Status.data?.name ?? ""
+                self.lblEmail.text =  Status.data?.email ?? ""
+                self.lblMobile.text = Status.data?.phone ?? ""
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -142,9 +149,6 @@ extension ProfileSellerVC: ImagePickerDelegate {
     }
     
 }
-
-
-
 extension ProfileSellerVC: UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return color.count

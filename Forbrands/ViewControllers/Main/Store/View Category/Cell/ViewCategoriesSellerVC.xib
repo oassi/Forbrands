@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -70,31 +70,31 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N4Y-ax-Fht">
-                                <rect key="frame" x="5" y="146" width="135" height="126.5"/>
+                                <rect key="frame" x="5" y="146" width="135" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 خصم" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfC-lH-f5o">
-                                        <rect key="frame" x="0.0" y="0.0" width="135" height="15.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="19.5"/>
                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="JeM-45-m6d">
-                                        <rect key="frame" x="0.0" y="25.5" width="135" height="25"/>
+                                        <rect key="frame" x="0.0" y="29.5" width="135" height="25"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qYw-ho-S48">
-                                                <rect key="frame" x="0.0" y="0.0" width="56" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="53.5" height="25"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="d8J-Yu-89W">
-                                                        <rect key="frame" x="0.0" y="0.0" width="56" height="25"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="53.5" height="25"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="256" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" text="232" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzE-OH-8Tw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="27" height="25"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="26.5" height="25"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                                                 <color key="textColor" name="black"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="754" text="SAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wak-ma-KvO">
-                                                                <rect key="frame" x="30" y="0.0" width="26" height="25"/>
+                                                                <rect key="frame" x="29.5" y="0.0" width="24" height="25"/>
                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="13"/>
                                                                 <color key="textColor" name="black"/>
                                                                 <nil key="highlightedColor"/>
@@ -114,42 +114,44 @@
                                                     <constraint firstAttribute="bottom" secondItem="d8J-Yu-89W" secondAttribute="bottom" id="mRd-Lv-WeS"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GU-mN-fvZ">
-                                                <rect key="frame" x="63" y="0.0" width="34" height="25"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9Z-3H-iqI">
+                                                <rect key="frame" x="60.5" y="0.0" width="17.5" height="25"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Q5-Hn-hw2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="25"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bIc-j6-XbU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="17.5" height="25"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="257" verticalHuggingPriority="253" horizontalCompressionResistancePriority="756" verticalCompressionResistancePriority="752" text="3 SAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8f-du-YyX">
-                                                                <rect key="frame" x="0.0" y="5.5" width="34" height="14"/>
-                                                                <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlX-Yd-r1y">
+                                                                <rect key="frame" x="0.0" y="0.0" width="17.5" height="25"/>
+                                                                <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="16"/>
                                                                 <color key="textColor" name="black"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NHz-he-gyJ">
-                                                        <rect key="frame" x="0.0" y="14" width="34" height="1"/>
-                                                        <color key="backgroundColor" name="derkGrey1"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kw-mq-pLr">
+                                                        <rect key="frame" x="0.0" y="12" width="17.5" height="1"/>
+                                                        <color key="backgroundColor" name="derkGrey"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="lDj-Qf-zYa"/>
+                                                            <constraint firstAttribute="height" constant="1" id="2o6-9E-Kvf"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="circleCorner" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </view>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="NHz-he-gyJ" firstAttribute="trailing" secondItem="4Q5-Hn-hw2" secondAttribute="trailing" id="Hzm-cJ-Xln"/>
-                                                    <constraint firstAttribute="height" constant="25" id="Ljx-bd-HWz"/>
-                                                    <constraint firstAttribute="trailing" secondItem="4Q5-Hn-hw2" secondAttribute="trailing" id="O5w-Hp-OPl"/>
-                                                    <constraint firstItem="4Q5-Hn-hw2" firstAttribute="top" secondItem="9GU-mN-fvZ" secondAttribute="top" id="Qt1-BF-1Ti"/>
-                                                    <constraint firstItem="NHz-he-gyJ" firstAttribute="leading" secondItem="4Q5-Hn-hw2" secondAttribute="leading" id="e85-sa-iMn"/>
-                                                    <constraint firstItem="NHz-he-gyJ" firstAttribute="centerY" secondItem="4Q5-Hn-hw2" secondAttribute="centerY" constant="2" id="gyN-fi-yVU"/>
-                                                    <constraint firstAttribute="bottom" secondItem="4Q5-Hn-hw2" secondAttribute="bottom" id="hlD-V9-82h"/>
-                                                    <constraint firstItem="4Q5-Hn-hw2" firstAttribute="leading" secondItem="9GU-mN-fvZ" secondAttribute="leading" id="xdq-m5-52Z"/>
+                                                    <constraint firstItem="9kw-mq-pLr" firstAttribute="leading" secondItem="bIc-j6-XbU" secondAttribute="leading" id="65l-H9-JeN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="bIc-j6-XbU" secondAttribute="bottom" id="AcL-oZ-kgS"/>
+                                                    <constraint firstAttribute="height" constant="25" id="FW5-V5-Soa"/>
+                                                    <constraint firstItem="9kw-mq-pLr" firstAttribute="centerY" secondItem="k9Z-3H-iqI" secondAttribute="centerY" id="JFC-bJ-AXZ"/>
+                                                    <constraint firstItem="bIc-j6-XbU" firstAttribute="leading" secondItem="k9Z-3H-iqI" secondAttribute="leading" id="TTc-7y-vUY"/>
+                                                    <constraint firstItem="bIc-j6-XbU" firstAttribute="top" secondItem="k9Z-3H-iqI" secondAttribute="top" id="WGF-Un-vXX"/>
+                                                    <constraint firstItem="9kw-mq-pLr" firstAttribute="trailing" secondItem="bIc-j6-XbU" secondAttribute="trailing" id="bRz-N4-KMa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="bIc-j6-XbU" secondAttribute="trailing" id="yhK-mf-rj0"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1H3-cY-fZp">
-                                                <rect key="frame" x="104" y="7.5" width="31" height="10"/>
+                                                <rect key="frame" x="85" y="7.5" width="50" height="10"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="rtT-Lb-zCA"/>
@@ -158,10 +160,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="B7D-Mo-Neh">
-                                        <rect key="frame" x="0.0" y="60.5" width="135" height="20"/>
+                                        <rect key="frame" x="0.0" y="64.5" width="135" height="22.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product available?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="As4-2r-4ap">
-                                                <rect key="frame" x="0.0" y="3" width="93" height="14"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="Cairo-SemiBold" family="Cairo" pointSize="12"/>
                                                 <color key="textColor" name="black"/>
                                                 <nil key="highlightedColor"/>
@@ -170,7 +172,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXA-q3-oeh">
-                                                <rect key="frame" x="98" y="0.0" width="37" height="20"/>
+                                                <rect key="frame" x="98" y="1.5" width="37" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="37" id="7o9-DC-7FZ"/>
                                                     <constraint firstAttribute="height" constant="20" id="l4Z-8C-Kdj"/>
@@ -184,10 +186,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="e5s-jg-eEs">
-                                        <rect key="frame" x="0.0" y="90.5" width="135" height="36"/>
+                                        <rect key="frame" x="0.0" y="97" width="135" height="36"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNE-l1-KhJ">
-                                                <rect key="frame" x="0.0" y="1.5" width="63" height="33"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="63" height="36"/>
                                                 <color key="backgroundColor" name="primary"/>
                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                 <state key="normal" title="Edit">
@@ -202,7 +204,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWl-qk-9Zg">
-                                                <rect key="frame" x="72" y="1.5" width="63" height="33"/>
+                                                <rect key="frame" x="72" y="0.0" width="63" height="36"/>
                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="18"/>
                                                 <state key="normal" title="Delete">
                                                     <color key="titleColor" name="redBut"/>
@@ -266,7 +268,7 @@
                 <outlet property="editBut" destination="nNE-l1-KhJ" id="I60-YN-xjh"/>
                 <outlet property="img" destination="Hq4-GX-gGA" id="Wpn-T6-9bi"/>
                 <outlet property="isAvailbleButton" destination="ZXA-q3-oeh" id="SVi-tD-AE4"/>
-                <outlet property="lblDescountPrice" destination="Y8f-du-YyX" id="Y4y-MK-wkb"/>
+                <outlet property="lblDescountPrice" destination="nlX-Yd-r1y" id="vXj-xM-QsN"/>
                 <outlet property="lblPrice" destination="LzE-OH-8Tw" id="exK-PM-8Nn"/>
                 <outlet property="lblTilte" destination="pfC-lH-f5o" id="f6U-Br-fxx"/>
                 <outlet property="viewDescount" destination="l82-DP-5g8" id="seR-fp-EwW"/>
@@ -281,8 +283,8 @@
         <namedColor name="black">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="derkGrey1">
-            <color red="0.7686274509803922" green="0.7686274509803922" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="derkGrey">
+            <color red="0.68627450980392157" green="0.68627450980392157" blue="0.68627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="grey">
             <color red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -104,13 +104,17 @@ class PhoneVerificationCode: SuperViewController {
                 
                 let Status =  try JSONDecoder().decode(BaseDataResponse<UserData>.self, from: response.data!)
                 
-                if Status.code == 200{
-                  
-                    WebRequests.tokenApiPassword = Status.data?.token ?? ""
-                        let vc:NewPasswordVC = NewPasswordVC.loadFromNib()
-                        vc.modalPresentationStyle = .fullScreen
-                        self.navigationController?.pushViewController(vc, animated: true)
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                
+                WebRequests.tokenApiPassword = Status.data?.token ?? ""
+                let vc:NewPasswordVC = NewPasswordVC.loadFromNib()
+                vc.modalPresentationStyle = .fullScreen
+                self.navigationController?.pushViewController(vc, animated: true)
+                
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -121,9 +125,14 @@ class PhoneVerificationCode: SuperViewController {
             do {
                 
                 let Status =  try JSONDecoder().decode(BaseDataResponse<GenerateCode>.self, from: response.data!)
-                if Status.code == 200{
-                    self.startTimeer()
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    self.navigationController?.popViewController(animated: true)
+                    return
                 }
+                self.startTimeer()
+               
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

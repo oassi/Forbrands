@@ -53,9 +53,6 @@ class EditProfileSellerVC: SuperViewController,UITextFieldDelegate {
     
     
     @IBAction func tapSave(_ sender: UIButton) {
-
-        
-                 
         var parameters: [String: String] = [:]
         if let fullName = lblFullName.text, !fullName.isEmpty {
             parameters["name"] = fullName
@@ -81,13 +78,15 @@ class EditProfileSellerVC: SuperViewController,UITextFieldDelegate {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.userProfile ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<UserStruct>.self, from: response.data!)
-                if Status.code == 200{
-                    self.lblFullName.text = Status.data?.name ?? ""
-                    self.lblEmail.text =  Status.data?.email ?? ""
-                    self.phoneTF.set(phoneNumber: Status.data?.phone! ?? "")
-                    
-                    
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                self.lblFullName.text = Status.data?.name ?? ""
+                self.lblEmail.text =  Status.data?.email ?? ""
+                self.phoneTF.set(phoneNumber: Status.data?.phone! ?? "")
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -98,9 +97,12 @@ class EditProfileSellerVC: SuperViewController,UITextFieldDelegate {
             
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<UserStruct>.self, from: response.data!)
-                if Status.code == 200{
-                    self.navigationController?.popViewController(animated: true)
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                self.navigationController?.popViewController(animated: true)
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

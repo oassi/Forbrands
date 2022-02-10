@@ -86,10 +86,9 @@ class SignVC: SuperViewController {
             return
         }
         
-        
-        
+
         let num = phoneTF.getRawPhoneNumber()
-//        (phoneTF.selectedCountry?.phoneCode ?? "+996")! +
+        let a = (phoneTF.selectedCountry?.phoneCode ?? "+996")! + num!.description
         var parameters: [String: Any] = [:]
         parameters["phone"] =    num!
         parameters["password"] =  password
@@ -102,12 +101,7 @@ class SignVC: SuperViewController {
                     self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
                     return
                 }
-                
-//                if Status.code != 200{
-//
-//                    return
-//
-//                }else{
+
                     CurrentUser.userInfo = Status.data
                     CurrentUser.userTrader = Status.data?.store
                     CurrentUser.typeSelect =  Status.data?.roleName == "Trader" ?  userType.Seller : userType.User
@@ -132,7 +126,7 @@ class SignVC: SuperViewController {
                             })}
                     }
                     
-                //}
+            
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

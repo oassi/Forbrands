@@ -145,19 +145,23 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.categoriesList ,isAuthRequired:  false).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<CategoriesHome>.self, from: response.data!)
-                if Status.code == 200{
-                    guard Status.data != nil else {
-                        return
-                    }
-                    self.categories += Status.data!
-                    self.categories.forEach{
-                        if($0.id?.description == self.selectedTypeCategoryID){
-                            self.lblCategory.text = $0.name ?? ""
-                        }
-                       
-                    }
-                   
+                
+                guard Status.code == 200  else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                guard let categoriesHome = Status.data ,  !categoriesHome.isEmpty else {
+                    return
+                }
+                self.categories += categoriesHome
+                self.categories.forEach{
+                    if($0.id?.description == self.selectedTypeCategoryID){
+                        self.lblCategory.text = $0.name ?? ""
+                    }
+                    
+                }
+                
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -168,11 +172,14 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
     
     
     func getProduct(){
-        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.getProduct,nestedParams: productId ?? "0" ,isAuthRequired:  true).start(){  (response, error) in
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.getProductTrader,nestedParams: productId ?? "0" ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<Product>.self, from: response.data!)
-                if Status.code == 200 && Status.data != nil{
-                    let obj = Status.data!
+                guard  Status.code == 200, let obj = Status.data else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
+                }
+               
                     self.lblProductNameAr.text = obj.nameAr ?? ""
                     self.lblProductNameEn.text = obj.nameEn ?? ""
                     self.lblPrice.text = obj.oldPrice ?? "0"
@@ -182,7 +189,7 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
                     self.selectedTypeCategoryID = obj.categoryId ?? "0"
                     self.isReturnProdectBut.isSelected = obj.returnProduct == "1" ? true : false
                     
-                    if(obj.images != nil){
+                    if(obj.images != nil && obj.images!.count > 0){
                         obj.images!.forEach{
                             let url = URL(string: "\(App.IMG_URL.img_URL)" + $0)
                             DispatchQueue.main.async {
@@ -192,11 +199,12 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
                             }
                         }
                     }
-                    if(obj.sizes != nil){
+                    if(obj.sizes != nil && obj.sizes!.count > 0){
                         UserDefaults.standard.set(object: obj.sizes!, forKey: "sizeLest")
                         self.isSizeEmpty()
                     }
-                }
+               
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -302,33 +310,37 @@ class AddProductVC: SuperViewController,UITextViewDelegate {
     }
             
     @IBAction func tapAddProduct(_ sender: UIButton) {
+        sender.isEnabled = false
         CheckProduct()
     }
     
     func addProduct(_ parameters : [String : Any],_ imgProducts: [UIImage],api : Endpoint,id:String = ""){
-        WebRequests.sendPostMultipartRequestWithMultiImgs(api:  api,nestedParams: id, parameters: parameters, imges: imgProducts, withName: "images", completion: { (response, error)
-             in
+        WebRequests.sendPostMultipartRequestWithMultiImgs(api:  api,nestedParams: id, parameters: parameters, imges: imgProducts, withName: "images", completion: { [weak self] (response, error)
+            in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<ProductByID>.self, from: response.data!)
-                
-                if Status.code == 200{
-                    print("_____ Add Products Done _____")
-                    guard Status.data != nil else {
-                        return
-                    }
-                    if(self.isEdit){
-                        self.navigationController?.popViewController(animated: true)
-                    }else{
-                        let vc: DetailsProductVC = DetailsProductVC.loadFromNib()
-                        vc.ProdectId = Status.data!.product?.id ?? 0
-                        vc.modalPresentationStyle = .fullScreen
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
-                    
-                }else{
+                guard let strongSelf = self else {
+                    return
+                }
+                guard Status.code == 200, let productByID = Status.data else{
+                    strongSelf.showAlert(title: Status.title ?? "", message: Status.message ?? "")
                     print("_____ Add Product Error _____")
                     print( Status.message ?? "")
+                    return
                 }
+              
+                print("_____ Add Products Done _____")
+                if(strongSelf.isEdit){
+                    strongSelf.addProductBut.isEnabled = true
+                    strongSelf.navigationController?.popToRootViewController(animated: true)
+                }else{
+                    let vc: DetailsProductVC = DetailsProductVC.loadFromNib()
+                    vc.ProdectId = productByID.product?.id ?? 0
+                    vc.modalPresentationStyle = .fullScreen
+                    strongSelf.navigationController?.pushViewController(vc, animated: true)
+                    strongSelf.addProductBut.isEnabled = true
+                }
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -351,7 +363,8 @@ extension AddProductVC: UICollectionViewDelegate,UICollectionViewDataSource {
             if (indexPath.row == 0){
                 let cellAdd:AddImgProductCVC = collectionView.dequeue(cellForItemAt: indexPath)
                 cellAdd.addImgDeleget = {[weak self] sender in
-                    self?.imagePicker.present(from: sender)
+                    guard let strongSelf = self else { return }
+                    strongSelf.imagePicker.present(from: sender)
                 }
                 return cellAdd
             }
@@ -359,8 +372,9 @@ extension AddProductVC: UICollectionViewDelegate,UICollectionViewDataSource {
             cell.img.image = imgProducts[indexPath.row - 1]
             
             cell.deleteDeleget = { [weak self] in
-                self?.imgProducts.remove(at: indexPath.row - 1)
-                self?.collectionView1.reloadData()
+                guard let strongSelf = self else { return }
+                strongSelf.imgProducts.remove(at: indexPath.row - 1)
+                strongSelf.collectionView1.reloadData()
             }
             return cell
         }
@@ -368,9 +382,7 @@ extension AddProductVC: UICollectionViewDelegate,UICollectionViewDataSource {
             let cellSize:SizeProductCVC = collectionView.dequeue(cellForItemAt: indexPath)
             cellSize.lblSize.text = sizeLest?[indexPath.row]
             cellSize.deleteDeleget = {[weak self] in
-                guard let strongSelf = self else {
-                    return
-                }
+                guard let strongSelf = self else { return }
                 strongSelf.sizeLest?.remove(at: indexPath.row)
                 strongSelf.isSizeEmpty()
                 strongSelf.collectionView2.reloadData()

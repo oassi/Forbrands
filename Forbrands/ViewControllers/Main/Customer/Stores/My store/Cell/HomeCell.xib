@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -72,13 +72,13 @@
                                                                                 <rect key="frame" x="0.0" y="0.0" width="51" height="15"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="254" verticalHuggingPriority="251" horizontalCompressionResistancePriority="757" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhe-Wy-orw">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="27" height="15"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="26.5" height="15"/>
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="16"/>
                                                                                         <color key="textColor" name="black"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="756" text="SAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XGR-aQ-q7A">
-                                                                                        <rect key="frame" x="27" y="0.0" width="24" height="15"/>
+                                                                                        <rect key="frame" x="26.5" y="0.0" width="24.5" height="15"/>
                                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                         <color key="textColor" name="black"/>
                                                                                         <nil key="highlightedColor"/>
@@ -108,13 +108,13 @@
                                                                                         <rect key="frame" x="0.0" y="0.0" width="55.5" height="15"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUs-O2-J2g">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="27.5" height="15"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="28.5" height="15"/>
                                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="14"/>
                                                                                                 <color key="textColor" name="black"/>
                                                                                                 <nil key="highlightedColor"/>
                                                                                             </label>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zQ-6u-N3l">
-                                                                                                <rect key="frame" x="27.5" y="0.0" width="28" height="15"/>
+                                                                                                <rect key="frame" x="28.5" y="0.0" width="27" height="15"/>
                                                                                                 <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="12"/>
                                                                                                 <color key="textColor" name="black"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -164,17 +164,17 @@
                                                         <rect key="frame" x="8" y="90" width="129" height="36"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-85-ptg">
-                                                                <rect key="frame" x="15.5" y="9.5" width="98" height="17.5"/>
+                                                                <rect key="frame" x="18.5" y="7" width="92.5" height="22.5"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cartAdd" translatesAutoresizingMaskIntoConstraints="NO" id="rbn-40-YDp">
-                                                                        <rect key="frame" x="0.0" y="0.5" width="13" height="16"/>
+                                                                        <rect key="frame" x="0.0" y="3" width="13" height="16"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="13" id="Z8k-Qw-dtI"/>
                                                                             <constraint firstAttribute="height" constant="16" id="yRW-iS-1ee"/>
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="258" verticalHuggingPriority="255" horizontalCompressionResistancePriority="755" verticalCompressionResistancePriority="757" text="Add to card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvT-Ha-RrX">
-                                                                        <rect key="frame" x="19" y="0.0" width="79" height="17.5"/>
+                                                                        <rect key="frame" x="19" y="0.0" width="73.5" height="22.5"/>
                                                                         <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="15"/>
                                                                         <color key="textColor" name="white"/>
                                                                         <nil key="highlightedColor"/>

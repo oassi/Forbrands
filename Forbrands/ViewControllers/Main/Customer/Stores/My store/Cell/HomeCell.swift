@@ -31,7 +31,7 @@ class HomeCell: UICollectionViewCell {
 
     var obj : Product?{
         didSet{
-            lblTitle.text = obj?.nameAr ?? ""
+            lblTitle.text = obj?.nameAr ?? obj?.nameEn ?? ""
             
             if(obj?.price == nil || obj?.price == "0"){
                 lblPrice.text = obj!.oldPrice?.description ?? ""

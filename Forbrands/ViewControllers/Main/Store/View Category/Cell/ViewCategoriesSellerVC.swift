@@ -29,8 +29,7 @@ class ViewCategoriesSellerVC: UICollectionViewCell {
     
     var obj : ProductsByStoreCat? {
         didSet{
-            lblTilte.text = obj?.name ?? ""
-            
+            lblTilte.text = MOLHLanguage.isArabic() ? obj?.nameAr ?? "" : obj?.nameEn ?? ""
             
             if(obj?.price == nil || obj?.price == 0){
                 lblPrice.text = obj?.oldPrice?.description ?? ""

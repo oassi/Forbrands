@@ -106,7 +106,7 @@ enum Endpoint {
     case getProduct
     case productChangeStatus
     case reviewsByID
-    
+    case getProductTrader
     
     //order
     case addOrders
@@ -290,6 +290,9 @@ enum Endpoint {
                 return (Endpoint.DOMAIN_URL + "v1/products/edit/",.post,nil)
             case .getProduct:
                 return (Endpoint.DOMAIN_URL + "v1/products/",.get,nil)
+            case .getProductTrader:
+                return (Endpoint.DOMAIN_URL + "v1/products/trader/",.get,nil)
+                
             case .productChangeStatus:
                 return (Endpoint.DOMAIN_URL + "v1/products/change_status/",.get,nil)
             case .reviewsByID:

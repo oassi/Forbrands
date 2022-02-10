@@ -76,10 +76,8 @@ class webViewVC: SuperViewController,WKNavigationDelegate, WKUIDelegate {
                        // UserDefaults.standard.set(true, forKey: "ordersComplete")
                         self.navigationController?.popToRootViewController(animated: true)
                     }else{
-                        
-                        let vc:CheckoutVC = CheckoutVC.loadFromNib()
-                        vc.modalPresentationStyle = .fullScreen
-                        self.navigationController?.present(vc, animated: true, completion: nil)
+                        addOrders(parameters : parametersOrder ?? [:])
+                       
                     }
                 }
             }
@@ -129,4 +127,24 @@ class webViewVC: SuperViewController,WKNavigationDelegate, WKUIDelegate {
 
     }
 
+    
+    func addOrders(parameters : [String:String])  {
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.addOrders,parameters: parameters ,isAuthRequired:  true).start(){  (response, error) in
+            do {
+    
+                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                if Status.code == 200{
+                    guard let st = Status.status, st else {
+                        return
+                    }
+                    let vc:CheckoutVC = CheckoutVC.loadFromNib()
+                    vc.modalPresentationStyle = .fullScreen
+                    self.navigationController?.present(vc, animated: true, completion: nil)
+                 
+                }
+            }catch let jsonErr {
+                print("Error serializing  respone json", jsonErr)
+            }
+        }
+    }
 }
