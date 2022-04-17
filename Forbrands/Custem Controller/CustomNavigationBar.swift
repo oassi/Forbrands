@@ -61,12 +61,16 @@ class CustomNavigationBar: UINavigationController,UISearchBarDelegate, UITextFie
         setUpBtnsNav()
         setShadowNavBar()
         
+         
         
     }
+    
+  
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         NotificationCenter.default.addObserver(self, selector: #selector(self.colorChange(_:)), name: Notification.Name("colorChange"), object: nil)
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)

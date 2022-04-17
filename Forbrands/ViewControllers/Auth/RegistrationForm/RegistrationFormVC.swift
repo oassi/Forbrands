@@ -31,6 +31,7 @@ class RegistrationFormVC: SuperViewController {
     private func navButtons(){
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setCustomBackButtonForViewController(sender: self)
+        navigationController?.navigationBar.tintColor = getColorApp()
     }
     
     //MARK: - setupPhoneTF

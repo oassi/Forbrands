@@ -9,15 +9,15 @@ import UIKit
 
 class EditStoreInformationVC: SuperViewController {
 
-    @IBOutlet var lblStoreName  : UITextField!
-    @IBOutlet var lblStoreLink  : UITextField!
-    @IBOutlet var lblCommercial : UITextField!
-    @IBOutlet var lblIban       : UITextField!
-    @IBOutlet var storePolicy   : UITextView!
-    @IBOutlet weak var lblStoreDetails: UITextView!
-    @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var optionColor: UILabel!
-    @IBOutlet weak var optionColor2: UILabel!
+    @IBOutlet var lblStoreName          : UITextField!
+    @IBOutlet var lblStoreLink          : UITextField!
+    @IBOutlet var lblCommercial         : UITextField!
+    @IBOutlet var lblIban               : UITextField!
+    @IBOutlet var storePolicy           : UITextView!
+    @IBOutlet weak var lblStoreDetails  : UITextView!
+    @IBOutlet weak var saveButton       : UIButton!
+    @IBOutlet weak var optionColor      : UILabel!
+    @IBOutlet weak var optionColor2     : UILabel!
     var storeData : StoreTrader?
    
     
@@ -65,23 +65,28 @@ class EditStoreInformationVC: SuperViewController {
         if let iban = lblIban.text, !iban.isEmpty {
             parameters["iban"] = iban
         }
-        if let storePolicy = storePolicy.text, !storePolicy.isEmpty {
-            parameters["store_policy"] = storePolicy
-        }
+//        if let storePolicy = storePolicy.text, !storePolicy.isEmpty {
+//             storePolicy
+//        }
 
+        parameters["store_policy"] = storePolicy.text ?? ""
         
         let id = CurrentUser.userTrader?.id?.description ?? "0"
         editStore(parameters,id)
     }
     
     func editStore(_ parameters: [String:String], _ id:String){
-            _ = WebRequests.setup(controller: self).prepare(api: Endpoint.editStoresInfo,nestedParams: id,parameters: parameters ,isAuthRequired:  true).start(){ (response, error) in
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.editStoresInfo,nestedParams: id,parameters: parameters ,isAuthRequired:  true).start(){ (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<StoreTrader>.self, from: response.data!)
-                if Status.code == 200{
-                    CurrentUser.userTrader = Status.data
-                    self.navigationController?.popViewController(animated: true)
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                
+                CurrentUser.userTrader = Status.data
+                self.navigationController?.popViewController(animated: true)
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

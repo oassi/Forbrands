@@ -17,6 +17,7 @@ struct BaseDataResponse<T:Codable>: Codable {
         case title
         case message
         case data
+        case errors
         
     }
     
@@ -24,6 +25,7 @@ struct BaseDataResponse<T:Codable>: Codable {
     var code: Int?
     var title: String?
     var message: String?
+    var errors:[String]?
     var data: T?
     
     init(from decoder: Decoder) throws {

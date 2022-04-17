@@ -40,11 +40,12 @@ class ConnectUsVC: SuperViewController {
         parameters["message"] = messageTF.text ?? ""
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.contactWithUs,parameters:parameters ,isAuthRequired: true).start(){  (response, error) in
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
-                if Status.code == 200{
-                    self.showAlert(title: "", message: Status.message ?? "")
-                    self.navigationController?.popViewController(animated: true)
+                let Status =  try JSONDecoder().decode(BaseDataResponse<DataClass>.self, from: response.data!)
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                self.navigationController?.popViewController(animated: true)
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

@@ -79,7 +79,8 @@ extension UIViewController {
     func showAlert(title: String, message:String, okAction: String = "Ok".localized, completion: ((UIAlertAction) -> Void)? = nil ) {
         let banner = Banner(title: title, subtitle: message, image: nil, backgroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         banner.textColor = .black
-        banner.show(duration: 10.0)
+        banner.dismissesOnTap = true
+        banner.show(duration: 5.0)
     }
     func showActionsheet(viewController: UIViewController,tint:String? = "", title: String, message: String,titleColor:String? = "", actions: [(String, UIAlertAction.Style)], completion: @escaping (_ index: Int) -> Void) {
         

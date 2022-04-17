@@ -124,11 +124,30 @@ class AddAddressVC: SuperViewController {
         parameters["street"] =       street
         parameters["state_id"] =     selectedGovernorateID!.description
         parameters["city_id"] =      selectedCityID!.description
-        parameters["building"] =     lblBuilding.text ?? ""
-        parameters["floor"] =        lblFloor.text ?? ""
-        parameters["apartment"] =    lblApartment.text ?? ""
-        parameters["special_mark"] = lblSpecialMarque.text ?? ""
         
+        if(lblBuilding.text != nil && !(lblBuilding.text?.isEmpty ?? false)){
+            parameters["building"] =  lblBuilding.text ?? "0"
+        }else{
+            parameters["building"] = "0"
+        }
+        
+        if(lblFloor.text != nil && !(lblFloor.text?.isEmpty ?? false)){
+            parameters["floor"] = lblFloor.text ?? "0"
+        }else{
+            parameters["floor"] = "0"
+        }
+        
+        if(lblApartment.text != nil && !(lblApartment.text?.isEmpty ?? false)){
+            parameters["apartment"] = lblApartment.text ?? "0"
+        }else{
+            parameters["apartment"] = "0"
+        }
+        if(lblSpecialMarque.text != nil && !(lblSpecialMarque.text?.isEmpty ?? false)){
+            parameters["special_mark"] = lblSpecialMarque.text ?? "not found".localized
+        }else{
+            parameters["special_mark"] = "not found".localized
+        }
+      
         if(anotherMobileTF.text != nil && anotherMobileTF.text?.count == 11){
             let another = anotherMobileTF.getRawPhoneNumber()
             let anotherMobile = (anotherMobileTF.selectedCountry?.phoneCode ?? "+996")! + another!
@@ -144,13 +163,16 @@ class AddAddressVC: SuperViewController {
     func addAddAddress(_ parameters: [String:String]){
             _ = WebRequests.setup(controller: self).prepare(api: Endpoint.addAddress,parameters: parameters ,isAuthRequired:  true).start(){ (response, error) in
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
-                if Status.code == 200{
-                    self.showAlert(title: "", message: Status.message ?? "")
-                    self.navigationController?.popViewController(animated: true)
+                let Status =  try JSONDecoder().decode(BaseDataResponse<AddressList>.self, from: response.data!)
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? Status.errors?.first ?? "", message: Status.message ??  "")
+                    return
                 }
+                self.showAlert(title: "", message: Status.message ?? "")
+                self.navigationController?.popViewController(animated: true)
+                
             }catch let jsonErr {
-                print("Error serializing  respone json", jsonErr)
+                print("Error serializing respone json", jsonErr)
             }
         }
     }
@@ -159,12 +181,16 @@ class AddAddressVC: SuperViewController {
             _ = WebRequests.setup(controller: self).prepare(api: Endpoint.editAddress,nestedParams: id,parameters: parameters ,isAuthRequired:  true).start(){ (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(StatusAddressEdit.self, from: response.data!)
-                if Status.code == 200{
-                    self.showAlert(title: "", message: Status.message ?? "")
-                    self.navigationController?.popViewController(animated: true)
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                
+                self.showAlert(title: "", message: Status.message ?? "")
+                self.navigationController?.popViewController(animated: true)
+                
             }catch let jsonErr {
-                print("Error serializing  respone json", jsonErr)
+                print("Error serializing respone json", jsonErr)
             }
         }
     }

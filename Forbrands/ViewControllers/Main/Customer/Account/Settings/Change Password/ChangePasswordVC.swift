@@ -31,6 +31,26 @@ class ChangePasswordVC: SuperViewController {
         navgtion.setTitle("".localized, sender: self, large: false)
     }
     @IBAction func tapSave(_ sender: UIButton) {
+        guard let oldPassword = self.oldPassword.text, !oldPassword.isEmpty else{
+            self.showAlert(title: "Error".localized, message: "Password cannot be empty".localized)
+            return
+        }
+        
+        guard  oldPassword.count >= 6 else{
+            self.showAlert(title: "Error".localized, message: "Password must be at least 6 characters long".localized)
+            return
+        }
+        
+        guard let newPassword = self.newPassword.text, !newPassword.isEmpty else{
+            self.showAlert(title: "Error".localized, message: "The new password is required".localized)
+            return
+        }
+        
+        guard  newPassword.count >= 6 else{
+            self.showAlert(title: "Error".localized, message: "Password must be at least 6 characters long".localized)
+            return
+        }
+        
         ChangePassword()
     }
 
@@ -46,18 +66,27 @@ class ChangePasswordVC: SuperViewController {
             let phon = CurrentUser.userInfo!.user!.phone
             parameters["phone"] = phon
         }
+         if(CurrentUser.userInfo?.user?.email != nil){
+             let email = CurrentUser.userInfo!.user!.email
+             parameters["email"] = email
+             
+         }
         
         changePassword(parameters)
     }
     
     func changePassword(_ parameters: [String:String]){
-        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.editProfile,parameters: parameters ,isAuthRequired:  true).start(){ (response, error) in
+        _ = WebRequests.setup(controller: self).prepare(api: Endpoint.editProfile,parameters: parameters ,isAuthRequired:  true).start(){  (response, error) in
             
             do {
+               
                 let Status =  try JSONDecoder().decode(BaseDataResponse<UserStruct>.self, from: response.data!)
-                if Status.code == 200{
-                    self.navigationController?.popViewController(animated: true)
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                self.navigationController?.popViewController(animated: true)
+               
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

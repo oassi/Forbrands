@@ -11,6 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate,MOLHResetable {
 
     var window: UIWindow?
+    
     func reset() {
         let stry = UIStoryboard(name: "Main", bundle: nil)
         window?.rootViewController = stry.instantiateInitialViewController()

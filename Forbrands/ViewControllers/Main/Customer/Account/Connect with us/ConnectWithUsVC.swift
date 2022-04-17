@@ -21,6 +21,7 @@ class ConnectWithUsVC: SuperViewController {
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setTitle("Connect with us".localized, sender: self, large: false)
         navgtion.setCustomBackButtonForViewController(sender: self)
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     @IBAction func tapConnect(_ sender: UIButton) {

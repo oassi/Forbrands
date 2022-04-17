@@ -123,6 +123,14 @@ class StoreInformationVC: SuperViewController,UITextViewDelegate {
                     CurrentUser.userTrader = Status.data?.store
                     self.showAlert(title: "successful", message: Status.message?.localized ?? "")
                     UserDefaults.standard.set(false, forKey: "isNotCompleteData")
+                    
+//                    DispatchQueue.main.async {
+//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+//                                    let vc = TTabBarController()
+//                                    vc.modalPresentationStyle = .fullScreen
+//                                    self.goToRoot(vc)
+//                        })}
+                    
                     let vc:AdvertiseWithUsVC = AdvertiseWithUsVC.loadFromNib()
                     vc.modalPresentationStyle = .fullScreen
                     vc.tabBarController?.navigationItem.hidesBackButton = true

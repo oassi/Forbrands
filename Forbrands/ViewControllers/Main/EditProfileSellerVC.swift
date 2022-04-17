@@ -68,7 +68,7 @@ class EditProfileSellerVC: SuperViewController,UITextFieldDelegate {
         if(phoneTF.text != nil && phoneTF.text?.count == 11){
             let another = phoneTF.getRawPhoneNumber()
             let anotherMobile = (phoneTF.selectedCountry?.phoneCode ?? "+996")! + another!
-            parameters["phone"] = anotherMobile
+            parameters["phone"] = another
         }
         
         editProfile(parameters)

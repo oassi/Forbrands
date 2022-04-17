@@ -24,6 +24,7 @@ struct UserStruct: Codable {
         case idHash = "id_hash"
         case emailVerifiedAt = "email_verified_at"
         case roles
+        case storePolicy = "store_policy"
     }
     
     var emailVerifiedAt: String?
@@ -40,7 +41,7 @@ struct UserStruct: Codable {
     var name: String?
     var image: String?
     var roles: [Roles]?
-    
+    var storePolicy: String?
     
     
     init(from decoder: Decoder) throws {
@@ -111,6 +112,11 @@ struct UserStruct: Codable {
             image = String(value)
         }else if let value = try? container.decode(String.self, forKey:.image) {
             image = value
+        }
+        if let value = try? container.decode(Int.self, forKey:.storePolicy) {
+            storePolicy = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.storePolicy) {
+            storePolicy = value
         }
     }
     

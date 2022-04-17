@@ -42,13 +42,14 @@ struct App {
     static func deleteAddress(_ viewController:UIViewController?, id:String, completion:((Bool)->Void)?) {
         viewController?.showAlertWithCancel(title: "", message: "Are you sure to delete?".localized, okAction: "Delete".localized, completion: { bool in
             
-            _ = WebRequests.setup(controller: viewController).prepare(api: Endpoint.deleteAddress,nestedParams: id ,isAuthRequired:  false).start(){  (response, error) in
+            _ = WebRequests.setup(controller: viewController).prepare(api: Endpoint.deleteAddress,nestedParams: id ,isAuthRequired: true).start(){  (response, error) in
                 do {
-                    let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
-                    if Status.code == 200{
-                        viewController?.showAlert(title: "", message: Status.message ?? "")
-                        completion?(true)
+                    let Status =  try JSONDecoder().decode(StatusStruct_.self, from: response.data!)
+                    guard Status.code == 200 else{
+                        viewController?.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                        return
                     }
+                    completion?(true)
                 }catch let jsonErr {
                     print("Error serializing  respone json", jsonErr)
                 }
@@ -194,6 +195,15 @@ struct StatusStruct : Codable{
     let message: String?
     let title: String?
     let data : [String]?
+
+}
+struct StatusStruct_ : Codable{
+    let status: Bool?
+    let code: Int?
+    let message: String?
+    let title: String?
+    let data : DataClass
+
 }
 
 

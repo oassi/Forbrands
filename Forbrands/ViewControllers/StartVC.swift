@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StartVC: UIViewController,SwiftyGifDelegate {
+class StartVC: SuperViewController,SwiftyGifDelegate {
 
     @IBOutlet var splashImage: UIImageView!
 
@@ -18,9 +18,21 @@ class StartVC: UIViewController,SwiftyGifDelegate {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             
-            let vc:OnBordingVC = OnBordingVC.loadFromNib()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+            if CurrentUser.typeSelect == userType.Seller{
+                let vc = AdvertiseWithUsVC.loadFromNib().navigationController()
+                vc.modalPresentationStyle = .fullScreen
+                vc.tabBarController?.navigationItem.hidesBackButton = true
+                self.goToRoot(vc)
+                //self.navigationController?.pushViewController(vc, animated: true)
+                
+            }else{
+                let vc:OnBordingVC = OnBordingVC.loadFromNib()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
+                
+                
+            }
+          
             
 //            if !UserDefaults.standard.bool(forKey: "didStart") {
 //                UserDefaults.standard.set(true, forKey: "didStart")

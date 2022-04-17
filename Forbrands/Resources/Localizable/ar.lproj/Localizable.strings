@@ -96,7 +96,7 @@
 "Favorites" = "المفضلة";
 "successful" = "تم بنجاح";
 "Search for" = "بحث عن";
-"Activate the discount code" = "تم تفعيل كود الخصم";
+"Discount code" = "كود الخصم";
 
 "Promo Code Discount" = "خصم البروموكود";
 "SAR" = "ريال";
@@ -301,3 +301,4 @@
 "Women's perfume" = "عطور نسائي";
 "hair perfumes" = "عطور شعر";
 "Incense promises" = "بخور وعود";
+"The new password is required" = "كلمة المرور الجديدة مطلوبة";

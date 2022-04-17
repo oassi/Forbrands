@@ -46,7 +46,7 @@ class ProfileVC: SuperViewController {
     func uploadImage(_ image : UIImage){
         WebRequests.sendPostMultipartRequestWithImgParam(api: Endpoint.uploadImageProfile, parameters: [String : String](), img: image, withName: "image", completion: { (response, error) in
             do {
-                let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
+                let Status =  try JSONDecoder().decode(BaseDataResponse<UserStruct>.self, from: response.data!)
                      if Status.code == 200{
                         self.showOkAlert(withTitle: "successful".localized, message:Status.message?.localized ?? "" )
                      }

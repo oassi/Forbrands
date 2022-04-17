@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43B864FF7AAEBB22E8EAA381 /* Pods_Forbrands.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55A3C6726B96AF6699123ECD /* Pods_Forbrands.framework */; };
 		A404B1EB27A2C179007C9E06 /* CartObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = A404B1EA27A2C179007C9E06 /* CartObj.swift */; };
+		A40770DE27F9433B0072DDE2 /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40770DD27F9433B0072DDE2 /* UIFont+Additions.swift */; };
 		A470B6DC27A2D30F007ABCC4 /* ForgetPasPhVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470B6DA27A2D30F007ABCC4 /* ForgetPasPhVC.swift */; };
 		A470B6DD27A2D310007ABCC4 /* ForgetPasPhVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A470B6DB27A2D30F007ABCC4 /* ForgetPasPhVC.xib */; };
 		A470B6E527A2D633007ABCC4 /* PhoneVerificationCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A470B6E327A2D633007ABCC4 /* PhoneVerificationCode.swift */; };
@@ -210,7 +211,6 @@
 		C9AEA6B626BD89AE00AAE409 /* TTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA6B526BD89AE00AAE409 /* TTabBarController.swift */; };
 		C9AEA6BB26BD8B0400AAE409 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA6B926BD8B0400AAE409 /* HomeVC.swift */; };
 		C9AEA6BC26BD8B0400AAE409 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AEA6BA26BD8B0400AAE409 /* HomeVC.xib */; };
-		C9AEA6C026BD8B9A00AAE409 /* UIFont+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA6BF26BD8B9A00AAE409 /* UIFont+Additions.swift */; };
 		C9AEA6C626BD8EC200AAE409 /* CardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA6C426BD8EC200AAE409 /* CardVC.swift */; };
 		C9AEA6C726BD8EC200AAE409 /* CardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9AEA6C526BD8EC200AAE409 /* CardVC.xib */; };
 		C9AEA6F026BDA4D900AAE409 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEA6EF26BDA4D900AAE409 /* CustomNavigationBar.swift */; };
@@ -315,6 +315,7 @@
 		8DD19959D67083F5FF6B277D /* Pods-Forbrands.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forbrands.release.xcconfig"; path = "Target Support Files/Pods-Forbrands/Pods-Forbrands.release.xcconfig"; sourceTree = "<group>"; };
 		941B95D5AF01907390E2601C /* Pods-Forbrands.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forbrands.debug.xcconfig"; path = "Target Support Files/Pods-Forbrands/Pods-Forbrands.debug.xcconfig"; sourceTree = "<group>"; };
 		A404B1EA27A2C179007C9E06 /* CartObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartObj.swift; sourceTree = "<group>"; };
+		A40770DD27F9433B0072DDE2 /* UIFont+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
 		A470B6DA27A2D30F007ABCC4 /* ForgetPasPhVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasPhVC.swift; sourceTree = "<group>"; };
 		A470B6DB27A2D30F007ABCC4 /* ForgetPasPhVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgetPasPhVC.xib; sourceTree = "<group>"; };
 		A470B6E327A2D633007ABCC4 /* PhoneVerificationCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationCode.swift; sourceTree = "<group>"; };
@@ -515,7 +516,6 @@
 		C9AEA6B526BD89AE00AAE409 /* TTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTabBarController.swift; sourceTree = "<group>"; };
 		C9AEA6B926BD8B0400AAE409 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C9AEA6BA26BD8B0400AAE409 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
-		C9AEA6BF26BD8B9A00AAE409 /* UIFont+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Additions.swift"; sourceTree = "<group>"; };
 		C9AEA6C426BD8EC200AAE409 /* CardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVC.swift; sourceTree = "<group>"; };
 		C9AEA6C526BD8EC200AAE409 /* CardVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardVC.xib; sourceTree = "<group>"; };
 		C9AEA6EF26BDA4D900AAE409 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -1847,8 +1847,8 @@
 			children = (
 				C950A1562765FA57000CE064 /* CustomState.swift */,
 				C950A1532765F9CE000CE064 /* MainState.swift */,
+				A40770DD27F9433B0072DDE2 /* UIFont+Additions.swift */,
 				C9E10DDD26BAA61A00E146C2 /* UIView+Extensions.swift */,
-				C9AEA6BF26BD8B9A00AAE409 /* UIFont+Additions.swift */,
 				C9E10DF526BADC4B00E146C2 /* Extentions.swift */,
 				C9269F7D26D25F7E00CE0BBB /* Extentions+UIViewController.swift */,
 				C9269F9726D2633A00CE0BBB /* Extentions+Date.swift */,
@@ -2341,6 +2341,7 @@
 				C933868F26C828AB00B67EA5 /* PopNotAvailableProduectVC.swift in Sources */,
 				C9456CBF26D6EA0A00A5F37B /* InfoApp.swift in Sources */,
 				C96C792E26E7DE920010709A /* Email.swift in Sources */,
+				A40770DE27F9433B0072DDE2 /* UIFont+Additions.swift in Sources */,
 				C9DC492626DD7A33007864F4 /* CategoriesHome.swift in Sources */,
 				C9E27CD7276569D4000285E8 /* Favorite.swift in Sources */,
 				C94C25B026BD1DE400300CDE /* NotificationDisplayVC.swift in Sources */,
@@ -2366,7 +2367,6 @@
 				C9AEA6F026BDA4D900AAE409 /* CustomNavigationBar.swift in Sources */,
 				C99F2AAF26CF8EA800AE1A83 /* ImagePicker.swift in Sources */,
 				C9474FA726D5ADF4008D760C /* UIImage+SwiftyGif.swift in Sources */,
-				C9AEA6C026BD8B9A00AAE409 /* UIFont+Additions.swift in Sources */,
 				C9F3623926C17F560012EC71 /* StoreInformationVC.swift in Sources */,
 				C9C0222A26BB4B76000ACBFE /* RegistrationFormVC.swift in Sources */,
 				C99F2AB726CF8EB700AE1A83 /* PickerViewViewController.swift in Sources */,
@@ -2681,7 +2681,7 @@
 				CODE_SIGN_ENTITLEMENTS = Forbrands/Forbrands.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = RZZ472J6K5;
 				INFOPLIST_FILE = Forbrands/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2689,7 +2689,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.forbrands.almusand.assi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forbrands.almusand.for;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2712,7 +2712,7 @@
 				CODE_SIGN_ENTITLEMENTS = Forbrands/Forbrands.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = RZZ472J6K5;
 				INFOPLIST_FILE = Forbrands/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -2720,7 +2720,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.forbrands.almusand.assi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.forbrands.almusand.for;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

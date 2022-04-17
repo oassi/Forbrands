@@ -109,7 +109,7 @@ class AddressesVC: SuperViewController {
                     self.tableview.reloadData()
                 }
             }catch let jsonErr {
-                print("Error serializing  respone json", jsonErr)
+                print("Error serializing respone json", jsonErr)
             }
         }
     }

@@ -38,24 +38,27 @@ class SubscribeVC: SuperViewController {
             do {
                 
                 let Status =  try JSONDecoder().decode(BaseDataResponse<Subscription>.self, from: response.data!)
-                
-                if Status.code == 200{
-                    self.subscription = Status.data!
-                    self.lblPrice.text =  self.subscription.price ?? ""
-                    self.lblshortPrice.text = MOLHLanguage.isArabic() ? Status.data!.currency?.shortNameAr ?? "ريال".localized : Status.data!.currency?.shortNameEn ?? "SAR".localized
-                    if MOLHLanguage.isArabic(){
-                        Status.data!.featuresAr?.forEach{self.features.append($0)}
-                    }else{
-                        Status.data!.featuresEn?.forEach{self.features.append($0)}
-                    }
-                        
-                        
-                     //   Status.data!.featuresAr?.split(separator: ",") : Status.data!.featuresEn?.split(separator: ",")
-                    
-//                    feature?.forEach{ (String($0)) }
-                    self.tableview.reloadData()
-                    
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                
+                self.subscription = Status.data!
+                self.lblPrice.text =  self.subscription.price ?? ""
+                self.lblshortPrice.text = MOLHLanguage.isArabic() ? Status.data!.currency?.shortNameAr ?? "ريال".localized : Status.data!.currency?.shortNameEn ?? "SAR".localized
+                if MOLHLanguage.isArabic(){
+                    Status.data!.featuresAr?.forEach{self.features.append($0)}
+                }else{
+                    Status.data!.featuresEn?.forEach{self.features.append($0)}
+                }
+                self.tableview.reloadData()
+                
+                //   Status.data!.featuresAr?.split(separator: ",") : Status.data!.featuresEn?.split(separator: ",")
+                
+                //                    feature?.forEach{ (String($0)) }
+                
+                
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

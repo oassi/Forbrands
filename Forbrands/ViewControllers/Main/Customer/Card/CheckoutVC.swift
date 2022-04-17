@@ -66,24 +66,27 @@ class CheckoutVC: SuperViewController {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.ordersComplete ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<OrdersComplete>.self, from: response.data!)
-                if Status.code == 200{
-                    let obj = Status.data
-                    self.orderId.text = obj?.orderId?.description ?? "0"
-                    self.total.text = obj?.total?.description ?? "0"
-                    self.oldtotal.text = obj?.oldtotal?.description ?? "0"
-                    self.payment.text = obj?.payment?.description ?? "0"
-                    self.promocode.text = obj?.promocode?.description ?? "0"
-                    self.totalDiscount.text =  String( (obj?.oldtotal ?? 0) -  (obj?.total ?? 0))
-                    self.shoping.text = obj?.shoping?.description ?? "0"
-                    
-                    if let products = obj?.products ,  !products.isEmpty{
-                        self.products = products
-                        self.heighttableViewCell.constant = CGFloat((products.count * 100))
-                        self.tableview.reloadData()
-                    }
-                    
-                    
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                
+                let obj = Status.data
+                self.orderId.text = obj?.orderId?.description ?? "0"
+                self.total.text = obj?.total?.description ?? "0"
+                self.oldtotal.text = obj?.oldtotal?.description ?? "0"
+                self.payment.text = obj?.payment?.description ?? "0"
+                self.promocode.text = obj?.promocode?.description ?? "0"
+                self.totalDiscount.text =  String( (obj?.oldtotal ?? 0) -  (obj?.total ?? 0))
+                self.shoping.text = obj?.shoping?.description ?? "0"
+                
+                if let products = obj?.products ,  !products.isEmpty{
+                    self.products = products
+                    self.heighttableViewCell.constant = CGFloat((products.count * 100))
+                    self.tableview.reloadData()
+                }
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

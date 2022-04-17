@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -46,10 +46,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Vd-B4-f06">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1440.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1490"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jXw-Cu-QDM">
-                                    <rect key="frame" x="20" y="0.0" width="374" height="1400.5"/>
+                                    <rect key="frame" x="20" y="0.0" width="374" height="1450"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBY-nI-Oxa">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="10"/>
@@ -110,10 +110,10 @@
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="diG-B0-i59">
-                                            <rect key="frame" x="0.0" y="262" width="374" height="80.5"/>
+                                            <rect key="frame" x="0.0" y="262" width="374" height="86"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZb-zE-efF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -122,7 +122,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="E09-qR-Mg1">
-                                                    <rect key="frame" x="0.0" y="39.5" width="374" height="41"/>
+                                                    <rect key="frame" x="0.0" y="45" width="374" height="41"/>
                                                     <color key="backgroundColor" name="background"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="41" id="p1f-VE-TQB"/>
@@ -141,10 +141,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="N9u-A1-MhX">
-                                            <rect key="frame" x="0.0" y="362.5" width="374" height="40"/>
+                                            <rect key="frame" x="0.0" y="368" width="374" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="257" verticalHuggingPriority="251" horizontalCompressionResistancePriority="758" text="My Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hD-sh-onb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="71.5" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="66" height="40"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -153,7 +153,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A8n-6I-Uf1">
-                                                    <rect key="frame" x="79.5" y="0.0" width="256.5" height="40"/>
+                                                    <rect key="frame" x="74" y="0.0" width="262" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="1XO-6O-Qgf"/>
                                                     </constraints>
@@ -174,10 +174,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ne4-mR-18j">
-                                            <rect key="frame" x="0.0" y="422.5" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="428" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocF-to-Eug">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -186,13 +186,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEu-kX-geS">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n51-Zw-Atk">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="rC7-7S-e4b"/>
@@ -201,10 +201,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sSl-wg-TFq">
-                                            <rect key="frame" x="0.0" y="536" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="547" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ted-Es-Pae">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -213,13 +213,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVr-bI-OQx">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qw1-Mx-tqL">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="wtc-LS-BCN"/>
@@ -228,10 +228,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fbW-K5-lln">
-                                            <rect key="frame" x="0.0" y="649.5" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="666" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F1b-F1-0Xr">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -240,13 +240,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRq-bC-9NX">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nYh-jT-AWL">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="CtK-Pv-iaz"/>
@@ -255,10 +255,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bx3-1a-FoY">
-                                            <rect key="frame" x="0.0" y="763" width="374" height="40"/>
+                                            <rect key="frame" x="0.0" y="785" width="374" height="40"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="257" verticalHuggingPriority="251" horizontalCompressionResistancePriority="756" text="Store information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TRl-iz-Q1y">
-                                                    <rect key="frame" x="0.0" y="0.0" width="146.5" height="40"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -267,7 +267,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bW0-5t-hrP">
-                                                    <rect key="frame" x="154.5" y="0.0" width="181.5" height="40"/>
+                                                    <rect key="frame" x="153" y="0.0" width="183" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="I5r-KK-QYS"/>
                                                     </constraints>
@@ -288,10 +288,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uMd-jW-cVF">
-                                            <rect key="frame" x="0.0" y="823" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="845" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDl-yT-UYq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -300,13 +300,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osI-wU-BBd">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyc-Wl-TIk">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="jg6-uM-VuG"/>
@@ -315,10 +315,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="L7D-U9-1ag">
-                                            <rect key="frame" x="0.0" y="936.5" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="964" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Link" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHb-5b-TTS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -327,13 +327,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tly-l6-oNR">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YFp-Pn-n4a">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="csc-Po-rG0"/>
@@ -342,10 +342,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xJP-a1-o7h">
-                                            <rect key="frame" x="0.0" y="1050" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="1083" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commercial Registration No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E59-3g-1Tl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -354,13 +354,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xtr-5s-eRc">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGt-ke-nQT">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="DUR-Xm-RP2"/>
@@ -369,10 +369,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MSL-03-Ivz">
-                                            <rect key="frame" x="0.0" y="1163.5" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="1202" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iban" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBq-fF-Ca8">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -381,13 +381,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdE-eu-MRE">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7EC-XD-XaJ">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="5tK-De-COy"/>
@@ -396,10 +396,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1wp-Le-UDA">
-                                            <rect key="frame" x="0.0" y="1277" width="374" height="93.5"/>
+                                            <rect key="frame" x="0.0" y="1321" width="374" height="99"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Store Policy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amg-14-fdF">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="28"/>
                                                     <fontDescription key="fontDescription" name="DINNextLTW23-Regular" family="DIN Next LT W23" pointSize="19"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
@@ -408,13 +408,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejo-5m-g7t">
-                                                    <rect key="frame" x="0.0" y="32.5" width="374" height="50"/>
+                                                    <rect key="frame" x="0.0" y="38" width="374" height="50"/>
                                                     <fontDescription key="fontDescription" name="Cairo-Regular" family="Cairo" pointSize="16"/>
                                                     <color key="textColor" name="black"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgS-Fl-ud2">
-                                                    <rect key="frame" x="0.0" y="92.5" width="374" height="1"/>
+                                                    <rect key="frame" x="0.0" y="98" width="374" height="1"/>
                                                     <color key="backgroundColor" name="grey"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="DMb-l0-nWG"/>
@@ -423,7 +423,7 @@
                                             </subviews>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bt7-iH-NJr">
-                                            <rect key="frame" x="0.0" y="1390.5" width="374" height="10"/>
+                                            <rect key="frame" x="0.0" y="1440" width="374" height="10"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="RmZ-dC-0EY"/>
                                             </constraints>

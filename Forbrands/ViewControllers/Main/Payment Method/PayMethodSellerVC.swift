@@ -50,10 +50,12 @@ class PayMethodSellerVC: SuperViewController {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.updatePayMethodByStore,parameters:parameters ,isAuthRequired: true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(StatusStruct.self, from: response.data!)
-                if Status.code == 200{
-                    self.navigationController?.popViewController(animated: true)
-                    
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                self.navigationController?.popViewController(animated: true)
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -65,13 +67,18 @@ class PayMethodSellerVC: SuperViewController {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.payMethods ,isAuthRequired:  false).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<PayMethodObj>.self, from: response.data!)
-                 if Status.code == 200{
-                    if(Status.data?.payMethods != nil){
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
+                }
+                
+                if(Status.data?.payMethods != nil){
                         self.paymentMethods += Status.data!.payMethods!
                         self.tableview.reloadData()
                     }
                    
-                }
+               
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
@@ -82,13 +89,17 @@ class PayMethodSellerVC: SuperViewController {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.payMethodsByStore,nestedParams: "\(CurrentUser.userInfo?.store?.id ?? 0)" ,isAuthRequired:  true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataArrayResponse<PayMethods>.self, from: response.data!)
-                 if Status.code == 200{
-                    if(Status.data != nil){
-                        Status.data?.forEach{self.payMeth.append($0.id!.description)}
-                        self.tableview.reloadData()
-                    }
-                   
+                
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                if(Status.data != nil){
+                    Status.data?.forEach{self.payMeth.append($0.id!.description)}
+                    self.tableview.reloadData()
+                }
+                
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

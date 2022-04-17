@@ -49,6 +49,13 @@ struct StoreTrader: Codable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        if let value = try? container.decode(Int.self, forKey:.storePolicy) {
+            storePolicy = String(value)
+        }else if let value = try? container.decode(String.self, forKey:.storePolicy) {
+            storePolicy = value
+        }
+        
         if let value = try? container.decode(Int.self, forKey:.iban) {
             iban = String(value)
         }else if let value = try? container.decode(String.self, forKey:.iban) {

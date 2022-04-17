@@ -69,6 +69,7 @@ class ProfileSellerVC: SuperViewController{
             lblCommercial.text = store.commercialRecord ?? ""
             lblIban.text       = store.iban ?? ""
             storePolicy.text   = store.storePolicy ?? ""
+            
             imgCoverStore.sd_custom(url: "\(App.IMG_URL.img_URL)\(store.image ?? "")",defultImage: UIImage(named: "caverImg"))
         }
     }
@@ -107,6 +108,7 @@ class ProfileSellerVC: SuperViewController{
                     return
                 }
                 CurrentUser.userTrader = Status.data
+               
                 self.showOkAlert(withTitle: "successful".localized, message:Status.message?.localized ?? "" )
                 
             }catch let jsonErr {
@@ -123,9 +125,11 @@ class ProfileSellerVC: SuperViewController{
                     self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
                     return
                 }
+                
                 self.lblFullName.text = Status.data?.name ?? ""
                 self.lblEmail.text =  Status.data?.email ?? ""
                 self.lblMobile.text = Status.data?.phone ?? ""
+                self.storePolicy.text = Status.data?.storePolicy ?? ""
                 
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
@@ -144,7 +148,7 @@ extension ProfileSellerVC: ImagePickerDelegate {
             return
         }
         self.imgCoverStore.image = img
-        uploadImage(img)
+      
         self.selectImage = true
     }
     

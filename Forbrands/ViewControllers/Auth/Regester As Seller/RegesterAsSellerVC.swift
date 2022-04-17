@@ -20,7 +20,6 @@ class RegesterAsSellerVC: SuperViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navButtons()
         lblFullName.delegate = self
         lblEmail.delegate = self
         lblPassword.delegate = self
@@ -46,10 +45,15 @@ class RegesterAsSellerVC: SuperViewController,UITextFieldDelegate {
     }
     
     //MARK: - toggle Login Button
+ 
+    override func viewWillAppear(_ animated: Bool) {
+        navButtons()
+    }
     
     private func navButtons(){
         let navgtion = self.navigationController as! CustomNavigationBar
         navgtion.setCustomBackButtonForViewController(sender: self)
+        navigationController?.navigationBar.tintColor = getColorApp()
     }
     
     @IBAction func isHidePassword(_ sender: UIButton) {

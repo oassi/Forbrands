@@ -33,17 +33,21 @@ class PaymentMethodVC: SuperViewController {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.payMethods ,isAuthRequired:  false).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<PayMethodObj>.self, from: response.data!)
-                 if Status.code == 200{
-                    if(Status.data?.payMethods != nil){
-                        for i in Status.data!.payMethods! {
-                            if (i.id != 1 ){
-                                self.paymentMethods.append(i)
-                            }
-                        }
-                        self.tableview.reloadData()
-                    }
-                   
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                guard let payMet = Status.data?.payMethods , !payMet.isEmpty else{
+                    return
+                }
+                for i in payMet {
+                    if (i.id != 1 ){
+                        self.paymentMethods.append(i)
+                    }
+                }
+                self.tableview.reloadData()
+                
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }

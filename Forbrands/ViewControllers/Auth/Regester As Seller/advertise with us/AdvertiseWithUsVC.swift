@@ -70,7 +70,7 @@ class AdvertiseWithUsVC: UIViewController {
                     }
                 }
             }catch let jsonErr {
-                print("Error serializing  respone json", jsonErr)
+                print("Error serializing respone json", jsonErr)
             }
         }
     }

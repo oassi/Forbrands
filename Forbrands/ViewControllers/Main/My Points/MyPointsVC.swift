@@ -30,10 +30,13 @@ class MyPointsVC: SuperViewController {
         _ = WebRequests.setup(controller: self).prepare(api: Endpoint.point ,isAuthRequired: true).start(){  (response, error) in
             do {
                 let Status =  try JSONDecoder().decode(BaseDataResponse<Point>.self, from: response.data!)
-                if Status.code == 200{
-                    self.moneyLbl.text = Status.data?.money?.description ?? "0"
-                    self.pointLbl.text = Status.data?.point?.description ?? "0"
+                guard Status.code == 200 else{
+                    self.showAlert(title: Status.title ?? "", message: Status.message ?? "")
+                    return
                 }
+                self.moneyLbl.text = Status.data?.money?.description ?? "0"
+                self.pointLbl.text = Status.data?.point?.description ?? "0"
+                
             }catch let jsonErr {
                 print("Error serializing  respone json", jsonErr)
             }
