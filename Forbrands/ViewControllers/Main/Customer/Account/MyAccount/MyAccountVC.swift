@@ -43,7 +43,9 @@ class MyAccountVC: SuperViewController {
         super.viewDidLoad()
         getMyAccount()
         // Do any additional setup after loading the view.
-        SubscribeToPremiumMembership.isHidden = !(CurrentUser.myAccount?.subscriptions ?? true)
+        SubscribeToPremiumMembership.isHidden = true
+//        SubscribeToPremiumMembership.isHidden = !(CurrentUser.myAccount?.subscriptions ?? true)
+
         viewtopNotSingin.isHidden = true
         
         if(CurrentUser.typeSelect == userType.Seller){
